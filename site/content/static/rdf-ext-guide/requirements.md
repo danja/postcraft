@@ -1,6 +1,6 @@
 # Coverage
 
-For each, one or two short demo snippets, example of use in a larger project.
+For each, one or two short demo snippets, example of use in a larger project. Node & browser
 
 The following use cases are covered:
 

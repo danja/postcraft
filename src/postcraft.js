@@ -1,4 +1,9 @@
-const args = require('args-parser')(process.argv);
-console.info(args);
 
-console.log("Hello World")
+
+
+
+exports.run = () => {
+    return "Hello from postcraft"
+}
+
+// exports.allColors = allColors;
