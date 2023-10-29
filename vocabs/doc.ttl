@@ -1,0 +1,136 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix doc: <http://www.w3.org/2000/10/swap/pim/doc#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<file:///home/danny/HKMS/postcraft/vocabs/doc.rdf>
+    doc:creator <http://www.w3.org/People/Berners-Lee/card#i> ;
+    doc:ipr <file:///home/danny/HKMS/postcraft/LICENSE.n3> ;
+    doc:version "$Id: doc.rdf,v 1.4 2006/07/29 20:18:43 timbl Exp $" .
+
+doc:OpenSourceLicense
+    :comment """Class of licenses which can be called Open Soutrce
+                according to opensource.org""" ;
+    :label "Opem Source licence" ;
+    :subClassOf doc:Work .
+
+doc:Work
+    a :Class ;
+    :comment "An abstract information thing of value, typically intellectual property" ;
+    :label "work" .
+
+doc:adminPage
+    a rdf:Property ;
+    :comment """A web page allowing a human user to administer this work,
+            for example changing access control, version control information etc.""" ;
+    :domain doc:Work ;
+    :label "administrative page" .
+
+doc:creator
+    a rdf:Property ;
+    :comment "The person (not string) who created this." ;
+    :domain doc:Work ;
+    :label "creator" ;
+    :range <http://www.w3.org/2000/10/swap/pim/contact#SocialEntity> .
+
+doc:dependsOn
+    a rdf:Property ;
+    :comment "The meaning or value of this work depends on that of that work." ;
+    :domain doc:Work ;
+    :label "depends on" ;
+    :range doc:Work .
+
+doc:derivativeWork
+    a rdf:Property ;
+    :comment "A work wholey or partly used in the creation of this one." ;
+    :domain doc:Work ;
+    :label "derivative work" ;
+    :range doc:Work ;
+    owl:inverseOf doc:derivedFrom .
+
+doc:derivedFrom
+    a rdf:Property ;
+    :comment "A work wholey or partly used in the creation of this one." ;
+    :domain doc:Work ;
+    :label "derived from" ;
+    :range doc:Work .
+
+doc:ipr
+    a rdf:Property ;
+    :comment "Terms and intellectual property rights licensing conditions." ;
+    :domain doc:Work ;
+    :label "rights" ;
+    :range doc:Work .
+
+doc:mayControl
+    a rdf:Property ;
+    :comment "This may change that access control for that" ;
+    :domain <http://www.w3.org/2000/10/swap/pim/contact#SocialEntity> ;
+    :label "may control" ;
+    :range doc:Work .
+
+doc:mayRead
+    a rdf:Property ;
+    :comment "This may access that for read -- compare 'r' unix" ;
+    :domain <http://www.w3.org/2000/10/swap/pim/contact#SocialEntity> ;
+    :label "may read" ;
+    :range doc:Work .
+
+doc:mayWrite
+    a rdf:Property ;
+    :comment "This may access that to modify it -- compare 'w' unix" ;
+    :domain <http://www.w3.org/2000/10/swap/pim/contact#SocialEntity> ;
+    :label "may write" ;
+    :range doc:Work .
+
+doc:obsoletes
+    a rdf:Property ;
+    :comment "This work is more upto date than that and makes it obsolete." ;
+    :domain doc:Work ;
+    :label "obsoletes" ;
+    :range doc:Work .
+
+doc:persistencePolicy
+    a rdf:Property ;
+    :comment """Publishers policy regarding the peristence of the mapping
+                between URI and its meaning and/or representation in bits.""" ;
+    :domain doc:Work ;
+    :label "persistence policy" ;
+    :range doc:Work .
+
+doc:rules
+    a rdf:Property ;
+    :comment """
+	The subject is a namespace document; the object is a document
+	containing rules. The rules are valid information about the terms
+	defined in the namespace document.
+	""" ;
+    :domain <http://www.w3.org/2000/10/swap/pim/contact#Work> ;
+    :label "rules" ;
+    :range <http://www.w3.org/2000/10/swap/pim/contact#Work> .
+
+doc:subLicense
+    a rdf:Property, owl:TransitiveProperty ;
+    :comment """For any license, a sublicense is a licensing offering a subset of the rights. 
+If A doc:sublicense B then anything under license A can be released under
+licence B.""" ;
+    :domain doc:Work ;
+    :label "sub-license" ;
+    :range doc:Work .
+
+doc:version
+    a rdf:Property ;
+    :comment """This generic work has a specific version in the
+	follwing specific document""", "This version of this document (eg number, date, etc). A string" ;
+    :domain doc:Work ;
+    :label "version" ;
+    :range doc:Work .
+
+doc:versionOf
+    a rdf:Property ;
+    :comment """This work is a a specific version of the follwing generic document.
+		OBSOLETE - use its inverse, version.""" ;
+    :domain doc:Work ;
+    :range doc:Work ;
+    owl:inverseOf doc:version .
+

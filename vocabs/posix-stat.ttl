@@ -1,0 +1,42 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<file:///home/danny/HKMS/postcraft/vocabs/posix-stat.rdf#atime>
+    rdfs:comment "time of last access" .
+
+<file:///home/danny/HKMS/postcraft/vocabs/posix-stat.rdf#blksize>
+    rdfs:comment "blocksize for file system I/O" .
+
+<file:///home/danny/HKMS/postcraft/vocabs/posix-stat.rdf#blocks>
+    rdfs:comment "number of 512B blocks allocated" .
+
+<file:///home/danny/HKMS/postcraft/vocabs/posix-stat.rdf#ctime>
+    rdfs:comment "time of last status change" .
+
+<file:///home/danny/HKMS/postcraft/vocabs/posix-stat.rdf#dev>
+    rdfs:comment "ID of device containing file" .
+
+<file:///home/danny/HKMS/postcraft/vocabs/posix-stat.rdf#gid>
+    rdfs:comment "group ID of owner" .
+
+<file:///home/danny/HKMS/postcraft/vocabs/posix-stat.rdf#ino>
+    rdfs:comment "inode number" .
+
+<file:///home/danny/HKMS/postcraft/vocabs/posix-stat.rdf#mode>
+    rdfs:comment "protection" .
+
+<file:///home/danny/HKMS/postcraft/vocabs/posix-stat.rdf#mtime>
+    rdfs:comment "time of last modification" .
+
+<file:///home/danny/HKMS/postcraft/vocabs/posix-stat.rdf#nlink>
+    rdfs:comment "number of hard links" .
+
+<file:///home/danny/HKMS/postcraft/vocabs/posix-stat.rdf#rdev>
+    rdfs:comment "device ID (if special file)" .
+
+<file:///home/danny/HKMS/postcraft/vocabs/posix-stat.rdf#size>
+    rdfs:comment "total size, in bytes" .
+
+<file:///home/danny/HKMS/postcraft/vocabs/posix-stat.rdf#uid>
+    rdfs:comment "user ID of owner" .
+
