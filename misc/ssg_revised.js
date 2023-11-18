@@ -4,6 +4,7 @@ const glob = require('glob'); // Equivalent to glob in Python
 const process = require('process'); // Equivalent to sys in Python
 const moment = require('moment'); // Equivalent to datetime in Python
 const marked = require('marked'); // Equivalent to commonmark in Python
+const fs = require('fs');
 
 class StaticSiteGenerator {
     constructor() {
@@ -12,7 +13,7 @@ class StaticSiteGenerator {
 
     // Reads the content of a file
     fread(filename) {
-        const fs = require('fs');
+
 
         try {
             const data = fs.readFileSync(filename, 'utf8');
@@ -52,7 +53,7 @@ class StaticSiteGenerator {
     }
 
     // Parse headers in text and yield (key, value, end-index) tuples
-    read_headers(text) {
+    * read_headers(text) {
         const headerRegex = /\\s*<!--\\s*(.+?)\\s*:\\s*(.+?)\\s*-->\\s*|.+?/g;
         let match;
 

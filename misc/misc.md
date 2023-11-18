@@ -17,3 +17,5 @@ virbr0: flags=4099<UP,BROADCAST,MULTICAST> mtu 1500
 wlx1cbfce60f911: flags=4163<UP,BROADCAST,RUNNING,MULTICAST> mtu 1500
 
 sudo ifconfig wlx1cbfce60f911 mtu 1428
+
+(ChatGPT ftw!).

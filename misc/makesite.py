@@ -37,12 +37,19 @@ def truncate(text, words=25):
     return ' '.join(re.sub('(?s)<.*?>', ' ', text).split()[:words])
 
 
-def read_headers(text):
-    """Parse headers in text and yield (key, value, end-index) tuples."""
-    for match in re.finditer(r'\s*<!--\s*(.+?)\s*:\s*(.+?)\s*-->\s*|.+', text):
-        if not match.group(1):
-            break
-        yield match.group(1), match.group(2), match.end()
+def readHeaders(text) {
+    // Parse headers in text and yield (key, value, end-index) objects.
+    const regex = /\s*<!--\s*(.+?)\s*:\s*(.+?)\s*-->\s*|.+/g;
+    let match;
+    
+    while ((match = regex.exec(text)) !== null) {
+        if (!match[1]) {
+            break;
+        }
+        yield { key: match[1], value: match[2], endIndex: match.index + match[0].length };
+    }
+}
+
 
 
 def rfc_2822_format(date_str):
