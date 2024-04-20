@@ -24,7 +24,7 @@
     fs:targetDirectory "site" ;
     pc:template "layouts/mediocre/mediocre.html" .
 
-# for index page & pinned
+# for index page & pinned, collapsed
 <https://danny.ayers.name/index> a pc:SpecialCase ;
     fs:sourceDirectory "posts" ;
     fs:targetDirectory "site" ;

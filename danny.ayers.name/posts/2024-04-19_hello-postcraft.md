@@ -8,6 +8,8 @@ PC = Postcraft
 2. walk dirs
 3. render
 
+transmission.execute('../../data/mail-archive-sample')
+
 ### 1. Read Manifest
 
 supply path of 'manifest.ttl' in
@@ -33,3 +35,25 @@ Medium uses some fonts on its website. Most of the body text in fonts called Cha
 Rooney maybe for friendly blog text
 
 Karma Semibold font
+
+LOGO!!!
+
+### Design Refs
+
+https://www.w3.org/wiki/IntegrityIsJobOne
+
+[Bake, Don’t Fry](http://www.aaronsw.com/weblog/000404)
+
+[Building Baked Sites](http://www.aaronsw.com/weblog/000406)
+
+https://www.madmode.com/2006/advogato_entry0045
+
+Layout
+
+https://www.tbray.org/ongoing/
+
+https://dirkjan.ochtman.nl/
+
+https://burningbird.net/
+
+https://www.engadget.com/
