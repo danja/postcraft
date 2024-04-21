@@ -18,6 +18,11 @@
     rdfs:label "danny.ayers.name" ;
     pc:contains <https://danny.ayers.name/blog> .
 
+<https://danny.ayers.name/blog> a pc:ContentGroup ;
+    fs:sourceDirectory "posts" ;
+    fs:targetDirectory "site" ;
+    pc:template "layouts/mediocre/mediocre.html" .
+    
 # this should maybe give the contentgroup a renderType, indirect with template etc
 <https://danny.ayers.name/blog> a pc:ContentGroup ;
     fs:sourceDirectory "posts" ;
