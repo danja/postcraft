@@ -1,4 +1,6 @@
-# Hello Treadmill
+# I hate frameworks, so I'm building one
+
+I'll expand on this further elsewhere, but not long ago I made a major shift in my attitude to my code projects: I'm now writing primarily for a userbase numbering _one_: **me**.
 
 Treadmill is my engine.
 
