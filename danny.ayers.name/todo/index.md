@@ -12,15 +12,6 @@ copy server-setup elsewhere +
 
 ### Server
 
-DNS, add :
-
-- [ ] foaf.hyperdata.it
-- [ ] treadmill.hyperdata.it
-- [ ] postcraft.hyperdata.it
-- [ ] kia.hyperdata.it
-- [ ] strandz.hyperdata.it
-- [ ] farelo.hyperdata.it
-
 add nginx entries
 
 certbot
@@ -36,3 +27,12 @@ grab stuff off old server
 ### Bits
 
 my first rdf-dev post?
+
+DNS, added :
+
+- [ ] foaf.hyperdata.it
+- [ ] treadmill.hyperdata.it
+- [ ] postcraft.hyperdata.it
+- kia.hyperdata.it
+- [ ] strandz.hyperdata.it
+- [ ] farelo.hyperdata.it

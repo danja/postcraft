@@ -48,7 +48,7 @@ https://www.w3.org/wiki/IntegrityIsJobOne
 
 https://www.madmode.com/2006/advogato_entry0045
 
-Layout
+### Layout
 
 https://www.tbray.org/ongoing/
 
@@ -57,3 +57,7 @@ https://dirkjan.ochtman.nl/
 https://burningbird.net/
 
 https://www.engadget.com/
+
+https://teamtreehouse.com/community/three-column-layout-that-is-responsive
+
+https://codepen.io/ericbutler555/pen/WRLvKm?editors=1100#0
