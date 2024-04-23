@@ -5,6 +5,10 @@ Priorities :
 - FOAF-Archive
 - Retire old server
 
+- Backups
+
+copy server-setup elsewhere +
+
 ### Server
 
 DNS, add :
