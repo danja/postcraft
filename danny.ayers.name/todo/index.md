@@ -2,6 +2,7 @@
 
 Priorities :
 
+- Basic Postcraft
 - FOAF-Archive
 - Retire old server
 
@@ -31,3 +32,7 @@ grab stuff off old server
 /var/www
 
 ???
+
+### Bits
+
+my first rdf-dev post?
