@@ -4,7 +4,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-# SIOC
+# SIOC 
 
 @prefix trm: <http://purl.org/stuff/transmission/> .
 @prefix fs: <http://purl.org/stuff/filesystem/> .
@@ -13,24 +13,27 @@
 
 <https://danny.ayers.name> a pc:Site ;
     rdfs:label "danny.ayers.name" ;
+    dcterms:title "Raw" ;
     pc:contains <https://danny.ayers.name/blog> .
-
-<https://danny.ayers.name/blog> a pc:ContentGroup ;
-    fs:sourceDirectory "posts" ;
-    fs:targetDirectory "site" ;
-    pc:template "layouts/mediocre/mediocre.html" .
     
 # this should maybe give the contentgroup a renderType, indirect with template etc
 <https://danny.ayers.name/blog> a pc:ContentGroup ;
     fs:sourceDirectory "posts" ;
-    fs:targetDirectory "site" ;
-    pc:template "layouts/mediocre/mediocre.html" .
+    fs:targetDirectory "site/blog" ;
+    pc:template "layouts/mediocre/mediocre-posts_template.html" .
 
 # for index page & pinned, collapsed
 <https://danny.ayers.name/index> a pc:SpecialCase ;
-    fs:sourceDirectory "posts" ;
-    fs:targetDirectory "site" ;
-    pc:template "layouts/mediocre/mediocre.html" .
+    a pc:HTMLIndex ;
+    fs:sourceFile "posts/index.md" ;
+    fs:targetFile "site/blog/index.html" ;
+    pc:template "layouts/mediocre/mediocre-html-index_template.html" .
+
+# pinned, collapsed page
+<https://danny.ayers.name/index> a pc:SpecialCase ;
+    fs:sourceFile "posts/2023-10-27_hello.md" ;
+    pc:state "pinned" .
+
 
  
 
