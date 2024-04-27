@@ -1,3 +1,31 @@
+media="(min-width: 1080px)" {
+    .mk {
+        letter-spacing: -0.003em;
+    }
+}
+ media="(min-width: 1080px)" {
+    .mj {
+        line-height: 32px;
+    }
+}
+ media="(min-width: 1080px)" {
+    .mi {
+        margin-top: 2.14em;
+    }
+}
+ media="(min-width: 1080px)" {
+    .mh {
+        font-size: 20px;
+    }
+}
+.ml {
+    margin-bottom: -0.46em;
+}
+.lq {
+    font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+
 one : articles
 two : directory
 three : about
