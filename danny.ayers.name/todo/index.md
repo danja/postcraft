@@ -10,6 +10,11 @@ Priorities :
 
 copy server-setup elsewhere +
 
+after FOAF-Archive is at v1, then :
+
+- treadmill major refactor
+- LlamaIndex/memary/SPARQL connector
+
 ### Server
 
 add nginx entries
