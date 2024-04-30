@@ -12,7 +12,7 @@ copy server-setup elsewhere +
 
 after FOAF-Archive is at v1, then :
 
-- treadmill major refactor
+- transmissions major refactor
 - LlamaIndex/memary/SPARQL connector
 
 ### Server
@@ -32,6 +32,8 @@ grab stuff off old server
 ### Bits
 
 my first rdf-dev post?
+
+add transmissions.hyperdata.it
 
 DNS, added :
 

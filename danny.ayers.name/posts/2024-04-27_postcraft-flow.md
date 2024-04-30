@@ -24,7 +24,7 @@ To run the pipeline, the following command is used:
 ```
 
 - `run` is a bash script for convenience, simply `node run.js "$@"`
-- `postcraft` is the name of the pipeline (corresponding to a directory under `treadmill/transmissions/`)
+- `postcraft` is the name of the pipeline (corresponding to a directory under `transmissions/applications/`)
 
 * `/home/danny/HKMS/postcraft/danny.ayers.name` is the directory containing the site content, including `manifest.ttl`
 

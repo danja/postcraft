@@ -3,7 +3,7 @@
 launched with:
 
 ```
-danny@danny-desktop:~/HKMS/treadmill$ ./run postcraft /home/danny/HKMS/postcraft/danny.ayers.name
+danny@danny-desktop:~/HKMS/transmissions$ ./run postcraft /home/danny/HKMS/postcraft/danny.ayers.name
 ```
 
 - manifest.ttl is read by ContextReader
@@ -17,7 +17,7 @@ context gets :
 }
 ```
 
-### Treadmill Conventions
+### Transmissions Conventions
 
 context is a JS dictionary
 
