@@ -77,10 +77,6 @@ Where it places the content is determined by the key given by `context.loadConte
 
 // what happened to pipeline trm:configKey :contextKey . ?
 
-#### :s4 a :NOP .
-
-No operation - a utility service that does nothing, helpful when making provisional changes to the pipeline.
-
 #### :s5 a :PostcraftDispatcher . # dispatch each content group
 
 COMMENTED OUT
@@ -95,9 +91,20 @@ process forks here
 
 which reads the content directory and dispatches each file entry to be processed individually.
 
+' + contextClone.filename)
+
 #### :s7 a :FileReader . # the markdown content
 
+in : context.filename
+out : context.content
+
+if (context.loadContext) { // get rid?
+context[context.loadContext] = content
+}
+
 #### :s8 a :PostcraftPrep .
+
+sorts out filename & title
 
 #### :s9 a :MarkdownToHTML .
 
@@ -108,6 +115,10 @@ which reads the content directory and dispatches each file entry to be processed
 ### Utility Services
 
 #### :NOP .
+
+#### :s4 a :NOP .
+
+No operation - a utility service that does nothing, helpful when making provisional changes to the pipeline.
 
 #### :s4 a :Halt .
 
