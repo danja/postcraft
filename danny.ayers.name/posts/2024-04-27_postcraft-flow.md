@@ -1,8 +1,10 @@
 # Postcraft Flow : 2024-04-27
 
-_note to self - when more static place alongside `transmission.ttl` as `about.md`_
+_TODO - when more static place alongside `transmission.ttl` as `about.md`_
 
 This is a work in progress, a sketch of the flow for the Postcraft pipeline. It's basically a Static Site Builder. It appears complex here, but that's a **feature!** Well, not exactly. The individual operations, which would typically appear as hardwired functions in a dedicated site builder are here implemented as independent services, connected at runtime via a definition that's expressed declaratively.
+
+_Major refactoring required...later. But wherever possible here, instead of `execute(data, context)` favour `execute(false, context)`, with `context.default` instead of `data`._
 
 A Turtle file `transmission.ttl` defines the general topology. Configuration details for the individual services are in `services.ttl`. The configuration specific to the site being built (dirs,templates etc) is supplied in `manifest.ttl`.
 
@@ -28,7 +30,7 @@ To run the pipeline, the following command is used:
 
 The `postcraft` pipeline services are then, in turn:
 
-#### :s1 a :ContextReader . # the manifest
+#### :s1 a :ContextReader .
 
 Reads `manifest.ttl` as a RDF/JS dataset, and extracts the configuration for the site being built.
 Two values are passed into the context:
@@ -38,7 +40,9 @@ Two values are passed into the context:
 
 The configuration now in `dataset` is used to set up the context for the rest of the pipeline.
 
-#### :s2 a :ConfigMap . ### use services.ttl?
+#### :s2 a :ConfigMap .
+
+_TODO use services.ttl?_
 
 This scans `config.dataset` looking for any instances of the rdfs:Class `pc:ContentGroup`.
 
@@ -59,7 +63,7 @@ additionally, a key is inserted into the context as:
 
 - context.loadContext = 'template'
 
-and the full path to the template is placed in `data`
+and the full path to the template is placed in `data` **and config.default** remember refactoring
 
 const contextClone = structuredClone(context)
 
