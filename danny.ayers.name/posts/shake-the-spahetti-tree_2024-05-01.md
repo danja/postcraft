@@ -29,3 +29,7 @@ avoid premature optimisation -
 ## Experience
 
 execute(data, context) was a mistake
+
+tendency to duplicate functionality
+
+RDF can be very painful
