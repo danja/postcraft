@@ -33,3 +33,5 @@ execute(data, context) was a mistake
 tendency to duplicate functionality
 
 RDF can be very painful
+
+RDF-Ext - there must be a better way!!!!
