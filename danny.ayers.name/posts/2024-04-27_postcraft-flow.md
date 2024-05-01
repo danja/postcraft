@@ -96,6 +96,7 @@ which reads the content directory and dispatches each file entry to be processed
 #### :s7 a :FileReader . # the markdown content
 
 in : context.filename
+context.sourceDir
 out : context.content
 
 if (context.loadContext) { // get rid?

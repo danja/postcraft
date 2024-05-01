@@ -24,15 +24,17 @@
 
 # for index page & pinned, collapsed
 <https://danny.ayers.name/index> a pc:SpecialCase ;
-    a pc:HTMLIndex ;
+    a pc:FrontPage ;
     fs:sourceFile "posts/index.md" ;
     fs:targetFile "site/blog/index.html" ;
-    pc:template "layouts/mediocre/mediocre-html-index_template.html" .
+    pc:template "layouts/mediocre/mediocre-main_template.html" .
 
-# pinned, collapsed page
+# pinned
 <https://danny.ayers.name/index> a pc:SpecialCase ;
+    pc:state "pinned" ;
     fs:sourceFile "posts/2023-10-27_hello.md" ;
-    pc:state "pinned" .
+    fs:targetFile "site/blog/2023-10-27_hello.html" ;
+     pc:template "layouts/mediocre/mediocre-posts_template.html" .
 
 
  
