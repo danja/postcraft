@@ -108,7 +108,16 @@ sorts out filename & title
 
 #### :s9 a :MarkdownToHTML .
 
+uses marked lib
+
+in: context.content is MD
+out: context.content is HTML
+
 #### :s10 a :Templater .
+
+for now just using replace()
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 
 #### :s11 a :FileWriter .
 
