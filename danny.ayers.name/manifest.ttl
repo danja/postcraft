@@ -17,17 +17,28 @@
     pc:contains <https://danny.ayers.name/blog> .
     
 # this should maybe give the contentgroup a renderType, indirect with template etc
-<https://danny.ayers.name/blog> a pc:ContentGroup ;
-    fs:sourceDirectory "test" ;
-    fs:targetDirectory "site/blog" ;
-    pc:template "layouts/mediocre/mediocre-posts_template.html" .
 
-# for index page & pinned, collapsed
-<https://danny.ayers.name/index> a pc:SpecialCase ;
+# POST CONTENT
+t:PostContent a pc:ContentGroup ; 
+    a pc:Partial ;
+    fs:sourceDirectory "test" ;
+    fs:targetDirectory "site/post-content-cache" ;
+    pc:template "layouts/mediocre/post-content_template.njk" .
+
+# POST PAGES
+t:PostPages a pc:ContentGroup ;
+    fs:sourceDirectory "site/post-content-cache" ;
+    fs:targetDirectory "site/blog" ;
+    pc:template "layouts/mediocre/post-page_template.njk" .
+
+# MAIN PAGE
+t:IndexPage a pc:SpecialCase ;
     a pc:FrontPage ;
-    fs:sourceFile "posts/index.md" ;
+    fs:sourceDirectory "site/post-content-cache" ;
     fs:targetFile "site/blog/index.html" ;
-    pc:template "layouts/mediocre/mediocre-main_template.html" .
+    pc:template "layouts/mediocre/index-page_template.html" .
+
+
 
 # pinned
 <https://danny.ayers.name/index> a pc:SpecialCase ;
@@ -35,7 +46,3 @@
     fs:sourceFile "posts/2023-10-27_hello.md" ;
     fs:targetFile "site/blog/2023-10-27_hello.html" ;
      pc:template "layouts/mediocre/mediocre-posts_template.html" .
-
-
- 
-
