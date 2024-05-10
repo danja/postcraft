@@ -20,16 +20,16 @@
 
 # POST CONTENT
 t:PostContent a pc:ContentGroup ; 
-    a pc:Partial ;
+   # a pc:Partial ;
     fs:sourceDirectory "test" ;
     fs:targetDirectory "public/post-content-cache" ;
     pc:template "layouts/mediocre/post-content_template.njk" .
 
 # POST PAGES
 #t:PostPages a pc:ContentGroup ;
-#    fs:sourceDirectory "public/post-content-cache" ;
-#    fs:targetDirectory "public/blog" ;
-#    pc:template "layouts/mediocre/post-page_template.njk" .
+ #   fs:sourceDirectory "public/post-content-cache" ;
+  #  fs:targetDirectory "public/blog" ;
+   # pc:template "layouts/mediocre/post-page_template.njk" .
 
 # MAIN PAGE
 #t:IndexPage a pc:SpecialCase ;
