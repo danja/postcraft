@@ -22,20 +22,20 @@
 t:PostContent a pc:ContentGroup ; 
     a pc:Partial ;
     fs:sourceDirectory "test" ;
-    fs:targetDirectory "site/post-content-cache" ;
+    fs:targetDirectory "public/post-content-cache" ;
     pc:template "layouts/mediocre/post-content_template.njk" .
 
 # POST PAGES
 t:PostPages a pc:ContentGroup ;
-    fs:sourceDirectory "site/post-content-cache" ;
-    fs:targetDirectory "site/blog" ;
+    fs:sourceDirectory "public/post-content-cache" ;
+    fs:targetDirectory "public/blog" ;
     pc:template "layouts/mediocre/post-page_template.njk" .
 
 # MAIN PAGE
 t:IndexPage a pc:SpecialCase ;
     a pc:FrontPage ;
-    fs:sourceDirectory "site/post-content-cache" ;
-    fs:targetFile "site/blog/index.html" ;
+    fs:sourceDirectory "public/post-content-cache" ;
+    fs:targetFile "public/blog/index.html" ;
     pc:template "layouts/mediocre/index-page_template.html" .
 
 
@@ -44,5 +44,5 @@ t:IndexPage a pc:SpecialCase ;
 <https://danny.ayers.name/index> a pc:SpecialCase ;
     pc:state "pinned" ;
     fs:sourceFile "posts/2023-10-27_hello.md" ;
-    fs:targetFile "site/blog/2023-10-27_hello.html" ;
+    fs:targetFile "public/blog/2023-10-27_hello.html" ;
      pc:template "layouts/mediocre/mediocre-posts_template.html" .
