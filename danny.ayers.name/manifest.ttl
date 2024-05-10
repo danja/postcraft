@@ -26,17 +26,17 @@ t:PostContent a pc:ContentGroup ;
     pc:template "layouts/mediocre/post-content_template.njk" .
 
 # POST PAGES
-t:PostPages a pc:ContentGroup ;
-    fs:sourceDirectory "public/post-content-cache" ;
-    fs:targetDirectory "public/blog" ;
-    pc:template "layouts/mediocre/post-page_template.njk" .
+#t:PostPages a pc:ContentGroup ;
+#    fs:sourceDirectory "public/post-content-cache" ;
+#    fs:targetDirectory "public/blog" ;
+#    pc:template "layouts/mediocre/post-page_template.njk" .
 
 # MAIN PAGE
-t:IndexPage a pc:SpecialCase ;
-    a pc:FrontPage ;
-    fs:sourceDirectory "public/post-content-cache" ;
-    fs:targetFile "public/blog/index.html" ;
-    pc:template "layouts/mediocre/index-page_template.html" .
+#t:IndexPage a pc:SpecialCase ;
+#    a pc:FrontPage ;
+#    fs:sourceDirectory "public/post-content-cache" ;
+#    fs:targetFile "public/blog/index.html" ;
+#    pc:template "layouts/mediocre/index-page_template.html" .
 
 
 
