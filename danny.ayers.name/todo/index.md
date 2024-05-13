@@ -1,5 +1,7 @@
 # Danny's Top Level To Do List
 
+- [ ] visualization : like http://localhost/farelo/src/TurtleEditor/
+
 Priorities :
 
 - Basic Postcraft

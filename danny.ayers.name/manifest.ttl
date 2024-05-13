@@ -13,36 +13,42 @@
 
 <https://danny.ayers.name> a pc:Site ;
     rdfs:label "danny.ayers.name" ;
-    dcterms:title "Raw" ;
-    pc:contains <https://danny.ayers.name/blog> .
+    dcterms:title "Rawer" ;
+    pc:contains <https://danny.ayers.name/blog> ;  # maybe
+    pc:includes t:PostContent . # maybe
     
 # this should maybe give the contentgroup a renderType, indirect with template etc
 
 # POST CONTENT
 t:PostContent a pc:ContentGroup ; 
    # a pc:Partial ;
+    pc:site <https://danny.ayers.name> ;
+    pc:subdir "blog" ; # better property name?
     fs:sourceDirectory "test" ;
-    fs:targetDirectory "public/post-content-cache" ;
-    pc:template "layouts/mediocre/post-content_template.njk" .
+    fs:targetDirectory "public/entry-content-cache" ;
+    pc:template "layouts/mediocre/templates/entry-content_template.njk" .
 
 # POST PAGES
 t:PostPages a pc:ContentGroup ;
-    fs:sourceDirectory "public/post-content-cache" ;
+    pc:site <https://danny.ayers.name> ;
+   # fs:sourceDirectory "public/post-content-cache" ;
     fs:targetDirectory "public/blog" ;
-    pc:template "layouts/mediocre/post-page_template.njk" .
+
+    pc:template "layouts/mediocre/templates/entry-page_template.njk" .
 
 # MAIN PAGE
-#t:IndexPage a pc:SpecialCase ;
+t:IndexPage a pc:SpecialCase ; # better name?
+    pc:site <https://danny.ayers.name> ;
 #    a pc:FrontPage ;
-#    fs:sourceDirectory "public/post-content-cache" ;
-#    fs:targetFile "public/blog/index.html" ;
-#    pc:template "layouts/mediocre/index-page_template.html" .
+    fs:sourceDirectory "public/entry-content-cache" ;
+    fs:targetFile "public/blog/index.html" .
+  #  pc:template "layouts/mediocre/index-page_template.html" .
 
 
 
 # pinned
 <https://danny.ayers.name/index> a pc:SpecialCase ;
     pc:state "pinned" ;
-    fs:sourceFile "posts/2023-10-27_hello.md" ;
-    fs:targetFile "public/blog/2023-10-27_hello.html" ;
-     pc:template "layouts/mediocre/mediocre-posts_template.html" .
+    fs:sourceFile "blog/2023-10-27_hello.md" ;
+    fs:targetFile "public/blog/2023-10-27_hello.html" .
+#     pc:template "layouts/mediocre/mediocre-posts_template.html" .
