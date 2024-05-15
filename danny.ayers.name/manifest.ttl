@@ -41,7 +41,7 @@ t:IndexPage a pc:ContentGroup ; # TODO naming!
 #    a pc:FrontPage ;
   #  fs:sourceDirectory "public/entry-content-cache" ;
     fs:filepath "public/blog/index.html" ;
-    pc:template "layouts/mediocre/index-page_template.html" .
+    pc:template "layouts/mediocre/templates/index-page_template.njk" .
 
 
 
