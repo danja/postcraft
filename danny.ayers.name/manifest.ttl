@@ -33,16 +33,15 @@ t:PostPages a pc:ContentGroup ;
     pc:site <https://danny.ayers.name> ;
    # fs:sourceDirectory "public/post-content-cache" ;
     fs:targetDirectory "public/blog" ;
-
     pc:template "layouts/mediocre/templates/entry-page_template.njk" .
 
 # MAIN PAGE
-t:IndexPage a pc:SpecialCase ; # better name?
+t:IndexPage a pc:ContentGroup ; # TODO naming!
     pc:site <https://danny.ayers.name> ;
 #    a pc:FrontPage ;
-    fs:sourceDirectory "public/entry-content-cache" ;
-    fs:targetFile "public/blog/index.html" .
-  #  pc:template "layouts/mediocre/index-page_template.html" .
+  #  fs:sourceDirectory "public/entry-content-cache" ;
+    fs:filepath "public/blog/index.html" ;
+    pc:template "layouts/mediocre/index-page_template.html" .
 
 
 
