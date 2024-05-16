@@ -24,7 +24,7 @@ t:PostContent a pc:ContentGroup ;
    # a pc:Partial ;
     pc:site <https://danny.ayers.name> ;
     pc:subdir "blog" ; # better property name?
-    fs:sourceDirectory "test" ;
+    fs:sourceDirectory "test" ; # entries/journal
     fs:targetDirectory "public/entry-content-cache" ;
     pc:template "layouts/mediocre/templates/entry-content_template.njk" .
 
