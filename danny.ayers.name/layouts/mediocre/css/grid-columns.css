@@ -4,11 +4,22 @@
     grid-auto-rows: 50px;
     /* for demo */
     grid-gap: 10px;
+    width: 100%;
+    grid-template-rows: auto auto auto;
+
+}
+
+.articles {
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow: auto;
 }
 
 @media (max-width: 1024px) {
     .grid-container {
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
     }
 
     .directory {
