@@ -42,4 +42,5 @@ There is a very fundamental need in people, I believe, for people to be protecti
 But I do believe that for globally society to function well, things have to work well at home.
 
 A silly points system. How to get better...
+Lets make a place to send people to.
 Who's gonna name the domain?
