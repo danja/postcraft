@@ -52,7 +52,7 @@
 <p>For the OpenAI API key, first copy yours to clipboard then click the dropdown labeled <strong>OpenAI</strong> top-left of screen and click the gear icon to the right of OpenAI on the list. That&#39;s it <strong>done</strong>.</p>
 <p>For <strong>Groq</strong> it&#39;s a little more involved.</p>
 <p>I was going around in circles for quite a while until I saw that the instructions for <a href="https://www.librechat.ai/docs/configuration/librechat_yaml/setup">YAML Setup</a> appear <em>after</em> those for <a href="https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints">Custom AI Endpoints</a>. The former tells you a <code>docker-compose.override.yml</code> is needed (a new one from the code on that page worked for me). That points Docker to a <code>librechat.yaml</code> file.
-Conveniently (for me) their <code>librechat.example.yaml</code> file has an entry for Groq :</p>
+Conveniently (for me) their <code>librechat.example.yaml</code> file has an entry for Groq, so I just copied &amp; renamed the whole file to <code>librechat.yaml</code>. It contains:</p>
 <pre><code>  custom:
     # Groq Example
     - name: &#39;groq&#39;
