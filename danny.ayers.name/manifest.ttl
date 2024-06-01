@@ -32,7 +32,7 @@ t:PostContent a pc:ContentGroup ;
 t:PostPages a pc:ContentGroup ;
     pc:site <https://danny.ayers.name> ;
    # fs:sourceDirectory "public/post-content-cache" ;
-    fs:targetDirectory "public/blog" ;
+    fs:targetDirectory "public/blog/entries" ;
     pc:template "layouts/mediocre/templates/entry-page_template.njk" .
 
 # MAIN PAGE
