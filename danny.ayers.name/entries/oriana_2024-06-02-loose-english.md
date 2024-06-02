@@ -1,4 +1,6 @@
-# Oriana, No.7
+[
+
+](oriana_2024-06-02.md)# Oriana, No.7
 
 Ho chiesto in giro riguardo alle pratiche burocratiche (principalmente Intelligenza Artificiale, IA).
 Preferisco l'informale. Ma per essere sicuri che siamo entrambi coperti, sono cose molto burocratiche, il che può essere vero o meno (l’Intelligenza Artificiale attualmente sbaglia molto).
