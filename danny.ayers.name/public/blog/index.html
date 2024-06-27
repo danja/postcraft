@@ -39,302 +39,160 @@
             <article>
                 <!-- POST CONTENT TEMPLATE -->
 <p class="post-title">
-    <a href="https://danny.ayers.name/blog/librechat-notes.html">
-        LibreChat Notes 2024-05-30
+    <a href="https://danny.ayers.name/blog/2024-06-27_project-alignment.html">
+        Project Alignment
     </a>
 </p>
 <article class="post-content">
-    <h1>LibreChat Notes 2024-05-30</h1>
-<p><a href="https://www.librechat.ai/">LibreChat</a> is a front end for conversational AI services. It&#39;s design is not dissimilar to OpenAI&#39;s ChatGPT Web interface, but supports a wide range of services. It&#39;s open source, and can be run locally or wherever. They recommend using Docker, which is what I did. I&#39;m on Ubuntu here, they support all the usual desktop platforms.</p>
-<p><strong>LibreChat is in active development, flux likely, so note the date above.</strong></p>
-<p>For starters I wanted to use models from <a href="https://openai.com/index/openai-api/">OpenAI</a> and <a href="https://groq.com/">Groq</a>. API keys are needed - OpenAI&#39;s is pay-as-you-go, Groq is free but capped usage (and very fast).</p>
-<p>Following the <a href="https://www.librechat.ai/docs/local/docker">Local Installation of LibreChat with Docker</a> will get the thing up and basically running with no fuss. But out of the box there are a few things that might not be immediately obvious.</p>
-<p>For the OpenAI API key, first copy yours to clipboard then click the dropdown labeled <strong>OpenAI</strong> top-left of screen and click the gear icon to the right of OpenAI on the list. That&#39;s it <strong>done</strong>.</p>
-<p>For <strong>Groq</strong> it&#39;s a little more involved.</p>
-<p>I was going around in circles for quite a while until I saw that the instructions for <a href="https://www.librechat.ai/docs/configuration/librechat_yaml/setup">YAML Setup</a> appear <em>after</em> those for <a href="https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints">Custom AI Endpoints</a>. The former tells you a <code>docker-compose.override.yml</code> is needed (a new one from the code on that page worked for me). That points Docker to a <code>librechat.yaml</code> file.
-Conveniently (for me) their <code>librechat.example.yaml</code> file has an entry for Groq, so I just copied &amp; renamed the whole file to <code>librechat.yaml</code>. It contains:</p>
-<pre><code>  custom:
-    # Groq Example
-    - name: &#39;groq&#39;
-      apiKey: &#39;${GROQ_API_KEY}&#39;
-      baseURL: &#39;https://api.groq.com/openai/v1/&#39;
-      ...
-</code></pre>
-<p><em>However</em>, I&#39;m no doubt missing something here, but it didn&#39;t pick up my environment variable set with:</p>
-<pre><code>export GROQ_API_KEY=...
-</code></pre>
-<p>Probably not best practices, but this is on a local install, so I simply pasted my key instead of the <code>${GROQ_API_KEY}</code> bit above.
-<strong>It works!!!</strong></p>
-<p>I intend using this quite a lot, so I created a service file for systemd,</p>
-<p>in <code>/etc/systemd/system/librechat.service</code> :</p>
-<pre><code>[Unit]
-Description=LibreChat
-Requires=docker.service
-After=docker.service
-
-[Service]
-WorkingDirectory=/home/danny/AI/LibreChat
-ExecStart=/usr/bin/docker-compose up
-ExecStop=/usr/bin/docker-compose down
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
-</code></pre>
-<p><em>Adjust paths to taste</em></p>
-<p>I always get confused about the order of these, it&#39;s something like:</p>
-<pre><code>sudo systemctl daemon-reload
-sudo systemctl enable librechat
-sudo systemctl start librechat
-</code></pre>
-<p>If you run into probs, try all the usual update procedures for Docker, npm, etc. before tearing your hair out.</p>
-<p>I&#39;ll be trying some other services soon (I see they have support for Ollama, so that&#39;s definitely in my queue). If there&#39;s anything useful to share I&#39;ll add it here.</p>
+    <h1>Project Alignment</h1>
+<p><em>I&#39;ve loads of notes broadly related to this, scattered around, but I don&#39;t think I&#39;ve written down this specific part yet. I&#39;ll expand later, but a placeholder in a place I can find again is a start.</em></p>
+<p>My perma-meta-project I&#39;ve been working on for about 20 years started as an attempt at a personal knowledgebase, #PKB, but it soon morphed when it occurred to me that what I was after was really a project management system. There were reasons I wanted the PKB, clustered around <em>Getting Things Done</em>. I&#39;ve been through several iterations, and various factors (including LLMs) have led me start again recently.</p>
+<p>I work alone most of the time, with lots of different things on the go. I&#39;m pretty bad at resisting interesting tangents, prone to <a href="https://en.wiktionary.org/wiki/yak_shaving">Yak Shaving</a>, exceptionally good at procrastinating. So one thing I really want this system to do is tell me what I should do next.</p>
+<p>Architecturally, an approach to implementation, I&#39;ve got a lot of that worked out. In short, express each project as a graph, with nodes representing tasks and edges representing dependencies. Weightings, like priorities and any time-related factors go in there too. Traverse the graph, with some lightweight reasoning, find the next task to do. I&#39;ve got a basic <a href="https://hyperdata.it/xmlns/project/2024/owldoc/">project ontology</a>, have got quite comfortable working against a SPARQL store for the data, with custom browser-based UI as needed.</p>
+<p>Right now I&#39;ve got one project I&#39;m running very late to schedule with, working title &#39;FOAF Retrospective&#39;. But for to me to work anything like efficiently on <em>anything</em>, I need good information capture and organisation. Job One there is note-taking. I find a blogging kind of setup works well for me, and that&#39;s what you&#39;re looking at. Next on that list is capturing links, bookmarking. I&#39;ve got the code together (/in-progress), #Transmissions, to give me tooling to make the dev side of these kinds of things easier for me.</p>
+<p>Now I can get to the aspect I&#39;m calling <strong>Project Alignment</strong>. While each of the FOAF, blogging, bookmarking projects can be considered independent, when decomposed into tasks, there is a huge amount of crossover. They have tasks in common. Their details might vary, but there&#39;s a functional requirement at the core of these that is near-enough. Put this way, these 3 projects are part of a larger dependency graph.</p>
+<p>On the surface, despite an explosion in overall complexity in the dependency graph, the next-task question remains the same. In principle at least it&#39;s tractable with classic planner/reasoning algorithms. It is a &#39;simple&#39; special case, in that there is only one agent (me) at work, analogous to a single thread in running code.</p>
+<p>But standing back, it seems pretty apparent that there should be extra optimisations to be had. If component X of system A and component Y of system B are reasonably similar, replacing X &amp; Y with a single component Z might be a win.</p>
+<p>At this point in time I&#39;m doing this very ad hoc, but #Transmissions is designed explicitly with reusability of components in mind. I&#39;m hoping this will inform me of good ways to proceed. I can see LLMs being a big part of this in the near future.</p>
+<p>But first things first, sketch out the general idea in black &amp; white. Done.</p>
 
 </article>
-<em>2024-05-30</em><!-- POST CONTENT TEMPLATE -->
+<em>2024-06-27</em><!-- POST CONTENT TEMPLATE -->
 <p class="post-title">
-    <a href="https://danny.ayers.name/blog/2024-05-30.html">
-        Good Things Come in Threes
+    <a href="https://danny.ayers.name/blog/2024-06-23_ldap.html">
+        LDAP bits
     </a>
 </p>
 <article class="post-content">
-    <h1>Good Things Come in Threes</h1>
-<p>I had to be up unnaturally early (for me) this morning, Mari giving me a lift for a blood test. So I didn&#39;t have a coffee until after. Wouldn&#39;t usually have been a good start to the day, but the clean-enough jeans I found to wear had €30 in the pocket. No idea when from.
-Then when she dropped me back I noticed some new flowers on the balcony (photo here if I get around to it). Two good things.
-I totally reject the stupid supernatural nonsense about bad things coming in threes, but today I&#39;m open to the notion of a third good thing. Even a 4th or 5th. Bring it on.</p>
-<p>So many distractions, my head is a bit scrambled. But fortunately it&#39;s pretty clear what the next few things I need to do are, and all <em>should</em> be straightforward, procedural.</p>
-<h2>Plan</h2>
-<ol>
-<li><p>Server rebuild bits</p>
-</li>
-<li><p>#FOAFRetrospective stuff</p>
-</li>
-<li><p>Bookmark store</p>
-</li>
-<li><p>Write about aligning projects</p>
-</li>
-<li><p>No.7 stuff</p>
-</li>
-<li><p>#Groq on #LibreChat</p>
-</li>
-<li><p>Family email</p>
-</li>
-</ol>
-<p>I&#39;ve been procrastinating about server admin because I had the tedious job of decommissioning the old server to do before anything else. But that&#39;s now done I can look forward. 1-3 above are very intertwingled, and 4. is about jotting down thoughts on how best to manage tasks when there are common demands across projects. 5. is actually highest priority, but I&#39;ll be better able to deal with those things after a bit of dopamine from 1-4.</p>
-<p>A meta-project in all this is facilitating the capture of any useful information. This blog setup was must-have numero uno, a consistent place to capture notes, under my control, with maximal potential for reuse. The next thing I need is a place to store links. I&#39;ve been here before, several times. It seems a no-brainer to use a <a href="https://en.wikipedia.org/wiki/SPARQL">SPARQL</a> store.</p>
-<p>Oops, I forgot 6. That shouldn&#39;t take long, worth getting out of the way, it will hopefully help with the other things.</p>
-<p>I&#39;ve got LibreChat running locally with Docker Compose, it&#39;s connecting to OpenAI&#39;s GPT4o API fine. But that was ready to go out of the box (just add an API key). Groq appears in LibreChat&#39;s list of potential services, but isn&#39;t yet showing up in the UI.</p>
-<p><strong>This is exactly what I don&#39;t like about Docker!</strong></p>
-<p>Ok, I can&#39;t contradict any of the very strong arguments in favour of using containers and suchlike. But there&#39;s no denying it&#39;s adding an additional component to the stack/system/process. I&#39;m inexperienced with it - for example, right now I&#39;m not clear about where and when LibreChat&#39;s config &amp; build files are consumed. There&#39;s a <code>.env</code> and a</p>
-
-</article>
-<em>2024-05-30</em><!-- POST CONTENT TEMPLATE -->
-<p class="post-title">
-    <a href="https://danny.ayers.name/blog/2024-05-29.html">
-        Calm
-    </a>
-</p>
-<article class="post-content">
-    <h1>Calm</h1>
-<p>I woke up calm and rested after a good night&#39;s sleep. Had about an hour doing odds &amp; end. All good. Then a video call from my mother, generally all ok but she promptly stressed me out. Headache, and the <em>No.7 insurance</em> thing has changed in my head from being a straightforward process to a <em>Big Difficult Thing</em> (nothing has changed in reality).</p>
-<p>I needed to get data from the old server so I could kill it off before the end of the month (so as not to pay for it again). Done.</p>
-<p>I also wanted to have something in place as a default AI assistant for <em>all the things</em>. I was using ChatGPT4, but hadn&#39;t subscribed for a couple of months ($ flow). <a href="https://groq.com/">Groq</a> was a very good stand-in, but their free offerings didn&#39;t seem any use for managing per-task/project conversations. I started setting up <a href="https://www.librechat.ai/">LibreChat</a> the other day, the plan being to to use it as a front end to <em>whatever</em>.</p>
-<p>So many distractions, and I wanted to try out ChatGPT4o anyway, so I signed up there again.</p>
-<p>Just now I had another quick look at #LibreChat - the Docker-based local install had worked nicely, I just had to add my API key for OpenAI to get that working.</p>
-<p>Might as well have that starting on boot on this machine. With a little help from GitHub #Copilot (I have a sub there) I got a systemd service file set up.</p>
-<pre><code>[Unit]
-Description=LibreChat
-Requires=docker.service
-After=docker.service
-
-[Service]
-WorkingDirectory=/home/danny/AI/LibreChat
-ExecStart=/usr/bin/docker-compose up
-ExecStop=/usr/bin/docker-compose down
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
-</code></pre>
-<p>Hmm. It didn&#39;t work. Copilot to the rescue :</p>
-<pre><code>sudo systemctl enable librechat
-</code></pre>
-<p>Further probs. I did a load of updating things, still no joy. Then I wondered about a flag Copilot had given me : <code>ExecStart=/usr/bin/docker-compose up -d</code>. That appears to have worked! Educated guesswork that should have started sooner with distrusting AI.</p>
-<h2>Plan</h2>
-<p>carried over:</p>
-<ol>
-<li><del>Server decommissioning</del></li>
-<li>#FOAFRetrospective stuff</li>
-<li>No.7 garden</li>
-<li><del>AI assistant</del> - good enough for now</li>
-</ol>
-<ul>
-<li><p>No.7 ballcock</p>
-</li>
-<li><p>Nigel pressie - little placeholder ordered</p>
-</li>
-<li><p>draft contract for No.7</p>
-</li>
-<li><p>check insurance for No.7</p>
-</li>
-<li><p>Groq on LibreChat</p>
-</li>
-<li><p>remove _.md</p>
-</li>
-<li><p>articles for #Transmissions</p>
-</li>
-<li><p>Service.execute(message)</p>
-</li>
-<li><p>project alignment Article</p>
-</li>
-</ul>
-<hr>
-<h3>FOAF Retrospective</h3>
-<p>danbri&#39;s last message about it:</p>
+    <h1>LDAP bits</h1>
+<p>Main objective today is to put #LDAP authentication on a #Fuseki server.</p>
+<p>I&#39;ve already got both running, apparently ok, on hyperdata.it</p>
+<p><a href="https://directory.apache.org/studio/">Apache Directory Studio</a> seemed the obvious management client. Running locally, it looks like it&#39;s seeing the server fine.</p>
+<p>Ok, I&#39;ll start at the LDAP end, I do need to refresh my memory on this stuff. Something simple in relative isolation before I think about Fuseki. A signup/login form.</p>
+<p><em>Copilot autosuggested from my miskeying: Chtulu, I mean Fuseki, is running on port 3331. I&#39;ll try to get a simple LDAP client running on the same machine.</em></p>
 <blockquote>
-<p>I think for foaf collecting raw materials is key
-Like the most interesting or impactful things that ever used it
-Or ongojng use in linkeddata datasets
-Skos is also kind of needing the same but is probably another story</p>
+<p>I have an Ubuntu server with LDAP running. I also have nginx running on the same machine. I&#39;d like to make a simple sign-up login form, using nodejs on the server. I have Apache Directory Studio running locally for LDAP management.
+Where do I start?</p>
 </blockquote>
+<p>ChatGPT gave me a reasonable-looking starting point.</p>
+<p>I&#39;ve stuck it on GitHub at <a href="https://github.com/danja/hyperdata-node">https://github.com/danja/hyperdata-node</a>, locally :</p>
+<p><code>~/HKMS/hyperdata-node</code></p>
+<p>on server</p>
+<p><code>root@hyperdata:/home/www/hyperdata.it# ln -s /home/github/hyperdata-node ./nodes</code></p>
+<p>Oops, I&#39;ve already got a <code>~/HKMS/node-services</code>, has <code>.git</code>. Hey ho, merge them later.</p>
+<p>I just remembered <a href="https://pm2.keymetrics.io/">PM2</a> for managing nodejs services. Used it before, was straightforward.</p>
 
 </article>
-<em>2024-05-30</em><!-- POST CONTENT TEMPLATE -->
+<em>2024-06-27</em><!-- POST CONTENT TEMPLATE -->
 <p class="post-title">
-    <a href="https://danny.ayers.name/blog/2024-05-28.html">
-        Cough to Sneeze
+    <a href="https://danny.ayers.name/blog/2024-06-23.html">
+        Back to Life
     </a>
 </p>
 <article class="post-content">
-    <h1>Cough to Sneeze</h1>
-<p>I seem to have got over the cough/cold I had. Head still a bit fuzzy, but after one good cough when I woke up, all seems fine. Now snuffling a bit with hay fever...</p>
+    <h1>Back to Life</h1>
+<p>A UK trip totally blew my momentum.</p>
+<p><em>funny, GitHub Copilot in VS Code where I&#39;m typing just suggested &quot;I&#39;m back in Portugal now, and I&#39;ve got a few days to get back on track.&quot;</em></p>
+<p><a href="https://www.youtube.com/watch?v=vXMdChlJa0s">Listening</a></p>
+<p><strong>No.7 CONTRACT</strong></p>
+<p>Zombie!</p>
+<h3>FOAF</h3>
+<ul>
+<li>org a bit</li>
+</ul>
+<h3>Fuseki</h3>
+<ul>
+<li>auth etc.</li>
+</ul>
+<p>Publish workflow - webhook?</p>
+<h3>Transmissions</h3>
+<ul>
+<li>HTTP hooks</li>
+</ul>
+<h3>Misc</h3>
+<p>check firewall</p>
+<p>Server requirements list</p>
+<p>qlever</p>
+<p>placeholder articles</p>
+
+</article>
+<em>2024-06-27</em><!-- POST CONTENT TEMPLATE -->
+<p class="post-title">
+    <a href="https://danny.ayers.name/blog/2024-06-05.html">
+        urghh
+    </a>
+</p>
+<article class="post-content">
+    <h1>urghh</h1>
+<pre><code>sudo systemctl disable clamav-daemon
+</code></pre>
+<p>admin=pw-256</p>
+<p>/etc/systemd/system/fuseki.service</p>
+<p>Environment=JVM_ARGS=-Xmx1G</p>
+
+</article>
+<em>2024-06-27</em><!-- POST CONTENT TEMPLATE -->
+<p class="post-title">
+    <a href="https://danny.ayers.name/blog/2024-06-03.html">
+        Today
+    </a>
+</p>
+<article class="post-content">
+    <h1>Today</h1>
+<p>A bit of a distraction, my mother&#39;s unwell wants me to go over to hers. I&#39;ve said I&#39;ll see what I can do - provisionally about 5 days, some time this week.</p>
+<p>Loose ends : static server bits, done, below.</p>
+<p>Next, get some of the little <code>hyperdata</code> browser apps working again, against #Fuseki on this new server. I think all I need to do is set up the endpoints and maybe shove in a bit of starter data. I do need to get the auth working (I&#39;m planning on using LDAP), but that&#39;s not a priority right now.</p>
 <h2>Plan</h2>
 <ul>
-<li>Decommission server</li>
+<li>reorg FOAF Retrospective <em>continues...</em></li>
+<li>static server bits - I think that&#39;s mostly done for now</li>
+<li>hyperdata browser apps against Fuseki</li>
+<li>project alignment notes</li>
+<li>blog layout tweaks</li>
+<li>ADHD note</li>
 </ul>
-<p>The Cranberries&#39; <a href="https://genius.com/The-cranberries-zombie-lyrics">Zombie</a></p>
-<p>Ok, if I tweak find-big-files a little, I should be able to save some time:</p>
-<pre><code>find ./ -type f -printf &#39;%s %p\n&#39; | sort -nr | head -30 | awk &#39;{print &quot;rm &quot; $2}&#39; &gt; bigfiles.sh
-</code></pre>
-<p>I&#39;ll manually check the script before running it in case it&#39;s picking up anything I want to keep.</p>
-<p>Ok, sweet.</p>
-<p>Now :</p>
-<pre><code>tar -czvf server-decommission-2024-05_root.tar.gz /root
-chmod 777
-</code></pre>
-<p>and locally:</p>
-<pre><code>time scp danny@178.79.136.35:/zips/server-decommission-2024-05_root.tar.gz ./
-</code></pre>
-<p>oops
-wrong dir - move to <code>/zips</code> and try again</p>
-<p>hah, that was tiny.</p>
-<p>Now, <code>/home</code> - doesn&#39;t have many big files, and most of those are in <code>.git</code> dirs. I&#39;ll just delete those.</p>
-<pre><code>find ./ -type d -name &#39;.git&#39; &gt; gits.sh
+<h3>Static server bits</h3>
+<p>It took me hours to realise why I had the static Web things set up on the old server the way they were, and why I was
+struggling to get the missing bits joined in. Because they were all in separate git repositories. So obvious, but it just didn&#39;t click in my head. All I need to do is clone them on the new server, pop in a symlink, that should be it.</p>
+<p>The login as regular user, su to root bit is a pain, I can&#39;t remember how to automate those bits - but AI can -</p>
+<p>Locally :</p>
+<pre><code>ssh-keygen -t rsa -b 4096 -C &quot;danny.ayers@gmail.com&quot;
+(I already had one)
+ssh-copy-id danny@178.79.189.240
 ...
-tar -czvf server-decommission-2024-05_home.tar.gz /home
-</code></pre>
-<pre><code>time scp danny@178.79.136.35:/zips/server-decommission-2024-05_home.tar.gz ./
-</code></pre>
-<p><code>var</code> - virtually all big files were under <code>log</code>, <code>lib</code> or <code>cache</code>. I reckon I&#39;m safe in just deleting those.</p>
-<pre><code>tar -czvf server-decommission-2024-05_var.tar.gz /var
-</code></pre>
-<p>Hmm. There was a lot under <code>/var/www/html</code> as expected. What I&#39;d forgotten about is all the <code>webdav</code> stuff for Joplin.</p>
-<p>That&#39;s a pain, I want to reuse that, but I seem to remember Joplin having a weird format in its <code>.md</code> files.</p>
-<pre><code>time scp danny@178.79.136.35:/zips/server-decommission-2024-05_var.tar.gz ./
-</code></pre>
+nano ~/.ssh/config
 
-</article>
-<em>2024-05-30</em><!-- POST CONTENT TEMPLATE -->
-<p class="post-title">
-    <a href="https://danny.ayers.name/blog/2024-05-26.html">
-        Slow Sunday
-    </a>
-</p>
-<article class="post-content">
-    <h1>Slow Sunday</h1>
-<p>This post started as <em>Tired Saturday</em> :</p>
-<blockquote>
-<p>Very late night last night (trying to fix a tv), very late start today.</p>
-</blockquote>
-<p>I&#39;ve developed a cough. Sean, Mari&#39;s Irish friend brought it, Mari got it in the week, now me. Annoying.</p>
-<p>Sunday, so I won&#39;t feel bad if I don&#39;t get much done today.</p>
-<h2>Plan</h2>
-<ol>
-<li>Server decommissioning</li>
-<li>#FOAFRetrospective stuff</li>
-<li>No.7 garden</li>
-<li>AI assistant</li>
-</ol>
-<h3>FOAF Retrospective</h3>
-<p>danbri&#39;s last message about it:</p>
-<blockquote>
-<p>I think for foaf collecting raw materials is key
-Like the most interesting or impactful things that ever used it
-Or ongojng use in linkeddata datasets
-Skos is also kind of needing the same but is probably another story</p>
-</blockquote>
-<hr>
-<h3>Server Decommissioning</h3>
-<p>Previous virtual server on Linode that go compromised. I need to download copies of anything that might potentially be useful.</p>
-<p>But the server is in a state of disarray, I can&#39;t remember what&#39;s where. I&#39;ll start by looking at the root directory:</p>
-<pre><code>danny@localhost:~$ ls /
-bin                boot  etc   lib    lib64              libx32      media  opt   root  sbin                snap  sys  usr
-bin.usr-is-merged  dev   home  lib32  lib.usr-is-merged  lost+found  mnt    proc  run   sbin.usr-is-merged  srv   tmp  var
+Host 178.79.189.240
+    HostName hyperdata.it
+    User danny
+    IdentityFile ~/.ssh/id_rsa
+    RequestTTY yes
+    RemoteCommand sudo su -
 </code></pre>
-<p>Ok, I guess I should get (most of) :</p>
-<pre><code>$du -sh /root
+<p>Remote :</p>
+<pre><code>sudo visudo
+...add...
+danny ALL=(ALL) NOPASSWD: ALL
 </code></pre>
+<p>Soo...the bits that were missing I <em>might</em> want to look at in the near future are:</p>
 <ul>
-<li><code>/etc</code> - 2.4G</li>
-<li><code>/root</code> - 1.9G</li>
-<li><code>/home</code> - 3.5G</li>
-<li><code>/var</code> - 12GB</li>
+<li>farelo</li>
+<li>foolicious</li>
+<li>foowiki</li>
+<li>trellis</li>
+<li>schema-editor</li>
+<li>HKMS</li>
+<li>trev</li>
+<li>dork</li>
+<li>environs</li>
 </ul>
-<p>Not as big as I expected, but still a pain on this slow connection.</p>
-<p>Find my <em>find big files</em> script...</p>
-<pre><code>#!/bin/bash
-find ./ -type f -printf &#39;%s %p\n&#39; | sort -nr | head -30
-</code></pre>
-<p>Ah. Now I see why <code>/etc</code> is that size. Lots of big files for #Fuseki DBs. I&#39;d better get all that dir.</p>
-<p><code>/root</code> has a lot of big junk. I&#39;ll get rid of some of that before getting the dir.</p>
-<p><code>/home</code> - similar. A lot under <code>.git</code> subdirs that should be safe to ditch - similar stuff will already be local and on GitHub</p>
-<p><code>/var</code> - hah, of course - lots of big log files</p>
-<p>Now what&#39;s the best tar/gzip command...ask ChatGPT...</p>
-<pre><code>tar -czvf root_backup.tar.gz /root
-</code></pre>
-<p>(It also had suggestions including <code>scp</code>, but today I&#39;ll do it step-by-step)</p>
-<p>Ok, that actually looks familiar. So right away I&#39;ll do :</p>
-<pre><code>mkdir /zips
-cd /zips
-time tar -czvf server-decommission-2024-05_etc.tar.gz /etc
-...
-real	1m54.447s
-user	1m36.847s
-sys	0m12.939s
-</code></pre>
-<p>File size is 364M, that&#39;s grand.</p>
-<p>Now to copy it down. <code>scp</code>, but I think it&#39;s have to be as non-root user. Ok,</p>
-<pre><code>chmod -R 777 ./
-</code></pre>
-<p>Overkill, who cares.
-Locally,</p>
-<pre><code>mkdir server-decommission_2024-05
-cd server-decommission_2024-05
-
-time scp danny@178.79.136.35:/zips/server-decommission-2024-05_etc.tar.gz ./
-</code></pre>
-<p>Looks to be working. Dogwalk time.</p>
-<pre><code>server-decommission-2024-05_etc.tar.gz        100%  363MB 841.7KB/s   07:22
-
-real	7m41.482s
-user	0m4.618s
-sys	0m7.892s
-</code></pre>
-<p>Good-good.
-Next, check that&#39;s got reasonable contents. Next, clean those other dirs a bit and repeat for them.</p>
+<p><em>(I haven&#39;t a clue what&#39;s in the last 4)</em></p>
+<p>These were all under <code>/home/hkms-apps/</code> on the old server. I&#39;ve already created a <code>/home/github/</code> on the new server. Clunky naming, but I might as well use that for things above, symlink from <code>/home/hkms-apps</code> to <code>/home/github</code>.</p>
+<p>Hmm. The tarball I got from the old server is lacking <code>.git</code> dirs in the above. I guess I must have stripped them out before zipping. No worries, I&#39;m pretty sure there&#39;ll be the same as under <a href="https://github.com/danja">https://github.com/danja</a></p>
+<p>Ok, cloned all those except for <strong>dork</strong>, apparently that&#39;s <em>Description of Runtime Klasses</em>. A Java thing I did ages ago, uses reflection to generate RDF descriptions of the code. I&#39;ll leave that one for now, I&#39;m not planning on doing any Java in the near future (no sure why it was on the server like this, hey ho).</p>
 
 </article>
-<em>2024-05-30</em>
+<em>2024-06-27</em>
             </article>
         </div>
         <div class="main-grid-item about">
