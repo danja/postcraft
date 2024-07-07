@@ -1,6 +1,6 @@
 <!-- POST CONTENT TEMPLATE -->
 <p class="post-title">
-    <a href="https://danny.ayers.name/blog/2024-07-07.html">
+    <a href="https://danny.ayers.name/home/2024-07-07.html">
         Mostly Transmissions Today
     </a>
 </p>
@@ -47,6 +47,62 @@ danny@danny-desktop:~/AI/LibreChat$ docker compose up -d
 <p>Hmm. It doesn&#39;t appear to be picking up the new <code>.env</code> settings, even after <code>docker compose </code>. Try again later.</p>
 <h2>Tidy up Postcraft</h2>
 <p>The <a href="https://github.com/danja/transmissions">Transmissions</a> refactoring might take a while, and will no doubt break the setup for <a href="https://github.com/danja/postcraft">Postcraft</a> in the interim. So I&#39;ll do a quick tidy up there first, publish the current material.</p>
+<p>ok, <code>2024-04-27_postcraft-flow.md</code> says:</p>
+<pre><code>./run postcraft /home/danny/HKMS/postcraft/danny.ayers.name
+</code></pre>
+<p>I guess that&#39;ll be from <code>danny@danny-desktop:~/HKMS/transmissions$</code> - the terminal I have in #Cursor.</p>
+<p>Ok, that appears to have run ok. Stuff locally at <code>http://localhost/danny.ayers.name/public/blog/</code>
+I&#39;ll push those changes, then do a quick check of <a href="https://danny.ayers.name/">https://danny.ayers.name/</a></p>
+<p>It&#39;s there, but without the CSS.</p>
+<pre><code>  &lt;link rel=&quot;stylesheet&quot; href=&quot;css/fonts.css&quot; type=&quot;text/css&quot; /&gt;
+</code></pre>
+<p><strong>Need more coffee!!</strong></p>
+<p>Ok, so with :</p>
+<pre><code>./run postcraft /home/danny/HKMS/postcraft/danny.ayers.name
+</code></pre>
+<p>it&#39;s picking up :</p>
+<pre><code>/home/danny/HKMS/transmissions/src/applications/postcraft
+
+./about.md
+./services.ttl
+./transmission.ttl
+</code></pre>
+<p>and then applying that to :</p>
+<pre><code>/home/danny/HKMS/postcraft/danny.ayers.name/manifest.ttl
+</code></pre>
+<p>putting the result in :</p>
+<pre><code>danny@danny-desktop:~/HKMS/postcraft/danny.ayers.name/public/blog$ ls
+entries  index.html
+</code></pre>
+<p>I don&#39;t like <code>./blog</code> there, <code>./home</code> would be better.</p>
+<p>what it needs to do but I clearly haven&#39;t set up yet is to copy some of this across :</p>
+<pre><code>danny@danny-desktop:~/HKMS/postcraft/danny.ayers.name/layouts/mediocre$ ls
+about.md  css  fonts  layout-sample.html  templates
+</code></pre>
+<p>So this is <em>delegation to the max</em>, but that&#39;s ok, intentional separation of concerns.</p>
+<p>I forget what <strong>Transmissions services</strong> (in <code>transmissions/src/services/</code>) I&#39;ve got set up around <strong>copy</strong>, one might need to be tweaked/added.
+It&#39;ll be easiest to run at the start of the pipeline, before things start forking.
+That will take its config from <code>transmissions/src/applications/postcraft/services.ttl</code>. Which in turn (I think) should take its details from the <code>manifest.ttl</code> in the site directory.</p>
+<p>I&#39;ll need to check what is in place already. While I&#39;m at it, I want to tweak the content folders a bit. New version in <a href="https://github.com/danja/postcraft/blob/main/docs/site-template.md">docs/site-template.md</a>.</p>
+<p>Ok, so in <code>danny.ayers.name/manifest.ttl</code> I&#39;ve flipped <code>blog</code> to <code>home</code> and added :</p>
+<pre><code># STYLES ETC
+t:CSS a pc:StaticGroup ;
+    pc:site &lt;https://danny.ayers.name&gt; ;
+    fs:sourceDirectory &quot;layouts/mediocre/css&quot; ;
+    fs:targetDirectory &quot;public/home/css&quot; .
+
+... similar for fonts &amp; JS
+</code></pre>
+<p><strong>also need to clean dirs on rebuild</strong> - later</p>
+<p>Although I&#39;ve got a <code>FileReader</code> and a <code>FileWriter</code>, I don&#39;t have a <code>FileCopy</code>. I&#39;ll add one to the services.</p>
+<p>Shortly...</p>
+<p>I&#39;ll put the config in place in <code>service.ttl</code> now, then implement it after a bit of Transmissions refactoring, after dogwalk.</p>
+<p>Hmm. I can&#39;t remember how I did the delegaty bit. For now I&#39;ve put this in <code>services.ttl</code> as a placeholder :</p>
+<pre><code>t:copyCSS a trm:FileCopy ;
+        trm:key t:cssCopy .
+
+... similar for fonts &amp; JS
+</code></pre>
 
 </article>
 <em>2024-07-07</em>

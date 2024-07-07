@@ -14,17 +14,16 @@
 <https://danny.ayers.name> a pc:Site ;
     rdfs:label "danny.ayers.name" ;
     dcterms:title "Rawer" ;
-    pc:contains <https://danny.ayers.name/blog> ;  # maybe
+    pc:contains <https://danny.ayers.name/home> ;  # maybe
     pc:includes t:PostContent . # maybe
     
 # this should maybe give the contentgroup a renderType, indirect with template etc
 
 # POST CONTENT
 t:PostContent a pc:ContentGroup ; 
-   # a pc:Partial ;
     pc:site <https://danny.ayers.name> ;
-    pc:subdir "blog" ; # better property name?
-    fs:sourceDirectory "entries/journal" ; # test or entries/journal
+    pc:subdir "home" ; # better property name?
+    fs:sourceDirectory "journal" ; 
     fs:targetDirectory "public/entry-content-cache" ;
     pc:template "layouts/mediocre/templates/entry-content_template.njk" .
 
@@ -32,22 +31,35 @@ t:PostContent a pc:ContentGroup ;
 t:PostPages a pc:ContentGroup ;
     pc:site <https://danny.ayers.name> ;
    # fs:sourceDirectory "public/post-content-cache" ;
-    fs:targetDirectory "public/blog/entries" ;
+    fs:targetDirectory "public/home/entries" ;
     pc:template "layouts/mediocre/templates/entry-page_template.njk" .
 
 # MAIN PAGE
 t:IndexPage a pc:ContentGroup ; # TODO naming!
     pc:site <https://danny.ayers.name> ;
-#    a pc:FrontPage ;
-  #  fs:sourceDirectory "public/entry-content-cache" ;
-    fs:filepath "public/blog/index.html" ;
+    fs:filepath "public/home/index.html" ;
     pc:template "layouts/mediocre/templates/index-page_template.njk" .
 
+# STYLES ETC not yet implemented
+t:CSS a pc:StaticGroup ;
+    pc:site <https://danny.ayers.name> ;
+    fs:sourceDirectory "layouts/mediocre/css" ;
+    fs:targetDirectory "public/home/css" .
+
+t:fonts a pc:StaticGroup ;
+    pc:site <https://danny.ayers.name> ;
+    fs:sourceDirectory "layouts/mediocre/fonts" ;
+    fs:targetDirectory "public/home/js" .
+
+t:JS a pc:StaticGroup ;
+    pc:site <https://danny.ayers.name> ;
+    fs:sourceDirectory "layouts/mediocre/js" ;
+    fs:targetDirectory "public/home/js" .
 
 
-# pinned
+# pinned - not yet implemented
 <https://danny.ayers.name/index> a pc:SpecialCase ;
     pc:state "pinned" ;
-    fs:sourceFile "blog/2023-10-27_hello.md" ;
-    fs:targetFile "public/blog/2023-10-27_hello.html" .
+    fs:sourceFile "home/2023-10-27_hello.md" ;
+    fs:targetFile "public/home/2023-10-27_hello.html" .
 #     pc:template "layouts/mediocre/mediocre-posts_template.html" .
