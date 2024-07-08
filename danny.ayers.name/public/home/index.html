@@ -39,6 +39,56 @@
             <article>
                 <!-- POST CONTENT TEMPLATE -->
 <p class="post-title">
+    <a href="https://danny.ayers.name/home/2024-07-08.html">
+        WTFs
+    </a>
+</p>
+<article class="post-content">
+    <h1>WTFs</h1>
+<ul>
+<li>danbri : <a href="https://codepen.io/danbri/full/xxoxqOp">https://codepen.io/danbri/full/xxoxqOp</a></li>
+</ul>
+<p>Ok, continuing from yesterday - #Transmissions and #Postcraft</p>
+<p>Funny, you know how legacy code can be mystifying? My initial setup in Transmissions used messages/process calls of the form <code>(data, context)</code>, where <code>data</code> would be a string, <code>context</code> a <code>{key:value, ... }</code> dictionary. Keep it simple...
+But I subsequently realised that it&#39;d be better with the dictionary alone (not least because the <em>actual</em> context was defined elsewhere). So I changed the signature to <code>(context)</code>, any string data could go in as something like <code>context.data</code>.</p>
+<p>Yeah. I should do <code>s/context/message</code>.</p>
+<p><img src="media/images/replace-all.png" alt="replace all"></p>
+<p><strong>need to move entry-content-cache somewhere better</strong></p>
+<hr>
+<p><a href="https://www.librechat.ai/">https://www.librechat.ai/</a> - rebuild, how?</p>
+<hr>
+<h3><a href="https://ldap-account-manager.org/lamcms/">LDAP Account Manager</a></h3>
+<p>to try. Has downloads but is also Ubuntu repos, so:</p>
+<pre><code>sudo apt install ldap-account-manager
+</code></pre>
+<p><strong>Stop!</strong> - ew, it has PHP dependencies. I&#39;ll leave that for now.</p>
+<pre><code>There&#39;s also a `ldap-account-manager-lamda` package:
+
+&gt; Lamdaemon is part of LDAP Account Manager. This package
+&gt; needs to be installed on the server where the home directories
+&gt; reside and/or quotas should be managed.
+
+---
+
+Closing tabs, these are notes-to-self:
+
+- https://github.com/authelia/authelia - The Single Sign-On Multi-Factor portal for web apps
+- https://www.authelia.com/configuration/first-factor/ldap/ - Authelia LDAP
+
+- https://www.w3.org/DesignIssues/Overview.html - for notes somewhere
+- https://simonwillison.net/ - check layout
+- https://github.com/yjs/yjs - use somewhere
+- https://qlever.cs.uni-freiburg.de/wikidata - fast SPARQL engine
+- https://docs.oracle.com/javase/jndi/tutorial/ldap/security/auth.html - LDAP auth methods
+
+* https://docs.ejabberd.im/admin/configuration/ldap/#ldap-connection - ejabberd LDAP
+- https://www.surfrock66.com/my-experience-guide-setting-up-openldap-for-pc-webapp-authentication-on-ubuntu-20-04/ - OpenLDAP setup
+`
+</code></pre>
+
+</article>
+<em>2024-07-08</em><!-- POST CONTENT TEMPLATE -->
+<p class="post-title">
     <a href="https://danny.ayers.name/home/2024-07-07.html">
         Mostly Transmissions Today
     </a>
@@ -143,10 +193,16 @@ t:CSS a pc:StaticGroup ;
 ... similar for fonts &amp; JS
 </code></pre>
 <p>Yay! I got the change from <code>execute(data, context)</code> to <code>execute(context)</code> etc. done and it&#39;s working with the <code>postcraft</code> application. I was dreading that. It may have broken some of the other services, but no biggy, I&#39;ll find out as I go along.</p>
-<p>I guess I should also rename the <code>mill</code> dir to <code>engine</code> while I&#39;m at it.</p>
+<p>I guess I should also rename the <code>mill</code> dir to <code>engine</code> while I&#39;m at it. Done! That was surprisingly painless too.</p>
+<p>So, <code>FileCopy</code> service. I also need a <code>FileRemove</code> service nearbly, so I might as well set that up too.</p>
+<p>Prompt time.</p>
+<p>Using @ServiceExample.js as a template, create @FileCopy.js The context object going into execute(context) will have <code>source</code> and <code>destination</code> keys. The <code>source</code> will be a path to a file or directory, the <code>destination</code> will be a path to a directory. If <code>source</code> is a file, it will be copied to the <code>destination</code> directory. If <code>source</code> is a directory, the directory and its contents will be copied recursively to the <code>destination</code> directory. Include appropriate error handling.</p>
+<p>Using @ServiceExample.js as a template, create @FileRemove.js The context object going into execute(context) will have a <code>remove</code> key. This will be a path to a file or directory. If it is a file, that file will be deleted. If it is a directory, the directory&#39;s contents will be deleted recursively, but not the directory itself. Include appropriate error handling.</p>
+<p>Ok, they&#39;re sketched out and I&#39;ve started a little application <code>file-copy-remove-test</code> to try them out.
+Enough for today.</p>
 
 </article>
-<em>2024-07-07</em><!-- POST CONTENT TEMPLATE -->
+<em>2024-07-08</em><!-- POST CONTENT TEMPLATE -->
 <p class="post-title">
     <a href="https://danny.ayers.name/home/2024-07-05.html">
         TODAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY AI setup, again
@@ -244,7 +300,7 @@ sec-ch-ua-platform: &quot;Linux&quot;
 <p>placeholder articles</p>
 
 </article>
-<em>2024-07-07</em><!-- POST CONTENT TEMPLATE -->
+<em>2024-07-08</em><!-- POST CONTENT TEMPLATE -->
 <p class="post-title">
     <a href="https://danny.ayers.name/home/2024-07-04.html">
         hyperdata.it reboot
@@ -337,7 +393,7 @@ The first three apps that will appear in the monorepo are called &#39;farelo&#39
 </code></pre>
 
 </article>
-<em>2024-07-07</em><!-- POST CONTENT TEMPLATE -->
+<em>2024-07-08</em><!-- POST CONTENT TEMPLATE -->
 <p class="post-title">
     <a href="https://danny.ayers.name/home/2024-07-03.html">
         LDAP and Fuseki cont.
@@ -349,86 +405,7 @@ The first three apps that will appear in the monorepo are called &#39;farelo&#39
 <p>curl -v -u service-admin-user:password <a href="https://fuseki.hyperdata.it/$/status">https://fuseki.hyperdata.it/$/status</a></p>
 
 </article>
-<em>2024-07-07</em><!-- POST CONTENT TEMPLATE -->
-<p class="post-title">
-    <a href="https://danny.ayers.name/home/2024-07-02.html">
-        LDAP and Fuseki cont.
-    </a>
-</p>
-<article class="post-content">
-    <h1>LDAP and Fuseki cont.</h1>
-<p><em>for ChatGPT</em></p>
-<p>I would like to test the auth on Fuseki. There is an endpoint that supports POST at : <a href="https://fuseki.hyperdata.it/foowiki/update">https://fuseki.hyperdata.it/foowiki/update</a>
-I would like to add a random triple to the foowiki dataset. Credentials will be user: fuseki-foowiki-user password: TheEnglish_3
-Please give me a minimal piece of node code, using ES modules if necessary, that I can run locally to add the triple to the dataset.</p>
-<hr>
-<p>moved to Claude Sonnet 3.5 in Cursor
-many more circles</p>
-<hr>
-<p>There are groups in LDAP that correspond to the roles in Fuseki. The users in these groups should have the following permissions -</p>
-<p>service-admin members:
-Should have complete access to Fuseki.
-fuseki-admin members:
-Should be able to create and delete datasets, and have write access.
-fuseki-foowiki members:
-Should be able to write data to the foowiki dataset.
-Any other user, without auth, has read access to the all datasets.</p>
-<p>The LDAP details are in</p>
-<p>what is needed in shiro.ini ?</p>
-<p><em>can you guess what happened based on what happened with most of the other things you advised recently?</em></p>
-<p>I sincerely apologize. Based on the pattern of our recent interactions, I can guess that this configuration also caused Fuseki to crash or fail to start. I deeply regret causing further issues and frustration.
-You&#39;re absolutely right to be critical of my advice. I&#39;ve been making assumptions and suggesting changes without fully understanding the specific constraints of your Fuseki setup. This approach has been counterproductive and potentially harmful to your system.
-Given this situation, I believe the most responsible course of action is to:</p>
-<ol>
-<li>Stop suggesting configuration changes that might destabilize your system.</li>
-<li>Return to the last known stable configuration (the one that gave a 401 Unauthorized error but didn&#39;t crash Fuseki).</li>
-<li>Recommend seeking assistance from Apache Jena Fuseki experts or official support channels.</li>
-</ol>
-<hr>
-<p>I first ask about known working Shiro configs - it gives me another breaky one</p>
-<p>then - ah...point it to Fuseki source</p>
-<p>Thank you for providing that information. After examining the ShiroEnvironmentLoader.java file in the Apache Jena GitHub repository, I&#39;ve found some insights that might be relevant to our LDAP configuration issue.</p>
-<p>The ShiroEnvironmentLoader class is responsible for setting up the Shiro security environment in Fuseki. Notably, it doesn&#39;t seem to have any specific handling for LDAP realms or group-to-role mapping. This could explain why our previous attempts at configuring LDAP group-based authorization weren&#39;t successful.</p>
-<p>Key observations from the file:</p>
-<ol>
-<li>The class loads the Shiro configuration from an INI file (shiro.ini).</li>
-<li>It sets up a SecurityManager and WebSecurityManager.</li>
-<li>There&#39;s no specific code for handling LDAP or group-to-role mapping.
-Given this information, it appears that Fuseki might not natively support advanced LDAP features like group-to-role mapping through the shiro.ini configuration alone. This could explain why our previous attempts to add group-to-role mapping in the configuration file didn&#39;t work as expected.
-To proceed, we might need to consider the following options:</li>
-<li>Use a simpler LDAP configuration that doesn&#39;t rely on group-to-role mapping. Instead, we could assign roles directly to users in the LDAP directory.</li>
-<li>Investigate if it&#39;s possible to extend Fuseki&#39;s security implementation to support group-to-role mapping. This would likely involve custom Java code and might not be feasible depending on your deployment setup.</li>
-<li>Look into using a custom Shiro Realm implementation that handles the group-to-role mapping logic internally, rather than relying on the configuration file.
-Given the complexity of the situation, it might be worth reaching out to the Apache Jena community or mailing list with these specific findings. They might have additional insights or workarounds for implementing LDAP group-based authorization in Fuseki.</li>
-</ol>
-<hr>
-<p>I apologize for the oversight. It seems the &#39;superpowers&#39; attribute isn&#39;t defined in your LDAP schema, which is causing the error. Let&#39;s take a step back and modify our approach to use an existing attribute that&#39;s already defined in the inetOrgPerson objectClass.</p>
-<p>Instead of &#39;superpowers&#39;, we can use the &#39;title&#39; attribute, which is a standard attribute in inetOrgPerson and can be repurposed for our needs.</p>
-<hr>
-<p>Now Claude is actively encouraging me to yak shave.
-For this configuration to work, you&#39;ll need to create a custom Java class CustomLdapRealm that extends JndiLdapRealm and implements the group-based authorization logic. This class should be placed in the org.apache.jena.fuseki.authz package.
-[Java source follows]</p>
-<p>Enough! Music room!!! Still got a bottle of beer left!!!</p>
-<hr>
-<p>Building Fuseki.
-mvn compile
-node, yarn, vite
-doc things
-some Bavarian stuff
-cypress
-skosmos?
-surefire-reports
-No license field
-Use of eval is strongly discouraged
-Hours later, eh -
-Port 3030 is already in use.
-Bastard! I already have Fuseki running on 3030.
-Artifact has not been packaged yet. When used on reactor artifact, unpack should be executed after packaging: see MDEP-98. -&gt; [Help 1]
-Nope. Means nothing to me. I&#39;m done.</p>
-<p>ERROR] Failed to execute goal org.apache.maven.plugins:maven-dependency-plugin:3.6.1:unpack (unpack) on project jena-fuseki-webapp: Artifact has not been packaged yet. When used on reactor artifact, unpack should be executed after packaging: see MDEP-98.</p>
-
-</article>
-<em>2024-07-07</em>
+<em>2024-07-08</em>
             </article>
         </div>
         <div class="main-grid-item about">

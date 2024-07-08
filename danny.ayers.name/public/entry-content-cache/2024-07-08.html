@@ -1,0 +1,51 @@
+<!-- POST CONTENT TEMPLATE -->
+<p class="post-title">
+    <a href="https://danny.ayers.name/home/2024-07-08.html">
+        WTFs
+    </a>
+</p>
+<article class="post-content">
+    <h1>WTFs</h1>
+<ul>
+<li>danbri : <a href="https://codepen.io/danbri/full/xxoxqOp">https://codepen.io/danbri/full/xxoxqOp</a></li>
+</ul>
+<p>Ok, continuing from yesterday - #Transmissions and #Postcraft</p>
+<p>Funny, you know how legacy code can be mystifying? My initial setup in Transmissions used messages/process calls of the form <code>(data, context)</code>, where <code>data</code> would be a string, <code>context</code> a <code>{key:value, ... }</code> dictionary. Keep it simple...
+But I subsequently realised that it&#39;d be better with the dictionary alone (not least because the <em>actual</em> context was defined elsewhere). So I changed the signature to <code>(context)</code>, any string data could go in as something like <code>context.data</code>.</p>
+<p>Yeah. I should do <code>s/context/message</code>.</p>
+<p><img src="media/images/replace-all.png" alt="replace all"></p>
+<p><strong>need to move entry-content-cache somewhere better</strong></p>
+<hr>
+<p><a href="https://www.librechat.ai/">https://www.librechat.ai/</a> - rebuild, how?</p>
+<hr>
+<h3><a href="https://ldap-account-manager.org/lamcms/">LDAP Account Manager</a></h3>
+<p>to try. Has downloads but is also Ubuntu repos, so:</p>
+<pre><code>sudo apt install ldap-account-manager
+</code></pre>
+<p><strong>Stop!</strong> - ew, it has PHP dependencies. I&#39;ll leave that for now.</p>
+<pre><code>There&#39;s also a `ldap-account-manager-lamda` package:
+
+&gt; Lamdaemon is part of LDAP Account Manager. This package
+&gt; needs to be installed on the server where the home directories
+&gt; reside and/or quotas should be managed.
+
+---
+
+Closing tabs, these are notes-to-self:
+
+- https://github.com/authelia/authelia - The Single Sign-On Multi-Factor portal for web apps
+- https://www.authelia.com/configuration/first-factor/ldap/ - Authelia LDAP
+
+- https://www.w3.org/DesignIssues/Overview.html - for notes somewhere
+- https://simonwillison.net/ - check layout
+- https://github.com/yjs/yjs - use somewhere
+- https://qlever.cs.uni-freiburg.de/wikidata - fast SPARQL engine
+- https://docs.oracle.com/javase/jndi/tutorial/ldap/security/auth.html - LDAP auth methods
+
+* https://docs.ejabberd.im/admin/configuration/ldap/#ldap-connection - ejabberd LDAP
+- https://www.surfrock66.com/my-experience-guide-setting-up-openldap-for-pc-webapp-authentication-on-ubuntu-20-04/ - OpenLDAP setup
+`
+</code></pre>
+
+</article>
+<em>2024-07-08</em>

@@ -122,10 +122,16 @@ t:CSS a pc:StaticGroup ;
 ... similar for fonts &amp; JS
 </code></pre>
 <p>Yay! I got the change from <code>execute(data, context)</code> to <code>execute(context)</code> etc. done and it&#39;s working with the <code>postcraft</code> application. I was dreading that. It may have broken some of the other services, but no biggy, I&#39;ll find out as I go along.</p>
-<p>I guess I should also rename the <code>mill</code> dir to <code>engine</code> while I&#39;m at it.</p>
+<p>I guess I should also rename the <code>mill</code> dir to <code>engine</code> while I&#39;m at it. Done! That was surprisingly painless too.</p>
+<p>So, <code>FileCopy</code> service. I also need a <code>FileRemove</code> service nearbly, so I might as well set that up too.</p>
+<p>Prompt time.</p>
+<p>Using @ServiceExample.js as a template, create @FileCopy.js The context object going into execute(context) will have <code>source</code> and <code>destination</code> keys. The <code>source</code> will be a path to a file or directory, the <code>destination</code> will be a path to a directory. If <code>source</code> is a file, it will be copied to the <code>destination</code> directory. If <code>source</code> is a directory, the directory and its contents will be copied recursively to the <code>destination</code> directory. Include appropriate error handling.</p>
+<p>Using @ServiceExample.js as a template, create @FileRemove.js The context object going into execute(context) will have a <code>remove</code> key. This will be a path to a file or directory. If it is a file, that file will be deleted. If it is a directory, the directory&#39;s contents will be deleted recursively, but not the directory itself. Include appropriate error handling.</p>
+<p>Ok, they&#39;re sketched out and I&#39;ve started a little application <code>file-copy-remove-test</code> to try them out.
+Enough for today.</p>
 
 </article>
-<em>2024-07-07</em>
+<em>2024-07-08</em>
         <div class="entry-footer">
             <h2>About</h2>
             
