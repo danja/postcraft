@@ -4,16 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>X Word Game</title>
+    <title>Xordle</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            padding: 20px;
             background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            text-align: center;
+            max-width: 600px;
+            margin-bottom: 20px;
         }
 
         #game-container {
@@ -50,6 +60,14 @@
 </head>
 
 <body>
+    <h1>Xordle</h1>
+    <p>
+        Welcome to Xordle! Guess the hidden word that starts with 'X'.
+        Fill in the letter boxes with your guess and click 'Submit'.
+        The first box is already filled with 'X' for you.
+        If you guess correctly, you win! If not, the correct word will be revealed.
+        Good luck!
+    </p>
     <div id="game-container">
         <div id="word-container"></div>
         <div id="message"></div>
@@ -76,6 +94,7 @@
                 letterBox.type = "text";
                 letterBox.maxLength = 1;
                 letterBox.classList.add("letter-box");
+                letterBox.addEventListener("input", onLetterInput);
                 if (i === 0) {
                     letterBox.value = "X";
                     letterBox.style.backgroundColor = "lightgreen";
@@ -87,6 +106,18 @@
             document.getElementById("message").textContent = "";
             document.getElementById("submit-btn").style.display = "inline-block";
             document.getElementById("play-again-btn").style.display = "none";
+
+            // Focus on the second input box
+            wordContainer.children[1].focus();
+        }
+
+        function onLetterInput(event) {
+            if (event.target.value.length === 1) {
+                const nextSibling = event.target.nextElementSibling;
+                if (nextSibling && nextSibling.classList.contains("letter-box")) {
+                    nextSibling.focus();
+                }
+            }
         }
 
         function checkGuess() {
