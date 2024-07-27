@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X Word Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #game-container {
+            text-align: center;
+        }
+
+        #word-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .letter-box {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #333;
+            margin: 0 5px;
+            font-size: 24px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        #message {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="game-container">
+        <div id="word-container"></div>
+        <div id="message"></div>
+        <button id="submit-btn">Submit</button>
+        <button id="play-again-btn" style="display: none;">Play Again?</button>
+    </div>
+    <script>
+        const dictionary = [
+            "Xanadu", "Xenon", "Xylophone", "Xavier", "Xerox", "Xena",
+            "Xbox", "X-ray", "Xmas", "Xenophobia", "Xylitol", "Xerxes"
+        ];
+
+        let targetWord = "";
+        let gameOver = false;
+
+        function initGame() {
+            targetWord = dictionary[Math.floor(Math.random() * dictionary.length)];
+            gameOver = false;
+            const wordContainer = document.getElementById("word-container");
+            wordContainer.innerHTML = "";
+
+            for (let i = 0; i < targetWord.length; i++) {
+                const letterBox = document.createElement("input");
+                letterBox.type = "text";
+                letterBox.maxLength = 1;
+                letterBox.classList.add("letter-box");
+                if (i === 0) {
+                    letterBox.value = "X";
+                    letterBox.style.backgroundColor = "lightgreen";
+                    letterBox.readOnly = true;
+                }
+                wordContainer.appendChild(letterBox);
+            }
+
+            document.getElementById("message").textContent = "";
+            document.getElementById("submit-btn").style.display = "inline-block";
+            document.getElementById("play-again-btn").style.display = "none";
+        }
+
+        function checkGuess() {
+            if (gameOver) return;
+
+            const letterBoxes = document.querySelectorAll(".letter-box");
+            let guess = "";
+            for (const box of letterBoxes) {
+                guess += box.value.toUpperCase();
+            }
+
+            if (guess === targetWord.toUpperCase()) {
+                document.getElementById("message").textContent = "You Win!";
+                document.getElementById("message").style.color = "green";
+            } else {
+                document.getElementById("message").textContent = "You Lose!";
+                document.getElementById("message").style.color = "red";
+                for (let i = 0; i < targetWord.length; i++) {
+                    letterBoxes[i].value = targetWord[i].toUpperCase();
+                    letterBoxes[i].style.backgroundColor = "lightcoral";
+                }
+            }
+
+            gameOver = true;
+            document.getElementById("submit-btn").style.display = "none";
+            document.getElementById("play-again-btn").style.display = "inline-block";
+        }
+
+        document.getElementById("submit-btn").addEventListener("click", checkGuess);
+        document.getElementById("play-again-btn").addEventListener("click", initGame);
+
+        initGame();
+    </script>
+</body>
+
+</html>
