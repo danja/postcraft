@@ -1,13 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
+media="(min-width: 1080px)" {
+    .mk {
+        letter-spacing: -0.003em;
+    }
+}
+ media="(min-width: 1080px)" {
+    .mj {
+        line-height: 32px;
+    }
+}
+ media="(min-width: 1080px)" {
+    .mi {
+        margin-top: 2.14em;
+    }
+}
+ media="(min-width: 1080px)" {
+    .mh {
+        font-size: 20px;
+    }
+}
+.ml {
+    margin-bottom: -0.46em;
+}
+.lq {
+    font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+}
 
-<head>
-    <title>The Title</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/fonts.css" type="text/css" />
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-</head>
 
+one : articles
+two : directory
+three : about
+cf : clearfix 
+
+<!--
 <body id="index" class="home">
 
     <header>
@@ -38,19 +62,17 @@ by
 in
 <a href="/writing/tag/tech.html" class="p-category">tech</a>
                 -->
-                </footer>
-            </article>
+</footer>
+</article>
 
-            <footer id="contentinfo">
-                <!--
+<footer id="contentinfo">
+    <!--
         <address id="about">
             Powered by <a href="http://getpelican.com/">Pelican</a>.
             Copyright 2012-2018 by .
         </address>
     -->
-            </footer>
-        </div>
-        <div class="three">3</div>
-</body>
-
-</html>
+</footer>
+</div>
+<div class="three">3</div>
+-->
