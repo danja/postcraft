@@ -49,6 +49,13 @@ message.contentBlocks.link = message.siteURL + '/' + message.contentBlocks.relUR
 
 ```
 
+on server
+
+```
+root@hyperdata:/home/www/danny.ayers.name#
+git pull
+```
+
 ## TODO
 
 - images
