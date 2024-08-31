@@ -51,13 +51,28 @@
 or
 ./run postcraft-beta /home/danny/github-danny/postcraft/danny.ayers.name
 </code></pre>
+<p>This will involve addressing more than one transmission in <code>transmission.ttl</code></p>
+<p>TODO rename <code>transmission.ttl</code> to <code>transmissions.ttl</code></p>
+<p>TODO rename <code>trm:Pipeline</code> etc</p>
+<p>Starting point, I need a key for the separate transmissions.<code>rdfs:label</code> will do.</p>
+<pre><code>:clean a trm:Pipeline ;
+    rdfs:label &quot;clean&quot; ;
+    rdfs:comment &quot;directory cleaner&quot; ;
+    trm:pipe (:SC) .
+</code></pre>
+<p>Yuck, so many TODOs!</p>
+<h2>Jeez, that took me a very long time. I really need to write those <code>grapoi</code> docs.</h2>
+<p><strong>2024-08-30</strong> continued</p>
+<p>That was unpleasant, sorting out the command-line (<code>yargs</code>) handling. Settled on a reasonable neat solution for subtasks/named transmissions, a dot notation :</p>
+<pre><code>./trans postcraft-beta.clean ../postcraft/danny.ayers.name
+</code></pre>
 
 </article>
 <p class="post-title">
     <a href="entries/2024-08-29_cleaner.html">
         Postcraft Cleaner
     </a>
-</p> <em>2024-08-29</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-08-31</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-08-28_project-vocab.html">#</a>
@@ -74,7 +89,7 @@ or
     <a href="entries/2024-08-28_project-vocab.html">
         Revisiting the Project Vocabulary
     </a>
-</p> <em>2024-08-29</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-08-31</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-08-28_postcraft-images.html">#</a>
@@ -197,7 +212,7 @@ or
     <a href="entries/2024-08-28_postcraft-images.html">
         Postcraft Images
     </a>
-</p> <em>2024-08-29</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-08-31</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-08-28_form-a-matic.html">#</a>
@@ -220,7 +235,7 @@ or
     <a href="entries/2024-08-28_form-a-matic.html">
         Form-a-matic
     </a>
-</p> <em>2024-08-29</em>
+</p> <em>2024-08-31</em>
             </article>
         </div>
         <div class="main-grid-item about">

@@ -24,7 +24,7 @@ t:PostContent a pc:ContentGroup ;
     pc:site <https://danny.ayers.name> ;
     pc:subdir "home" ; # better property name?
     fs:sourceDirectory "entries" ; # SOURCE DIR HERE journal, entries
-    fs:targetDirectory "public/entry-content-cache" ;
+    fs:targetDirectory "entry-content-cache" ;
     pc:template "layouts/mediocre/templates/entry-content_template.njk" .
 
 # POST PAGES
