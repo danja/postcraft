@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Rawer</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- TODO make like this, place from manifest
+    <link rel="stylesheet" href="css/fonts.css" type="text/css" />
+    <link rel="stylesheet" href="css/grid-columns.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    -->
+    <link rel="stylesheet" href="css/fonts.css" type="text/css" />
+    <link rel="stylesheet" href="css/grid-columns.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+</head>
+
+<body>
+    <header id="main-header">
+        <h1>
+           Rawer
+        </h1>
+    </header>
+    <div class="grid-container">
+        <div class="main-grid-item directory">
+            <p><strong>Under Construction</strong></p>
+            <p><em>there are many to-dos</em></p>
+            <!--
+            <h2>directory</h2>
+            <p>i cinque secoli, ma anche al passaggio alla videoimp</p>
+            -->
+        </div>
+        <div class="main-grid-item articles">
+            <!-- h2>articles</h2 -->
+            <article>
+                <!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="entries/2024-08-29_cleaner.html">#</a>
+    <h1>Postcraft Cleaner</h1>
+<p>A quick job to start the day. I need a #transmission, as part of #Postcraft, that will wipe all rendered files - cache and <code>.html</code>.</p>
+<p>Ideally to run as :</p>
+<pre><code>./trans postcraft clean /home/danny/github-danny/postcraft/danny.ayers.name
+</code></pre>
+<p>The current runner is :</p>
+<pre><code>./run postcraft /home/danny/github-danny/postcraft/danny.ayers.name
+or
+./run postcraft-beta /home/danny/github-danny/postcraft/danny.ayers.name
+</code></pre>
+<p>This will involve addressing more than one transmission in <code>transmission.ttl</code></p>
+<p>TODO rename <code>transmission.ttl</code> to <code>transmissions.ttl</code></p>
+<p>TODO rename <code>trm:Pipeline</code> etc</p>
+<p>Starting point, I need a key for the separate transmissions.<code>rdfs:label</code> will do.</p>
+<pre><code>:clean a trm:Pipeline ;
+    rdfs:label &quot;clean&quot; ;
+    rdfs:comment &quot;directory cleaner&quot; ;
+    trm:pipe (:SC) .
+</code></pre>
+<p>Yuck, so many TODOs!</p>
+<p>Jeez, that took me a very long time. I really need to write those <code>grapoi</code> docs.</p>
+<p><strong>2024-08-30</strong> continued</p>
+<p>That was unpleasant, sorting out the command-line (<code>yargs</code>) handling. Settled on a reasonable neat solution for subtasks/named transmissions, a dot notation :</p>
+<pre><code>./trans postcraft-beta.clean ../postcraft/danny.ayers.name
+</code></pre>
+<p><strong>2024-09-01</strong></p>
+<p>A quick test of this :</p>
+<pre><code>&lt;details&gt;
+&lt;summary&gt;More&lt;/summary&gt;
+&lt;p&gt;
+This should show more.
+&lt;/p&gt;
+&lt;/details&gt;
+</code></pre>
+<details>
+<summary>More</summary>
+<p>
+This should show more.
+</p>
+</details>
+
+<hr>
+<p>Grr. I suppose I&#39;d better do some light tweaking before putting this into place.</p>
+<ul>
+<li>Group the markdown dirs. A <code>raw</code> dir suits me.</li>
+<li>Rename <code>cache</code></li>
+</ul>
+<p>I want to keep the dir structures in places, but pull the content from git so I&#39;ll put a flag in <code>FileRemove</code> to ignore <code>.dotfiles</code>.
+In <code>.gitignore</code> maybe:</p>
+<pre><code>cache/*
+!cache/.*
+</code></pre>
+<p>I also need to copy across static content.</p>
+<pre><code>danny.ayers.name/public/home
+</code></pre>
+
+</article>
+<p class="post-title">
+    <a href="entries/2024-08-29_cleaner.html">
+        Postcraft Cleaner
+    </a>
+</p> <em>2024-09-01</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="entries/2024-08-28_project-vocab.html">#</a>
+    <h1>Revisiting the Project Vocabulary</h1>
+<p>I constantly find myself circling back to my own project management issues. Specifically efficient use of time. There is huge overlap in the requirements across my projects.</p>
+<p>My #hyperdata subproject #farelo is the umbrella for this side of things.</p>
+<p>A must-have is task prioritization. Aside from various other trad &amp; novel metrics &amp; strategies I want here is the ability to identify tasks that will...</p>
+<h3>Refs in 2004 doc</h3>
+<p>DOAP</p>
+<p>Benjamin Nowack&#39;s <a href="https://web.archive.org/web/20070807105414/http://labs.semanticweb.org/main-vocab_browser?vocab=pm&vocab_id=6">Vocabulary &quot;Project management&quot;</a> (archive.org 2007)</p>
+
+</article>
+<p class="post-title">
+    <a href="entries/2024-08-28_project-vocab.html">
+        Revisiting the Project Vocabulary
+    </a>
+</p> <em>2024-09-01</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="entries/2024-08-28_postcraft-images.html">#</a>
+    <h1>Postcraft Images</h1>
+<p>This should be a little thing...</p>
+<p>Markdown format is :</p>
+<pre><code>![alt text](https://hyperdata.it/images/raw-data_320x480.png)
+</code></pre>
+<p>The markdown lib I&#39;m using should understand that :</p>
+<p><img src="https://hyperdata.it/images/raw-data_320x480.png" alt="alt text"></p>
+<p>I&#39;d better check relative URLs :</p>
+<pre><code>![alt text](../images/not-an-image.png)
+</code></pre>
+<p><img src="../images/not-an-image.png" alt="alt text"></p>
+<p>Looking good. That gets rendered as :</p>
+<pre><code>&lt;img src=&quot;../images/not-an-image.png&quot; alt=&quot;alt text&quot;&gt;
+</code></pre>
+<p>So now, image locations. I must have set up a folder or something...yup. Of the form :</p>
+<pre><code>danny.ayers.name/media/images/2024-08/
+</code></pre>
+<p>I&#39;d better check how I&#39;ve got the paths when sent to the server...</p>
+<pre><code>danny.ayers.name/public/home/index.html
+</code></pre>
+<p>Ok, what if I copy the dir to :</p>
+<pre><code>danny.ayers.name/public/home/media/images/2024-08/
+</code></pre>
+<p>(The <code>public/home</code> seems like an unnecessary bit of path, but I&#39;ll leave that for now).</p>
+<p>Hmm. There are some semi-untested bits here. I guess safest is to copy application :</p>
+<pre><code>/home/danny/github-danny/transmissions/src/applications/postcraft
+-&gt;
+/home/danny/github-danny/transmissions/src/applications/postcraft-beta
+</code></pre>
+<p>Ok,</p>
+<pre><code>./run postcraft ../postcraft/danny.ayers.name
+</code></pre>
+<p>worked.</p>
+<p>Next, look back how I did application <code>src/applications/file-copy-remove-test</code></p>
+<p>In <code>transmission.ttl</code> there&#39;s :</p>
+<pre><code>:s4 a :FileCopy ;
+    trm:configKey :copyStartToSeveralEmpty .
+</code></pre>
+<p>In <code>services.ttl</code> there&#39;s :</p>
+<pre><code>t:copyStartToSeveralEmpty a trm:ServiceConfig ;
+    trm:key t:copyStartToSeveralEmpty ;
+    trm:source &quot;data/start&quot; ;
+    trm:destination &quot;data/several-empty&quot; .
+</code></pre>
+<p>Hmm. The paths are relative to the application, ie. on my local machine in :</p>
+<pre><code>/home/danny/github-danny/transmissions/src/applications/file-copy-remove-test/data
+</code></pre>
+<p>I need them to be relative to the <em>target</em> of the <code>postcraft-beta</code> application, ie.</p>
+<pre><code>/home/danny/github-danny/postcraft/danny.ayers.name
+</code></pre>
+<p>That should be going in the message somewhere. Time for a little probe, in:</p>
+<pre><code>/home/danny/github-danny/transmissions/src/applications/postcraft-beta/transmission.ttl
+</code></pre>
+<p>Lol, fool danny, I&#39;m already using <code>FileCopy</code> :</p>
+<pre><code>:postTemplating a trm:Pipeline ;
+    trm:pipe (:s00 :s10 :s11 :s12 :s20  :s30 :s40  :s50 :s60 :s70 :s80 :s90 :s100
+                :s110 :s120 :s130 :s140 :s150  :s160 :s170 :s180) .
+
+:s00 a :DatasetReader . # read the manifest
+# trm:configKey trm:describe .
+
+### Copy layout dirs
+:s10 a :FileCopy ;
+    trm:configKey :cssCopy .
+</code></pre>
+<p>In</p>
+<pre><code>/home/danny/github-danny/transmissions/src/applications/postcraft-beta/services.ttl
+</code></pre>
+<p>there is:</p>
+<pre><code>t:copyCSS a trm:ServiceConfig ;
+    trm:key t:cssCopy ;
+    trm:source &quot;layouts/mediocre/css&quot; ;
+    trm:destination &quot;public/home/css&quot; .
+</code></pre>
+<p>So let me try adding an entry for the <code>media</code> dir as above.</p>
+<pre><code>:postTemplating a trm:Pipeline ;
+    trm:pipe (:s00 :s05 :s10 :s11 :s12 :s20  :s30 :s40  :s50 :s60 :s70 :s80 :s90 :s100
+                :s110 :s120 :s130 :s140 :s150  :s160 :s170 :s180) .
+
+:s00 a :DatasetReader . # read the manifest
+# trm:configKey trm:describe .
+
+### Copy media dirs
+:s05 a :FileCopy ;
+    trm:configKey :mediaCopy .
+
+### Copy layout dirs
+:s10 a :FileCopy ;
+    trm:configKey :cssCopy .
+</code></pre>
+<p>...</p>
+<pre><code>t:copyMedia a trm:ServiceConfig ;
+    trm:key t:mediaCopy ;
+    trm:source &quot;media&quot; ;
+    trm:destination &quot;public/home/media&quot; .
+</code></pre>
+<p>I&#39;ll stick an image in the <code>media</code> source dir, and then:</p>
+<pre><code>![Claudio Grouse Hunting](media/images/2024-08/claudio-grouse-hunting.jpeg)
+</code></pre>
+<p>and maybe...
+<img src="media/images/2024-08/claudio-grouse-hunting.jpeg" alt="Claudio Grouse Hunting"></p>
+<p>Yay!</p>
+<p>But the image is cropped. Can you specify scale in markdown? No wait, would be better to do in CSS, make it responsive.</p>
+<p>So in <code>danny.ayers.name/layouts/mediocre/css/style.css</code>:</p>
+<pre><code>img {
+  max-width: 100%;
+  height: auto;
+}
+</code></pre>
+<p>Double-yay!!!</p>
+<p>This is <strong>exactly</strong> how #Transmissions is meant to work. Maximum reuse, minimum thought/effort.</p>
+<p><code>postcraft</code> application moved to <code>postcraft-previous</code>, <code>postcraft-beta</code> move to <code>postcraft</code>.</p>
+<p>Job done.</p>
+
+</article>
+<p class="post-title">
+    <a href="entries/2024-08-28_postcraft-images.html">
+        Postcraft Images
+    </a>
+</p> <em>2024-09-01</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="entries/2024-08-28_form-a-matic.html">#</a>
+    <h1>Form-a-matic</h1>
+<p>Prompted by my need to capture project/task descriptions I&#39;ve been wondering how to automate UI generation.</p>
+<p>I can use #Transmissions for this!</p>
+<ol>
+<li>upload vocab RDF to a SPARQL store</li>
+<li>run selective query</li>
+<li>render results as a form with checkboxes to tag desired properties</li>
+<li>submit back to SPARQL store</li>
+<li>query again</li>
+<li>render results as a FOAF-a-matic style form</li>
+</ol>
+<p>I will need a few new Transmissions services. Claude can help a lot, I&#39;d better leave this until I have access again.</p>
+<p>Easiest wiring would be to use the #SPARQL-Diamonds trick. But using #RDF-Ext would also be nice, no store dependency.</p>
+
+</article>
+<p class="post-title">
+    <a href="entries/2024-08-28_form-a-matic.html">
+        Form-a-matic
+    </a>
+</p> <em>2024-09-01</em>
+            </article>
+        </div>
+        <div class="main-grid-item about">
+            <!--
+            <h2>About</h2>
+            
+            -->
+        </div>
+    </div>
+</body>
+
+</html>
