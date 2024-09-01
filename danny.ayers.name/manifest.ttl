@@ -23,8 +23,8 @@
 t:PostContent a pc:ContentGroup ; 
     pc:site <https://danny.ayers.name> ;
     pc:subdir "home" ; # better property name?
-    fs:sourceDirectory "entries" ; # SOURCE DIR HERE journal, entries
-    fs:targetDirectory "entry-content-cache" ;
+    fs:sourceDirectory "raw-content/entries" ; # SOURCE DIR HERE journal, entries
+    fs:targetDirectory "cache" ;
     pc:template "layouts/mediocre/templates/entry-content_template.njk" .
 
 # POST PAGES
