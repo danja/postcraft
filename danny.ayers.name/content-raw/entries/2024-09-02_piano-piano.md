@@ -14,6 +14,8 @@ You can say anything in #Turtle (ok, with provisos [^4]). But there aren't many 
 
 With #Postcraft as my first practical application of #Transmissions, I have been pondering what I might slip in. A page like this is written in markdown, a _transmission_ is used to render it to HTML. But into that transmission I can throw in whatever pre-processors I fancy.
 
+So today it occurred to _slowww_ Danny, there's an low-effort/high-value thing available :
+
 ## Namespaced Hashtags
 
 ### Motivation
