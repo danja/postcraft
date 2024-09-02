@@ -4,7 +4,7 @@ _This was also a test to see if the markdown processor I'm using (?) understood 
 
 I'll need help from AI to get the wording of this more quotable, but something like :
 
-> The slow worker has the advantage of being able to think about things slowly. [^1]
+> The slow worker has the advantage of being able to take their time to think about things. [^1]
 
 I am a slow worker and a slow thinker. Of course I'd rather I was Mr. Lightspeed[^2] externally and quick-witted[^3] internally. But there is a plus side to each failing (#neurodivergence). A case in point.
 
