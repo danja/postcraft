@@ -12,7 +12,7 @@ I've gravitated to two formats for stuff I write : [Markdown](https://en.wikiped
 
 You can say anything in #Turtle (ok, with provisos [^4]). But there aren't many vectors through which to cleanly and _easily_ extend markdown. Bridging the two has been lurking around my #todo lists for while.
 
-With #Postcraft as my first practical application of my pipeliney thing #Transmissions, I have been pondering what I might slip in. A page like this is written in markdown, a _transmission_ is used to render it to HTML. But into that transmission I can throw in whatever pre-processors I fancy.
+With [Postcraft](https://github.com/danja/postcraft) as my first practical application of my pipeliney thing [Transmissions](https://github.com/danja/transmissions), I have been pondering what I might slip in. A page like this is written in markdown, a _transmission_ is used to render it to HTML. But into that transmission I can throw in whatever pre-processors I fancy.
 
 So today it occurred to _slowww_ Danny, there's an low-effort/high-value thing available :
 
