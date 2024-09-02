@@ -35,7 +35,7 @@ _ok, first pass, formal-ish :_
 3. Within the domain `http://example.org` a document resource a string of the form `#ns:hashtag` SHOULD have an easily-accessible means of interpreting the significance of `ns` and `hashtag`
 4. `ns` will identify a namespace (as per XML & RDF prefix notation), which SHOULD be associated with a URI
 5. `hashtag` will identify a term which SHOULD be defined within the namespace document and identified with a URI, eg. `http://example.org/terms/swift`
-6. `#ns:hashtag` MAY be interpreted as the statement `<http://example.org/birdies.md> rdfs:seeAlso <http://example.org/terms#swift> .
+6. `#ns:hashtag` MAY be interpreted as the statement `<http://example.org/birdies.md> rdfs:seeAlso <http://example.org/terms#swift> . (and whatever else)
 
 _in practice..._
 
@@ -47,9 +47,9 @@ Not entirely sure yet, but in the _transmission_ I'll regex/template this out so
 
 Respond to that on the server with the results of a SPARQL query and/or vector similarity giving the term defn and/or related pages.
 
-TODO RFC refs for all the terms above
-TODO [BNFs](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form)
-TODO write up #h:griller spec (GRDDL for JSON & markdown)
+- TODO RFC refs for all the terms above
+- TODO [BNFs](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form)
+- TODO write up #h:griller spec (GRDDL for JSON & markdown)
 
 Previous notes at :
 

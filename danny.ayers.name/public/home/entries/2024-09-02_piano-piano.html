@@ -44,16 +44,18 @@
 <li>Within the domain <code>http://example.org</code> a document resource a string of the form <code>#ns:hashtag</code> SHOULD have an easily-accessible means of interpreting the significance of <code>ns</code> and <code>hashtag</code></li>
 <li><code>ns</code> will identify a namespace (as per XML &amp; RDF prefix notation), which SHOULD be associated with a URI</li>
 <li><code>hashtag</code> will identify a term which SHOULD be defined within the namespace document and identified with a URI, eg. <code>http://example.org/terms/swift</code></li>
-<li><code>#ns:hashtag</code> MAY be interpreted as the statement `<a href="http://example.org/birdies.md">http://example.org/birdies.md</a> rdfs:seeAlso <a href="http://example.org/terms#swift">http://example.org/terms#swift</a> .</li>
+<li><code>#ns:hashtag</code> MAY be interpreted as the statement `<a href="http://example.org/birdies.md">http://example.org/birdies.md</a> rdfs:seeAlso <a href="http://example.org/terms#swift">http://example.org/terms#swift</a> . (and whatever else)</li>
 </ol>
 <p><em>in practice...</em></p>
 <p>Not entirely sure yet, but in the <em>transmission</em> I&#39;ll regex/template this out so that <code>#ns:hashtag</code> turns into something like:</p>
 <pre><code>[#hashtag](http://example.org/terms?ns-hashtag)
 </code></pre>
 <p>Respond to that on the server with the results of a SPARQL query and/or vector similarity giving the term defn and/or related pages.</p>
-<p>TODO RFC refs for all the terms above
-TODO <a href="https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form">BNFs</a>
-TODO write up #h:griller spec (GRDDL for JSON &amp; markdown)</p>
+<ul>
+<li>TODO RFC refs for all the terms above</li>
+<li>TODO <a href="https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form">BNFs</a></li>
+<li>TODO write up #h:griller spec (GRDDL for JSON &amp; markdown)</li>
+</ul>
 <p>Previous notes at :</p>
 <pre><code>postcraft/danny.ayers.name/content-raw/todo/2024-08.md
 -&gt;
