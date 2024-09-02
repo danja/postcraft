@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/fonts.css" type="text/css"/>
+        <link rel="stylesheet" href="css/grid-columns.css" type="text/css"/>
+        <link rel="stylesheet" href="css/style.css" type="text/css"/>
+        <title>Piano Piano Task Force and Namespaced Hashtags</title>
+    </head>
+    <!-- POST PAGE TEMPLATE -->
+    <body>
+        <header id="entry-header">
+            <h1>
+                
+            </h1>
+        </header>
+        <!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="entries/2024-09-02_piano-piano.html">#</a>
+    <h1>Piano Piano Task Force and Namespaced Hashtags</h1>
+<p><em>This was also a test to see if the markdown processor I&#39;m using (?) understood GitHub-flavoured markdown footnotes. Apparently not, grrr.</em></p>
+<p>I&#39;ll need help from AI to get the wording of this more quotable, but something like :</p>
+<blockquote>
+<p>The slow worker has the advantage of being able to think about things slowly. [^1]</p>
+</blockquote>
+<p>I am a slow worker and a slow thinker. Of course I&#39;d rather I was Mr. Lightspeed[^2] externally and quick-witted[^3] internally. But there is a plus side to each failing (#neurodivergence). A case in point.</p>
+<p>I&#39;ve gravitated to two formats for stuff I write : <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> for any text, <a href="https://en.wikipedia.org/wiki/Turtle_(syntax">Turtle</a> for any data (for code I currently favour JS, another story).</p>
+<p>You can say anything in #Turtle (ok, with provisos [^4]). But there aren&#39;t many vectors through which to cleanly and <em>easily</em> extend markdown. Bridging the two has been lurking around my #todo lists for while.</p>
+<p>With #Postcraft as my first practical application of #Transmissions, I have been pondering what I might slip in. A page like this is written in markdown, a <em>transmission</em> is used to render it to HTML. But into that transmission I can throw in whatever pre-processors I fancy.</p>
+<h2>Namespaced Hashtags</h2>
+<h3>Motivation</h3>
+<p>Ok, so #hashtag is a convention for a keyword. But it&#39;s all very folksy, prone to ambiguity, is #swift a bird or a singer?</p>
+<p>In practice, I want to get my tokens as cleanly separated as I can, so they get a head start in vector space.</p>
+<p>I bet someone&#39;s done this before, but still, this :</p>
+<h3>Specification</h3>
+<p><em>ok, first pass, formal-ish :</em></p>
+<ol>
+<li>Within any document resource, a string of the form <code>#hashtag</code> will be assumed to have no significance under this specification.</li>
+<li>Within a document resource, eg. <code>http://example.org/birdies.md</code> a string of the form <code>#ns:hashtag</code> will be interpreted as a pair of identifiers associated with the document, <code>ns</code> and <code>hashtag</code>.</li>
+<li>Within the domain <code>http://example.org</code> a document resource a string of the form <code>#ns:hashtag</code> SHOULD have an easily-accessible means of interpreting the significance of <code>ns</code> and <code>hashtag</code></li>
+<li><code>ns</code> will identify a namespace (as per XML &amp; RDF prefix notation), which SHOULD be associated with a URI</li>
+<li><code>hashtag</code> will identify a term which SHOULD be defined within the namespace document and identified with a URI, eg. <code>http://example.org/terms/swift</code></li>
+<li><code>#ns:hashtag</code> MAY be interpreted as the statement `<a href="http://example.org/birdies.md">http://example.org/birdies.md</a> rdfs:seeAlso <a href="http://example.org/terms#swift">http://example.org/terms#swift</a> .</li>
+</ol>
+<p><em>in practice...</em></p>
+<p>Not entirely sure yet, but in the <em>transmission</em> I&#39;ll regex/template this out so that <code>#ns:hashtag</code> turns into something like:</p>
+<pre><code>[#hashtag](http://example.org/terms?ns-hashtag)
+</code></pre>
+<p>Respond to that on the server with the results of a SPARQL query and/or vector similarity giving the term defn and/or related pages.</p>
+<p>TODO RFC refs for all the terms above
+TODO <a href="https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form">BNFs</a>
+TODO write up #h:griller spec (GRDDL for JSON &amp; markdown)</p>
+<p>Previous notes at :</p>
+<pre><code>postcraft/danny.ayers.name/content-raw/todo/2024-08.md
+-&gt;
+ `transmissions/docs/postcraft-site/todo/turtle-markdown.md`
+</code></pre>
+<p>[^1]: This is on my #todo list:</p>
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://danny.ayers.name">The Bumper Book of danja quotes</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://danny.ayers.name/me">Danny Ayers</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
+
+<p>[^2]: Another danja quote I would like out there is a modified version of the saying (questionably) attributed to <a href="https://en.wikipedia.org/wiki/Sun_Tzu">Sun Tzu</a> :</p>
+<blockquote>
+<p>If you wait by the interweb stream long enough, the implementation of your amazing idea will float by.</p>
+</blockquote>
+<p>[^3]: Maybe 8 years ago I was with my cousin Nick in a kitchen (at Geil Torrs?). He had an Elvis fridge magnet in his hand. As he stuck it onto the fridge, he said <strong>&quot;Elvis is cool!&quot;</strong> I nodded, smiled, said <em>&quot;Yup, he sure is.&quot;</em>. Nick repeated the gesture and words several times. I responded, increasingly bemused <em>&quot;yeah...&quot;</em>, before he gave up. It must have been about 3 years later, I was dozing off in bed, it finally hit me : <em>Elvis...cool...fridge</em>. Oh yeah, <strong>now I get it!</strong> I am genuinely really slow-witted.
+[^4]: I like to take a simplistic approach with data. Core <a href="https://en.wikipedia.org/wiki/Resource_Description_Framework">RDF</a> covers most of my bases, Turtle is nice and easy. Ok, at minimum <a href="https://en.wikipedia.org/wiki/Named_graph">Named Graphs</a>[^5] are essential too, especially when using <a href="https://en.wikipedia.org/wiki/SPARQL">SPARQL</a>. But while definitely <em>nice-to-know-they-exist</em>, personally I&#39;ve never actually found need for specs like <a href="https://en.wikipedia.org/wiki/TriG_(syntax)">TriG</a> or <a href="https://www.ontotext.com/knowledgehub/fundamentals/what-is-rdf-star/">RDF-*</a>. I&#39;m happy with the assumption that if there&#39;s an RDF format resource at say <a href="http://hyperdata.it/">http://hyperdata.it/</a>, then it MAY be considered a graph with the name `<a href="http://hyperdata.it/">http://hyperdata.it/</a>&#39;.
+[^5]: The Wikipedia page for <a href="https://en.wikipedia.org/wiki/Named_graph">Named Graphs</a> is still largely as I created it in 2010 (hat tip to self, but it did take me me 5 years to see their value, slowwww). TODO ping @bobdc &amp; Jeremy Carroll, prompt them to revise that page.</p>
+
+</article>
+<p class="post-title">
+    <a href="entries/2024-09-02_piano-piano.html">
+        Piano Piano Task Force and Namespaced Hashtags
+    </a>
+</p> <em>2024-09-02</em>
+        <div class="entry-footer">
+            <h2>About</h2>
+            
+        </div>
+    </body>
+</html>
