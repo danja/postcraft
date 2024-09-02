@@ -57,14 +57,26 @@ postcraft/danny.ayers.name/content-raw/todo/2024-08.md
  `transmissions/docs/postcraft-site/todo/turtle-markdown.md`
 ```
 
+- grrr, footnotes
+
 [^1]: This is on my #todo list:
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://danny.ayers.name">The Bumper Book of danja quotes</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://danny.ayers.name/me">Danny Ayers</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
+
+- grrr, footnotes
 
 [^2]: Another danja quote I would like out there is a modified version of the saying (questionably) attributed to [Sun Tzu](https://en.wikipedia.org/wiki/Sun_Tzu) :
 
 > If you wait by the interweb stream long enough, the implementation of your amazing idea will float by.
 
+- grrr, footnotes
+
 [^3]: Maybe 8 years ago I was with my cousin Nick in a kitchen (at Geil Torrs?). He had an Elvis fridge magnet in his hand. As he stuck it onto the fridge, he said **"Elvis is cool!"** I nodded, smiled, said _"Yup, he sure is."_. Nick repeated the gesture and words several times. I responded, increasingly bemused _"yeah..."_, before he gave up. It must have been about 3 years later, I was dozing off in bed, it finally hit me : _Elvis...cool...fridge_. Oh yeah, **now I get it!** I am genuinely really slow-witted.
+
+- grrr, footnotes
+
 [^4]: I like to take a simplistic approach with data. Core [RDF](https://en.wikipedia.org/wiki/Resource_Description_Framework) covers most of my bases, Turtle is nice and easy. Ok, at minimum [Named Graphs](https://en.wikipedia.org/wiki/Named_graph)[^5] are essential too, especially when using [SPARQL](https://en.wikipedia.org/wiki/SPARQL). But while definitely _nice-to-know-they-exist_, personally I've never actually found need for specs like [TriG](<https://en.wikipedia.org/wiki/TriG_(syntax)>) or [RDF-\*](https://www.ontotext.com/knowledgehub/fundamentals/what-is-rdf-star/). I'm happy with the assumption that if there's an RDF format resource at say http://hyperdata.it/, then it MAY be considered a graph with the name `http://hyperdata.it/'.
+
+- grrr, footnotes
+
 [^5]: The Wikipedia page for [Named Graphs](https://en.wikipedia.org/wiki/Named_graph) is still largely as I created it in 2010 (hat tip to self, but it did take me me 5 years to see their value, slowwww). TODO ping @bobdc & Jeremy Carroll, prompt them to revise that page.
