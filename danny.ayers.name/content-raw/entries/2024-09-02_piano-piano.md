@@ -77,7 +77,7 @@ postcraft/danny.ayers.name/content-raw/todo/2024-08.md
 
 - grrr, footnotes
 
-[^4]: I like to take a simplistic approach with data. Core [RDF](https://en.wikipedia.org/wiki/Resource_Description_Framework) covers most of my bases, Turtle is nice and easy. Ok, at minimum [Named Graphs](https://en.wikipedia.org/wiki/Named_graph)[^5] are essential too, especially when using [SPARQL](https://en.wikipedia.org/wiki/SPARQL). But while definitely _nice-to-know-they-exist_, personally I've never actually found need for specs like [TriG](<https://en.wikipedia.org/wiki/TriG_(syntax)>) or [RDF-\*](https://www.ontotext.com/knowledgehub/fundamentals/what-is-rdf-star/). I'm happy with the assumption that if there's an RDF format resource at say http://hyperdata.it/, then it MAY be considered a graph with the name `http://hyperdata.it/'.
+[^4]: I like to take a simplistic approach with data. Core [RDF](https://en.wikipedia.org/wiki/Resource_Description_Framework) covers most of my bases, Turtle is nice and easy. Ok, at minimum [Named Graphs](https://en.wikipedia.org/wiki/Named_graph)[^5] are essential too, especially when using [SPARQL](https://en.wikipedia.org/wiki/SPARQL). But while definitely _nice-to-know-they-exist_, personally I've never actually found need for specs like [TriG](<https://en.wikipedia.org/wiki/TriG_(syntax)>) or [RDF-\*](https://www.ontotext.com/knowledgehub/fundamentals/what-is-rdf-star/). I'm happy with the assumption that if there's an RDF resource at say http://hyperdata.it/, then (depending on the format defn) it MAY be considered a graph with the name `http://hyperdata.it/'.
 
 - grrr, footnotes
 
