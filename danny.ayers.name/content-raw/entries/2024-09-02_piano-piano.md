@@ -1,10 +1,8 @@
 # Piano Piano Task Force and Namespaced Hashtags
 
-_This was also a test to see if the markdown processor I'm using (?) understood GitHub-flavoured markdown footnotes. Apparently not, grrr._
-
 I'll need help from AI to get the wording of this more quotable, but something like :
 
-> The slow worker has the advantage of being able to take their time to think about things. [^1]
+> The slow worker has the advantage of being able to take their time to think about things.[^1]
 
 I am a slow worker and a slow thinker. Of course I'd rather I was Mr. Lightspeed[^2] externally and quick-witted[^3] internally. But there is a plus side to each failing (#neurodivergence). A case in point.
 
@@ -16,7 +14,7 @@ With [Postcraft](https://github.com/danja/postcraft) as my first practical appli
 
 So today it occurred to _slowww_ Danny, there's an low-effort/high-value thing available :
 
-## Namespaced Hashtags
+## Namespaced Hashtags {#namespaced-hashtags}
 
 ### Motivation
 
@@ -73,7 +71,9 @@ postcraft/danny.ayers.name/content-raw/todo/2024-08.md
 
 - grrr, footnotes
 
-[^3]: Maybe 8 years ago I was with my cousin Nick in a kitchen (at Geil Torrs?). He had an Elvis fridge magnet in his hand. As he stuck it onto the fridge, he said **"Elvis is cool!"** I nodded, smiled, said _"Yup, he sure is."_. Nick repeated the gesture and words several times. I responded, increasingly bemused _"yeah..."_, before he gave up. It must have been about 3 years later, I was dozing off in bed, it finally hit me : _Elvis...cool...fridge_. Oh yeah, **now I get it!** I am genuinely really slow-witted.
+[^3]:
+    Maybe 8 years ago I was with my cousin Nick in a kitchen (at Geil Torrs?). He had an Elvis fridge magnet in his hand. As he stuck it onto the fridge, he said **"Elvis is cool!"** I nodded, smiled, said _"Yup, he sure is."_. Nick repeated the gesture and words several times. I responded, increasingly bemused _"yeah..."_, before he gave up. It must have been about 3 years later, I was dozing off in bed, it finally hit me : _Elvis...cool...fridge_. Oh yeah, **now I get it!** I am genuinely really slow-witted.
+    _PS. I mentioned this in chat with Nick. He reckoned I had false memory syndrome. Ok, that's impossible to confirm or refute, but is definitely more fun-twisted if he's right._
 
 - grrr, footnotes
 
@@ -82,3 +82,7 @@ postcraft/danny.ayers.name/content-raw/todo/2024-08.md
 - grrr, footnotes
 
 [^5]: The Wikipedia page for [Named Graphs](https://en.wikipedia.org/wiki/Named_graph) is still largely as I created it in 2010 (hat tip to self, but it did take me me 5 years to see their value, slowwww). TODO ping @bobdc & Jeremy Carroll, prompt them to revise that page.
+
+### Footnote testing
+
+This was also a test to see if the markdown processor I'm using, [marked](https://marked.js.org/) understood GitHub-flavoured markdown footnotes. It didn't out of the box, but there was an easy-to-add extension, [marked-footnote](https://www.npmjs.com/package/marked-footnote). I've also added [marked-code-format](https://github.com/bent10/marked-extensions/tree/main/packages/code-format) There was a version conflit with [marked-gfm-heading-id](https://github.com/markedjs/marked-gfm-heading-id) so I tried [marked-custom-heading-id](https://www.npmjs.com/package/marked-custom-heading-id), which didn't work. I made have to code something up for that.
