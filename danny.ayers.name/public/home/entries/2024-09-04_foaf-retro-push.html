@@ -38,10 +38,21 @@
 <pre><code>./trans -d ../foaf-retro/src/applications postcraft ../foaf-retro/docs/postcraft
 </code></pre>
 <p>should run the application <code>postcraft</code> described in the dir <code>../foaf-retro/src/applications</code> with the target <code>../foaf-retro/docs/postcraft</code></p>
+<p>TODO integration tests for eg. :</p>
 <pre><code>./trans postcraft ../postcraft/danny.ayers.name
 
 ./trans -d ../foaf-retro/src/applications postcraft.render ../foaf-retro/docs/postcraft
 </code></pre>
+<p>It looks like it&#39;s running ok but the index page isn&#39;t getting properly build.</p>
+<p>Using the single transmission <code>postcraft.render</code> does reduce the material logged, but it would be better if there was a bit more flow control to skip services.</p>
+<p>TODO a <code>GOTO</code> service!</p>
+<p>D&#39;oh! I bet it&#39;s the loop I&#39;ve got going through the most recent posts.</p>
+<p>It was!!!</p>
+<pre><code> for (let i = rangeEnd; i &gt; rangeStart; i--) {
+...
+ for (let i = rangeEnd; i &gt;= rangeStart; i--) {
+</code></pre>
+<p>Fixed.</p>
 
 </article>
 <p class="post-title h-cinzel">
