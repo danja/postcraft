@@ -6,10 +6,12 @@ A little precursor to the precursors below, a workaround for my setup not yet su
 
 ```
 <a id="yak-hairs" class="anchor" />
+
 ## Yak Hairs
 ```
 
-<a id="yak-hairs" class="anchor" /> 
+<a id="yak-hairs" class="anchor" />
+
 ## Yak Hairs
 
 - [ ] #Transmissions external app call
