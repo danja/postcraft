@@ -14,8 +14,8 @@ A little precursor to the precursors below, a workaround for my setup not yet su
 
 ## Yak Hairs
 
-- [ ] #Transmissions external app call
-- [ ] publish FOAF Retro
+- [x] #Transmissions external app call
+- [x] publish FOAF Retro
 
 ### Transmissions external app call
 

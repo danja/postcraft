@@ -21,16 +21,16 @@
 
 # POST CONTENT
 t:PostContent a pc:ContentGroup ; 
+    rdfs:label "entries" ;
     pc:site <https://danny.ayers.name> ;
     pc:subdir "home" ; # better property name?
     fs:sourceDirectory "content-raw/entries" ; # SOURCE DIR HERE journal, entries
-    fs:targetDirectory "cache" ;
+    fs:targetDirectory "cache/entries" ;
     pc:template "layouts/mediocre/templates/entry-content_template.njk" .
 
 # POST PAGES
 t:PostPages a pc:ContentGroup ;
     pc:site <https://danny.ayers.name> ;
-   # fs:sourceDirectory "public/post-content-cache" ;
     fs:targetDirectory "public/home/entries" ;
     pc:template "layouts/mediocre/templates/entry-page_template.njk" .
 
@@ -40,7 +40,9 @@ t:IndexPage a pc:ContentGroup ; # TODO naming!
     fs:filepath "public/home/index.html" ;
     pc:template "layouts/mediocre/templates/index-page_template.njk" .
 
-# STYLES ETC not yet implemented
+
+
+# STYLES ETC currently just done with FileCopy
 t:CSS a pc:StaticGroup ;
     pc:site <https://danny.ayers.name> ;
     fs:sourceDirectory "layouts/mediocre/css" ;
