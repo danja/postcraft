@@ -224,6 +224,8 @@ ConfigMap, group =  http://hyperdata.it/transmissions/SampleGroup
 
 ```
 
+TODO while I'm here ... a little thing for `transmissions.ttl` : `trm:match "string"` so the service will be skipped unless `string` is matched. Thinking for XMPP agents.
+
 <a id="old-configmap" class="anchor" />
 
 ### `ConfigMap.js` as on 2024-09-06 morning :

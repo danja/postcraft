@@ -30,6 +30,364 @@
                 <!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
+        <a href="entries/test.html">#</a>
+    <p>test include</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="entries/test.html">
+        test.md
+    </a>
+</p> <em>2024-09-08</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="entries/2024-09-08_stormy.html">#</a>
+    <h1>Stormy Weather</h1>
+<p>I did start looking at server XMPP config again but a thunderstorm means the network is up &amp; down.</p>
+<p>Back to #Transmissions <code>ConfigMap</code>.</p>
+<p>Hmm. Need docs to make sense of these.</p>
+<p>Slight diversion : I&#39;m adding code into <code>DirWalker</code> to ignore markdown files with a name start with <code>_</code> underscore. Hardcoded for now (like accepting <code>.md</code>).</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="entries/2024-09-08_stormy.html">
+        Stormy Weather
+    </a>
+</p> <em>2024-09-08</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="entries/2024-09-07_xmpp-2.html">#</a>
+    <h1>Setting up XMPP pt.2</h1>
+<p>Yesterday I got to this:</p>
+<pre><code class="language-bash">nano /etc/ejabberd/ejabberd.yml
+ejabberdctl reload_config
+ejabberdctl request-certificate all
+</code></pre>
+<p>When I hit ACME rate limiting. I just tried again:</p>
+<pre><code class="language-bash">root@hyperdata:~# ejabberdctl request-certificate all
+Error: error
+Error: &quot;Challenge failed for domain conference.hyperdata.it: ACME server reported: 178.79.189.240: Invalid response from http://conference.hyperdata.it/.well-known/acme-challenge/XqMA-5eKaFy4hEmuP8jO7TUOzp_wmlvbR4DpuRpMqFY: 404 (error type: unauthorized)&quot;
+</code></pre>
+<p>At <a href="https://docs.ejabberd.im/admin/configuration/basic/#setting-up-acme">ejabberd setting up ACME</a>:</p>
+<pre><code class="language-yaml">listen:
+  - module: ejabberd_http
+    port: 5280
+    tls: false
+    request_handlers:
+      /.well-known/acme-challenge: ejabberd_acme
+</code></pre>
+<p>Hah!</p>
+<p>I just went to see what was happening on the server with:</p>
+<pre><code class="language-bash">lynx http://localhost:5280
+</code></pre>
+<p>And it gave me a sensible response. Then tried with <code>http://localhost:5280/admin</code> and it was asking for a login.</p>
+<p>Ok, so, how about in a desktop browser with <code>https://xmpp.hyperdata.it/admin/</code></p>
+<p>Yes! It let me log in as admin.</p>
+<p>But,</p>
+<blockquote>
+<p>Apparently your account has no administration rights in this server. Please check how to grant admin rights in: <a href="https://docs.ejabberd.im/admin/installation/#administration-account">https://docs.ejabberd.im/admin/installation/#administration-account</a></p>
+</blockquote>
+<p>Docs better at <a href="https://docs.ejabberd.im/admin/install/next-steps/#administration-account">https://docs.ejabberd.im/admin/install/next-steps/#administration-account</a></p>
+<p>Added:</p>
+<pre><code class="language-bash">acl:
+  admin:
+     user: admin@hyperdata.it
+</code></pre>
+<p>and the web interface is showing me stuff.</p>
+<p>The Dino XMPP client running on desktop isn&#39;t connecting. Checking my old notes... I mentioned <a href="https://mcabber.com/">mcabber</a> client, but nothing more.</p>
+<p>Downloaded Android monocle client to phone (from F-Droid)</p>
+<pre><code class="language-bash">ejabberdctl live
+...
+ERROR: The ejabberd node &#39;ejabberd@localhost&#39; is already running.
+root@hyperdata:/etc/nginx/sites-available# ps -aux | grep -i &#39;ejabberd&#39;
+kill 1234
+</code></pre>
+<p>I changed the static fs location in nginx conf to proxy instead. Got another rate limit. Grr.</p>
+<p>It was trying to set up certs on <code>hyperdata.it</code>.</p>
+<pre><code class="language-bash">hosts:
+  - localhost
+#  - hyperdata.it
+  - xmpp.hyperdata.it
+  ejabberdctl reload_config
+</code></pre>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="entries/2024-09-07_xmpp-2.html">
+        Setting up XMPP pt.2
+    </a>
+</p> <em>2024-09-08</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="entries/2024-09-06_xmpp.html">#</a>
+    <h1>Setting up XMPP</h1>
+<p>A little diversion. <a href="https://xmpp.org/">XMPP</a> on <code>hyperdata.it</code>. I took lots of notes last time I set it up, hopefully won&#39;t take long.</p>
+<p>First thing is to install <a href="https://docs.ejabberd.im/">ejabberd</a> and set it up with certs &amp; a handful of users. Then connect it to LDAP (already installed).</p>
+<p>18:00</p>
+<pre><code class="language-bash">apt install ejabberd
+...
+root@hyperdata:~#  ejabberdctl start
+ERROR: The ejabberd node &#39;ejabberd@localhost&#39; is already running.
+</code></pre>
+<p>Ok...</p>
+<pre><code class="language-bash">nano /etc/ejabberd/ejabberd.yml
+...
+hosts:
+  - localhost
+  - hyperdata.it
+...
+ejabberdctl reload_config
+ejabberdctl register admin hyperdata.it password
+...
+User admin@hyperdata.it successfully registered.
+</code></pre>
+<p>Apparently there should be an admin interface on <a href="https://hyperdata.it:5280/admin/">https://hyperdata.it:5280/admin/</a>
+LetsEncrypt time.</p>
+<pre><code>service ejabberd stop
+mv /etc/ejabberd/ejabberd.pem  /etc/ejabberd/ejabberd.pem.backup
+
+//certbot certonly --webroot -w /etc/ejabberd -d hyperdata.it --force-renewal --rsa-key-size 4096
+ certbot certonly -w /etc/ejabberd -d hyperdata.it
+ ...
+ says current cert is ok
+
+
+
+ok, looks like I&#39;ve set up DNS for `xmpp.hyperdata.it`
+
+https://stackoverflow.com/questions/56335966/how-to-renew-lets-encrypt-certificate-in-ejabberd-configured-server
+</code></pre>
+<p>Hmm. not sure how to make certbot aware of <code>xmpp.hyperdata.it</code> except for adding</p>
+<pre><code class="language-bash">nano /etc/nginx/sites-available/xmpp.hyperdata.it.conf
+...
+server {
+    server_name xmpp.hyperdata.it;
+
+    location / {
+        proxy_pass http://127.0.0.1:5280;
+        proxy_set_header Host $host;
+    }
+    listen 80;
+}
+...
+ln -s /etc/nginx/sites-available/xmpp.hyperdata.it.conf /etc/nginx/sites-enabled/xmpp.hyperdata.it.conf
+systemctl restart nginx
+certbot
+...chose  xmpp.hyperdata.it
+Successfully deployed certificate for xmpp.hyperdata.it
+</code></pre>
+<p>ufw disable</p>
+<p>Hmm. Next...</p>
+<pre><code class="language-bash">cat /etc/letsencrypt/live/hyperdata.it/privkey.pem /etc/letsencrypt/live/xmpp.hyperdata.it/fullchain.pem &gt; ejabberd.pem
+</code></pre>
+<p><a href="https://hyperdata.it:5280/admin/">https://hyperdata.it:5280/admin/</a></p>
+<p>nano /etc/ejabberd/ejabberd.yml
+add xmpp.hyperdata.it
+ejabberdctl reload_config
+ejabberdctl register admin hyperdata.it password</p>
+<p>admin</p>
+<p>alice
+bob
+canary
+danbri
+maxf</p>
+<p>danja
+dogbot
+mari</p>
+<p>19:00 - reboot, dogwalk</p>
+<p>20:00 - back. <code>ejabberd</code> came back fine</p>
+<p>Currently <code>https://xmpp.hyperdata.it/</code> is giving me a 502 Bad Gateway (through nginx).</p>
+<p>None of the likely HTTP endpoints work. nginx logs...</p>
+<p>TODO /home/www/danny.ayers.name/robots.txt and .ico</p>
+<p>TODO archive.org for &quot;GET /wordpress/wp-content/uploads/2015/11/dscn6185.jpg HTTP/1.1&quot;, host: &quot;hyperdata.it&quot;</p>
+<p>Before I forget - ufw firewall open for whatever XMPP uses</p>
+<p><a href="https://stackoverflow.com/questions/3452161/which-ports-does-xmpp-use">https://stackoverflow.com/questions/3452161/which-ports-does-xmpp-use</a></p>
+<pre><code class="language-bash">ufw allow 5222
+ufw allow 5269
+ufw enable
+ufw status
+</code></pre>
+<p>Eyeball config :</p>
+<pre><code class="language-bash">nano /etc/ejabberd/ejabberd.yml
+</code></pre>
+<p>onto : <code>/var/log/ejabberd</code></p>
+<p>both <code>ejabberd.log</code> and <code>error.log</code> say it&#39;s not seeing the certfile. Path or permissions?</p>
+<p>Check my notes...</p>
+<blockquote>
+<p>THISSSSSSS
+certbot --key-type ecdsa --cert-name xmpp.hyperdata.it</p>
+</blockquote>
+<p>Hmm. That looks like it&#39;s ok already.</p>
+<pre><code class="language-yaml">certfiles:
+  - &quot;/etc/ejabberd/ejabberd.pem&quot;
+#  - /etc/letsencrypt/live/localhost/fullchain.pem
+#  - /etc/letsencrypt/live/localhost/privkey.pem
+---
+adding
+
+- /etc/letsencrypt/live/hyperdata.it/fullchain.pem
+- /etc/letsencrypt/live/hyperdata.it/privkey.pem
+- /etc/letsencrypt/live/xmpp.hyperdata.it/fullchain.pem
+- /etc/letsencrypt/live/xmpp.hyperdata.it/privkey.pem
+---
+ejabberdctl reload_config
+</code></pre>
+<p>Hmm. why is the first one in quotes?</p>
+<p><a href="https://docs.ejabberd.im/admin/configuration">https://docs.ejabberd.im/admin/configuration</a></p>
+<pre><code class="language-bash">ejabberdctl request-certificate all
+Error: error
+Error: &quot;Challenge failed for domain conference.hyperdata.it: ACME server reported: 178.79.189.240: Invalid response from http://conference.hyperdata.it/.well-known/acme-challenge/Wy7YZJQD9wGdOLI9tyv2oKyTTktvnGtWVgIaEhd1qZg: 404 (error type: unauthorized)&quot;
+</code></pre>
+<p><a href="https://www.process-one.net/blog/ejabberd-xmpp-server-useful-configuration-steps/">https://www.process-one.net/blog/ejabberd-xmpp-server-useful-configuration-steps/</a></p>
+<p>suggests A records for :</p>
+<ul>
+<li>conference</li>
+<li>proxy</li>
+<li>pubsub</li>
+<li>upload</li>
+</ul>
+<p>My DNS aready has :</p>
+<pre><code>conference 10800 IN CNAME hyperdata.it.
+</code></pre>
+<p>etc.</p>
+<p>I saw mention of <code>chat</code> somewhere too - might as well add that too.</p>
+<p>It&#39;s poking at the filesystem, so I guess I should make dirs &amp; nginx config for those.</p>
+<pre><code class="language-bash">root@hyperdata:/home/www# tree xmpp
+xmpp
+├── chat
+├── conference
+├── proxy
+├── pubsub
+└── upload
+</code></pre>
+<p><a href="https://foaf-retro.hyperdata.it/">https://foaf-retro.hyperdata.it/</a></p>
+<pre><code>server {
+    listen 80;
+    server_name chat.hyperdata.it;
+
+    # Hide nginx version
+    server_tokens off;
+
+    location / {
+        root /home/www/xmpp/chat;
+        index index.html index.htm index.ttl;
+        try_files $uri $uri/ =404;
+    }
+}
+
+server {
+    listen 80;
+    server_name conference.hyperdata.it;
+
+    # Hide nginx version
+    server_tokens off;
+
+    location / {
+        root /home/www/xmpp/conference;
+        index index.html index.htm index.ttl;
+        try_files $uri $uri/ =404;
+    }
+}
+
+server {
+    listen 80;
+    server_name proxy.hyperdata.it;
+
+    # Hide nginx version
+    server_tokens off;
+
+    location / {
+        root /home/www/xmpp/proxy;
+        index index.html index.htm index.ttl;
+        try_files $uri $uri/ =404;
+    }
+}
+server {
+    listen 80;
+    server_name pubsub.hyperdata.it;
+
+    # Hide nginx version
+    server_tokens off;
+
+    location / {
+        root /home/www/xmpp/pubsub;
+        index index.html index.htm index.ttl;
+        try_files $uri $uri/ =404;
+    }
+}
+server {
+    listen 80;
+    server_name upload.hyperdata.it;
+
+    # Hide nginx version
+    server_tokens off;
+
+    location / {
+        root /home/www/xmpp/upload;
+        index index.html index.htm index.ttl;
+        try_files $uri $uri/ =404;
+    }
+}
+</code></pre>
+<p>While I&#39;m here :</p>
+<pre><code>server {
+    listen 80;
+    server_name kia.hyperdata.it;
+
+    # Hide nginx version
+    server_tokens off;
+
+    location / {
+        root /home/www/kia;
+        index index.html index.htm index.ttl;
+        try_files $uri $uri/ =404;
+    }
+}
+
+...
+ln -s /etc/nginx/sites-available/kia.hyperdata.it.conf /etc/nginx/sites-enabled/kia.hyperdata.it.conf
+nginx -t
+systemctl restart nginx
+certbot
+</code></pre>
+<p>KIA done.</p>
+<p>Back to :</p>
+<pre><code class="language-bash">ejabberdctl request-certificate all
+</code></pre>
+<p>Grrr! Tucked away in the docs it says you have to turn off TLS first :</p>
+<pre><code>listen:
+  -
+    module: ejabberd_http
+    port: 5280
+    tls: false
+    request_handlers:
+      /.well-known/acme-challenge: ejabberd_acme
+</code></pre>
+<pre><code class="language-bash">nano /etc/ejabberd/ejabberd.yml
+ejabberdctl reload_config
+ejabberdctl request-certificate all
+</code></pre>
+<blockquote>
+<p>Error: &quot;ACME server reported: Error creating new order :: too many failed authorizations recently: see <a href="https://letsencrypt.org/docs/failed-validation-limit/">https://letsencrypt.org/docs/failed-validation-limit/</a> (error type: rateLimited)&quot;</p>
+</blockquote>
+<p>certbot has a dry run option, does this?</p>
+<p>Ok, enough for today.</p>
+<p>21:37</p>
+<p>my hosts</p>
+<pre><code>root@hyperdata:/etc/nginx/sites-available# ls ../sites-enabled/
+danny.ayers.name.conf         fuseki.conf            ps.hyperdata.it.conf  strandz.it.conf
+elfquake.org.conf             hyperdata.it.conf      ps.strandz.it.conf    xmpp.hyperdata.it.conf
+foaf-retro.hyperdata.it.conf  kia.hyperdata.it.conf  solid.conf
+</code></pre>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="entries/2024-09-06_xmpp.html">
+        Setting up XMPP
+    </a>
+</p> <em>2024-09-08</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
         <a href="entries/2024-09-06_configmap.html">#</a>
     <h1>Refactoring ConfigMap</h1>
 <p>This won&#39;t mean much to anyone else today, before I&#39;ve done more docs for #Transmissions. But It&#39;s a bit twisty, writing it done will help me figure it out.</p>
@@ -197,6 +555,7 @@ logger.debug(`ConfigMap, group =  ${group}`);
 ConfigMap, Using configKey http://hyperdata.it/transmissions/postcraftMap
 ConfigMap, group =  http://hyperdata.it/transmissions/SampleGroup
 </code></pre>
+<p>TODO while I&#39;m here ... a little thing for <code>transmissions.ttl</code> : <code>trm:match &quot;string&quot;</code> so the service will be skipped unless <code>string</code> is matched. Thinking for XMPP agents.</p>
 <a id="old-configmap" class="anchor" />
 
 <h3><code>ConfigMap.js</code> as on 2024-09-06 morning :</h3>
@@ -350,239 +709,7 @@ export default ConfigMap;
     <a href="entries/2024-09-06_configmap.html">
         Refactoring ConfigMap
     </a>
-</p> <em>2024-09-06</em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="entries/2024-09-05_sidebars.html">#</a>
-    <h1>Postcraft Sidebars</h1>
-<p>I&#39;ve got a #Postcraft instance for <a href="https://foaf-retro.hyperdata.it/">FOAF-Retro</a> ok now.</p>
-<p>It needs populating. Placeholders for content will be useful.</p>
-<p>Sidebars. Mostly links.</p>
-<p>These could be :</p>
-<ol>
-<li>hardcoded in the (nunjucks) templates</li>
-<li>specified in <code>manifest.ttl</code></li>
-<li>specified in markdown files</li>
-</ol>
-<p>First pass, a combination of 2. and 3.</p>
-<p>While I&#39;m looking at this, it makes sense to also consider :</p>
-<p>TODO to ignore files who&#39;s name begins with an underscore. That seems the easiest way of managing drafts.</p>
-<p>TODO some way of making a list of (most) posts in a dir.</p>
-<p>Ew. <code>src/services/rdf/ConfigMap.js</code> is <em>very</em> specific. Hardcoded.</p>
-<p>TODO little change in <code>manifest.ttl</code></p>
-<pre><code>  fs:targetDirectory &quot;cache/entries&quot; ;
-</code></pre>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="entries/2024-09-05_sidebars.html">
-        Postcraft Sidebars
-    </a>
-</p> <em>2024-09-06</em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="entries/2024-09-04_foaf-retro-push.html">#</a>
-    <h1>FOAF Retro Push</h1>
-<hr>
-<p>A little precursor to the precursors below, a workaround for my setup not yet supporting HTML anchors in markdown. Below is :</p>
-<pre><code>&lt;a id=&quot;yak-hairs&quot; class=&quot;anchor&quot; /&gt;
-
-## Yak Hairs
-</code></pre>
-<a id="yak-hairs" class="anchor" />
-
-<h2>Yak Hairs</h2>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> #Transmissions external app call</li>
-<li><input checked="" disabled="" type="checkbox"> publish FOAF Retro</li>
-</ul>
-<h3>Transmissions external app call</h3>
-<p>In the <code>transmissions</code> dir (on my destop machine, <code>/home/danny/github-danny/transmissions</code>) :</p>
-<pre><code>./trans -d ../foaf-retro/src/applications postcraft ../foaf-retro/docs/postcraft
-</code></pre>
-<p>should run the application <code>postcraft</code> described in the dir <code>../foaf-retro/src/applications</code> with the target <code>../foaf-retro/docs/postcraft</code></p>
-<p>TODO integration tests for eg. :</p>
-<pre><code>./trans postcraft ../postcraft/danny.ayers.name
-
-./trans -d ../foaf-retro/src/applications postcraft.render ../foaf-retro/docs/postcraft
-</code></pre>
-<p>It looks like it&#39;s running ok but the index page isn&#39;t getting properly build.</p>
-<p>Using the single transmission <code>postcraft.render</code> does reduce the material logged, but it would be better if there was a bit more flow control to skip services.</p>
-<p>TODO a <code>GOTO</code> service!</p>
-<p>D&#39;oh! I bet it&#39;s the loop I&#39;ve got going through the most recent posts.</p>
-<p>It was!!!</p>
-<pre><code> for (let i = rangeEnd; i &gt; rangeStart; i--) {
-...
- for (let i = rangeEnd; i &gt;= rangeStart; i--) {
-</code></pre>
-<p>Fixed.</p>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="entries/2024-09-04_foaf-retro-push.html">
-        FOAF Retro Push
-    </a>
-</p> <em>2024-09-06</em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="entries/2024-09-02_piano-piano.html">#</a>
-    <h1>Piano Piano Task Force and Namespaced Hashtags</h1>
-<p>I&#39;ll need help from AI to get the wording of this more quotable, but something like :</p>
-<blockquote>
-<p>The slow worker has the advantage of being able to take their time to think about things.<sup><a id="footnote-ref-1" href="#footnote-1" data-footnote-ref aria-describedby="footnote-label">1</a></sup></p>
-</blockquote>
-<p>I am a slow worker and a slow thinker. Of course I&#39;d rather I was Mr. Lightspeed<sup><a id="footnote-ref-2" href="#footnote-2" data-footnote-ref aria-describedby="footnote-label">2</a></sup> externally and quick-witted<sup><a id="footnote-ref-3" href="#footnote-3" data-footnote-ref aria-describedby="footnote-label">3</a></sup> internally. But there is a plus side to each failing (#neurodivergence). A case in point.</p>
-<p>I&#39;ve gravitated to two formats for stuff I write : <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> for any text, <a href="https://en.wikipedia.org/wiki/Turtle_(syntax">Turtle</a> for any data (for code I currently favour JS, another story).</p>
-<p>You can say anything in #Turtle (ok, with provisos <sup><a id="footnote-ref-4" href="#footnote-4" data-footnote-ref aria-describedby="footnote-label">4</a></sup>). But there aren&#39;t many vectors through which to cleanly and <em>easily</em> extend markdown. Bridging the two has been lurking around my #todo lists for while.</p>
-<p>With <a href="https://github.com/danja/postcraft">Postcraft</a> as my first practical application of my pipeliney thing <a href="https://github.com/danja/transmissions">Transmissions</a>, I have been pondering what I might slip in. A page like this is written in markdown, a <em>transmission</em> is used to render it to HTML. But into that transmission I can throw in whatever pre-processors I fancy.</p>
-<p>So today it occurred to <em>slowww</em> Danny, there&#39;s an low-effort/high-value thing available :</p>
-<h2>Namespaced Hashtags {#namespaced-hashtags}</h2>
-<h3>Motivation</h3>
-<p>Ok, so #hashtag is a convention for a keyword. But it&#39;s all very folksy, prone to ambiguity, is #swift a bird or a singer?</p>
-<p>In practice, I want to get my tokens as cleanly separated as I can, so they get a head start in vector space.</p>
-<p>I bet someone&#39;s done this before, but still, this :</p>
-<h3>Specification</h3>
-<p><em>ok, first pass, formal-ish :</em></p>
-<ol>
-<li>Within any document resource, a string of the form <code>#hashtag</code> will be assumed to have no significance under this specification.</li>
-<li>Within a document resource, eg. <code>http://example.org/birdies.md</code> a string of the form <code>#ns:hashtag</code> will be interpreted as a pair of identifiers associated with the document, <code>ns</code> and <code>hashtag</code>.</li>
-<li>Within the domain <code>http://example.org</code> a document resource a string of the form <code>#ns:hashtag</code> SHOULD have an easily-accessible means of interpreting the significance of <code>ns</code> and <code>hashtag</code></li>
-<li><code>ns</code> will identify a namespace (as per XML &amp; RDF prefix notation), which SHOULD be associated with a URI</li>
-<li><code>hashtag</code> will identify a term which SHOULD be defined within the namespace document and identified with a URI, eg. <code>http://example.org/terms/swift</code></li>
-<li><code>#ns:hashtag</code> MAY be interpreted as the statement `<a href="http://example.org/birdies.md">http://example.org/birdies.md</a> rdfs:seeAlso <a href="http://example.org/terms#swift">http://example.org/terms#swift</a> . (and whatever else)</li>
-</ol>
-<p><em>in practice...</em></p>
-<p>Not entirely sure yet, but in the <em>transmission</em> I&#39;ll regex/template this out so that <code>#ns:hashtag</code> turns into something like:</p>
-<pre><code>[#hashtag](http://example.org/terms?ns-hashtag)
-</code></pre>
-<p>Respond to that on the server with the results of a SPARQL query and/or vector similarity giving the term defn and/or related pages.</p>
-<ul>
-<li>TODO RFC refs for all the terms above</li>
-<li>TODO <a href="https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form">BNFs</a></li>
-<li>TODO write up #h:griller spec (GRDDL for JSON &amp; markdown)</li>
-</ul>
-<p>Previous notes at :</p>
-<pre><code>postcraft/danny.ayers.name/content-raw/todo/2024-08.md
--&gt;
- `transmissions/docs/postcraft-site/todo/turtle-markdown.md`
-</code></pre>
-<ul>
-<li>grrr, footnotes</li>
-</ul>
-<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://danny.ayers.name">The Bumper Book of danja quotes</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://danny.ayers.name/me">Danny Ayers</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
-
-<ul>
-<li>grrr, footnotes</li>
-</ul>
-<blockquote>
-<p>If you wait by the interweb stream long enough, the implementation of your amazing idea will float by.</p>
-</blockquote>
-<ul>
-<li>grrr, footnotes</li>
-</ul>
-<ul>
-<li>grrr, footnotes</li>
-</ul>
-<ul>
-<li>grrr, footnotes</li>
-</ul>
-<h3>Footnote testing</h3>
-<p>This was also a test to see if the markdown processor I&#39;m using, <a href="https://marked.js.org/">marked</a> understood GitHub-flavoured markdown footnotes. It didn&#39;t out of the box, but there was an easy-to-add extension, <a href="https://www.npmjs.com/package/marked-footnote">marked-footnote</a>. I&#39;ve also added <a href="https://github.com/bent10/marked-extensions/tree/main/packages/code-format">marked-code-format</a> There was a version conflit with <a href="https://github.com/markedjs/marked-gfm-heading-id">marked-gfm-heading-id</a> so I tried <a href="https://www.npmjs.com/package/marked-custom-heading-id">marked-custom-heading-id</a>, which didn&#39;t work. I made have to code something up for that.</p>
-<section class="footnotes" data-footnotes>
-<h2 id="footnote-label" class="sr-only">Footnotes</h2>
-<ol>
-<li id="footnote-1">
-<p>This is on my #todo list: <a href="#footnote-ref-1" data-footnote-backref aria-label="Back to reference 1">↩</a></p>
-</li>
-<li id="footnote-2">
-<p>Another danja quote I would like out there is a modified version of the saying (questionably) attributed to <a href="https://en.wikipedia.org/wiki/Sun_Tzu">Sun Tzu</a> : <a href="#footnote-ref-2" data-footnote-backref aria-label="Back to reference 2">↩</a></p>
-</li>
-<li id="footnote-3">
-<p>Maybe 8 years ago I was with my cousin Nick in a kitchen (at Geil Torrs?). He had an Elvis fridge magnet in his hand. As he stuck it onto the fridge, he said <strong>&quot;Elvis is cool!&quot;</strong> I nodded, smiled, said <em>&quot;Yup, he sure is.&quot;</em>. Nick repeated the gesture and words several times. I responded, increasingly bemused <em>&quot;yeah...&quot;</em>, before he gave up. It must have been about 3 years later, I was dozing off in bed, it finally hit me : <em>Elvis...cool...fridge</em>. Oh yeah, <strong>now I get it!</strong> I am genuinely really slow-witted.
-<em>PS. I mentioned this in chat with Nick. He reckoned I had false memory syndrome. Ok, that&#39;s impossible to confirm or refute, but is definitely more fun-twisted if he&#39;s right.</em> <a href="#footnote-ref-3" data-footnote-backref aria-label="Back to reference 3">↩</a></p>
-</li>
-<li id="footnote-4">
-<p>I like to take a simplistic approach with data. Core <a href="https://en.wikipedia.org/wiki/Resource_Description_Framework">RDF</a> covers most of my bases, Turtle is nice and easy. Ok, at minimum <a href="https://en.wikipedia.org/wiki/Named_graph">Named Graphs</a><sup><a id="footnote-ref-5" href="#footnote-5" data-footnote-ref aria-describedby="footnote-label">5</a></sup> are essential too, especially when using <a href="https://en.wikipedia.org/wiki/SPARQL">SPARQL</a>. But while definitely <em>nice-to-know-they-exist</em>, personally I&#39;ve never actually found need for specs like <a href="https://en.wikipedia.org/wiki/TriG_(syntax)">TriG</a> or <a href="https://www.ontotext.com/knowledgehub/fundamentals/what-is-rdf-star/">RDF-*</a>. I&#39;m happy with the assumption that if there&#39;s an RDF resource at say <a href="http://hyperdata.it/">http://hyperdata.it/</a>, then (depending on the format defn) it MAY be considered a graph with the name `<a href="http://hyperdata.it/">http://hyperdata.it/</a>&#39;. <a href="#footnote-ref-4" data-footnote-backref aria-label="Back to reference 4">↩</a></p>
-</li>
-<li id="footnote-5">
-<p>The Wikipedia page for <a href="https://en.wikipedia.org/wiki/Named_graph">Named Graphs</a> is still largely as I created it in 2010 (hat tip to self, but it did take me me 5 years to see their value, slowwww). TODO ping @bobdc &amp; Jeremy Carroll, prompt them to revise that page. <a href="#footnote-ref-5" data-footnote-backref aria-label="Back to reference 5">↩</a></p>
-</li>
-</ol>
-</section>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="entries/2024-09-02_piano-piano.html">
-        Piano Piano Task Force and Namespaced Hashtags
-    </a>
-</p> <em>2024-09-06</em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="entries/2024-08-29_cleaner.html">#</a>
-    <h1>Postcraft Cleaner</h1>
-<p>A quick job to start the day. I need a #transmission, as part of #Postcraft, that will wipe all rendered files - cache and <code>.html</code>.</p>
-<p>Ideally to run as :</p>
-<pre><code>./trans postcraft clean /home/danny/github-danny/postcraft/danny.ayers.name
-</code></pre>
-<p>The current runner is :</p>
-<pre><code>./run postcraft /home/danny/github-danny/postcraft/danny.ayers.name
-or
-./run postcraft-beta /home/danny/github-danny/postcraft/danny.ayers.name
-</code></pre>
-<p>This will involve addressing more than one transmission in <code>transmission.ttl</code></p>
-<p>TODO rename <code>transmission.ttl</code> to <code>transmissions.ttl</code></p>
-<p>TODO rename <code>trm:Pipeline</code> etc</p>
-<p>Starting point, I need a key for the separate transmissions.<code>rdfs:label</code> will do.</p>
-<pre><code>:clean a trm:Pipeline ;
-    rdfs:label &quot;clean&quot; ;
-    rdfs:comment &quot;directory cleaner&quot; ;
-    trm:pipe (:SC) .
-</code></pre>
-<p>Yuck, so many TODOs!</p>
-<p>Jeez, that took me a very long time. I really need to write those <code>grapoi</code> docs.</p>
-<p><strong>2024-08-30</strong> continued</p>
-<p>That was unpleasant, sorting out the command-line (<code>yargs</code>) handling. Settled on a reasonable neat solution for subtasks/named transmissions, a dot notation :</p>
-<pre><code>./trans postcraft-beta.clean ../postcraft/danny.ayers.name
-</code></pre>
-<p><strong>2024-09-01</strong></p>
-<p>A quick test of this :</p>
-<pre><code>&lt;details&gt;
-&lt;summary&gt;More&lt;/summary&gt;
-&lt;p&gt;
-This should show more.
-&lt;/p&gt;
-&lt;/details&gt;
-</code></pre>
-<details>
-<summary>More</summary>
-<p>
-This should show more.
-</p>
-</details>
-
-<hr>
-<p>Grr. I suppose I&#39;d better do some light tweaking before putting this into place.</p>
-<ul>
-<li>Group the markdown dirs. A <code>raw</code> dir suits me.</li>
-<li>Rename <code>cache</code></li>
-</ul>
-<p>I want to keep the dir structures in places, but pull the content from git so I&#39;ll put a flag in <code>FileRemove</code> to ignore <code>.dotfiles</code>.
-In <code>.gitignore</code> maybe:</p>
-<pre><code>cache/*
-!cache/.*
-</code></pre>
-<p>I also need to copy across static content.</p>
-<pre><code>danny.ayers.name/public/home
-</code></pre>
-<p>Phew! Ok, done all that.</p>
-<p>TODO <code>services/DatasetReader</code> is very hard-coded.</p>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="entries/2024-08-29_cleaner.html">
-        Postcraft Cleaner
-    </a>
-</p> <em>2024-09-06</em>
+</p> <em>2024-09-08</em>
             </article>
         </div>
         <div class="main-grid-item about">

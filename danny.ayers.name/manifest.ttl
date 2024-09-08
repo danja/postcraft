@@ -19,7 +19,7 @@
     
 # this should maybe give the contentgroup a renderType, indirect with template etc
 
-# POST CONTENT
+# ENTRIES CONTENT
 t:PostContent a pc:ContentGroup ; 
     rdfs:label "entries" ;
     pc:site <https://danny.ayers.name> ;
@@ -28,19 +28,29 @@ t:PostContent a pc:ContentGroup ;
     fs:targetDirectory "cache/entries" ;
     pc:template "layouts/mediocre/templates/entry-content_template.njk" .
 
-# POST PAGES
+# ENTRIES PAGES
 t:PostPages a pc:ContentGroup ;
     pc:site <https://danny.ayers.name> ;
     fs:targetDirectory "public/home/entries" ;
     pc:template "layouts/mediocre/templates/entry-page_template.njk" .
 
-# MAIN PAGE
+# ENTRIES MAIN PAGE
 t:IndexPage a pc:ContentGroup ; # TODO naming!
     pc:site <https://danny.ayers.name> ;
     fs:filepath "public/home/index.html" ;
     pc:template "layouts/mediocre/templates/index-page_template.njk" .
 
+#################################
+# ENTRIES CONTENT
+t:TodoContent a pc:ContentGroup ; 
+    rdfs:label "todo" ;
+    pc:site <https://danny.ayers.name> ;
+    pc:subdir "home" ; # better property name?
+    fs:sourceDirectory "content-raw/todo" ; # SOURCE DIR HERE journal, entries
+    fs:targetDirectory "cache/todo" ;
+    pc:template "layouts/mediocre/templates/entry-content_template.njk" .
 
+####################################
 
 # STYLES ETC currently just done with FileCopy
 t:CSS a pc:StaticGroup ;
