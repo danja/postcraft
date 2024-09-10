@@ -30,6 +30,39 @@
                 <!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
+        <a href="entries/2024-09-09_holst.html">#</a>
+    <h1>The Planets</h1>
+<p>On BBC Radio 4 this morning there was a prog <a href="https://www.bbc.co.uk/sounds/play/m0022t6x">How to Play</a> featuring Holst&#39;s &#39;The Planets&#39;.</p>
+<p>Gives me today&#39;s analogy for my recurring problem of how best to spend my time.</p>
+<p>My todo list for today might well be changed if some money I&#39;m hoping is coming my way arrives today, but for now I&#39;ll assume it isn&#39;t.</p>
+<p>I want to get XMPP up and running asap but I&#39;ve got to a point with #Postcraft where I can start organising my notes better (and putting them online).</p>
+<h2>Postcraft/Transmissions</h2>
+<ul>
+<li>write a top-level list of what I&#39;m working on</li>
+<li>set up placeholder Postcraft setups as appropriate</li>
+</ul>
+<p><a href="https://markmap.js.org/docs/markmap">markmap</a></p>
+<p><a href="https://markmap.js.org/docs/packages--markmap-lib">markmap-lib</a></p>
+<p><a href="https://markmap.js.org/docs/json-options">markmap JSON Options</a> - note Markdown Frontmatter</p>
+<p><code>/home/danny/github-danny/postcraft/danny.ayers.name/content-raw/articles/about/what-am-i-doing.md</code></p>
+<p>TODO Postcraft backup transmission
+TODO Transmissions conditionals (+ list other constructs somewhere)
+TODO todo list extractor</p>
+<p>TODO markmap interactive page</p>
+<h2>XMPP</h2>
+<ul>
+<li>get the server working</li>
+<li>make a (client) test script</li>
+</ul>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="entries/2024-09-09_holst.html">
+        The Planets
+    </a>
+</p> <em>2024-09-09</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
         <a href="entries/2024-09-08_xmpp-3.html">#</a>
     <h1>Setting up XMPP pt.3</h1>
 <p><a href="https://github.com/mathiasertl/xmpp-test">https://github.com/mathiasertl/xmpp-test</a></p>
@@ -50,19 +83,23 @@ cd xmpp-test# pip install -r requirements.txt
 pip install -r requirements.txt
 </code></pre>
 <p>deactivate</p>
-<p>grrr.</p>
+<p>grrr. Incompatible dependency.</p>
 <p><a href="https://stackoverflow.com/questions/72032032/importerror-cannot-import-name-iterable-from-collections-in-python">https://stackoverflow.com/questions/72032032/importerror-cannot-import-name-iterable-from-collections-in-python</a></p>
 <p>I could fork &amp; tweak...</p>
 <p>but my own code can probably do the same.</p>
 <p>I think <a href="https://github.com/danja/dogbot">https://github.com/danja/dogbot</a> was my latest.</p>
 <p>Later.</p>
+<p>// ejabberdctl register dogbot hyperdata.it
+// ejabberdctl change_password dogbot hyperdata.it doggy</p>
+<p>nano /etc/ejabberd/ejabberd.yml
+ejabberdctl reload_config</p>
 
 </article>
 <p class="post-title h-cinzel">
     <a href="entries/2024-09-08_xmpp-3.html">
         Setting up XMPP pt.3
     </a>
-</p> <em>2024-09-08</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-09-09</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-09-08_stormy.html">#</a>
@@ -77,7 +114,7 @@ pip install -r requirements.txt
     <a href="entries/2024-09-08_stormy.html">
         Stormy Weather
     </a>
-</p> <em>2024-09-08</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-09-09</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-09-07_xmpp-2.html">#</a>
@@ -123,7 +160,10 @@ Error: &quot;Challenge failed for domain conference.hyperdata.it: ACME server re
 <pre><code class="language-bash">ejabberdctl live
 ...
 ERROR: The ejabberd node &#39;ejabberd@localhost&#39; is already running.
-root@hyperdata:/etc/nginx/sites-available# ps -aux | grep -i &#39;ejabberd&#39;
+
+
+ps -aux | grep -i &#39;ejabberd&#39;
+
 kill 1234
 </code></pre>
 <p>I changed the static fs location in nginx conf to proxy instead. Got another rate limit. Grr.</p>
@@ -140,7 +180,7 @@ kill 1234
     <a href="entries/2024-09-07_xmpp-2.html">
         Setting up XMPP pt.2
     </a>
-</p> <em>2024-09-08</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-09-09</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-09-06_xmpp.html">#</a>
@@ -409,331 +449,7 @@ foaf-retro.hyperdata.it.conf  kia.hyperdata.it.conf  solid.conf
     <a href="entries/2024-09-06_xmpp.html">
         Setting up XMPP
     </a>
-</p> <em>2024-09-08</em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="entries/2024-09-06_configmap.html">#</a>
-    <h1>Refactoring ConfigMap</h1>
-<p>This won&#39;t mean much to anyone else today, before I&#39;ve done more docs for #Transmissions. But It&#39;s a bit twisty, writing it done will help me figure it out.</p>
-<p>TODO copy some of this across for Transmissions docs</p>
-<p>A transmission is a pipeline of services, each of the form :</p>
-<pre><code class="language-javascript">
-class Dave extends Service {
-  constructor(config) {
-    super(config)
-  }
-
-  async execute(message) {
-
-    // process message
-
-    this.emit(&#39;message&#39;, message)
-  }
-
-export default Dave
-</code></pre>
-<p>Each service should be relatively simple (for easy dev and to facilitate reuse). It will have a functional description (currently just in comments) called a #Signature.</p>
-<hr>
-<p>The signature for <code>ConfigMap</code> (<a href="#old-configmap">current source below</a>) includes the description :</p>
-<blockquote>
-<p>Maps RDF dataset contents to key-value pairs in the message object based on services-config.ttl</p>
-</blockquote>
-<p>Ok...it is kinda doing that, but it&#39;s hardcoded for the #Postcraft flow. I need to look at the message before &amp; after.</p>
-<p>TODO message diff (premessage)-&gt;ServiceUnderTest-&gt;(postmessage)-&gt;Diff-&gt;(postmessage-premessage)</p>
-<p>TODO setup <a href="https://jena.apache.org/documentation/tools/index.html">Jena command-line tools</a> (has rdfdiff)</p>
-<p>Actually I need <code>diff</code> before that - check I haven&#39;t made significant changes to the RDF when playing with #FOAFRetro. Checking <a href="https://www.geeksforgeeks.org/diff-command-linux-examples/">diff examples</a>...</p>
-<pre><code class="language-bash">diff /home/danny/github-danny/transmissions/src/applications/postcraft/transmissions.ttl /home/danny/github-danny/foaf-retro/src/applications/postcraft/transmissions.ttl
-</code></pre>
-<p>Same.</p>
-<pre><code class="language-bash">diff /home/danny/github-danny/transmissions/src/applications/postcraft/services-config.ttl /home/danny/github-danny/foaf-retro/src/applications/postcraft/services-config.ttl
-</code></pre>
-<p>Same.</p>
-<p>How to check the messages?</p>
-<p>Handy, there&#39;s only one <code>ConfigMap</code> and it&#39;s early on. I can just pop in a couple of <code>ShowMessage</code> services followed by a <code>DeadEnd</code>:</p>
-<pre><code class="language-turtle">   trm:pipe (:s10 :SM :s20 :SM2 :DE  :s30 :s40  :s50 :s60 :s70 :s80 :s90 :s100
-              :s110 :s120 :s130 :s140 :s150  :s160 :s170 :s180) .
-
-:s10 a :DatasetReader . # read the manifest
-# trm:configKey trm:describe .
-
-:s20 a :ConfigMap ; ### use services.ttl? - defer to RemapContext as possible
-    trm:configKey :markdownToRawPosts .
-</code></pre>
-<p>Running -</p>
-<pre><code class="language-bash">danny@danny-desktop:~/github-danny/transmissions$ ./trans postcraft.render ../postcraft/danny.ayers.name
-
-...
-
-+ ***** Execute Transmission : render &lt;http://hyperdata.it/transmissions/render&gt;
-| Running : http://hyperdata.it/transmissions/s10 a DatasetReader
-| Running :  (s10) SM a ShowMessage
-***************************
-***  Message
-Instance of Object with properties -
-{
-  &quot;dataDir&quot;: &quot;src/applications/postcraft/data&quot;,
-  &quot;rootDir&quot;: &quot;../postcraft/danny.ayers.name&quot;,
-  &quot;tags&quot;: &quot;s10.SM&quot;
-}
-***************************
-| Running :  (s10.SM) s20 a ConfigMap
-| Running :  (s10.SM.s20) SM2 a ShowMessage
-***************************
-***  Message
-Instance of Object with properties -
-{
-  &quot;dataDir&quot;: &quot;src/applications/postcraft/data&quot;,
-  &quot;rootDir&quot;: &quot;../postcraft/danny.ayers.name&quot;,
-  &quot;tags&quot;: &quot;s10.SM.s20.SM2&quot;,
-  &quot;filepath&quot;: &quot;layouts/mediocre/templates/entry-content_template.njk&quot;,
-  &quot;template&quot;: &quot;§§§ placeholer for debugging §§§&quot;,
-  &quot;entryContentMeta&quot;: {
-    &quot;sourceDir&quot;: &quot;content-raw/entries&quot;,
-    &quot;targetDir&quot;: &quot;cache/entries&quot;,
-    &quot;templateFilename&quot;: &quot;layouts/mediocre/templates/entry-content_template.njk&quot;
-  },
-  &quot;entryContentToPage&quot;: {
-    &quot;targetDir&quot;: &quot;public/home/entries&quot;,
-    &quot;templateFilename&quot;: &quot;layouts/mediocre/templates/entry-page_template.njk&quot;
-  },
-  &quot;indexPage&quot;: {
-    &quot;filepath&quot;: &quot;public/home/index.html&quot;,
-    &quot;templateFilename&quot;: &quot;layouts/mediocre/templates/index-page_template.njk&quot;
-  }
-}
-***************************
-| Running :  (s10.SM.s20.SM2) DE a DeadEnd
-DeadEnd  at (s10.SM.s20.SM2.DE) DE
-</code></pre>
-<p>Ok, these are being pulled out of (as <code>message.dataset</code>) :</p>
-<pre><code class="language-turtle">/home/danny/github-danny/postcraft/danny.ayers.name/manifest.ttl
-
-# POST CONTENT
-t:PostContent a pc:ContentGroup ;
-    rdfs:label &quot;entries&quot; ;
-    pc:site &lt;https://danny.ayers.name&gt; ;
-    pc:subdir &quot;home&quot; ; # better property name?
-    fs:sourceDirectory &quot;content-raw/entries&quot; ; # SOURCE DIR HERE journal, entries
-    fs:targetDirectory &quot;cache/entries&quot; ;
-    pc:template &quot;layouts/mediocre/templates/entry-content_template.njk&quot; .
-
-# POST PAGES
-t:PostPages a pc:ContentGroup ;
-    pc:site &lt;https://danny.ayers.name&gt; ;
-    fs:targetDirectory &quot;public/home/entries&quot; ;
-    pc:template &quot;layouts/mediocre/templates/entry-page_template.njk&quot; .
-
-# MAIN PAGE
-t:IndexPage a pc:ContentGroup ; # TODO naming!
-    pc:site &lt;https://danny.ayers.name&gt; ;
-    fs:filepath &quot;public/home/index.html&quot; ;
-    pc:template &quot;layouts/mediocre/templates/index-page_template.njk&quot; .
-</code></pre>
-<p>But the mapping are hardcoded in <code>ConfigMap.js</code>. They need to be declared in <code>services-config.ttl</code>.</p>
-<p>I see a note in <code>transmissions.ttl</code> re. <code>ConfigMap</code>: &#39;defer to RemapContext as possible&#39; but I&#39;ll ignore that for now, if necessary reconcile later.
-First,</p>
-<pre><code> async execute(message) {
-      logger.setLogLevel(&#39;debug&#39;)
-      ...
-</code></pre>
-<p>The <code>pc:ContentGroup</code> bits are getting picked out with :</p>
-<pre><code class="language-javascript">if (type.equals(ns.pc.ContentGroup)) {
-  await this.processContentGroup(message, q.subject);
-}
-</code></pre>
-<p>In need to generalise that in <code>ConfigMap.js</code>, replace <code>ns.pc.ContentGroup</code> with <em>something</em> specified in <code>services-config.ttl</code>.</p>
-<p>That <em>something</em> needs to be pointed to in <code>transmissions.turtle</code>. Ok:</p>
-<pre><code class="language-turtle">:s20 a :ConfigMap ;
-    trm:configKey :postcraftMap .
-</code></pre>
-<p>Those should be addressable from <code>service.config</code> but how, where&#39;s a good example of where I was addressing those?</p>
-<p>Found one, in <code>FileCopy</code> :</p>
-<pre><code class="language-javascript">logger.debug(`FileCopy: Using configKey ${this.configKey.value}`);
-source = this.getPropertyFromMyConfig(ns.trm.source);
-destination = this.getPropertyFromMyConfig(ns.trm.destination);
-source = path.join(message.rootDir, source);
-</code></pre>
-<p>That&#39;s derived from <code>transmissions.ttl</code>, eg :</p>
-<pre><code class="language-turtle">:cp30 a :FileCopy ;
-    trm:configKey :cssCopy .
-</code></pre>
-<p>and in <code>services-config.ttl</code> :</p>
-<pre><code class="language-turtle">t:copyCSS a trm:ServiceConfig ;
-    trm:key t:cssCopy ;
-    trm:source &quot;layouts/mediocre/css&quot; ;
-    trm:destination &quot;public/home/css&quot; .
-</code></pre>
-<p>So now I can make that part of the redirection for <code>ConfigMap</code> :</p>
-<pre><code class="language-turtle">t:PostcraftMap a trm:ServiceConfig ;
-    trm:key t:postcraftMap ;
-    trm:group t:SampleGroup .
-</code></pre>
-<p>Next I need to grab that in <code>ConfigMap</code> :</p>
-<pre><code class="language-javascript">logger.debug(`ConfigMap, Using configKey ${this.configKey.value}`);
-const group = this.getPropertyFromMyConfig(ns.trm.group);
-logger.debug(`ConfigMap, group =  ${group}`);
-</code></pre>
-<p>Yay!</p>
-<pre><code class="language-bash">| Running :  (s10.SM) s20 a ConfigMap
- api.logger debug
-ConfigMap, Using configKey http://hyperdata.it/transmissions/postcraftMap
-ConfigMap, group =  http://hyperdata.it/transmissions/SampleGroup
-</code></pre>
-<p>TODO while I&#39;m here ... a little thing for <code>transmissions.ttl</code> : <code>trm:match &quot;string&quot;</code> so the service will be skipped unless <code>string</code> is matched. Thinking for XMPP agents.</p>
-<a id="old-configmap" class="anchor" />
-
-<h3><code>ConfigMap.js</code> as on 2024-09-06 morning :</h3>
-<pre><code class="language-javascript">// src/services/rdf/ConfigMap.js
-/**
- * @class ConfigMap
- * @extends ProcessService
- * @classdesc
- * **a Transmissions Service**
- *
- * Maps RDF dataset contents to key-value pairs in the message object based on services-config.ttl
- *
- * ### Signature
- *
- * #### __*Input*__
- * * **`message.dataset`** - RDF dataset containing configuration
- *
- * #### __*Output*__
- * * **`message`** - Updated with mapped key-value pairs based on the dataset content
- *
- * #### __*Behavior*__
- * * Processes the RDF dataset in the message
- * * Identifies and processes different content groups (PostContent, PostPages, IndexPage)
- * * Maps relevant information to specific message properties
- *
- * #### __Tests__
- * * TODO: Add test information
- */
-
-import ns from &quot;../../utils/ns.js&quot;;
-import rdf from &quot;rdf-ext&quot;;
-import grapoi from &quot;grapoi&quot;;
-import logger from &quot;../../utils/Logger.js&quot;;
-import ProcessService from &quot;../base/ProcessService.js&quot;;
-
-class ConfigMap extends ProcessService {
-  constructor(config) {
-    super(config);
-  }
-
-  /**
-   * Executes the ConfigMap service
-   * @param {Object} message - The message object containing the dataset
-   * @todo Refactor for better generalization and maintainability
-   */
-  async execute(message) {
-    //  logger.setLogLevel(&#39;debug&#39;)
-
-    this.preProcess(message);
-    const dataset = message.dataset;
-    const poi = grapoi({ dataset, factory: rdf });
-    const quads = await poi.out(ns.rdf.type).quads();
-
-    for (const q of quads) {
-      const type = q.object;
-      if (type.equals(ns.pc.ContentGroup)) {
-        await this.processContentGroup(message, q.subject);
-      }
-    }
-
-    this.emit(&quot;message&quot;, message);
-  }
-
-  /**
-   * Processes a content group based on its type
-   * @param {Object} message - The message object
-   * @param {Object} contentGroupID - The ID of the content group
-   */
-  async processContentGroup(message, contentGroupID) {
-    switch (contentGroupID.value) {
-      case ns.t.PostContent.value:
-        await this.markdownToEntryContent(message, contentGroupID);
-        break;
-      case ns.t.PostPages.value:
-        await this.entryContentToPostPage(message, contentGroupID);
-        break;
-      case ns.t.IndexPage.value:
-        await this.indexPage(message, contentGroupID);
-        break;
-      default:
-        logger.log(&quot;Group not found in dataset: &quot; + contentGroupID.value);
-    }
-  }
-
-  /**
-   * Processes markdown to entry content
-   * @param {Object} message - The message object
-   * @param {Object} contentGroupID - The ID of the content group
-   */
-  async markdownToEntryContent(message, contentGroupID) {
-    const postcraftConfig = message.dataset;
-    const groupPoi = rdf.grapoi({
-      dataset: postcraftConfig,
-      term: contentGroupID,
-    });
-
-    // message.location = groupPoi.out(ns.pc.location).term.value
-    // message.subdir = groupPoi.out(ns.pc.subdir).term.value
-    message.filepath = groupPoi.out(ns.pc.template).term.value;
-    message.template = &quot;§§§ placeholer for debugging §§§&quot;;
-
-    message.entryContentMeta = {
-      sourceDir: groupPoi.out(ns.fs.sourceDirectory).term.value,
-      targetDir: groupPoi.out(ns.fs.targetDirectory).term.value,
-      templateFilename: groupPoi.out(ns.pc.template).term.value,
-    };
-  }
-
-  /**
-   * Processes entry content to post page
-   * @param {Object} message - The message object
-   * @param {Object} contentGroupID - The ID of the content group
-   */
-  async entryContentToPostPage(message, contentGroupID) {
-    const postcraftConfig = message.dataset;
-    const groupPoi = rdf.grapoi({
-      dataset: postcraftConfig,
-      term: contentGroupID,
-    });
-
-    message.entryContentToPage = {
-      targetDir: groupPoi.out(ns.fs.targetDirectory).term.value,
-      templateFilename: groupPoi.out(ns.pc.template).term.value,
-    };
-  }
-
-  /**
-   * Processes index page
-   * @param {Object} message - The message object
-   * @param {Object} contentGroupID - The ID of the content group
-   */
-  async indexPage(message, contentGroupID) {
-    const postcraftConfig = message.dataset;
-    const groupPoi = rdf.grapoi({
-      dataset: postcraftConfig,
-      term: contentGroupID,
-    });
-
-    message.indexPage = {
-      filepath: groupPoi.out(ns.fs.filepath).term.value,
-      templateFilename: groupPoi.out(ns.pc.template).term.value,
-    };
-  }
-}
-
-export default ConfigMap;
-</code></pre>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="entries/2024-09-06_configmap.html">
-        Refactoring ConfigMap
-    </a>
-</p> <em>2024-09-08</em>
+</p> <em>2024-09-09</em>
             </article>
         </div>
         <div class="main-grid-item about">
