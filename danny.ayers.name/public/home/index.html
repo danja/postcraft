@@ -30,6 +30,78 @@
                 <!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
+        <a href="entries/2024-09-10_goon.html">#</a>
+    <h1>Goon</h1>
+<p>I&#39;ve just given myself a headache doing a little bit of real-world admin. I got a little bit of money through yesterday, I&#39;ve been attempting to direct into the best places...</p>
+<p>Including cancelling the €22/month Google One account I&#39;d accidentally signed up for. Grr, only noticed after 3? months. All I need is the €3/m extra storage. I&#39;m actually at 201.03 GB, so am doing a bit of backup in the background right now.</p>
+<hr>
+<p>A deeper headache is due to me getting overwhelmed by TODOs again (it&#39;s an #ADHD thing).</p>
+<p>My long-term solution is the #farelo project. Job One-ish there is capturing descriptions of projects/tasks in #RDF with the <a href="https://hyperdata.it/xmlns/project/">Project Vocabulary</a>. (That needs revising, which I&#39;ve been dipping into occasionally in <a href="https://hyperdata.it/xmlns/project/2024/">2024</a>, but that&#39;s not a big issue today).</p>
+<p>While thinking about <a href="https://foaf-retro.hyperdata.it/">foaf-retro</a>, making a <a href="https://danny.ayers.name/entries/2024-08-28_form-a-matic.html">Form-a-matic</a> seemed a good idea.</p>
+<p>One way of skipping out of the overwhelmedness kind of task paralysis is doing something new. This is in the distraction, #yak direction, but sometimes that&#39;s necessary. If the new thing has clearly defined, nearby, goal, then the sidestep can work.</p>
+<h2>Form-a-matic</h2>
+<p><em>requirements, second pass</em></p>
+<h3>Purpose</h3>
+<p>Generate HTML forms based on RDF shapes<sup><a id="footnote-ref-1" href="#footnote-1" data-footnote-ref aria-describedby="footnote-label">1</a></sup> which, when filled in, will generate RDF instance data. The FOAF-a-matic and DOAP-a-matic being examples.</p>
+<p>This will be an application of #Transmissions.</p>
+<p>I want to get Claude to do most of the work.</p>
+<h3>Process</h3>
+<p>My initial <a href="https://danny.ayers.name/entries/2024-08-28_form-a-matic.html">Form-a-matic</a> process is more general than I need right now. Also it would be nicer for the resulting a-matic-form to be relatively self-contained (ie. not involving a SPARQL store).</p>
+<p>The input is an example of the target RDF data.</p>
+<ol>
+<li>variable fields are identified</li>
+<li>HTML form elements are created corresponding to those fields</li>
+<li>Javascript is attached to a button on on the form to read the field values</li>
+<li>JS functions will generate RDF from the form values</li>
+</ol>
+<p>Possibly the quickest way of achieving most of this would be using generic text templating throughout (a la #SPARQLDiamonds). But I reckon it&#39;ll be neater, and potential more easily extendable if I use an RDF model in the JS.</p>
+<p>I <em>so</em> want to use SPARQL here, but side project in my queue is documenting <a href="https://rdf-ext.org/">RDF-Ext</a>. That includes <a href="https://github.com/rdf-ext/grapoi">grapoi</a>, a &#39;Universal RDF/JS graph traverser&#39;. There are also readers/serializers nearby, and I&#39;ve already been using it around #Transmissions.</p>
+<p>So let&#39;s :</p>
+<ul>
+<li>start with some tweaked <a href="https://en.wikipedia.org/wiki/Turtle_(syntax)">Turtle</a>-format <a href="https://en.wikipedia.org/wiki/FOAF">FOAF</a>. Give the places of interest keyword-style markers</li>
+<li>parse that out and locate those markers with RDF-Ext, recording their path inside the graph</li>
+<li>for each marker, generate a form field</li>
+</ul>
+<p>The end result form will need boilerplate JS functions for taking the form values and the RDF path, constructing the required triples.</p>
+<p>To get Claude to do the drudge work without being stupid I&#39;m going to have to prepare some prompts, some background material to put into a Claude Project and some examples.</p>
+<p>The other day I set up Transmissions&#39; CLI so it could use an application from any file path, so I guess this might be a good point to set up yet another GitHub repo : <a href="https://github.com/danja/trans-apps">trans-apps</a></p>
+<p>TODO allow applications to be loaded from URLs</p>
+<p>Now I&#39;ll publish this and then it&#39;s dogwalk time, then I&#39;m of out for a coffee &amp; shopping with Mari.</p>
+<hr>
+<pre><code class="language-turtle">@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+&lt;#URI&gt;
+    a foaf:Person ;
+    foaf:name &quot;LITERAL&quot; ;
+    foaf:mbox &lt;#URI&gt; ;
+    foaf:homepage &lt;#URI&gt; ;
+    foaf:nick &quot;LITERAL&quot; ;
+    foaf:depiction &lt;#URI&gt; ;
+    foaf:interest &lt;#URI&gt; ;
+    foaf:knows [
+        a foaf:Person ;
+        foaf:name &quot;LITERAL&quot;
+    ] .
+</code></pre>
+<section class="footnotes" data-footnotes>
+<h2 id="footnote-label" class="sr-only">Footnotes</h2>
+<ol>
+<li id="footnote-1">
+<p>ultimately <a href="https://www.w3.org/TR/shacl/">SHACL</a> is totally in the frame for this, but this quick-and-dirty approach skipping around SHACL should be simpler to implement as first attempt. (There is a SHACL engine in RDF-Ext, see <a href="https://www.bergnet.org/2023/03/2023/shacl-engine/">https://www.bergnet.org/2023/03/2023/shacl-engine/</a>) <a href="#footnote-ref-1" data-footnote-backref aria-label="Back to reference 1">↩</a></p>
+</li>
+</ol>
+</section>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="entries/2024-09-10_goon.html">
+        Goon
+    </a>
+</p> <em>2024-09-10</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
         <a href="entries/2024-09-09_holst.html">#</a>
     <h1>The Planets</h1>
 <p>On BBC Radio 4 this morning there was a prog <a href="https://www.bbc.co.uk/sounds/play/m0022t6x">How to Play</a> featuring Holst&#39;s &#39;The Planets&#39;.</p>
@@ -37,6 +109,7 @@
 <p>My todo list for today might well be changed if some money I&#39;m hoping is coming my way arrives today, but for now I&#39;ll assume it isn&#39;t.</p>
 <p>I want to get XMPP up and running asap but I&#39;ve got to a point with #Postcraft where I can start organising my notes better (and putting them online).</p>
 <h2>Postcraft/Transmissions</h2>
+<p>Hmm. JSON remodeller, RDF-&gt;JSON lib for ConfigMap etc. Use the old thing</p>
 <ul>
 <li>write a top-level list of what I&#39;m working on</li>
 <li>set up placeholder Postcraft setups as appropriate</li>
@@ -54,13 +127,20 @@ TODO todo list extractor</p>
 <li>get the server working</li>
 <li>make a (client) test script</li>
 </ul>
+<h2>hkms-desktop</h2>
+<ul>
+<li>relocate</li>
+<li>update</li>
+<li>symlinks to</li>
+</ul>
+<p>TODO URL shortener : <a href="https://strandz.it/QWER">https://strandz.it/QWER</a></p>
 
 </article>
 <p class="post-title h-cinzel">
     <a href="entries/2024-09-09_holst.html">
         The Planets
     </a>
-</p> <em>2024-09-09</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-09-10</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-09-08_xmpp-3.html">#</a>
@@ -99,7 +179,7 @@ ejabberdctl reload_config</p>
     <a href="entries/2024-09-08_xmpp-3.html">
         Setting up XMPP pt.3
     </a>
-</p> <em>2024-09-09</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-09-10</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-09-08_stormy.html">#</a>
@@ -114,7 +194,7 @@ ejabberdctl reload_config</p>
     <a href="entries/2024-09-08_stormy.html">
         Stormy Weather
     </a>
-</p> <em>2024-09-09</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-09-10</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-09-07_xmpp-2.html">#</a>
@@ -180,276 +260,7 @@ kill 1234
     <a href="entries/2024-09-07_xmpp-2.html">
         Setting up XMPP pt.2
     </a>
-</p> <em>2024-09-09</em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="entries/2024-09-06_xmpp.html">#</a>
-    <h1>Setting up XMPP</h1>
-<p>A little diversion. <a href="https://xmpp.org/">XMPP</a> on <code>hyperdata.it</code>. I took lots of notes last time I set it up, hopefully won&#39;t take long.</p>
-<p>First thing is to install <a href="https://docs.ejabberd.im/">ejabberd</a> and set it up with certs &amp; a handful of users. Then connect it to LDAP (already installed).</p>
-<p>18:00</p>
-<pre><code class="language-bash">apt install ejabberd
-...
-root@hyperdata:~#  ejabberdctl start
-ERROR: The ejabberd node &#39;ejabberd@localhost&#39; is already running.
-</code></pre>
-<p>Ok...</p>
-<pre><code class="language-bash">nano /etc/ejabberd/ejabberd.yml
-...
-hosts:
-  - localhost
-  - hyperdata.it
-...
-ejabberdctl reload_config
-ejabberdctl register admin hyperdata.it password
-...
-User admin@hyperdata.it successfully registered.
-</code></pre>
-<p>Apparently there should be an admin interface on <a href="https://hyperdata.it:5280/admin/">https://hyperdata.it:5280/admin/</a>
-LetsEncrypt time.</p>
-<pre><code>service ejabberd stop
-mv /etc/ejabberd/ejabberd.pem  /etc/ejabberd/ejabberd.pem.backup
-
-//certbot certonly --webroot -w /etc/ejabberd -d hyperdata.it --force-renewal --rsa-key-size 4096
- certbot certonly -w /etc/ejabberd -d hyperdata.it
- ...
- says current cert is ok
-
-
-
-ok, looks like I&#39;ve set up DNS for `xmpp.hyperdata.it`
-
-https://stackoverflow.com/questions/56335966/how-to-renew-lets-encrypt-certificate-in-ejabberd-configured-server
-</code></pre>
-<p>Hmm. not sure how to make certbot aware of <code>xmpp.hyperdata.it</code> except for adding</p>
-<pre><code class="language-bash">nano /etc/nginx/sites-available/xmpp.hyperdata.it.conf
-...
-server {
-    server_name xmpp.hyperdata.it;
-
-    location / {
-        proxy_pass http://127.0.0.1:5280;
-        proxy_set_header Host $host;
-    }
-    listen 80;
-}
-...
-ln -s /etc/nginx/sites-available/xmpp.hyperdata.it.conf /etc/nginx/sites-enabled/xmpp.hyperdata.it.conf
-systemctl restart nginx
-certbot
-...chose  xmpp.hyperdata.it
-Successfully deployed certificate for xmpp.hyperdata.it
-</code></pre>
-<p>ufw disable</p>
-<p>Hmm. Next...</p>
-<pre><code class="language-bash">cat /etc/letsencrypt/live/hyperdata.it/privkey.pem /etc/letsencrypt/live/xmpp.hyperdata.it/fullchain.pem &gt; ejabberd.pem
-</code></pre>
-<p><a href="https://hyperdata.it:5280/admin/">https://hyperdata.it:5280/admin/</a></p>
-<p>nano /etc/ejabberd/ejabberd.yml
-add xmpp.hyperdata.it
-ejabberdctl reload_config
-ejabberdctl register admin hyperdata.it password</p>
-<p>admin</p>
-<p>alice
-bob
-canary
-danbri
-maxf</p>
-<p>danja
-dogbot
-mari</p>
-<p>19:00 - reboot, dogwalk</p>
-<p>20:00 - back. <code>ejabberd</code> came back fine</p>
-<p>Currently <code>https://xmpp.hyperdata.it/</code> is giving me a 502 Bad Gateway (through nginx).</p>
-<p>None of the likely HTTP endpoints work. nginx logs...</p>
-<p>TODO /home/www/danny.ayers.name/robots.txt and .ico</p>
-<p>TODO archive.org for &quot;GET /wordpress/wp-content/uploads/2015/11/dscn6185.jpg HTTP/1.1&quot;, host: &quot;hyperdata.it&quot;</p>
-<p>Before I forget - ufw firewall open for whatever XMPP uses</p>
-<p><a href="https://stackoverflow.com/questions/3452161/which-ports-does-xmpp-use">https://stackoverflow.com/questions/3452161/which-ports-does-xmpp-use</a></p>
-<pre><code class="language-bash">ufw allow 5222
-ufw allow 5269
-ufw enable
-ufw status
-</code></pre>
-<p>Eyeball config :</p>
-<pre><code class="language-bash">nano /etc/ejabberd/ejabberd.yml
-</code></pre>
-<p>onto : <code>/var/log/ejabberd</code></p>
-<p>both <code>ejabberd.log</code> and <code>error.log</code> say it&#39;s not seeing the certfile. Path or permissions?</p>
-<p>Check my notes...</p>
-<blockquote>
-<p>THISSSSSSS
-certbot --key-type ecdsa --cert-name xmpp.hyperdata.it</p>
-</blockquote>
-<p>Hmm. That looks like it&#39;s ok already.</p>
-<pre><code class="language-yaml">certfiles:
-  - &quot;/etc/ejabberd/ejabberd.pem&quot;
-#  - /etc/letsencrypt/live/localhost/fullchain.pem
-#  - /etc/letsencrypt/live/localhost/privkey.pem
----
-adding
-
-- /etc/letsencrypt/live/hyperdata.it/fullchain.pem
-- /etc/letsencrypt/live/hyperdata.it/privkey.pem
-- /etc/letsencrypt/live/xmpp.hyperdata.it/fullchain.pem
-- /etc/letsencrypt/live/xmpp.hyperdata.it/privkey.pem
----
-ejabberdctl reload_config
-</code></pre>
-<p>Hmm. why is the first one in quotes?</p>
-<p><a href="https://docs.ejabberd.im/admin/configuration">https://docs.ejabberd.im/admin/configuration</a></p>
-<pre><code class="language-bash">ejabberdctl request-certificate all
-Error: error
-Error: &quot;Challenge failed for domain conference.hyperdata.it: ACME server reported: 178.79.189.240: Invalid response from http://conference.hyperdata.it/.well-known/acme-challenge/Wy7YZJQD9wGdOLI9tyv2oKyTTktvnGtWVgIaEhd1qZg: 404 (error type: unauthorized)&quot;
-</code></pre>
-<p><a href="https://www.process-one.net/blog/ejabberd-xmpp-server-useful-configuration-steps/">https://www.process-one.net/blog/ejabberd-xmpp-server-useful-configuration-steps/</a></p>
-<p>suggests A records for :</p>
-<ul>
-<li>conference</li>
-<li>proxy</li>
-<li>pubsub</li>
-<li>upload</li>
-</ul>
-<p>My DNS aready has :</p>
-<pre><code>conference 10800 IN CNAME hyperdata.it.
-</code></pre>
-<p>etc.</p>
-<p>I saw mention of <code>chat</code> somewhere too - might as well add that too.</p>
-<p>It&#39;s poking at the filesystem, so I guess I should make dirs &amp; nginx config for those.</p>
-<pre><code class="language-bash">root@hyperdata:/home/www# tree xmpp
-xmpp
-├── chat
-├── conference
-├── proxy
-├── pubsub
-└── upload
-</code></pre>
-<p><a href="https://foaf-retro.hyperdata.it/">https://foaf-retro.hyperdata.it/</a></p>
-<pre><code>server {
-    listen 80;
-    server_name chat.hyperdata.it;
-
-    # Hide nginx version
-    server_tokens off;
-
-    location / {
-        root /home/www/xmpp/chat;
-        index index.html index.htm index.ttl;
-        try_files $uri $uri/ =404;
-    }
-}
-
-server {
-    listen 80;
-    server_name conference.hyperdata.it;
-
-    # Hide nginx version
-    server_tokens off;
-
-    location / {
-        root /home/www/xmpp/conference;
-        index index.html index.htm index.ttl;
-        try_files $uri $uri/ =404;
-    }
-}
-
-server {
-    listen 80;
-    server_name proxy.hyperdata.it;
-
-    # Hide nginx version
-    server_tokens off;
-
-    location / {
-        root /home/www/xmpp/proxy;
-        index index.html index.htm index.ttl;
-        try_files $uri $uri/ =404;
-    }
-}
-server {
-    listen 80;
-    server_name pubsub.hyperdata.it;
-
-    # Hide nginx version
-    server_tokens off;
-
-    location / {
-        root /home/www/xmpp/pubsub;
-        index index.html index.htm index.ttl;
-        try_files $uri $uri/ =404;
-    }
-}
-server {
-    listen 80;
-    server_name upload.hyperdata.it;
-
-    # Hide nginx version
-    server_tokens off;
-
-    location / {
-        root /home/www/xmpp/upload;
-        index index.html index.htm index.ttl;
-        try_files $uri $uri/ =404;
-    }
-}
-</code></pre>
-<p>While I&#39;m here :</p>
-<pre><code>server {
-    listen 80;
-    server_name kia.hyperdata.it;
-
-    # Hide nginx version
-    server_tokens off;
-
-    location / {
-        root /home/www/kia;
-        index index.html index.htm index.ttl;
-        try_files $uri $uri/ =404;
-    }
-}
-
-...
-ln -s /etc/nginx/sites-available/kia.hyperdata.it.conf /etc/nginx/sites-enabled/kia.hyperdata.it.conf
-nginx -t
-systemctl restart nginx
-certbot
-</code></pre>
-<p>KIA done.</p>
-<p>Back to :</p>
-<pre><code class="language-bash">ejabberdctl request-certificate all
-</code></pre>
-<p>Grrr! Tucked away in the docs it says you have to turn off TLS first :</p>
-<pre><code>listen:
-  -
-    module: ejabberd_http
-    port: 5280
-    tls: false
-    request_handlers:
-      /.well-known/acme-challenge: ejabberd_acme
-</code></pre>
-<pre><code class="language-bash">nano /etc/ejabberd/ejabberd.yml
-ejabberdctl reload_config
-ejabberdctl request-certificate all
-</code></pre>
-<blockquote>
-<p>Error: &quot;ACME server reported: Error creating new order :: too many failed authorizations recently: see <a href="https://letsencrypt.org/docs/failed-validation-limit/">https://letsencrypt.org/docs/failed-validation-limit/</a> (error type: rateLimited)&quot;</p>
-</blockquote>
-<p>certbot has a dry run option, does this?</p>
-<p>Ok, enough for today.</p>
-<p>21:37</p>
-<p>my hosts</p>
-<pre><code>root@hyperdata:/etc/nginx/sites-available# ls ../sites-enabled/
-danny.ayers.name.conf         fuseki.conf            ps.hyperdata.it.conf  strandz.it.conf
-elfquake.org.conf             hyperdata.it.conf      ps.strandz.it.conf    xmpp.hyperdata.it.conf
-foaf-retro.hyperdata.it.conf  kia.hyperdata.it.conf  solid.conf
-</code></pre>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="entries/2024-09-06_xmpp.html">
-        Setting up XMPP
-    </a>
-</p> <em>2024-09-09</em>
+</p> <em>2024-09-10</em>
             </article>
         </div>
         <div class="main-grid-item about">
