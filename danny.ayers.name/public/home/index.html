@@ -30,6 +30,48 @@
                 <!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
+        <a href="entries/2024-09-11_ratty.html">#</a>
+    <h1>Ratty</h1>
+<h3>Video Test</h3>
+<video width="320" height="240" controls>
+  <source src="media/videos/2024-09/2024-09-11_ratty.mp4" type="video/mp4">
+Your browser does not support this video.
+</video>
+
+<p>Grr, task paralysis through overwhelmedness is getting me again today.</p>
+<p>A GTD thought : when I&#39;m stuck on what to work on, choose something that&#39;ll help productivity</p>
+<hr>
+<h2>TODO</h2>
+<ul>
+<li>form-a-matic</li>
+<li>update <code>hkms-desktop</code> : new clone of <a href="https://github.com/pulsar-edit/pulsar">Pulsar</a>, move my customizations across</li>
+</ul>
+<h2>form-a-matic</h2>
+<p>Continuing from yesterday.</p>
+<p>Collecting background for a Claude project. Put stuff around (desktop) :</p>
+<pre><code>/home/danny/github-danny/trans-apps/docs/references/rdf-ext
+</code></pre>
+<pre><code>danny@danny-desktop:~/github-other/rdf-ext/grapoi$
+...
+repopack --verbose -c /home/danny/github-danny/transmissions/repopack.config.json
+</code></pre>
+<p><a href="https://github.com/danielbeeke/grapoi-inspector">https://github.com/danielbeeke/grapoi-inspector</a></p>
+<hr>
+<p>Clearing a few tabs. I&#39;ve done &#39;Save All&quot; into a folder, but some should go somewhere near here. A bit annoying, this is what <a href="https://strandz.it">Strandz</a> should be doing for me.</p>
+<p>TODO <a href="https://www.bergnet.org/2023/09/grapoi/">https://www.bergnet.org/2023/09/grapoi/</a>
+TODO <a href="https://en.wikipedia.org/wiki/Decision_tree">https://en.wikipedia.org/wiki/Decision_tree</a>
+TODO <a href="https://blog.dailydoseofds.com/p/free-daily-dose-of-data-science-pdf">https://blog.dailydoseofds.com/p/free-daily-dose-of-data-science-pdf</a>
+TODO <a href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments">https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments</a>
+TODO <a href="https://github.com/influxdata/telegraf">https://github.com/influxdata/telegraf</a> Go Agent for collecting, processing, aggregating, and writing metrics, logs, and other arbitrary data.</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="entries/2024-09-11_ratty.html">
+        Ratty
+    </a>
+</p> <em>2024-09-11</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
         <a href="entries/2024-09-10_goon.html">#</a>
     <h1>Goon</h1>
 <p>I&#39;ve just given myself a headache doing a little bit of real-world admin. I got a little bit of money through yesterday, I&#39;ve been attempting to direct into the best places...</p>
@@ -99,7 +141,7 @@
     <a href="entries/2024-09-10_goon.html">
         Goon
     </a>
-</p> <em>2024-09-10</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-09-11</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-09-09_holst.html">#</a>
@@ -140,7 +182,7 @@ TODO todo list extractor</p>
     <a href="entries/2024-09-09_holst.html">
         The Planets
     </a>
-</p> <em>2024-09-10</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-09-11</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-09-08_xmpp-3.html">#</a>
@@ -179,7 +221,7 @@ ejabberdctl reload_config</p>
     <a href="entries/2024-09-08_xmpp-3.html">
         Setting up XMPP pt.3
     </a>
-</p> <em>2024-09-10</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-09-11</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-09-08_stormy.html">#</a>
@@ -194,73 +236,7 @@ ejabberdctl reload_config</p>
     <a href="entries/2024-09-08_stormy.html">
         Stormy Weather
     </a>
-</p> <em>2024-09-10</em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="entries/2024-09-07_xmpp-2.html">#</a>
-    <h1>Setting up XMPP pt.2</h1>
-<p>Yesterday I got to this:</p>
-<pre><code class="language-bash">nano /etc/ejabberd/ejabberd.yml
-ejabberdctl reload_config
-ejabberdctl request-certificate all
-</code></pre>
-<p>When I hit ACME rate limiting. I just tried again:</p>
-<pre><code class="language-bash">root@hyperdata:~# ejabberdctl request-certificate all
-Error: error
-Error: &quot;Challenge failed for domain conference.hyperdata.it: ACME server reported: 178.79.189.240: Invalid response from http://conference.hyperdata.it/.well-known/acme-challenge/XqMA-5eKaFy4hEmuP8jO7TUOzp_wmlvbR4DpuRpMqFY: 404 (error type: unauthorized)&quot;
-</code></pre>
-<p>At <a href="https://docs.ejabberd.im/admin/configuration/basic/#setting-up-acme">ejabberd setting up ACME</a>:</p>
-<pre><code class="language-yaml">listen:
-  - module: ejabberd_http
-    port: 5280
-    tls: false
-    request_handlers:
-      /.well-known/acme-challenge: ejabberd_acme
-</code></pre>
-<p>Hah!</p>
-<p>I just went to see what was happening on the server with:</p>
-<pre><code class="language-bash">lynx http://localhost:5280
-</code></pre>
-<p>And it gave me a sensible response. Then tried with <code>http://localhost:5280/admin</code> and it was asking for a login.</p>
-<p>Ok, so, how about in a desktop browser with <code>https://xmpp.hyperdata.it/admin/</code></p>
-<p>Yes! It let me log in as admin.</p>
-<p>But,</p>
-<blockquote>
-<p>Apparently your account has no administration rights in this server. Please check how to grant admin rights in: <a href="https://docs.ejabberd.im/admin/installation/#administration-account">https://docs.ejabberd.im/admin/installation/#administration-account</a></p>
-</blockquote>
-<p>Docs better at <a href="https://docs.ejabberd.im/admin/install/next-steps/#administration-account">https://docs.ejabberd.im/admin/install/next-steps/#administration-account</a></p>
-<p>Added:</p>
-<pre><code class="language-bash">acl:
-  admin:
-     user: admin@hyperdata.it
-</code></pre>
-<p>and the web interface is showing me stuff.</p>
-<p>The Dino XMPP client running on desktop isn&#39;t connecting. Checking my old notes... I mentioned <a href="https://mcabber.com/">mcabber</a> client, but nothing more.</p>
-<p>Downloaded Android monocle client to phone (from F-Droid)</p>
-<pre><code class="language-bash">ejabberdctl live
-...
-ERROR: The ejabberd node &#39;ejabberd@localhost&#39; is already running.
-
-
-ps -aux | grep -i &#39;ejabberd&#39;
-
-kill 1234
-</code></pre>
-<p>I changed the static fs location in nginx conf to proxy instead. Got another rate limit. Grr.</p>
-<p>It was trying to set up certs on <code>hyperdata.it</code>.</p>
-<pre><code class="language-bash">hosts:
-  - localhost
-#  - hyperdata.it
-  - xmpp.hyperdata.it
-  ejabberdctl reload_config
-</code></pre>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="entries/2024-09-07_xmpp-2.html">
-        Setting up XMPP pt.2
-    </a>
-</p> <em>2024-09-10</em>
+</p> <em>2024-09-11</em>
             </article>
         </div>
         <div class="main-grid-item about">

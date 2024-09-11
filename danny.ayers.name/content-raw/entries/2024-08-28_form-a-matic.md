@@ -14,3 +14,5 @@ I can use #Transmissions for this!
 I will need a few new Transmissions services. Claude can help a lot, I'd better leave this until I have access again.
 
 Easiest wiring would be to use the #SPARQL-Diamonds trick. But using #RDF-Ext would also be nice, no store dependency.
+
+PS. I revisit this at [Goon](https://danny.ayers.name/entries/2024-09-10_goon.html)

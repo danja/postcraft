@@ -2,18 +2,22 @@
 
 Had ~€230
 
-Moved €18 to Wise for Linode
+### Paid
 
-€30 on Amazon : mouse, probiotics, guitar strings
+- shopping €50
+- Chinese €15?
+- Moved €18 to Wise for Linode - paid
+- €30 on Amazon : mouse, probiotics, guitar strings
+- Claude - €22
+- Printer cartridge Amazon €13
 
 TO PAY
 
 - ENEL
-- remember LINODE
 - Gandi soon
 - Federico
 - Mari
-- Claude (+API)
+- Claude API
 - OpenAI API
 
 Transfers from BPM acc to Wise:
