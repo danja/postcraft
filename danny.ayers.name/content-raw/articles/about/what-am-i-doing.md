@@ -22,6 +22,9 @@ hkms-desktop
 
 #### Transmissions
 
+- wedwer
+- sdffgsdfg
+
 #### Postcraft
 
 #### KIA
@@ -32,13 +35,31 @@ hkms-desktop
 
 #### trellis
 
-### Music
+### Music Production
 
-#### Tasty EP
+- Tasty EP
+
+### Musical Instruments
+
+- Clarinet
+- Guitar
 
 ### Electronics
 
+- Dreamachine
+- Effects Module
+
+### Woodwork
+
 ### Not Climbing
+
+- Kitchen Climbing Wall
+
+### Outside
+
+### Other Stuff
+
+- Brewing
 
 farelo
 foowiki
