@@ -30,216 +30,406 @@
                 <!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
-        <a href="entries/2024-09-11_ratty.html">#</a>
-    <h1>Ratty</h1>
-<h3>Video Test</h3>
-<video width="320" height="240" controls>
-  <source src="media/videos/2024-09/2024-09-11_ratty.mp4" type="video/mp4">
-Your browser does not support this video.
-</video>
-
-<p>Grr, task paralysis through overwhelmedness is getting me again today.</p>
-<p>A GTD thought : when I&#39;m stuck on what to work on, choose something that&#39;ll help productivity</p>
-<hr>
-<h2>TODO</h2>
+        <a href="entries/2024-09-16_jacket.html">#</a>
+    <h1>Hiding Jacket</h1>
+<p>13:00</p>
+<p>It&#39;s gone cool. I have a fleece jacket that&#39;s warm, but I knew it needed washing. So I just searched high &amp; low, only to find it in the washing machine. A wash I did a couple of days ago and completely forgot.</p>
+<p>My priorities today are something like :</p>
 <ul>
+<li>pension docs</li>
+<li>pulsar</li>
 <li>form-a-matic</li>
-<li>update <code>hkms-desktop</code> : new clone of <a href="https://github.com/pulsar-edit/pulsar">Pulsar</a>, move my customizations across</li>
+<li>xmpp</li>
+<li>sidebars</li>
+<li>tidy desk</li>
+<li>fix chairs</li>
+<li>metal detector</li>
+<li>music room</li>
+<li>PS. read @iand&#39;s notes around <a href="https://blog.iandavis.com/2017/10/microfunctions/">Serverless: why microfunctions &gt; microservices</a></li>
+<li>foaf-retro todos</li>
 </ul>
-<h2>form-a-matic</h2>
-<p>Continuing from yesterday.</p>
-<p>Collecting background for a Claude project. Put stuff around (desktop) :</p>
-<pre><code>/home/danny/github-danny/trans-apps/docs/references/rdf-ext
+<p>But I&#39;ve still got a bit of task paralysis. #ADHD Strategy : either do something that will help productivity or something that will benefit someone else or take Claudio out.</p>
+<p>The #Pulsar thing is productivity and should be a quicky.</p>
+<p>Just thinking about Transmissions dev.</p>
+<h2>Pulsar Install</h2>
+<p><a href="https://pulsar-edit.dev/docs/launch-manual/sections/core-hacking/#building-pulsar">https://pulsar-edit.dev/docs/launch-manual/sections/core-hacking/#building-pulsar</a></p>
+<pre><code>danny@danny-desktop:~/github-danny/pulsar$ node -v
+v20.11.0
+danny@danny-desktop:~/github-danny/pulsar$ nvm use
+Found &#39;/home/danny/github-danny/pulsar/.nvmrc&#39; with version &lt;16&gt;
+Now using node v16.20.2 (npm v8.19.4)
+danny@danny-desktop:~/github-danny/pulsar$ node -v
+v16.20.2
 </code></pre>
-<pre><code>danny@danny-desktop:~/github-other/rdf-ext/grapoi$
-...
+<p>New to me, <a href="https://nodejs.org/api/corepack.html">corepack</a> :</p>
+<p>Trying :</p>
+<pre><code class="language-bash">corepack enable
+git submodule init &amp;&amp; git submodule update
+yarn install
+yarn build
+yarn build:apm
+yarn start
+</code></pre>
+<p>Some dependency warnings for <code>install</code></p>
+<p>Taking its time...might as well do printer alignment (I put in a new ink cartridge the other day before going out, alignment step had timed out before I got back).</p>
+<p>Yay! Pulsar worked.</p>
+<p>TODO review my earlier Pulsar tweaks, maybe integrate, save as <code>hkms-desktop</code></p>
+<p>TODO have a look at making an AppImage of <code>hkms-desktop</code></p>
+<p>What I want this for, in the first instance, is as a text editor for my #Postcraft instances, to free up this VSCode for, errm, code (I have been coding in Cursor, which is based on VSCode, but having this one separate to try other AI assistants will be useful).</p>
+<p>I want the edity bits of each Postcraft instance in a common place. Named symlinks first :</p>
+<pre><code class="language-bash">mkdir ~/workspaces_hkms-desktop
+cd ~/workspaces_hkms-desktop
+mkdir postcrafts-raw
+cd postcrafts-raw
+ln -s ~/github-danny/postcraft/danny.ayers.name/content-raw ./danny.ayers.name
+ln -s ~/github-danny/hyperdata/docs/postcraft/content-raw ./hyperdata
+ln -s ~/github-danny/transmissions/docs/postcraft/content-raw ./transmissions
+ln -s ~/github-danny/foaf-retro/docs/postcraft/content-raw ./foaf-retro
+</code></pre>
+<p>Hmm. Most of the others need their folder structure updating. I&#39;ll sort those out as I need them.</p>
+<p>Ok, this will need tweaks, but that&#39;s basically done :</p>
+<p><img src="media/images/2024-09/pulsar.png" alt="Screenshot of Pulsar for editing"></p>
+<p>Font size changed 16-&gt;14.</p>
+<pre><code class="language-bash">cd ../transmissions/
+./trans postcraft ../postcraft/danny.ayers.name
+</code></pre>
+<p>TODO bash script to run transmissions on postcrafts</p>
+<p>Bum. I left a bug in there. Sort out later.</p>
+<p>Git commit &amp; push everything.</p>
+<p>TODO better way of doing git commit/push on all these (instead of from inside VSCode)</p>
+<p>Dogwalk time.</p>
+<blockquote>
+<p>(use <code>usr/local/bin</code>...) Alternatively, if you want the scripts to be available only for your user:</p>
+<p>Create a bin directory in your home folder if it doesn&#39;t exist: mkdir -p ~/bin
+Add this line to your .bashrc file: export PATH=&quot;$HOME/bin:$PATH&quot;
+Reload your .bashrc: source ~/.bashrc
+Place your scripts in ~/bin</p>
+</blockquote>
+<p>I need a <code>hyperdata-static-2024</code> repo.</p>
+<pre><code class="language-bash">cd ~/github-danny/pulsar
+
 repopack --verbose -c /home/danny/github-danny/transmissions/repopack.config.json
 </code></pre>
-<p>add repopacks from all the libs in <code>package.json</code></p>
-<p>After <em>hours</em> with Claude I now have a not-quite-right <code>form-a-matic.js</code> and a very broken <code>test-fam.js</code></p>
-<p>But I think there&#39;s enough in place that I can now get those working without Claude.</p>
-<hr>
-<p>Clearing a few tabs. I&#39;ve done &#39;Save All&quot; into a folder, but some should go somewhere near here. A bit annoying, this is what <a href="https://strandz.it">Strandz</a> should be doing for me.</p>
-<p>TODO <a href="https://www.bergnet.org/2023/09/grapoi/">https://www.bergnet.org/2023/09/grapoi/</a>
-TODO <a href="https://en.wikipedia.org/wiki/Decision_tree">https://en.wikipedia.org/wiki/Decision_tree</a>
-TODO <a href="https://blog.dailydoseofds.com/p/free-daily-dose-of-data-science-pdf">https://blog.dailydoseofds.com/p/free-daily-dose-of-data-science-pdf</a>
-TODO <a href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments">https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments</a>
-TODO <a href="https://github.com/influxdata/telegraf">https://github.com/influxdata/telegraf</a> Go Agent for collecting, processing, aggregating, and writing metrics, logs, and other arbitrary data.
-TODO <a href="https://github.com/danielbeeke/grapoi-inspector">https://github.com/danielbeeke/grapoi-inspector</a></p>
+<p>That got stuck.</p>
+<p>Hmm. <code>npm update repopack</code> stuck too. Network glitching? Yup, connection had dropped.</p>
+<p>TODO minimalist hardcoded runner script for Transmissions to help testing &amp; AI assistant generation</p>
+<p>Something like :</p>
+<pre><code class="language-javascript">const servicesConfigA = {...}
+const servicesConfigB = {...}
+
+var message = {...}
+
+// need to add
+const A = new ServiceA(servicesConfigA, configType=&quot;json&quot;)
+const B = new ServiceB(servicesConfigB, configType=&quot;json&quot;)
+
+message = A.execute(message)
+message = B.execute(message)
+
+console.log(JSON.stringify(message))
+</code></pre>
+<p>I&#39;ve made another repopack config, so :</p>
+<pre><code class="language-bash">cd ~/github-danny/pulsar
+repopack --verbose -c ./repopack.config.json
+</code></pre>
+<p>Hmm. 9x too big for Claude.</p>
+<p>Time to organise my scripts. Might as well put them on GitHub and on hyperdata.it</p>
+<p>Added to <code>.bashrc</code> :</p>
+<pre><code class="language-bash">export PATH=&quot;$HOME/github-danny/hyperdata.it/scripts:$PATH&quot;
+</code></pre>
+<p>then :</p>
+<pre><code class="language-bash">source ~/.bashrc
+</code></pre>
+<p>&quot;packages&quot;,
+ &quot;vendor&quot;,
+ &quot;.github&quot;,
+ &quot;static&quot;,
+ &quot;spec&quot;,
+ &quot;resources&quot;
+             &quot;ppm&quot;,</p>
 
 </article>
 <p class="post-title h-cinzel">
-    <a href="entries/2024-09-11_ratty.html">
-        Ratty
+    <a href="entries/2024-09-16_jacket.html">
+        Hiding Jacket
     </a>
-</p> <em>2024-09-11</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-09-16</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
-        <a href="entries/2024-09-10_goon.html">#</a>
-    <h1>Goon</h1>
-<p>I&#39;ve just given myself a headache doing a little bit of real-world admin. I got a little bit of money through yesterday, I&#39;ve been attempting to direct into the best places...</p>
-<p>Including cancelling the €22/month Google One account I&#39;d accidentally signed up for. Grr, only noticed after 3? months. All I need is the €3/m extra storage. I&#39;m actually at 201.03 GB, so am doing a bit of backup in the background right now.</p>
-<hr>
-<p>A deeper headache is due to me getting overwhelmed by TODOs again (it&#39;s an #ADHD thing).</p>
-<p>My long-term solution is the #farelo project. Job One-ish there is capturing descriptions of projects/tasks in #RDF with the <a href="https://hyperdata.it/xmlns/project/">Project Vocabulary</a>. (That needs revising, which I&#39;ve been dipping into occasionally in <a href="https://hyperdata.it/xmlns/project/2024/">2024</a>, but that&#39;s not a big issue today).</p>
-<p>While thinking about <a href="https://foaf-retro.hyperdata.it/">foaf-retro</a>, making a <a href="https://danny.ayers.name/entries/2024-08-28_form-a-matic.html">Form-a-matic</a> seemed a good idea.</p>
-<p>One way of skipping out of the overwhelmedness kind of task paralysis is doing something new. This is in the distraction, #yak direction, but sometimes that&#39;s necessary. If the new thing has clearly defined, nearby, goal, then the sidestep can work.</p>
-<h2>Form-a-matic</h2>
-<p><em>requirements, second pass</em></p>
-<h3>Purpose</h3>
-<p>Generate HTML forms based on RDF shapes<sup><a id="footnote-ref-1" href="#footnote-1" data-footnote-ref aria-describedby="footnote-label">1</a></sup> which, when filled in, will generate RDF instance data. The FOAF-a-matic and DOAP-a-matic being examples.</p>
-<p>This will be an application of #Transmissions.</p>
-<p>I want to get Claude to do most of the work.</p>
-<h3>Process</h3>
-<p>My initial <a href="https://danny.ayers.name/entries/2024-08-28_form-a-matic.html">Form-a-matic</a> process is more general than I need right now. Also it would be nicer for the resulting a-matic-form to be relatively self-contained (ie. not involving a SPARQL store).</p>
-<p>The input is an example of the target RDF data.</p>
-<ol>
-<li>variable fields are identified</li>
-<li>HTML form elements are created corresponding to those fields</li>
-<li>Javascript is attached to a button on on the form to read the field values</li>
-<li>JS functions will generate RDF from the form values</li>
-</ol>
-<p>Possibly the quickest way of achieving most of this would be using generic text templating throughout (a la #SPARQLDiamonds). But I reckon it&#39;ll be neater, and potential more easily extendable if I use an RDF model in the JS.</p>
-<p>I <em>so</em> want to use SPARQL here, but side project in my queue is documenting <a href="https://rdf-ext.org/">RDF-Ext</a>. That includes <a href="https://github.com/rdf-ext/grapoi">grapoi</a>, a &#39;Universal RDF/JS graph traverser&#39;. There are also readers/serializers nearby, and I&#39;ve already been using it around #Transmissions.</p>
-<p>So let&#39;s :</p>
-<ul>
-<li>start with some tweaked <a href="https://en.wikipedia.org/wiki/Turtle_(syntax)">Turtle</a>-format <a href="https://en.wikipedia.org/wiki/FOAF">FOAF</a>. Give the places of interest keyword-style markers</li>
-<li>parse that out and locate those markers with RDF-Ext, recording their path inside the graph</li>
-<li>for each marker, generate a form field</li>
-</ul>
-<p>The end result form will need boilerplate JS functions for taking the form values and the RDF path, constructing the required triples.</p>
-<p>To get Claude to do the drudge work without being stupid I&#39;m going to have to prepare some prompts, some background material to put into a Claude Project and some examples.</p>
-<p>The other day I set up Transmissions&#39; CLI so it could use an application from any file path, so I guess this might be a good point to set up yet another GitHub repo : <a href="https://github.com/danja/trans-apps">trans-apps</a></p>
-<p>TODO allow applications to be loaded from URLs</p>
-<p>Now I&#39;ll publish this and then it&#39;s dogwalk time, then I&#39;m of out for a coffee &amp; shopping with Mari.</p>
-<hr>
-<pre><code class="language-turtle">@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
-@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
-@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+        <a href="entries/2024-09-15_hiphop.html">#</a>
+    <h1>HipHop</h1>
+<p>Listening to <a href="https://www.youtube.com/watch?v=MYv_HaIrgdg">oldskool hiphop</a>, trying to restrain my head from hopping around.</p>
+<p>Nearly forgot, I was wondering about dynamically loading #Transmission services from locations unkown before runtime. Claude gave me some suggestions.</p>
+<p>TODO copy into Transmissions notes</p>
+<p>13:33 and I still not really awake yet. Body a bit tired, I walked 14,163 steps yesterday! But I&#39;ve 1 bottle of Peroni, 3 cans of Radler 2% shandy and some very poor ginger beer to lubricate.</p>
+<p>Ok, quick stab at the markmap bits.</p>
+<p>It&#39;s not obvious from the docs how to use the libs. See if Claude can help.</p>
+<p>In <code>~/github-other$ </code> :</p>
+<pre><code class="language-bash">git clone https://github.com/markmap/markmap.git
 
-&lt;#URI&gt;
-    a foaf:Person ;
-    foaf:name &quot;LITERAL&quot; ;
-    foaf:mbox &lt;#URI&gt; ;
-    foaf:homepage &lt;#URI&gt; ;
-    foaf:nick &quot;LITERAL&quot; ;
-    foaf:depiction &lt;#URI&gt; ;
-    foaf:interest &lt;#URI&gt; ;
-    foaf:knows [
-        a foaf:Person ;
-        foaf:name &quot;LITERAL&quot;
-    ] .
+cd markmap
+
+repopack --verbose -c /home/danny/github-danny/transmissions/repopack.config.json
 </code></pre>
+<p>Project created on Claude. System prompt &amp; repopack added.</p>
+<p>In <code>~github-danny/transmissions</code></p>
+<pre><code class="language-bash">npm install markmap-lib
+npm install markmap-render
+npm install markmap-view
+npm install markmap-toolbar
+</code></pre>
+<p>Claudes first pass in :</p>
+<pre><code class="language-bash">~/github-danny/transmissions/raw-src/markmap/01.js
+</code></pre>
+<p>Wow, Claude got it right first time!</p>
+<pre><code class="language-javascript">import { Transformer } from &quot;markmap-lib&quot;;
+import { fillTemplate } from &quot;markmap-render&quot;;
+
+const input = `# A markdown string
+## another
+
+* bullet1
+* bullet2`;
+
+// Step 1: Transform markdown to markmap data
+const transformer = new Transformer();
+const A = transformer.transform(input);
+
+// Step 2: Get assets (CSS and JS) needed for rendering
+const B = transformer.getAssets();
+
+// Step 3: Generate HTML with embedded SVG
+const C = fillTemplate(A.root, B);
+
+// Now C contains the final HTML with embedded SVG
+
+// console.log(A)
+//console.log(B)
+console.log(C);
+</code></pre>
+<p>The JSON structure I wanted to look at, <code>A</code> is :</p>
+<pre><code class="language-json">{
+  content: &#39;# A markdown string\n## another\n\n* bullet1\n* bullet2&#39;,
+  features: {},
+  contentLineOffset: 0,
+  root: {
+    content: &#39;A markdown string&#39;,
+    children: [ [Object] ],
+    payload: { lines: &#39;0,1&#39; }
+  }
+}
+</code></pre>
+<p>Hmm. Not quite the intermediate representation I was hoping for, but presumably there&#39;s stuff in the <code>[Object]</code>.</p>
+<p><code>B</code> is :</p>
+<pre><code class="language-json">{
+  styles: [
+    { type: &#39;stylesheet&#39;, data: [Object] },
+    { type: &#39;stylesheet&#39;, data: [Object] }
+  ],
+  scripts: [
+    { type: &#39;iife&#39;, data: [Object] },
+    { type: &#39;script&#39;, data: [Object] }
+  ]
+}
+</code></pre>
+<p><code>C</code> is HTML with embedded SVG.</p>
+<p>Claude also gave me code for getting just the SVG: In node it needs :</p>
+<pre><code class="language-bash">npm install jsdom
+</code></pre>
+<p>Code is in <code>raw-src/markmap/02.js</code></p>
+<p>Claude messed up trying to use lots of DOM. I&#39;ll leave SVG-alone alone for now.</p>
+<p>I asked Claude about looking at the <code>children</code> object. He gave me :</p>
+<pre><code class="language-javascript">function expandNode(node, depth = 0) {
+  const indent = &quot;  &quot;.repeat(depth);
+  console.log(`${indent}content: ${JSON.stringify(node.content)}`);
+  if (node.payload) {
+    console.log(`${indent}payload: ${JSON.stringify(node.payload)}`);
+  }
+  if (node.children &amp;&amp; node.children.length &gt; 0) {
+    console.log(`${indent}children:`);
+    node.children.forEach((child) =&gt; expandNode(child, depth + 1));
+  }
+}
+</code></pre>
+<pre><code># A markdown string
+## another
+
+* bullet1
+* bullet2
+</code></pre>
+<p>This gave me :</p>
+<pre><code>content: &quot;A markdown string&quot;
+payload: {&quot;lines&quot;:&quot;0,1&quot;}
+children:
+  content: &quot;another&quot;
+  payload: {&quot;lines&quot;:&quot;1,2&quot;}
+  children:
+    content: &quot;bullet1&quot;
+    payload: {&quot;lines&quot;:&quot;3,4&quot;}
+    content: &quot;bullet2&quot;
+    payload: {&quot;lines&quot;:&quot;4,5&quot;}
+</code></pre>
+<p>TODO incorporate <a href="https://markmap.js.org/docs/packages--markmap-toolbar">markmap-toolbar</a></p>
+<p>Dogwalk time.</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="entries/2024-09-15_hiphop.html">
+        HipHop
+    </a>
+</p> <em>2024-09-16</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="entries/2024-09-14_walking-hat.html">#</a>
+    <h1>Walking Hat</h1>
+<p>The bedroom was chilly last night so I wore a beany hat in bed. I was wearing it when I woke up. Finally found it on the bedside table on the other side of the bed. How it got there is a mystery. I didn&#39;t go over there, it&#39;s not the kind of trick Claudio plays. Which leaves the possibility of rodents...</p>
+<p>So it&#39;s Saturday, #ELFQuake day. So I <strong>must</strong> do at least an hour on that.</p>
+<p>The dependency tree for that includes a lot of tasks that help elsewhere, so</p>
+<p>17:15 and I still haven&#39;t got to code...</p>
+<p>Using bit from Markmap :</p>
+<p>TODO <code>services/text/MarkdownToJSON.js</code>, <code>services/viz/JSONToSVGTree.js</code></p>
+<p>The latter using <code>markmap-lib</code> to have a look at the output shape, because I now reckon for simplicity &amp; reuse, #form-a-matic should have an intermediate JS object representation (so RDF-&gt;JSON...JSON-&gt;HTML), initially a simple tree.</p>
+<p>First, dump some <a href="#idea-bits">idea bits</a>.</p>
+<ul>
+<li>Twitter export</li>
+</ul>
+<ul>
+<li><a href="https://github.com/mvbasov/OMN">Open Markdown Notes</a></li>
+<li><a href="https://github.com/gsantner/markor">Markor</a></li>
+<li><a href="https://github.com/mvbasov/lWS">IWS Lightweight Android Web Server</a></li>
+</ul>
+<p>TODO <code>transmissions/services/ingesters/ToDoText.js</code></p>
+<a id="idea-bits" class="anchor" />
+
+<h2>Idea Bits</h2>
+<p>Unidentified Reality Issues</p>
+<p>Nature Nurture</p>
+<p>TODO make #Transmissions Turing Complete</p>
+<p>This is currently a YAGNI, but I reckon worth doing before release because it make <em>anything</em> possible and implementation will need changes in the core engine of Transmissions.</p>
+<p>Needs :</p>
+<ul>
+<li>Conditional branching</li>
+<li>Looping or recursion</li>
+</ul>
+<p><a href="https://en.wikipedia.org/wiki/Structured_program_theorem">https://en.wikipedia.org/wiki/Structured_program_theorem</a></p>
+<p>TODO write Wireless World articles on Radio Nature, ELFQuake</p>
+<p><a href="https://www.electronicsworld.co.uk/magazines/">https://www.electronicsworld.co.uk/magazines/</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Electronics_World">https://en.wikipedia.org/wiki/Electronics_World</a></p>
+<p>TODO write &#39;ADHD for Computer Scientists&#39;</p>
+<p>For r/tokipona</p>
+<p>The English idiom &quot;to kill two birds with one stone&quot; expresses a very useful concept (to achieve two things with a single action) in a horrible way. I was pleased to find that the Italian equivalent &quot;prendere due piccioni con una fava&quot; is less violent - to catch two pigeons with one bean. There are other variants around Europe <sup><a id="footnote-ref-1" href="#footnote-1" data-footnote-ref aria-describedby="footnote-label">1</a></sup>. My geo is terrible, no idea which country has &quot;roast two pieces meat on one fire&quot;, but again that&#39;s a bit less nasty.</p>
+<p>I&#39;d like a pleasant English version and to find that, getting it to work in the language of good seems a good approach. So how would you express this in toki pona?</p>
+<p>For twitter:</p>
+<p>First they came for the Venezualians, and I did not speak out, because I was not a Venezualian.
+Then they came for the Haitians, and I did not speak out, because I was not a Haitian.
+...</p>
 <section class="footnotes" data-footnotes>
 <h2 id="footnote-label" class="sr-only">Footnotes</h2>
 <ol>
 <li id="footnote-1">
-<p>ultimately <a href="https://www.w3.org/TR/shacl/">SHACL</a> is totally in the frame for this, but this quick-and-dirty approach skipping around SHACL should be simpler to implement as first attempt. (There is a SHACL engine in RDF-Ext, see <a href="https://www.bergnet.org/2023/03/2023/shacl-engine/">https://www.bergnet.org/2023/03/2023/shacl-engine/</a>) <a href="#footnote-ref-1" data-footnote-backref aria-label="Back to reference 1">↩</a></p>
+<p><a href="https://jakubmarian.com/kill-two-birds-with-one-stone-in-european-languages/">https://jakubmarian.com/kill-two-birds-with-one-stone-in-european-languages/</a> <a href="#footnote-ref-1" data-footnote-backref aria-label="Back to reference 1">↩</a></p>
 </li>
 </ol>
 </section>
 
 </article>
 <p class="post-title h-cinzel">
-    <a href="entries/2024-09-10_goon.html">
-        Goon
+    <a href="entries/2024-09-14_walking-hat.html">
+        Walking Hat
     </a>
-</p> <em>2024-09-11</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-09-16</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
-        <a href="entries/2024-09-09_holst.html">#</a>
-    <h1>The Planets</h1>
-<p>On BBC Radio 4 this morning there was a prog <a href="https://www.bbc.co.uk/sounds/play/m0022t6x">How to Play</a> featuring Holst&#39;s &#39;The Planets&#39;.</p>
-<p>Gives me today&#39;s analogy for my recurring problem of how best to spend my time.</p>
-<p>My todo list for today might well be changed if some money I&#39;m hoping is coming my way arrives today, but for now I&#39;ll assume it isn&#39;t.</p>
-<p>I want to get XMPP up and running asap but I&#39;ve got to a point with #Postcraft where I can start organising my notes better (and putting them online).</p>
-<h2>Postcraft/Transmissions</h2>
-<p>Hmm. JSON remodeller, RDF-&gt;JSON lib for ConfigMap etc. Use the old thing</p>
+        <a href="entries/2024-09-13_ducks.html">#</a>
+    <h1>A Swarm of Ducks</h1>
 <ul>
-<li>write a top-level list of what I&#39;m working on</li>
-<li>set up placeholder Postcraft setups as appropriate</li>
+<li><p>under construction snippet</p>
+</li>
+<li><p>sidebars for danny.ayers.name</p>
+</li>
+<li><p>get pulsar running</p>
+</li>
+<li><p>all postcrafts</p>
+</li>
+<li><p>form-a-matic</p>
+</li>
+<li></li>
 </ul>
-<p><a href="https://markmap.js.org/docs/markmap">markmap</a></p>
-<p><a href="https://markmap.js.org/docs/packages--markmap-lib">markmap-lib</a></p>
-<p><a href="https://markmap.js.org/docs/json-options">markmap JSON Options</a> - note Markdown Frontmatter</p>
-<p><code>/home/danny/github-danny/postcraft/danny.ayers.name/content-raw/articles/about/what-am-i-doing.md</code></p>
-<p>TODO Postcraft backup transmission
-TODO Transmissions conditionals (+ list other constructs somewhere)
-TODO todo list extractor</p>
-<p>TODO markmap interactive page</p>
-<h2>XMPP</h2>
-<ul>
-<li>get the server working</li>
-<li>make a (client) test script</li>
-</ul>
-<h2>hkms-desktop</h2>
-<ul>
-<li>relocate</li>
-<li>update</li>
-<li>symlinks to</li>
-</ul>
-<p>TODO URL shortener : <a href="https://strandz.it/QWER">https://strandz.it/QWER</a></p>
+<h2>Postcrafts</h2>
+<p>danny.ayers.name
+hyperdata.it
+elfquake.org
+strandz.it</p>
+<p>foaf-retro</p>
+<p>postcraft</p>
 
 </article>
 <p class="post-title h-cinzel">
-    <a href="entries/2024-09-09_holst.html">
-        The Planets
+    <a href="entries/2024-09-13_ducks.html">
+        A Swarm of Ducks
     </a>
-</p> <em>2024-09-11</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-09-16</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
-        <a href="entries/2024-09-08_xmpp-3.html">#</a>
-    <h1>Setting up XMPP pt.3</h1>
-<p><a href="https://github.com/mathiasertl/xmpp-test">https://github.com/mathiasertl/xmpp-test</a></p>
-<pre><code class="language-bash">cd /home/github-other
-
-apt install python-is-python3
-
-git clone https://github.com/mathiasertl/xmpp-test.git
-
-cd xmpp-test
-
-python3 -m venv .venv
-
-source .venv/bin/activate
-
-cd xmpp-test# pip install -r requirements.txt
-
-pip install -r requirements.txt
-</code></pre>
-<p>deactivate</p>
-<p>grrr. Incompatible dependency.</p>
-<p><a href="https://stackoverflow.com/questions/72032032/importerror-cannot-import-name-iterable-from-collections-in-python">https://stackoverflow.com/questions/72032032/importerror-cannot-import-name-iterable-from-collections-in-python</a></p>
-<p>I could fork &amp; tweak...</p>
-<p>but my own code can probably do the same.</p>
-<p>I think <a href="https://github.com/danja/dogbot">https://github.com/danja/dogbot</a> was my latest.</p>
-<p>Later.</p>
-<p>// ejabberdctl register dogbot hyperdata.it
-// ejabberdctl change_password dogbot hyperdata.it doggy</p>
-<p>nano /etc/ejabberd/ejabberd.yml
-ejabberdctl reload_config</p>
+        <a href="entries/2024-09-12_google-takedown.html">#</a>
+    <p>Download to my server first? But how, given whatever auth Google is using..? Wireshark to read actual messages?</p>
+<p>Claude suggested download to Google Drive first, then other more interesting suggestions, including using Selenium or Puppeteer. I think I played with Selenium a while back, the mock-browser setup would be useful elsewhere for me. To consider.</p>
+<hr>
+<p>Distraction:</p>
+<p><a href="https://console.cloud.google.com/welcome?pli=1&project=mozzanella-01">https://console.cloud.google.com/welcome?pli=1&amp;project=mozzanella-01</a></p>
+<p>Start your free trial with $300 in credit. Don&#39;t worry – you won&#39;t be charged if you run out of credit. Learn more</p>
+<hr>
+<p>Asked Grok:</p>
+<p>I need to download my email archives from gmail but I have a very unreliable internet connection. For downloading from simple URLs I would use wget -c and resume if the line dropped. When I try downloading the gmail archive from a browser is does have a kind of resume, but doesn&#39;t appear to restart where it left off a lot of the time. It also has quite a complicated URL and it looks like there is some kind of auth involved too. How can I do a reliable, resumable, efficient download?
+Show more
+I understand your concern. Downloading a large email archive from Gmail can be challenging, especially with an unreliable internet connection. Here&#39;s a step-by-step guide to help you download your Gmail archives reliably, resumably, and efficiently:</p>
+<p>Method 1: Using wget with Gmail&#39;s API</p>
+<p>Gmail provides an API that allows you to download your email archives programmatically. You&#39;ll need to:</p>
+<p>Enable the Gmail API for your account:
+Go to the Google Cloud Console (<a href="https://console.cloud.google.com/">https://console.cloud.google.com/</a>) and create a new project.
+Navigate to APIs &amp; Services &gt; Library and search for &quot;Gmail API&quot;.
+Click on the result, then click on the &quot;Enable&quot; button.
+Create credentials for your project (OAuth client ID).
+Install the curl and jq command-line tools:
+curl is used to send HTTP requests, and jq is used to parse JSON responses.
+Use the following command to download your email archives:
+curl -X GET <br> <a href="https://www.googleapis.com/gmail/v1/users/me/messages?labelIds=INBOX&maxResults=1000">https://www.googleapis.com/gmail/v1/users/me/messages?labelIds=INBOX&amp;maxResults=1000</a> <br> -H &#39;Authorization: Bearer YOUR_ACCESS_TOKEN&#39; <br> -H &#39;Content-Type: application/json&#39; <br> -o messages.json
+Replace YOUR_ACCESS_TOKEN with the access token obtained from the Google Cloud Console.</p>
+<p>This command downloads the first 1000 messages in your inbox. You can adjust the maxResults parameter to change the batch size.</p>
+<p>To resume the download, you can use the --continue option with curl:</p>
+<p>curl -X GET <br> <a href="https://www.googleapis.com/gmail/v1/users/me/messages?labelIds=INBOX&maxResults=1000&startMessageId=MESSAGE_ID">https://www.googleapis.com/gmail/v1/users/me/messages?labelIds=INBOX&amp;maxResults=1000&amp;startMessageId=MESSAGE_ID</a> <br> -H &#39;Authorization: Bearer YOUR_ACCESS_TOKEN&#39; <br> -H &#39;Content-Type: application/json&#39; <br> -o messages.json <br> --continue
+Replace MESSAGE_ID with the ID of the last message downloaded.</p>
+<p>Method 2: Using wget with Gmail&#39;s IMAP</p>
+<p>Gmail provides an IMAP (Internet Message Access Protocol) interface that allows you to access your email archives. You&#39;ll need to:</p>
+<p>Enable IMAP access for your Gmail account:
+Go to your Gmail settings (gear icon) &gt; Forwarding and POP/IMAP &gt; Enable IMAP.
+Install the wget command-line tool.
+Use the following command to download your email archives:
+wget -r -l 1 -A imap -P /path/to/download/folder imap://imap.gmail.com
+This command downloads all emails from your inbox, using the IMAP protocol. The -r option tells wget to follow links, -l 1 sets the maximum recursion depth to 1, -A imap specifies the file name pattern, and -P sets the download directory.</p>
+<p>To resume the download, you can use the --continue option with wget:</p>
+<p>wget -r -l 1 -A imap -P /path/to/download/folder --continue imap://imap.gmail.com
+Tips and Variations</p>
+<p>To download specific labels or folders, modify the labelIds or folder parameter in the API request or IMAP URL.
+To download attachments, use the --recursive option with wget and specify the attachment file name pattern.
+To download emails in a specific format (e.g., MBOX, EML), use a tool like imap-sync or mbox2eml.
+If you encounter issues with authentication or connection timeouts, try using a VPN or a more reliable internet connection.
+Remember to respect Gmail&#39;s terms of service and usage limits when downloading your email archives.</p>
+<p>Welcome back! We&#39;re glad you’re here and as always, we want to help. If you&#39;re new to Groq, here are a few suggested topics you might be interested in learning about:</p>
+<p>What is an LPU? Read our latest whitepaper outlining the four core design principles of an LPU and how it differs from a GPU
+Learn about the openly available models Groq is running, including the recent addition of Llama 3.1 by Meta
+Get inspiration from the innovative AI applications Powered by Groq, featured on our Showcase
+Ready to start building? Get your free API key at GroqCloud™ Developer Console and join our community of developers on Discord.</p>
+<p>To experience the instant intelligence of GroqChat, create an account or sign in</p>
+<p>Danny Ayers
+Danny Ayers</p>
 
 </article>
 <p class="post-title h-cinzel">
-    <a href="entries/2024-09-08_xmpp-3.html">
-        Setting up XMPP pt.3
+    <a href="entries/2024-09-12_google-takedown.html">
+        Google Takedown
     </a>
-</p> <em>2024-09-11</em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="entries/2024-09-08_stormy.html">#</a>
-    <h1>Stormy Weather</h1>
-<p>I did start looking at server XMPP config again but a thunderstorm means the network is up &amp; down.</p>
-<p>Back to #Transmissions <code>ConfigMap</code>.</p>
-<p>Hmm. Need docs to make sense of these.</p>
-<p>Slight diversion : I&#39;m adding code into <code>DirWalker</code> to ignore markdown files with a name start with <code>_</code> underscore. Hardcoded for now (like accepting <code>.md</code>).</p>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="entries/2024-09-08_stormy.html">
-        Stormy Weather
-    </a>
-</p> <em>2024-09-11</em>
+</p> <em>2024-09-16</em>
             </article>
         </div>
         <div class="main-grid-item about">
