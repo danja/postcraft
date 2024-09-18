@@ -50,13 +50,4 @@ Two different repos.
 
 The `form-a-matic` source so far is a transmission defined under `trans-apps` using services under transmissions. I have notes on shifting the services elsewhere, but that's not high priority.
 
-Real-world odd jobs!
-
-
-
-
-
-
-
-
 After a couple of real-world odd jobs.
