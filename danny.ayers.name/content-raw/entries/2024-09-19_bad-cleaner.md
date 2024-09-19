@@ -22,7 +22,7 @@ Ops.
 
 Dogwalk time.
 
-TODO ping Bergi re. store suggestions for SparqlPress3
+
 ---
 The goal today is to create nodejs es modules that will take Turtle syntax RDF and render is as a  graph diagram. The form-a-matic repo contains an example of parsing Turtle syntax, the json-ld-playground repo includes code for rendering a visualization of RDF using the D3 library.
 
@@ -32,3 +32,7 @@ Please follow these steps :
 2. examine the form-a-matic repo to find the JS represention it makes of the RDF model from the Turtle file
 3. locate whichever point in the json-ld-playground visualization code that is most appropriate to take the the JS representation of Turtle and pass it to the visualizer
 4. modify and/or create the necessary code to read a Turtle file and render a visualization
+
+We got quite a way with this, but it looks like it'll take a good few more cycles. Leave it for now, 19:22 dogwalk 2 time.   
+
+---
