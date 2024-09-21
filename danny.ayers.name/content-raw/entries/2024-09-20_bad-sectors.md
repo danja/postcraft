@@ -20,6 +20,10 @@ Today I *must* get my pension docs sorted out.
 
 #Form-a-matic time.
 
+Grr. Got in a tangle with git doing a bit of reorg.
+
+Hey ho, break time.
+
 ## Git Stuff
 
 ### New package
@@ -29,6 +33,9 @@ https://github.blog/open-source/git/working-with-submodules/
 ```
 cd /home/danny/github-danny/hyperdata/packages
 git submodule add https://github.com/danja/kia.git kia
+
+cd /home/danny/github-danny/hyperdata/packages
+git submodule add https://github.com/danja/farelo.git farelo
 ```
 
 
