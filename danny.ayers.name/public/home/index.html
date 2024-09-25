@@ -30,383 +30,191 @@
                 <!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
-        <a href="entries/2024-09-17_fan-migration.html">#</a>
-    <h1>Fan Migration</h1>
-<p>It&#39;s chilly. The summer fans have gone down into the cantina for winter, the fan heaters have come up.</p>
-<p><strong>Grrrrr</strong>, the Pulsar install had a little brokenness, I wanted to turn off autocomplete on <code>.md</code> but loading packages for settings wasn&#39;t working.</p>
-<p>I moved pre-existing <code>~/.pulsar</code> out of the way and reinstalled - it needed</p>
-<pre><code>~/github-danny/pulsar$ nvm use
+        <a href="entries/2024-09-24_mail.html">#</a>
+    <h1>Mail</h1>
+<ul>
+<li>email my mother</li>
+</ul>
+<h2>hyperdata-desktop</h2>
+<p><a href="https://pulsar-edit.dev/docs/launch-manual/sections/core-hacking/#building-and-running-the-application">https://pulsar-edit.dev/docs/launch-manual/sections/core-hacking/#building-and-running-the-application</a></p>
+<p>&quot;typescript-simple&quot;: &quot;github:pulsar-edit/typescript-simple#ccb03e558217030e8f261339281f1d69147934f7&quot;,</p>
+<pre><code>&quot;typescript-simple&quot;: &quot;github:pulsar-edit/typescript-simple#ccb03e558217030e8f261339281f1d69147934f7&quot;,
 </code></pre>
-<p>Packages still not being found. Got a minimal error message on command line :</p>
-<pre><code>[79459:0917/125131.490332:INFO:CONSOLE(223)] &quot;Fetching local packages failed. Error: Fetching local packages failed.
-    at createProcessError (/home/danny/github-danny/pulsar/node_modules/settings-view/lib/package-manager.js:575:17)
-</code></pre>
-<p>Ok, I haz source &amp; AI...</p>
-<pre><code class="language-bash">cd src
-repopack --verbose -c ../repopack.config.json
-cd ../docs
-repopack --verbose -c ../repopack.config.json
-</code></pre>
-<p>(needed a new terminator session so it used the right nodejs)</p>
-<p>Distracted - little admin/productivity jobs -</p>
-<p>Moved my <em>Daily</em> tabs from Brave to Opera. Dark theme so I can see.</p>
-<p>Fixed one problem with Pulsar, I had an env var in <code>.bashrc</code> pointing to the wrong path for <code>apm</code>. Not entirely fixed yet, need to <code>apt upgrade</code>...</p>
-<p>I&#39;ve decided to give myself a deadline for doing a release of #Transmissions etc, announcements... 2024-10-31</p>
-<p>This really calls for me to figure out task priorities. That starts with capturing tasks.
-Onto #fom-a-matic, <a href="https://danny.ayers.name/entries/2024-09-10_goon.html">latest notes</a>.</p>
-<p>Hmm. Docs should go under #farelo. Need to set that up first <strong>why oh why are the yaks so hairy!?</strong></p>
-<p>Ops. I was in the process of moving Farelo to the #hyperdata monorepo, so I&#39;ve got (at least) two different dirs...</p>
-<pre><code>/home/danny/github-danny/hyperdata/packages/farelo
-/home/danny/github-danny/farelo
-</code></pre>
-<p>Two different repos.</p>
-<p>The <code>form-a-matic</code> source so far is a transmission defined under <code>trans-apps</code> using services under transmissions. I have notes on shifting the services elsewhere, but that&#39;s not high priority.</p>
-<p>Real-world odd jobs!</p>
-<p>After a couple of real-world odd jobs.</p>
+<p>export ATOM_HOME=/home/danny/.pulsar
+export APM_PATH=/ppm/bin/apm
+export ATOM_ELECTRON_VERSION=12.2.3</p>
+<p>export APM_PATH=/home/danny/github-danny/hkms-desktop/ppm/bin/apm</p>
 
 </article>
 <p class="post-title h-cinzel">
-    <a href="entries/2024-09-17_fan-migration.html">
-        Fan Migration
+    <a href="entries/2024-09-24_mail.html">
+        Mail
     </a>
-</p> <em>2024-09-17</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-09-25</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
-        <a href="entries/2024-09-16_jacket.html">#</a>
-    <h1>Hiding Jacket</h1>
-<p>13:00</p>
-<p>It&#39;s gone cool. I have a fleece jacket that&#39;s warm, but I knew it needed washing. So I just searched high &amp; low, only to find it in the washing machine. A wash I did a couple of days ago and completely forgot.</p>
-<p>My priorities today are something like :</p>
-<ul>
-<li>pension docs</li>
-<li>pulsar</li>
-<li>form-a-matic</li>
-<li>xmpp</li>
-<li>sidebars</li>
-<li>tidy desk</li>
-<li>fix chairs</li>
-<li>metal detector</li>
-<li>music room</li>
-<li>PS. read @iand&#39;s notes around <a href="https://blog.iandavis.com/2017/10/microfunctions/">Serverless: why microfunctions &gt; microservices</a></li>
-<li>foaf-retro todos</li>
-</ul>
-<p>But I&#39;ve still got a bit of task paralysis. #ADHD Strategy : either do something that will help productivity or something that will benefit someone else or take Claudio out.</p>
-<p>The #Pulsar thing is productivity and should be a quicky.</p>
-<p>Just thinking about Transmissions dev.</p>
-<h2>Pulsar Install</h2>
-<p><a href="https://pulsar-edit.dev/docs/launch-manual/sections/core-hacking/#building-pulsar">https://pulsar-edit.dev/docs/launch-manual/sections/core-hacking/#building-pulsar</a></p>
-<pre><code>danny@danny-desktop:~/github-danny/pulsar$ node -v
-v20.11.0
-danny@danny-desktop:~/github-danny/pulsar$ nvm use
-Found &#39;/home/danny/github-danny/pulsar/.nvmrc&#39; with version &lt;16&gt;
-Now using node v16.20.2 (npm v8.19.4)
-danny@danny-desktop:~/github-danny/pulsar$ node -v
-v16.20.2
+        <a href="entries/2024-09-22_iron.html">#</a>
+    <h1>Iron</h1>
+<p>This morning I was woken first around 9:00 by Claudio wanting to get under my blanket. He&#39;s been doing it all week, seems to like to start the day with a snuggle. I&#39;d just about dozed off again when the alarm on my phone went off, 9:57 (timed so I can have a pee &amp; glass of water before BBC Radio 4 news). Dozing off again, Oriana phoned, asking if I had an iron &amp; ironing board. I have iron which I never use, so I got up and took it across.</p>
+<p>I remember last century, all the musicians in South London would use ironing boards as keyboard stands. I&#39;m pretty sure I&#39;ll have one somewhere, probably under piles of junk in the cantina, take forever to find. But I do have a couple of spare keyboard stands...</p>
+<h2>Today</h2>
+<p>Make a note of my (intended) schedule.</p>
+<h3>form-a-matic</h3>
+<p>I need to move this on a bit. I really need an RDF instance viewer/editor.</p>
+<p>TODO add terms to `project vocab :</p>
+<pre><code>prj:Requirement a rdf:Class
 </code></pre>
-<p>New to me, <a href="https://nodejs.org/api/corepack.html">corepack</a> :</p>
-<p>Trying :</p>
-<pre><code class="language-bash">corepack enable
-git submodule init &amp;&amp; git submodule update
+<p>something like <code>resolution</code> to point between tasks/goals and requirements.</p>
+<p>wait, <a href="https://www.pqforce.com/en/blog/goals-vs-requirements-what-is-the-difference">this</a> suggests my subgoals are pretty much the same. Maybe sameClassAs??</p>
+<h3>Transmissions</h3>
+<p>Refactoring first, renaming <code>services</code> to <code>transformers</code>.</p>
+<p>I also want to do the simplified runners, scripts that directly call <code>transformers</code>. It&#39;ll offer a quick &amp; dirty way of setting up (and explaining) transmissions, more importantly make sub-codebases small enough for AI&#39;s context windows to deal with.</p>
+<p>Hmm...this could make <code>transmissions/blocks</code>, each of which could be run as a <code>transformer</code> in the current sense.</p>
+<p>While I&#39;m there, think about the Turing Completeness goal.</p>
+<p>Then, I&#39;m a bit frustrated with the AI coding assistants I&#39;ve been using. A bit snag is them not seeing what happens at runtime. So I want to attach a shell to an API.</p>
+<h3>Server reorg</h3>
+<p>I&#39;ve spawned lots of #Postcraft instances that need to go on the server somewhere. I&#39;ve got a few domain names, so I reckon I&#39;ll start by renaming the <code>hyperdata.it</code> repo to <code>servers</code> and drop the postcraft stuff in there.</p>
+<p>TODO tweak <code>services-config.ttl</code> so <code>postcraft/public/home</code> goes straight to <code>postcraft/public</code></p>
+<p>TODO add a postcraft for <code>danny.ayers.name/irl</code> for more real projects.</p>
+<h3>hyperdata-desktop</h3>
+<p>Annoying I&#39;ve somehow managed to break <code>hyperdata-desktop</code> (==<code>pulsar-edit</code>) while reorganising things. I&#39;m now trying to rebuild, at some point I may have forgotten to do :</p>
+<pre><code class="language-sh">nvm use
+</code></pre>
+<p>and got lib versions muddled.</p>
+<p>13:03 earlier-than-usual dogwalk, I need a bit of fresh air.</p>
+<p><code>npm install</code> mentions :</p>
+<pre><code class="language-sh">--cache=/home/danny/.npm
+</code></pre>
+<p>So just in case :</p>
+<pre><code class="language-sh">cd ~/.npm
+sudo rm -r *
+</code></pre>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="entries/2024-09-22_iron.html">
+        Iron
+    </a>
+</p> <em>2024-09-25</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="entries/2024-09-21_pension.html">#</a>
+    <h1>Pension</h1>
+<p>Title is a note to self. I need to fill in some forms for Derbyshire County Council so I can get pension from the period I worked for High Peak College (network admin/support).</p>
+<p>Bits of admin on this desktop before anything else.</p>
+<p>Fool Danny, I&#39;d forgotten I&#39;d started <code>danny.ayers.name/todo/2024-09.md</code> etc for my ongoing todo list.</p>
+<p>for building <code>hyperdata-desktop</code> :</p>
+<p><a href="https://pulsar-edit.dev/docs/launch-manual/sections/core-hacking/#building-and-running-the-application">https://pulsar-edit.dev/docs/launch-manual/sections/core-hacking/#building-and-running-the-application</a></p>
+<pre><code class="language-bash">cd ~/github-danny/hyperdata/packages/hyperdata-desktop
+
+# first time
+# nvm install
+# corepack enable
+
+# subsequent
+nvm use
+# Now using node v16.20.2 (npm v8.19.4)
 yarn install
 yarn build
 yarn build:apm
-yarn start
 </code></pre>
-<p>Some dependency warnings for <code>install</code></p>
-<p>Taking its time...might as well do printer alignment (I put in a new ink cartridge the other day before going out, alignment step had timed out before I got back).</p>
-<p>Yay! Pulsar worked.</p>
-<p>TODO review my earlier Pulsar tweaks, maybe integrate, save as <code>hkms-desktop</code></p>
-<p>TODO have a look at making an AppImage of <code>hkms-desktop</code></p>
-<p>What I want this for, in the first instance, is as a text editor for my #Postcraft instances, to free up this VSCode for, errm, code (I have been coding in Cursor, which is based on VSCode, but having this one separate to try other AI assistants will be useful).</p>
-<p>I want the edity bits of each Postcraft instance in a common place. Named symlinks first :</p>
-<pre><code class="language-bash">mkdir ~/workspaces_hkms-desktop
-cd ~/workspaces_hkms-desktop
-mkdir postcrafts-raw
-cd postcrafts-raw
-ln -s ~/github-danny/postcraft/danny.ayers.name/content-raw ./danny.ayers.name
-ln -s ~/github-danny/hyperdata/docs/postcraft/content-raw ./hyperdata
-ln -s ~/github-danny/transmissions/docs/postcraft/content-raw ./transmissions
-ln -s ~/github-danny/foaf-retro/docs/postcraft/content-raw ./foaf-retro
+<pre><code>cd ~/workspaces_hyperdata-desktop/postcrafts-raw
+ln -s /home/danny/github-danny/hyperdata/packages/hyperdata-desktop/docs/postcraft/content-raw ./hyperdata-desktop
 </code></pre>
-<p>Hmm. Most of the others need their folder structure updating. I&#39;ll sort those out as I need them.</p>
-<p>Ok, this will need tweaks, but that&#39;s basically done :</p>
-<p><img src="media/images/2024-09/pulsar.png" alt="Screenshot of Pulsar for editing"></p>
-<p>Font size changed 16-&gt;14.</p>
-<pre><code class="language-bash">cd ../transmissions/
-./trans postcraft ../postcraft/danny.ayers.name
-</code></pre>
-<p>TODO bash script to run transmissions on postcrafts</p>
-<p>Bum. I left a bug in there. Sort out later.</p>
-<p>Git commit &amp; push everything.</p>
-<p>TODO better way of doing git commit/push on all these (instead of from inside VSCode)</p>
-<p>Dogwalk time.</p>
-<blockquote>
-<p>(use <code>usr/local/bin</code>...) Alternatively, if you want the scripts to be available only for your user:</p>
-<p>Create a bin directory in your home folder if it doesn&#39;t exist: mkdir -p ~/bin
-Add this line to your .bashrc file: export PATH=&quot;$HOME/bin:$PATH&quot;
-Reload your .bashrc: source ~/.bashrc
-Place your scripts in ~/bin</p>
-</blockquote>
-<p>I need a <code>hyperdata-static-2024</code> repo.</p>
-<pre><code class="language-bash">cd ~/github-danny/pulsar
-
-repopack --verbose -c /home/danny/github-danny/transmissions/repopack.config.json
-</code></pre>
-<p>That got stuck.</p>
-<p>Hmm. <code>npm update repopack</code> stuck too. Network glitching? Yup, connection had dropped.</p>
-<p>TODO minimalist hardcoded runner script for Transmissions to help testing &amp; AI assistant generation</p>
-<p>Something like :</p>
-<pre><code class="language-javascript">const servicesConfigA = {...}
-const servicesConfigB = {...}
-
-var message = {...}
-
-// need to add
-const A = new ServiceA(servicesConfigA, configType=&quot;json&quot;)
-const B = new ServiceB(servicesConfigB, configType=&quot;json&quot;)
-
-message = A.execute(message)
-message = B.execute(message)
-
-console.log(JSON.stringify(message))
-</code></pre>
-<p>I&#39;ve made another repopack config, so :</p>
-<pre><code class="language-bash">cd ~/github-danny/pulsar
-repopack --verbose -c ./repopack.config.json
-</code></pre>
-<p>Hmm. 9x too big for Claude.</p>
-<p>Time to organise my scripts. Might as well put them on GitHub and on hyperdata.it</p>
-<p>Added to <code>.bashrc</code> :</p>
-<pre><code class="language-bash">export PATH=&quot;$HOME/github-danny/hyperdata.it/scripts:$PATH&quot;
-</code></pre>
-<p>then :</p>
-<pre><code class="language-bash">source ~/.bashrc
-</code></pre>
-<p>I did a repopack of the <code>src</code> and <code>docs</code> dirs of Pulsar. Docs was 58% of Claude project space, so I&#39;ll leave that there for now.</p>
-<p>The Transmissions bug was an easy fix.</p>
-<p>19:38 - food time.</p>
 
 </article>
 <p class="post-title h-cinzel">
-    <a href="entries/2024-09-16_jacket.html">
-        Hiding Jacket
+    <a href="entries/2024-09-21_pension.html">
+        Pension
     </a>
-</p> <em>2024-09-17</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-09-25</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
-        <a href="entries/2024-09-15_hiphop.html">#</a>
-    <h1>HipHop</h1>
-<p>Listening to <a href="https://www.youtube.com/watch?v=MYv_HaIrgdg">oldskool hiphop</a>, trying to restrain my head from hopping around.</p>
-<p>Nearly forgot, I was wondering about dynamically loading #Transmission services from locations unkown before runtime. Claude gave me some suggestions.</p>
-<p>TODO copy into Transmissions notes</p>
-<p>13:33 and I still not really awake yet. Body a bit tired, I walked 14,163 steps yesterday! But I&#39;ve 1 bottle of Peroni, 3 cans of Radler 2% shandy and some very poor ginger beer to lubricate.</p>
-<p>Ok, quick stab at the markmap bits.</p>
-<p>It&#39;s not obvious from the docs how to use the libs. See if Claude can help.</p>
-<p>In <code>~/github-other$ </code> :</p>
-<pre><code class="language-bash">git clone https://github.com/markmap/markmap.git
+        <a href="entries/2024-09-20_bad-sectors.html">#</a>
+    <h1>Bad Sectors</h1>
+<p>When I just switched on this machine it had a read-only fs. Had to run <code>fsck</code> manually.</p>
+<p>TODO review backup strategies</p>
+<p>Today I <em>must</em> get my pension docs sorted out.</p>
+<ul>
+<li>tidy big table  </li>
+<li>pension docs</li>
+<li>set up #Postcraft for electronics</li>
+<li>tidy desk</li>
+<li>metal detector</li>
+<li>form-a-matic</li>
+<li>try Claude snippets</li>
+<li>tidy kitchen table</li>
+<li>water kefir</li>
+<li>fix telefunken</li>
+<li>Diced paper instructions</li>
+</ul>
+<p>#Form-a-matic time.</p>
+<p>Grr. Got in a tangle with git doing a bit of reorg.</p>
+<p>Hey ho, break time.</p>
+<h2>Git Stuff</h2>
+<h3>New package</h3>
+<p><a href="https://github.blog/open-source/git/working-with-submodules/">https://github.blog/open-source/git/working-with-submodules/</a></p>
+<pre><code>cd /home/danny/github-danny/hyperdata/packages
+git submodule add https://github.com/danja/kia.git kia
 
-cd markmap
-
-repopack --verbose -c /home/danny/github-danny/transmissions/repopack.config.json
+cd /home/danny/github-danny/hyperdata/packages
+git submodule add https://github.com/danja/farelo.git farelo
 </code></pre>
-<p>Project created on Claude. System prompt &amp; repopack added.</p>
-<p>In <code>~github-danny/transmissions</code></p>
-<pre><code class="language-bash">npm install markmap-lib
-npm install markmap-render
-npm install markmap-view
-npm install markmap-toolbar
-</code></pre>
-<p>Claudes first pass in :</p>
-<pre><code class="language-bash">~/github-danny/transmissions/raw-src/markmap/01.js
-</code></pre>
-<p>Wow, Claude got it right first time!</p>
-<pre><code class="language-javascript">import { Transformer } from &quot;markmap-lib&quot;;
-import { fillTemplate } from &quot;markmap-render&quot;;
-
-const input = `# A markdown string
-## another
-
-* bullet1
-* bullet2`;
-
-// Step 1: Transform markdown to markmap data
-const transformer = new Transformer();
-const A = transformer.transform(input);
-
-// Step 2: Get assets (CSS and JS) needed for rendering
-const B = transformer.getAssets();
-
-// Step 3: Generate HTML with embedded SVG
-const C = fillTemplate(A.root, B);
-
-// Now C contains the final HTML with embedded SVG
-
-// console.log(A)
-//console.log(B)
-console.log(C);
-</code></pre>
-<p>The JSON structure I wanted to look at, <code>A</code> is :</p>
-<pre><code class="language-json">{
-  content: &#39;# A markdown string\n## another\n\n* bullet1\n* bullet2&#39;,
-  features: {},
-  contentLineOffset: 0,
-  root: {
-    content: &#39;A markdown string&#39;,
-    children: [ [Object] ],
-    payload: { lines: &#39;0,1&#39; }
-  }
-}
-</code></pre>
-<p>Hmm. Not quite the intermediate representation I was hoping for, but presumably there&#39;s stuff in the <code>[Object]</code>.</p>
-<p><code>B</code> is :</p>
-<pre><code class="language-json">{
-  styles: [
-    { type: &#39;stylesheet&#39;, data: [Object] },
-    { type: &#39;stylesheet&#39;, data: [Object] }
-  ],
-  scripts: [
-    { type: &#39;iife&#39;, data: [Object] },
-    { type: &#39;script&#39;, data: [Object] }
-  ]
-}
-</code></pre>
-<p><code>C</code> is HTML with embedded SVG.</p>
-<p>Claude also gave me code for getting just the SVG: In node it needs :</p>
-<pre><code class="language-bash">npm install jsdom
-</code></pre>
-<p>Code is in <code>raw-src/markmap/02.js</code></p>
-<p>Claude messed up trying to use lots of DOM. I&#39;ll leave SVG-alone alone for now.</p>
-<p>I asked Claude about looking at the <code>children</code> object. He gave me :</p>
-<pre><code class="language-javascript">function expandNode(node, depth = 0) {
-  const indent = &quot;  &quot;.repeat(depth);
-  console.log(`${indent}content: ${JSON.stringify(node.content)}`);
-  if (node.payload) {
-    console.log(`${indent}payload: ${JSON.stringify(node.payload)}`);
-  }
-  if (node.children &amp;&amp; node.children.length &gt; 0) {
-    console.log(`${indent}children:`);
-    node.children.forEach((child) =&gt; expandNode(child, depth + 1));
-  }
-}
-</code></pre>
-<pre><code># A markdown string
-## another
-
-* bullet1
-* bullet2
-</code></pre>
-<p>This gave me :</p>
-<pre><code>content: &quot;A markdown string&quot;
-payload: {&quot;lines&quot;:&quot;0,1&quot;}
-children:
-  content: &quot;another&quot;
-  payload: {&quot;lines&quot;:&quot;1,2&quot;}
-  children:
-    content: &quot;bullet1&quot;
-    payload: {&quot;lines&quot;:&quot;3,4&quot;}
-    content: &quot;bullet2&quot;
-    payload: {&quot;lines&quot;:&quot;4,5&quot;}
-</code></pre>
-<p>TODO incorporate <a href="https://markmap.js.org/docs/packages--markmap-toolbar">markmap-toolbar</a></p>
-<p>Dogwalk time.</p>
+<ul>
+<li><p>local : <code>/home/danny/github-danny/strandz/docs/strandz.it/public/home</code></p>
+</li>
+<li><p>server : <code>/home/github/strandz/docs/strandz.it/public/home</code></p>
+</li>
+<li><p>github :</p>
+</li>
+</ul>
+<hr>
+<h3>In VSCode</h3>
+<p>File -&gt; Preferences -&gt; Settings
+search &#39;autofetch&#39;</p>
+<p>// When set to true, commits will automatically be fetched from the default remote of the current Git repository. Setting to <code>all</code> will fetch from all remotes.
+&quot;git.autofetch&quot;: false,</p>
+<p>/home/danny/github-danny/elfquake/elfquake.org/entries/2024-08-03_submodules.md</p>
 
 </article>
 <p class="post-title h-cinzel">
-    <a href="entries/2024-09-15_hiphop.html">
-        HipHop
+    <a href="entries/2024-09-20_bad-sectors.html">
+        Bad Sectors
     </a>
-</p> <em>2024-09-17</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-09-25</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
-        <a href="entries/2024-09-14_walking-hat.html">#</a>
-    <h1>Walking Hat</h1>
-<p>The bedroom was chilly last night so I wore a beany hat in bed. I was wearing it when I woke up. Finally found it on the bedside table on the other side of the bed. How it got there is a mystery. I didn&#39;t go over there, it&#39;s not the kind of trick Claudio plays. Which leaves the possibility of rodents...</p>
-<p>So it&#39;s Saturday, #ELFQuake day. So I <strong>must</strong> do at least an hour on that.</p>
-<p>The dependency tree for that includes a lot of tasks that help elsewhere, so</p>
-<p>17:15 and I still haven&#39;t got to code...</p>
-<p>Using bit from Markmap :</p>
-<p>TODO <code>services/text/MarkdownToJSON.js</code>, <code>services/viz/JSONToSVGTree.js</code></p>
-<p>The latter using <code>markmap-lib</code> to have a look at the output shape, because I now reckon for simplicity &amp; reuse, #form-a-matic should have an intermediate JS object representation (so RDF-&gt;JSON...JSON-&gt;HTML), initially a simple tree.</p>
-<p>First, dump some <a href="#idea-bits">idea bits</a>.</p>
-<ul>
-<li>Twitter export</li>
-</ul>
-<ul>
-<li><a href="https://github.com/mvbasov/OMN">Open Markdown Notes</a></li>
-<li><a href="https://github.com/gsantner/markor">Markor</a></li>
-<li><a href="https://github.com/mvbasov/lWS">IWS Lightweight Android Web Server</a></li>
-</ul>
-<p>TODO <code>transmissions/services/ingesters/ToDoText.js</code></p>
-<a id="idea-bits" class="anchor" />
-
-<h2>Idea Bits</h2>
-<p>Unidentified Reality Issues</p>
-<p>Nature Nurture</p>
-<p>TODO make #Transmissions Turing Complete</p>
-<p>This is currently a YAGNI, but I reckon worth doing before release because it make <em>anything</em> possible and implementation will need changes in the core engine of Transmissions.</p>
-<p>Needs :</p>
-<ul>
-<li>Conditional branching</li>
-<li>Looping or recursion</li>
-</ul>
-<p><a href="https://en.wikipedia.org/wiki/Structured_program_theorem">https://en.wikipedia.org/wiki/Structured_program_theorem</a></p>
-<p>TODO write Wireless World articles on Radio Nature, ELFQuake</p>
-<p><a href="https://www.electronicsworld.co.uk/magazines/">https://www.electronicsworld.co.uk/magazines/</a></p>
-<p><a href="https://en.wikipedia.org/wiki/Electronics_World">https://en.wikipedia.org/wiki/Electronics_World</a></p>
-<p>TODO write &#39;ADHD for Computer Scientists&#39;</p>
-<p>For r/tokipona</p>
-<p>The English idiom &quot;to kill two birds with one stone&quot; expresses a very useful concept (to achieve two things with a single action) in a horrible way. I was pleased to find that the Italian equivalent &quot;prendere due piccioni con una fava&quot; is less violent - to catch two pigeons with one bean. There are other variants around Europe <sup><a id="footnote-ref-1" href="#footnote-1" data-footnote-ref aria-describedby="footnote-label">1</a></sup>. My geo is terrible, no idea which country has &quot;roast two pieces meat on one fire&quot;, but again that&#39;s a bit less nasty.</p>
-<p>I&#39;d like a pleasant English version and to find that, getting it to work in the language of good seems a good approach. So how would you express this in toki pona?</p>
-<p>For twitter:</p>
-<p>First they came for the Venezualians, and I did not speak out, because I was not a Venezualian.
-Then they came for the Haitians, and I did not speak out, because I was not a Haitian.
-...</p>
-<section class="footnotes" data-footnotes>
-<h2 id="footnote-label" class="sr-only">Footnotes</h2>
+        <a href="entries/2024-09-19_bad-cleaner.html">#</a>
+    <h1>Bad Cleaner</h1>
+<p>Oriana&#39;s just arrived back from Switzerland. When she left she asked a mutual friend to clean her house (my No.7). I checked afterwards, it looked fine to me. But I didn&#39;t look closely, and didn&#39;t realise Oriana had given €30 to do 3 hours cleaning. Among other things, there were clothes left in the washing machine - now mouldy. Oriana left her a voice message asking for some of her money back. So assertive!</p>
+<p>TODO employ Oriana as my PA</p>
+<p>Ok, today I first want to push #form-a-matic along.</p>
+<p>Claude had given me a broken namespace/term URI splitter, but when I described what I wanted it to do, it gave me a much improved version first shot.</p>
+<p>I&#39;ve since realised I do need to carry the ns of each term through into the JSON. Tweaking...</p>
+<p>TODO <a href="https://www.digitalglobe.it/lavora-con-noi">https://www.digitalglobe.it/lavora-con-noi</a></p>
+<p>I tweaked the form-a-matic code, the core stuff is now basically working. The JSON out is now looking much like another RDF serialization, so I went to check on the <a href="https://json-ld.org/">JSON-LD</a> syntaxes. There isn&#39;t one <em>very</em> close, so I reckon I&#39;ll continue as-is.</p>
+<p>I used the <a href="https://json-ld.org/playground/">JSON-LD Playground</a>, which has a graph visualization. That&#39;s been on my todo list forever (I&#39;ve already got several, but all a bit old and/or not quite suitable for #Transmissions).
+So naturally I got distracted and started making one, with the help of Claude, based on the Playground version (it uses <a href="https://d3js.org/">D3.js</a>).</p>
+<p>Ops.</p>
+<p>Dogwalk time.</p>
+<hr>
+<p>The goal today is to create nodejs es modules that will take Turtle syntax RDF and render is as a  graph diagram. The form-a-matic repo contains an example of parsing Turtle syntax, the json-ld-playground repo includes code for rendering a visualization of RDF using the D3 library.</p>
+<p>Please follow these steps :</p>
 <ol>
-<li id="footnote-1">
-<p><a href="https://jakubmarian.com/kill-two-birds-with-one-stone-in-european-languages/">https://jakubmarian.com/kill-two-birds-with-one-stone-in-european-languages/</a> <a href="#footnote-ref-1" data-footnote-backref aria-label="Back to reference 1">↩</a></p>
-</li>
+<li>identify the code in the json-ld-playground repo that is used to generate visualizations. List the filenames.</li>
+<li>examine the form-a-matic repo to find the JS represention it makes of the RDF model from the Turtle file</li>
+<li>locate whichever point in the json-ld-playground visualization code that is most appropriate to take the the JS representation of Turtle and pass it to the visualizer</li>
+<li>modify and/or create the necessary code to read a Turtle file and render a visualization</li>
 </ol>
-</section>
+<p>We got quite a way with this, but it looks like it&#39;ll take a good few more cycles. Leave it for now, 19:22 dogwalk 2 time.   </p>
+<hr>
 
 </article>
 <p class="post-title h-cinzel">
-    <a href="entries/2024-09-14_walking-hat.html">
-        Walking Hat
+    <a href="entries/2024-09-19_bad-cleaner.html">
+        Bad Cleaner
     </a>
-</p> <em>2024-09-17</em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="entries/2024-09-13_ducks.html">#</a>
-    <h1>A Swarm of Ducks</h1>
-<ul>
-<li><p>under construction snippet</p>
-</li>
-<li><p>sidebars for danny.ayers.name</p>
-</li>
-<li><p>get pulsar running</p>
-</li>
-<li><p>all postcrafts</p>
-</li>
-<li><p>form-a-matic</p>
-</li>
-<li></li>
-</ul>
-<h2>Postcrafts</h2>
-<p>danny.ayers.name
-hyperdata.it
-elfquake.org
-strandz.it</p>
-<p>foaf-retro</p>
-<p>postcraft</p>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="entries/2024-09-13_ducks.html">
-        A Swarm of Ducks
-    </a>
-</p> <em>2024-09-17</em>
+</p> <em>2024-09-25</em>
             </article>
         </div>
         <div class="main-grid-item about">
