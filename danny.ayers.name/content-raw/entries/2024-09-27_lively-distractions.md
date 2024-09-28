@@ -1,6 +1,21 @@
 # Lively Distractions
 
-tibico research
+**2024-09-28** Yesterday I was too busy doing things so only wrote down reminders. I'll flesh them out a little now.
+
+## Tibico Research
+
+Last month Oriana asked me to look after her jar of [Tibicos](https://en.wikipedia.org/wiki/Tibicos) aka **water kefir**. It's fascinating stuff, I've already started experimenting. It also made a nice test case for using Claude AI's [Projects](https://www.anthropic.com/news/projects) for research. I had only used them for software projects, for which they are great (with the help of [repopack](https://github.com/yamadashy/repopack)). I know virtually nothing about microbiology (though have been interested a while - I've got a usable microscope etc), so this topic offered a good *virgin* project.    
+
+I created the Project and set up a custom prompt. Then added the 'Edit' raw text of the Wikipedia page on Tibicos and that of [Saccharomyces boulardii](https://en.wikipedia.org/wiki/Saccharomyces_boulardii) (a probiotic - that page is an interesting read), together with 4 papers linked from Wikipedia to Project Knowledge.
+It worked really well, I immediately had a useful expert on hand.  
+
+I was curious how viable it might be to incorporate the probiotic critter into the existing symbiotic tibicos culture. Here's how the chat started :
+
+![Claude Tibicos research screenshot 1](media/images/2024-09/claude-tibicos_1.png)
+
+By the 4th interaction we were at this :
+
+ ![Claude Tibicos research screenshot 1](media/images/2024-09/claude-tibicos_2.png)
 
 alife
 
