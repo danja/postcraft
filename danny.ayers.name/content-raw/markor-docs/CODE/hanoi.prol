@@ -1,0 +1,35 @@
+Now add an additional class which will allow an interactive prompt, a repl loop. 
+
+Here is an example of user input providing rules 
+(note the use of anonymous variables) :
+
+move(1,X,Y,_) :-  
+         write('Move top disk from '), 
+         write(X), 
+         write(' to '), 
+         write(Y), 
+         nl. 
+     move(N,X,Y,Z) :- 
+         N>1, 
+         M is N-1, 
+         move(M,X,Z,Y), 
+         move(1,X,Y,_), 
+         move(M,Z,Y,X).  
+
+If the user then enters the following query :
+
+     ?-  move(3,left,right,center). 
+     
+The prolog interpreter should respond with :
+
+     Move top disk from left to right 
+     Move top disk from left to center 
+     Move top disk from right to center 
+     Move top disk from left to right 
+     Move top disk from center to left 
+     Move top disk from center to right 
+     Move top disk from left to right 
+      
+     yes
+     
+Please adjust the code to support this behaviour.

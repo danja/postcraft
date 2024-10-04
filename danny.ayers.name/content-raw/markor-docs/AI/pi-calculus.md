@@ -1,0 +1,1 @@
+Can you please do a Iittle research for me, around  deep learning (eg. LLMs) and was listening to a podcast by Karpathy and he mentioned an aspect of transformers I hadn't heard before. Subcomponents of a something like a GPT

@@ -1,0 +1,1 @@
+https://replications.clearerthinking.org/?_gl=1*19axzss*_ga*NTUwODIwOTg5LjE3MDE5OTQ0NTk.*_ga_58RPQ2D860*MTcwMTk5NDQ1OS4xLjEuMTcwMTk5NDQ3My40Ni4wLjA.

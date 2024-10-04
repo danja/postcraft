@@ -1,0 +1,1 @@
+Finally figured out what's going on in You Can Call Me Al's bass solo. It's NOT just forwards and backwards. Transcription inside.

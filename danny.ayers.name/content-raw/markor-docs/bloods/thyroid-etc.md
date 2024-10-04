@@ -1,0 +1,59 @@
+THYROID DIAGNOSTICS
+
+TSH-THYROSTIMULATING HORMONE (ECLIA)
+
+IT4-THYROXINE RELEASES
+
+(ECLIA)
+
+Ac ANTI-TIREOPEROSSIDASI (TRO) (ECLIA)
+
+Ac ANTI-TIREOGLOBULINA (Ab-Tg) (ECLIA)
+
+Ac ANTI-TIREOGLOBULINA (Ab-Tg) (ECLIA)
+
+Ac ANTI-TIREOPEROSSIDASI (TPO) (ECLIA)
+
+THYROSTIMULATING HORMONE 6.21 UNIT/mL
+
+[0.27-4.20]
+
+Analytical sensitivity: 0.005 HUI/mL
+
+Functional sensitivity: 0.014 HUI/mL
+
+1.36
+
+of/dL
+
+[0.90 -1.70]
+
+13.6
+
+pg/mL
+
+[9.0-17.0]
+
+<9
+
+Ul/mL
+
+[0-34]
+
+17
+
+Ul/mL
+
+[0-115]
+
+17
+
+Ul/mL
+
+[0-115]
+
+<9
+
+Ul/mL
+
+[0-34]

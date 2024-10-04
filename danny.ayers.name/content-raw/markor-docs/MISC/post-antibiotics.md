@@ -1,0 +1,3 @@
+Funny. The last week I felt really lousy, could barely do anything. But now the antibiotics have sorted out the tooth infection. And now I've got some energy back, the ADHD has raging out of its box, 1001 things I desperately must do *right now*. Focus danny! Priorities!!
+
+I'll get it back off danbri soon. He would have given me the money first, but I wanted to have something to show first. Under normal circumstances I'd have asked him today, but he and Hadley his wife are in hospital and -

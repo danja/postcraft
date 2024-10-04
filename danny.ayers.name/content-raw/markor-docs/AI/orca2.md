@@ -1,0 +1,3 @@
+3 weeks late I got around to reading the #Orca2 paper. It is must-read. I'd recommend printing the first 11/53 pages. That's gold for prompt engineering & clever training (too much for a highlighter pen). The rest is read-once. 
+It indicates that with a careful choice of training, a model can hop up surprising levels of abstraction. I haven't yet digested the paper well enough to see many of the implications, but one is clear - small models can be very capable. Remarkable how the transformer just keeps on giving. 
+Hopefully when I get back from today's dog walk it'll be available on Ollama on my desktop.

@@ -1,0 +1,1 @@
+Non avrò contanti fino alla prossima settimana, potresti scrivermi un po' per favore

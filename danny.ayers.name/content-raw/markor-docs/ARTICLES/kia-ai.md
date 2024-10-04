@@ -1,0 +1,1 @@
+How can an tokenizer and vector embedding be combined efficiently to provide semantic search, data for llm fine tuning as well as rag afterwards?

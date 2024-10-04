@@ -1,0 +1,1 @@
+Like a codice fiscale for foaf but includes your mother's maiden name, first pet. Generates an avatar like drag queen name

@@ -1,0 +1,1 @@
+  (Btw, I was born M and declare as straight M, but my more nuanced answer would also be No, because I consider my gender to be a concept tangential to my birth sex).
