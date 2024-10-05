@@ -1,0 +1,1 @@
+I am using a nginx server with LDAP Auth. I would like a html form which posts text to the server and saves it in a text file, if the user is logged in. The server will use Nodejs with vanilla js in an es6 module style. How?

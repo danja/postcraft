@@ -1,0 +1,3 @@
+I have a recurring problem with my desktop computer, running a recent Ubuntu. Intermittently the main partition, which is on an SSD drive, flips into being read only, and crashes the os. This most often occurs when I first boot up for the day, though occasionally it happens at random times. I haven't noticed anything systematic related to the software I run.
+On rebooting it takes me into a Busybox session, there I run fsck. This reports orphaned inodes, free inodes and block count errors, all of which it manages to fix. When I reboot I get back into Ubuntu ok.
+This has been happening for a long time, it doesn't appear to be the drive dying. My suspicion is there may a timing error somewhere when the drive is waking up. What do you suggest I do to fix this?

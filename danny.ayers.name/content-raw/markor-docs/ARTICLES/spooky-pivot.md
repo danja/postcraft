@@ -15,6 +15,24 @@ git revert
 
 # Releases for Halloween
 
+Demos:
+
+run Conway's Life as a trenasmission
+
+https://en.wikipedia.org/wiki/Zenodo
+
+https://zenodo.org/communities
+
+add https://github.com/eyereasoner/eye-js
+to the engine, opposite of `simples`!
+Maybe do as a `Processor` first, see how far that can go
+
+https://eyereasoner.github.io/eye-js/example/
+
+https://github.com/eyereasoner/lingua
+
+ https://eyereasoner.github.io/eye/
+
 Mega : have #:kia autonomously write an app using #:: transmissions (newsmonitor?)
 
 Train custom models : rdf/controlled English

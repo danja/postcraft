@@ -1,0 +1,5 @@
+F-Droid
+
+PipePipe
+
+Termux

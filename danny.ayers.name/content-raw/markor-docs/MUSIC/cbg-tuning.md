@@ -1,0 +1,1 @@
+I've been getting a little confused figuring out a tuning for the cigar box guitar that will work well with clarinet. Open CDC' tuning feels good on this CBG. At 5th fret, that's FCF' (concert pitch - notated as GDG' for the clarinet). Or would BbCBb', putting FCF' at the 7th fret be easier..?

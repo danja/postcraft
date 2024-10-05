@@ -1,0 +1,2 @@
+Corbyn was clearly seen as a threat to the status quo by the rich & powerful. Labour's antisemitism wasn't exceptional, but his mishandling was a gift for a smear. 
+@RachelRileyRR's views may be heartfelt, but other agencies will have helped purge and put the fetters on Labour.

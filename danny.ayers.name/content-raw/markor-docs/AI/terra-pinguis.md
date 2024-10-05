@@ -1,0 +1,1 @@
+Using the Wikipedia page on Phlogiston theory for inspiration, especially with 'terra pinguis', please generate an image of penguins as alchemists working on magical experiments, in the style of dramatic paintings of the period
