@@ -1,3 +1,0 @@
-* Clarinet
-* Ubuntu USB
-* 

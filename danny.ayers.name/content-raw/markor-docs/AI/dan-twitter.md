@@ -1,1 +1,0 @@
-Aaargh! I can't look at that graph rag stuff until I have my nuts & bolts sorted! Below yak shaving but above accepting Microsoft 365/Google (whatever they call it) as being adequate.

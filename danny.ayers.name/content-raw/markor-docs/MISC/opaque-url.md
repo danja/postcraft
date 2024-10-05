@@ -1,1 +1,0 @@
-Incidentally, I'm getting a rare stab of OCD, somewhere around Roy Fielding & opaque URLs. This is a beaut : <https://chrome.google.com/webstore/detail/page-assist-a-web-ui-for/jfgfiigpkhlkbnfnbobbkinehhfdhndo> :means "wtf?" .

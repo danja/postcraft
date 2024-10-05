@@ -1,2 +1,0 @@
-Good points. I'd add that the media hype machine is very good at projecting the illusion of there being a consistent cause or ideology. Sometimes it even seems to provoke the same behaviour as if there was an actual leader.
-There is an effective defence. Simply by taking a moment to look with an objective eye, the inconsistencies are usually obvious, the spirits evaporate. But, I suppose it's a feature of how the social media systems are implemented, we get into a habit 

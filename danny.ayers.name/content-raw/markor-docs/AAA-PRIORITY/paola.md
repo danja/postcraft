@@ -1,2 +1,0 @@
-On Friday I am going over to visit my mother. Provisional plan about 5 days. Marinella Is feeding Claudio. Please, if you hear anything unusual, investigate. 
-I was planning on going over at the end of the month, but she called to say she was feeling bad, could I come over. I don't think there has been any change in her physical health (is not good, heart etc etc). Her saying this I suspect was manipulative. (Very inconvenient for me with work). But ok, she really wants me to go over, so there I go. It will be nice to see her.

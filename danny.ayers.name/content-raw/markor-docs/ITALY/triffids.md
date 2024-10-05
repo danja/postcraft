@@ -1,2 +1,0 @@
-I absolutely love this house. But the grey pebbledashed walls, whilst functional, are not pretty. (One of reasons I've put it on Google Maps as 'Mozzanella Polytechnic'). 
-Federico next door had wisteria growing crazily up the lamp post. That was really pretty for the couple of weeks it was in flower, but looked a mess the rest of the year. Their garden is lovely: I believe it's known as an 'English lawn'

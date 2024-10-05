@@ -1,3 +1,0 @@
-I'm trying to find where I read it. I think I remembered it being on Examine but that didn't turn it up unless it was on an older version of their site before everything went behind paywalls
-
-Edit: I found the source I was thinking of - it was the Legion Athletics page on milk thistle under the alcohol section. They referenced the 2012 study by Brandon-Warner et al. showing that in combination milk thistle and alcohol could potentiate the growth of hepatocarcinoma

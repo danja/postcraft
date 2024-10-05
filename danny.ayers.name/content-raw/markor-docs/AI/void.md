@@ -1,2 +1,0 @@
-I was looking for any vocabs that might cover the LLM space. Only just started when I remembered #VoID, some obvious overlaps. So, human-curated shortcut : Seen anything?
-@cygri @mhausenblas @junszhao @keithalexander 

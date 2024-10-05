@@ -1,4 +1,0 @@
-I will upload two images from an old book of games written in the BASIC language.
-Please apply OCR and save the text to /mnt/data/camel.txt
- 
-   First can you extract the code and save it to /mnt/data/ Then check the code for errors caused by scanning. Correct these and save the result. Then write a Python script with the same functionality. Run it to make sure it works, fix if necessary. Then save the result to /mnt/data/ 

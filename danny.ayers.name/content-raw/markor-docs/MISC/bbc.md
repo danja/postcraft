@@ -1,1 +1,0 @@
-the BBC has always been an arm of govt. There is systematic bias in news, politics & current affairs reporting. However there's still a lot of integrity at the producer/presenter level, too much truth, a thorn for the powers that be. Hopefully the next govt won't be so keen to trash it. Hands off The News Quiz!

@@ -1,1 +1,0 @@
-Driving a lorry with a digger in the back to fix the hole in the wall when the lorry crashed making a hole in the wall.

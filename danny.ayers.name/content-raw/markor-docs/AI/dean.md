@@ -1,1 +1,0 @@
-https://twitter.com/juansequeda/status/1724445606884593950?t=wEQy0WRgmWjSLjQ_ozQ2-A&s=19

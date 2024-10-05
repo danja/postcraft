@@ -1,2 +1,0 @@
-Ciao danny. È un urgenza. Non trovo nessuno per tenere il bimbo oggi pomeriggio. 
-So che hai tanto lavoro da fare e sei stanco. Se lo porto a casa mia oggi pomeriggio, lo metto a dormire e tu lo guardi? Appena si sveglia basta che lo guardi mentre gioca e stai a casa mia. Puoi anche portarti il computer e lavorare da lì.  E io arrivo alle 21 o un po' prima

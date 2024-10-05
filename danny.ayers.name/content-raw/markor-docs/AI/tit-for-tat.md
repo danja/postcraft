@@ -1,3 +1,0 @@
-Bookmark, something to try on multi-agent system. No doubt already being played with elsewhere, but fun challenge. Today's Guardian, more tit-for-tat (a) in the Middle East. Going abstract...this game theory strategy seems like a stable attractor in such systems (except intermittent escalations take the nastiness up a notch). 
-But there is also "reciprocal altruism" (b) nearby, potentially a not-nasty stable state. What is the lowest-cost intervention to flip the system's orbit from (a) to (b)?
-https://en.wikipedia.org/wiki/Reciprocal_altruism

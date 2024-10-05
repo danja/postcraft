@@ -1,9 +1,0 @@
-"The Enchanted Pig," a Romanian fairy tale, tells the story of a king who has three daughters. One day, while the king is away, the princesses, out of curiosity, disobey his instructions and open a forbidden door. To their horror, they discover a prophecy stating that the eldest two will marry princes, but the youngest, the kindest and most beautiful, will marry a pig.
-
-As foretold, a pig arrives to marry the youngest princess. She accepts her fate and marries the pig, who, to her surprise, turns into a handsome prince at night. He reveals that he is under a curse cast by a witch and can only become human at night. The princess must not reveal this secret for a year, or he will be bound to the witch forever.
-
-However, the princess's sisters, driven by jealousy, trick her into revealing the secret. As a result, the prince is forced to leave and go to the witch's castle at the Ends of the Earth. Heartbroken, the princess embarks on a difficult journey to find him. Along the way, she receives help from the sun, the moon, and the wind. They guide her to the castle and provide her with magical gifts: a towel that can create a sea, a comb that turns into a forest, and a nut that turns into a mountain.
-
-When the princess finally reaches the witch's castle, she uses the magical gifts to overcome obstacles set by the witch and rescue the prince. After a series of challenges, the couple outsmarts the witch, breaking the curse. The prince regains his human form permanently, and they return to their kingdom, where they live happily ever after.
-
-The tale of "The Enchanted Pig" is a story of love, bravery, and perseverance, illustrating the power of determination and the triumph of good over evil.

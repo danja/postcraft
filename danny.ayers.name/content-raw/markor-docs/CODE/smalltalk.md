@@ -1,1 +1,0 @@
-You could use SqueakJS in a browser, which should have rough support for Android, too. It should also not be too hard to convert it into a PWA.
