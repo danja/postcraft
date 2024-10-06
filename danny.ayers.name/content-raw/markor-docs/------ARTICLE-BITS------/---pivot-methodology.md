@@ -51,6 +51,10 @@ The system should evolve, especially in terms of personalisation for the user
 
 Every task should increase knowledge and productivity
 
+Notetaking : Must been fast to navigate into a context
+
+Have an agent make predictions about how Dev will progress. Evaluate actual progress against it. Rate it. Adjust tactics and predictor.
+
 Reduce the overhead of automation
 
 Exponential, not linear progress, acceleration - result of feedback

@@ -47,6 +47,7 @@ WordNet
 
 Ollama 
 
+Kia : agents good at *asking* 
 
 https://deepspeech.readthedocs.io/en/r0.9/USING.html#using-the-node-js-electron-js-package
 
