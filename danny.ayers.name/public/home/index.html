@@ -30,6 +30,160 @@
                 <!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
+        <a href="entries/2024-10-07_homepage-first.html">#</a>
+    <h1>Homepage[^1] First</h1>
+<p><em>I&#39;ll use this post as my sample for This Site Requires below</em></p>
+<p>I don&#39;t think I&#39;ve written this down anywhere yet, although the core idea certainly isn&#39;t new [^2].</p>
+<p>Instead of automatically posting material to Facebook, Twitter, LinkedIn.., post it in a space you control first. Only then share any of <strong>your own content</strong> on the big $-motivated platforms. And only share as little or as much as you want to, on a case-by-case basis. Copy &amp; paste everything, get AI to write a summary, only post a link. <strong>Your choice</strong>.</p>
+<p>But I&#39;ve still not adopted the principle (? better word?) myself, despite having the provider of what you&#39;re looking at under my own control (cheapo quasi-bare metal virtual server, nginx and a bunch of node code). Aside from the elephant in the cyberspace that this site ain&#39;t much to look at (<em>yet!</em>), there are some key elements I need to work on a bit first :</p>
+<h2>This Site Requires</h2>
+<ul>
+<li><strong>Accessibility</strong> - firstly in the broadest sense, presenting this stuff in a form that will work ok for most people on common devices. But high on the list are using some of the techniques of <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/">Web Accessibility</a> to remove tech obstacles that might limit the potential audience.</li>
+<li><strong>Modalities</strong> - other aspects of the same kind of thing, focusing on supporting multiple devices, multiple media. I don&#39;t yet have a workflow for easily publishing video &amp; audio <em>Homepage First</em>. Very low-hanging fruit in this domain is giving the site a feed : Atom format first (because I was on the WG, I think it&#39;s the only RFC with my name in it).</li>
+<li><strong>SEO (Ho-ho-ho)</strong> - page metadata, rich snippety things, so that links posted to the platforms, search results etc. have a decent preview</li>
+</ul>
+<p>I&#39;m framing <strong>Homepage First</strong> as a (lazy<sup><a id="footnote-ref-3" href="#footnote-3" data-footnote-ref aria-describedby="footnote-label">1</a></sup>) campaign. I&#39;ll do a proper <em>launch</em> when I&#39;ve got my systems set up to capture comments etc. (This will be lazy<sup><a id="footnote-ref-3" href="#footnote-3" data-footnote-ref aria-describedby="footnote-label">1</a></sup> again - I&#39;ll just post a link here and there. I&#39;ve given myself an artificial deadline of 2024-10-31 for announcing the release of a load of <em>unfinished</em> work, I&#39;ll chuck this in).</p>
+<h3>Footlings</h3>
+<p>[1^]: &#39;Homepage&#39; was best <em>(but still not great)</em> signifier for the space I could come up with was &#39;Homepage&#39;. I bet the proportion of people that knows what that means has actually <em>declined</em> over the past 20 years.</p>
+<p>[2^]: Related material will appear around here soon. I currently have documenting specific bits of history (<strong>#:FOAF!</strong>) as a priority job. But the whole <em>milieu-milieu</em> around trends in social media, the Web and tech at large and the status of <strong>Open Social</strong> (as a good-enough umbrella term) is due a revisit, so my todo list is a bit broader.  </p>
+<p>Oh yeah, I also dislike <strong>&#39;upcycling&#39;</strong>. Ok, the principle sounds ok - recycling and adding value (eg. environmental or artistic). But if you&#39;re making something, using recycled materials and being environment-friendly should be the defaults, not <strong>virtue-signaling nonsense</strong> over using a feather to repaint an ugly plain vase to make it an uglier decorated vase.
+Oh yeah, and <strong>&#39;proactive&#39;</strong>, what is that beyond management babble meaning <strong>active</strong>. Ok, like &#39;hacktivism&#39; and &#39;upcycling&#39; I suppose it has value in <strong>wankiness-signalling</strong>.   </p>
+<section class="footnotes" data-footnotes>
+<h2 id="footnote-label" class="sr-only">Footnotes</h2>
+<ol>
+<li id="footnote-3">
+<p>I do have strong views on quite a lot of things, but simply can&#39;t be bothered doing much beyond living my life the way I do, occasionally stating my position and/or trolling on Twitter. Passive-activism (including inacto-pacifism). Also <strong>I dislike the term &#39;hacktivism&#39;</strong>. In the current socio-politico-economic climate, hacking (in every sense except the nasty rip-off stuff) is inherently a form of activism. Fixing your own music system, making your own gadgets, all are a form of non-violent direct action. (For great ideas about creating your own future, check Libby&#39;s recent post : <a href="https://planb.nicecupoftea.org/2024/08/26/poking-holes-in-reality-with-prototypes/">Poking holes in reality with prototypes</a>). <a href="#footnote-ref-3" data-footnote-backref aria-label="Back to reference 3">↩</a> <a href="#footnote-ref-3" data-footnote-backref aria-label="Back to reference 3">↩<sup>2</sup></a></p>
+</li>
+</ol>
+</section>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="entries/2024-10-07_homepage-first.html">
+        Homepage[^1] First
+    </a>
+</p> <em>2024-10-07</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="entries/2024-10-07_brrr.html">#</a>
+    <h1>Brrr!</h1>
+<p>It&#39;s chilly in the house, raining outside.</p>
+<p>I worked on some ideas for #:transmissions with Claude on phone in bed, only just got up, 13:30. Coffee was necessary.</p>
+<p>I&#39;ve set myself #:pivot:spooky for 2024-10-31, basically release a v1 alpha of <em>everything</em>. An artificial deadline to help me get things done.</p>
+<p>Big problem now, I need a system for prioritizing tasks in the <strong>massive todo graph</strong>.</p>
+<p>One of my key projects is just such a system : #:farelo. But it&#39;s not yet usable...</p>
+<p>To start it bootstrapping me, I first need to capture project information.</p>
+<h2>Form-a-matic</h2>
+<p>#:fam code generator to make custom forms is <strong>Top Priority</strong></p>
+<p>I&#39;ve got the <em>offline</em> node bits working ok : you provide a pseudo-Turtle template for a given vocab. This is converted to an intermediate (#:yars) JSON representation, next that is used to generate the HTML form.</p>
+<p>After filling out the form and clicking a button, a Turtle representation of the fields should be presented. The form uses a script called <code>extractor.js</code>.</p>
+<p>The issue right now is that I&#39;m using a couple of libs written for node, made browser-friendly by #:tools:webpack. But debugging is really painful. I&#39;ve not been in quite this situation before so I don&#39;t even really know what tooling is available. This might be a one-off, so I can&#39;t really justify the time needed to learn new kit and integrate it into my workflow.</p>
+<p>But my best guess as where the bugs are most likely to be is :</p>
+<ol>
+<li>my code (written with much help from #ai:claude)</li>
+<li>code/lib integration for browser</li>
+<li>libs</li>
+</ol>
+<p>For 1, as it happens, I&#39;ve barely touched one particular first-line approach : tests! Because of the node/browser lib issue, I reckon I&#39;ll try kind-of mocks.</p>
+<p>Unit tests for methods will be needed. But to prepare Claude to make these, a quasi-integration test seems a good place to start.</p>
+<p>Take a rendered HTML form file, fill in sample data as preset values, this is the mock. In node, by read the HTML file into a <code>document</code> model in #:tools:jsdom, check the operation of <code>extractor.js</code> with that.
+Prompt time.</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="entries/2024-10-07_brrr.html">
+        Brrr!
+    </a>
+</p> <em>2024-10-07</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="entries/2024-10-06_heart.html">#</a>
+    <h1>Heart</h1>
+<p>RAD!</p>
+<p><a href="https://danbri.org/words/2007/09/13/194">https://danbri.org/words/2007/09/13/194</a></p>
+<p><a href="https://web.archive.org/web/20080225095724/https://danbri.org/words/2007/09/13/194">https://web.archive.org/web/20080225095724/https://danbri.org/words/2007/09/13/194</a></p>
+<p>Sunday, writing/social media day. Must do <em>some</em>, but such a backlog of other stuff distracting me...</p>
+<p>#:farelo form-a-matic is crucial, I&#39;ll do a bit of coding there.</p>
+<p>Visualization just crossed my mind, a little plan prep/org of notes needed. Find some old stuff.</p>
+<p>Created a new repo along the way : <a href="https://github.com/danja/open-world-interface.git">https://github.com/danja/open-world-interface.git</a></p>
+<p>#:todo make a wiki engine built on #:transmissions that works against #:postcraft and syncs with #:diamonds #:foowiki</p>
+<p>SVG Wiki Whiteboard - used SVG.</p>
+<p>Found this XML.com article I wrote in</p>
+<pre><code class="language-sh">danny@danny-desktop:~/github-danny/hyperdata-static$ grep -r whiteboard
+xmlns/ibis/w6/xow/testing/.svn/text-base/xow.js.svn-base:   http://dannyayers.com/2003/08/jspwiki/whiteboard.htm
+xmlns/ibis/w6/xow/testing/xow.js:   http://dannyayers.com/2003/08/jspwiki/whiteboard.htm
+</code></pre>
+<p>Hmm. Yes, that&#39;s old!</p>
+<p>Hah, I couldn&#39;t remember it&#39;s name <strong><a href="https://sourceforge.net">SourceForge</a></strong>. Ok, I still have a login <em>dannyayers</em>. &#39;Joined 2000-12-23 16:33:37&#39;.
+Wonder what&#39;s there...  </p>
+<p>Two projects I&#39;d completely forgotten about :</p>
+<p><a href="https://sourceforge.net/projects/jemblog/">JemBlog</a></p>
+<blockquote>
+<p>This Sourceforge project was initially set up to publish JemBlog (RDF-backed server-side blogging). It&#39;s drifted: there is the Stiki Wiki which is RDF-backed, and there will also be some RDF API material (&quot;Sambuca&quot;) following in the near future.</p>
+</blockquote>
+<p>Web Site : <a href="http://ideagraph.net/jemblog/">http://ideagraph.net/jemblog/</a></p>
+<p>Registered 2003-02-14</p>
+<p>It drifted a lot. This direction.</p>
+<p><a href="https://sourceforge.net/projects/knobot/">KnoBot</a></p>
+<blockquote>
+<p>WYMIWYG KnoBot is a content management system for the semantic web designed to promote the exchange of content with a P2P and reputation based system. The aim is to create a socio-topical space, a perspective dependent space of information and knowledge.</p>
+</blockquote>
+<p>Registered 2003-06-10</p>
+<p>I believe that was @retobg&#39;s project. Last activity on SourceForge, <code>.jar</code> releases, 10 years ago.</p>
+<p><a href="https://web.archive.org/web/20040324040012/http://dannyayers.com/2003/09/17/sketch.svg">https://web.archive.org/web/20040324040012/http://dannyayers.com/2003/09/17/sketch.svg</a></p>
+<p>TurtleEditor  - used canvas</p>
+<p>I made another new repo : <a href="https://github.com/danja/store-wrapper.git">store-wrapper</a></p>
+<p>I had a GitHub notification related to this :</p>
+<blockquote>
+<p><a href="https://github.com/semanticarts/gist">Gist</a> is Semantic Arts&#39; minimalist upper ontology for the enterprise. It is designed to have the maximum coverage of typical business ontology concepts with the fewest number of primitives and the least amount of ambiguity.</p>
+</blockquote>
+<p>Linked from there, omg, this : <a href="https://semantechs.co.uk/turtle-editor-viewer/">https://semantechs.co.uk/turtle-editor-viewer/</a></p>
+<p>Also - <a href="https://dgarijo.github.io/Widoco">https://dgarijo.github.io/Widoco</a> - rather a capable ont doc toolset. I have uses for that...</p>
+<p><a href="https://dgarijo.github.io/Widoco/doc/gallery/">https://dgarijo.github.io/Widoco/doc/gallery/</a></p>
+<p>Sweet!</p>
+<p>Nice touch - including markdown in <code>rdfs:comment</code>, having it render in the ont doc. Guess who&#39;s going to steal that idea...</p>
+<p>Notification re. <a href="https://solidproject.org">https://solidproject.org</a> - all that&#39;s already on my todo list somewhere.</p>
+<h2>open-world-interface</h2>
+<p><a href="https://en.wikipedia.org/wiki/Open_world">https://en.wikipedia.org/wiki/Open_world</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Closed-world_assumption">https://en.wikipedia.org/wiki/Closed-world_assumption</a></p>
+<p>Try a games engine</p>
+<p>diegetic UI</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="entries/2024-10-06_heart.html">
+        Heart
+    </a>
+</p> <em>2024-10-07</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="entries/2024-10-05_marconi.html">#</a>
+    <h1>Marconi</h1>
+<p>websim inky</p>
+<p>Claudio manual : rdf-ext, transmissions</p>
+<p>&quot;task pile..stack&quot;? &quot;job stack&quot; or &quot;task stack&quot;, but abbr to &quot;stack&quot;.
+Kanban term?</p>
+<p>#:today ELFQuake reboot #:server  </p>
+<p>#:today  Metal Detector #:electronics</p>
+<p>cd /home/danny/github-danny/hyperdata/packages
+git submodule add <a href="https://github.com/danja/progressive-scraper.git">https://github.com/danja/progressive-scraper.git</a> progressive-scraper</p>
+<p>/home/danny/workspaces_hyperdata-desktop/postcrafts-raw/elfquake -&gt; /home/danny/github-danny/elfquake/docs/postcraft/content-raw</p>
+<p><a href="https://rtyley.github.io/bfg-repo-cleaner/">https://rtyley.github.io/bfg-repo-cleaner/</a></p>
+<p>remote:       —— OpenAI API Key ————————————————————————————————————
+remote:        locations:
+remote:          - commit: 17bd14a2737819d2cc3ab7eacc55c356ffe8cf51
+remote:            path: danny.ayers.name/content-raw/markor-docs/..md:131
+remote:<br>remote:        (?) To push, remove secret from commit(s) or follow this URL to allow the secret.
+remote:        <a href="https://github.com/danja/postcraft/security/secret-scanning/unblock-secret/2n1DxX4TTzsbCQzLz6ZEzPFUvVY">https://github.com/danja/postcraft/security/secret-scanning/unblock-secret/2n1DxX4TTzsbCQzLz6ZEzPFUvVY</a></p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="entries/2024-10-05_marconi.html">
+        Marconi
+    </a>
+</p> <em>2024-10-07</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
         <a href="entries/2024-10-03_wordy.html">#</a>
     <h1>Wordy</h1>
 <p>#:next Friday is Collation Day!!!</p>
@@ -64,221 +218,7 @@
     <a href="entries/2024-10-03_wordy.html">
         Wordy
     </a>
-</p> <em>2024-10-03</em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="entries/2024-10-02_rain.html">#</a>
-    <h1>Rainsday</h1>
-<p>#:todo:tomorrow replace all <code>Processor</code> lines <code>this.emit(&#39;message&#39;, message)</code> with <code>return super.handle(message)</code></p>
-<p>It&#39;s pouring with rain, but I&#39;m hoping to be going out later. When Mari messages to say my meds prescription is ready to pick up, we&#39;ll go ut for that, do a bit of shopping and have a coffee. There&#39;s also a little panelling job for me to do at hers, when convenient.  </p>
-<p>Before I got up I did a bit of exploration around formulas for determining task priorities, with much help from Claude AI on the phone. Got to v1 bits for #Farelo.</p>
-<h2>TODO</h2>
-<p><code>form-a-matic</code> first</p>
-<p>get Claude to make a test for extractor.js, sim from form with jsdom</p>
-<p><em>Interruption - trip into town.</em></p>
-<p><code>form-a-matic</code>  is proceeding ok. But given the new TODOs below, I&#39;m inclined to procrastinate a little to make a little #productivity timesaver.</p>
-<hr>
-<p>A #:pain at the moment is the chain of run #:postcraft on projects -&gt; commit projects (in the correct order) -&gt; push -&gt; server pull. I&#39;d better have this as a #:transmission.</p>
-<p>...oops, mind wandered from that #:adhd, heh.</p>
-<p>Which calls for new processors. Docs can start in #:transmissions:processors (#:specs:md)</p>
-<p>Ops, I see #:yars approaching - <strong>Yet another RDF syntax</strong>. I&#39;ve got notes on #md:rdf somewhere, #:todo:link. But this may have potential for quick &amp; dirty inline RDF, eg. #(anchor):seeAlso:<a href="http://url">link</a> ...hmmm...</p>
-<ul>
-<li><p><input disabled="" type="checkbox"> 
-define #:specs:md for an arbitrary anchor for <em>incoming</em> links anywhere in a doc that can act as an #:XPointer style URL to use in HTML and inline/any RDF statements. Hang on, why not just something like #:.anchor-name</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-look for prior use of &quot;Smart Hashtags&quot; or somesuch  </p>
-</li>
-<li><p>[ ]</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-#:markdown #:hashtag parser - needed soon</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-include special handling of <code>#:tag</code> for terms with a defined meaning in RDF (with dropdown in HTML : defn comment, linked term defn, vector index link)</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-#:specs #:xmlns doc for <code>#:tag</code></p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-paliwan doc - in #Farelo, methodology</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-#:farelo - info capture notes, can start using things like</p>
-</li>
-</ul>
-<hr>
-<p>Back to the first diversion. #:transmissions:processors:github - document in <code>transmissions/postcraft/content-raw/articles/processors/*</code> and or around #:trans-apps:github</p>
-<p>#:todo:transmissions #:refactor - rename SystemsProcessorsFactory etc to something shorter</p>
-<p>#:todo:transmissions code generator - a #:transmission that takes as input a prompt including a #:transmissions:signature and using <code>processors/templates/*.js</code> as examples, creates a processor in <code>processors/sandbox</code> together with a test runner based of #:transmissions:direct. Uses Mistral? API call to check functionality. Loop.</p>
-<p>#:todo:transmissions code generator - ditto for applications</p>
-<p><a href="https://dotenvx.com/">https://dotenvx.com/</a></p>
-<pre><code class="language-sh">npm install @dotenvx/dotenvx --save
-</code></pre>
-<p>#:todo:docs:farelo - write up doing 150% work once, for single task, to make subsequent tasks of a similar shape 25%</p>
-<p>SO :</p>
-<p>#:todo make <code>.enx</code> loader processor as <code>transmissions/processors/system/EnvLoader.js</code>
-#:todo make #:transmission:simple for <code>EnvLoader</code>
-#:todo make <code>transmissions/engine/ModuleLoader.js</code>
-#:todo make <code>trans-apps/applications/git-apps/processors/GitHubList.js</code></p>
-<p>#:todo make Claudio prompt for making #:transmission:simple apps (script to copy only essentials to a dir?)
-#:todo make processors for using API APIs to build processors
-#:todo  make the rest of the github callers
-#:todo integrate into #:hyperdata-desktop</p>
-<hr>
-<p><strong>pali wan</strong>[^1]</p>
-<p>#:paliwan</p>
-<p>#:markdown</p>
-<hr>
-<p>I must remember to use the ongoing <code>danny.ayers.name/todo/2024-10.md</code>, together with sub-project <code>todo/next-steps.md</code>.</p>
-<p>Also markdown:</p>
-<pre><code class="language-text">- [ ] todo item 1
-- [ ] todo item 2
-</code></pre>
-<p>I don&#39;t yet have a handler for that syntax,</p>
-<p>Chat on LinkedIn has pushed a few things up my priority list.</p>
-<ul>
-<li><input disabled="" type="checkbox"> General sites&#39; material presentation (ie. next little bits of #Postcraft)</li>
-<li><input disabled="" type="checkbox"> Update my CV</li>
-<li><input disabled="" type="checkbox"> What&#39;s I&#39;ve been doing docs</li>
-<li><input disabled="" type="checkbox"> Document my current AI process/tips/tools</li>
-<li><input disabled="" type="checkbox"> update system prompts</li>
-</ul>
-<p>New :</p>
-<ul>
-<li><p><input disabled="" type="checkbox"> 
-investigate making pulsar package ~/github-danny/hyperdata/packages/hyperdata-desktop/hyperdata-package (I created with pulsar built-in package, atom was <a href="https://github.com/pulsar-edit/package-generator">https://github.com/pulsar-edit/package-generator</a>). First, running node scripts, check node-runner package and x-terminal-reloaded packages - maybe extend latter?</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-#Transmissions/#KIA agent use case (Claudio B. mentioned) : genai chatbot backed by a software manual</p>
-</li>
-</ul>
-<p>I&#39;ll get Claude to help me with my CV. Create a Project &quot;PR&quot; and add some of my small publication PDFs as <code>Project knowledge</code>.</p>
-<p>Before anything else (but after making a coffee), I&#39;ll have an hour or so on #Farelo <code>form-a-matic</code>. That feels close to a working v1, soon should be very helpful for my productivity and also feeds a couple of nearby birds[^1].</p>
-<hr>
-<p>[1^]:  &quot;pali wan, kama pini tu.&quot;</p>
-<p>I just checked back on this :</p>
-<p><a href="https://www.reddit.com/r/tokipona/comments/1fgj8ae/kill_two_birds_with_one_stone/">https://www.reddit.com/r/tokipona/comments/1fgj8ae/kill_two_birds_with_one_stone/</a></p>
-<p>There was a new suggestion. So I asked Claude :</p>
-<blockquote>
-<p>What is the toki pona &quot;pali wan, kama pini tu.&quot; in English?</p>
-</blockquote>
-<blockquote>
- The Toki Pona phrase "pali wan, kama pini tu." can be translated to English as:
- "Do one task, finish two."
- This phrase uses the following Toki Pona words:
-
-<p> pali: work, do, make
- wan: one
- kama: to become, to arrive, to bring about
- pini: end, finish, complete
- tu: two</p>
-<p> The meaning conveys the idea of efficiency or accomplishing more than expected - by doing one task, you end up completing two things. It&#39;s similar to the English saying &quot;killing two birds with one stone.&quot;</p>
-</blockquote>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="entries/2024-10-02_rain.html">
-        Rainsday
-    </a>
-</p> <em>2024-10-03</em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="entries/2024-09-30_mournday.html">#</a>
-    <h1>Moonday</h1>
-<h2>Sort out storage, lighten <code>/</code>, clone media to music room</h2>
-<p>TODO note about zooming in and out of projects, cf. Chris advanced driving</p>
-<ul>
-<li><p>form-a-matic</p>
-</li>
-<li><p>maa-mail</p>
-</li>
-<li><p>office shelves</p>
-</li>
-<li><p>tibicos</p>
-</li>
-<li><p>kitchen table</p>
-</li>
-<li><p>transmissions simple runner</p>
-</li>
-<li><p>transmissions processor dirs</p>
-</li>
-<li><p>ELFQuake init</p>
-</li>
-<li><p>transmissions Turing</p>
-</li>
-<li><p>turtle writer</p>
-</li>
-<li><p>look into calling Termux from Android app (to run #Transmissions)</p>
-</li>
-<li><p>look into browser build of transmissions - webpack?</p>
-</li>
-<li><p>in fam, modify so fields can be given a sample value for testing
-homepage</p>
-</li>
-</ul>
-<hr>
-<p>Posted somewhere in the early hours last night</p>
-<p>I really like sound of this version of &#39;Blue Monday&#39;,</p>
-<p><a href="https://www.youtube.com/watch?v=cHLbaOLWjpc">https://www.youtube.com/watch?v=cHLbaOLWjpc</a></p>
-<p>but there are many, many things about the video that annoy me. A small sample :</p>
-<ul>
-<li>that&#39;s a cruddy monochord (I made one as a pressie for oor Nigel, much  more practical &amp; prettier)</li>
-<li>the sig gen looks at least late 40s</li>
-<li>voice short delay effect - how? It&#39;s generally taken that the first time an artificial reverb effect was used was in 1947. The producer&#39;s bathroom, for this : <a href="https://www.youtube.com/watch?v=9BIuX7IsdE8">https://www.youtube.com/watch?v=9BIuX7IsdE8</a></li>
-<li>where is the vocal chorus coming from? (Ok, magnetic wire recording had been around a while, tape was just emerging, you could overlay - but they were all really big machines, valve/tube electronics, I don&#39;t see one)</li>
-<li>NO-ONE IN THEIR RIGHT MINDS USES RUSTY STRINGS</li>
-</ul>
-<p>However, all these are coumterbalanced for me by intrigue on the 4-stringed hammered thing (what is that called?) and most of all by imagining - Stephen Morris drum roll, tss tss tss...</p>
-<p>Peter Hook playing a banjolele.</p>
-<p>(I&#39;ve actually got one, they are probably the most ridiculous instrument in human history. A meeting of the best engineering and craftwor., The end result having the worst features of both banjos and ukuleles.
-I&#39;m guessing me dad found it in a charity shop. Has been desperately in need of repair for decades, this might be motivation for me to get around to it. Also the mandolin sharing the same cardboard box I got from a car boot sale years back, which had no back and a broken front, which I <em>did</em> resurrect - so badly it has needed gluing back together since a week after my fix- accursed kerfs!).</p>
-<p>How does it feel?</p>
-<p><a href="https://youtu.be/6uU9ikIg8FU?t=90">https://youtu.be/6uU9ikIg8FU?t=90</a></p>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="entries/2024-09-30_mournday.html">
-        Moonday
-    </a>
-</p> <em>2024-10-03</em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="entries/2024-09-29_unsday.html">#</a>
-    <h1>Unsday</h1>
-<p>I got totally distracted during the day. In the evening I just gave up, went out for a beer.</p>
-<p>What was today&#39;s list moved to 2024-09-30</p>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="entries/2024-09-29_unsday.html">
-        Unsday
-    </a>
-</p> <em>2024-10-03</em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="entries/2024-09-28_wall-y.html">#</a>
-    <h1>Wall-Y</h1>
-<p>This evening there&#39;s the inauguration open day of <a href="https://www.facebook.com/apuanoappeso">Apuano Appeso ASD arrampicata indoor</a> climbing wall, 1/2 hour drive (thanks Mari!) down the valley in Gallicano. Run by the same (welcoming, helpful) folks that had one very nearby in Pieve Fosciano which I went to a few times last year.</p>
-<p>TODO finish notes from yesterday</p>
-<ul>
-<li>mail MAA</li>
-<li>sort climbing gear</li>
-<li>office shelves</li>
-<li>Ollama Phi-3.5</li>
-<li>Alife</li>
-<li>Atom feed</li>
-<li>sparql-store-lite</li>
-</ul>
-<p><img src="media/images/2024-09/bank-1.png" alt="Empty bank account screenshot"></p>
-<p><img src="media/images/2024-09/bank-2.png" alt="€2 on credit card screenshot"></p>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="entries/2024-09-28_wall-y.html">
-        Wall-Y
-    </a>
-</p> <em>2024-10-03</em>
+</p> <em>2024-10-07</em>
             </article>
         </div>
         <div class="main-grid-item about">
