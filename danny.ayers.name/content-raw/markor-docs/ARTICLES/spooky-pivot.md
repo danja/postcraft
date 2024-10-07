@@ -1,23 +1,19 @@
-git revert 17bd14a2737819d2cc3ab7eacc55c356ffe8cf51
-git revert
-git revert
-git revert
-git revert
-git revert
-git revert
-git revert
-git revert
-git revert
-git revert
-git revert
-
-
-
 # Releases for Halloween
 
 Demos:
 
-run Conway's Life as a trenasmission
+```sh
+~/github-danny/trans-apps/applications/reaperbot
+https://github.com/danja/reaperbot
+```
+
+run Conway's Life as a transmission - my environment thing?
+
+port newsmonitor to js as automatically from my specs/preso
+
+port webbeep - ditto
+
+
 
 https://en.wikipedia.org/wiki/Zenodo
 
