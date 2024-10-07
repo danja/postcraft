@@ -8,6 +8,9 @@ Pivots are the engines of positive change
 
 Gather taglines ^^^
 
+
+Evolve Pivot using the Pivot Method
+
 Make every task information-gathering, increase the knowledge pool
 
 Zoom levels on knowledge relevance
@@ -99,7 +102,13 @@ Note everything down, even just a word
 
 Fast search for a noted thing, easy to add +1 to boost priority
 
+Spikes
 
+Automate everything
+
+
+
+Interstices 
 
 Continually build knowledgebase
 
