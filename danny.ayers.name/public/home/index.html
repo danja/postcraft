@@ -30,6 +30,58 @@
                 <!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
+        <a href="entries/2024-10-12_bhs.html">#</a>
+    <h1>BHS</h1>
+<p>I got the Sleaford Mods track in my head.</p>
+<p>danja mental floodgates are wide open</p>
+<p>start what am I up to</p>
+<h2>github list</h2>
+<ul>
+<li>make ForEach Processor</li>
+</ul>
+<pre><code class="language-sh">cd /home/danny/github-danny/transmissions
+repopack --verbose -c repopack.config.json .
+cd /home/danny/github-danny/trans-apps/applications/git-apps
+repopack --verbose -c repopack.config.json .
+</code></pre>
+<p>get elfquake.org primed</p>
+<p>publishing transmission!!!</p>
+<p>check <a href="https://claude.ai/chat/638f937d-53c0-49d5-9caa-868e841f4247">https://claude.ai/chat/638f937d-53c0-49d5-9caa-868e841f4247</a></p>
+<p>fam</p>
+<p>remember for notes:</p>
+<pre><code>Error: Unknown processor type: http://hyperdata.it/transmissions/ForEach
+    at AbstractProcessorFactory.createProcessor (file:///home/danny/github-danny/transmissions/src/engine/AbstractProcessorFactory.js:52:15)
+    ```
+
+#:todo  transmission for docs, for each processor make list of usages in transmissions.ttl - add this to a .ttl file in eg.
+```sh
+transmissions/src/processors/fs/manifest.ttl
+</code></pre>
+<hr>
+<p>update repopack for transmissions and trans-apps/git-apps</p>
+<p>1661  node src/simples/nop/simple-runner.js
+1663  node src/simples/nop/simple-runner.js
+1854  node test/integration-test.js
+1856  node test-runner.js
+1960  repopack --verbose -c repopack.config.json .
+1961  repopack --verbose -c ../../repopack.config.json .
+1964  node github-list-runner.js
+1965  node github-list-pipeline-runner.js
+1971  repopack --verbose -c repopack.config.json .
+1972  repopack --verbose -c ../repopack.config.json .
+1973  repopack --verbose -c ../../repopack.config.json .
+1974  repopack --verbose -c repopack.config.json .
+1975  node github-list-runner.js
+1976  node github-list-pipeline-runner.js</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="entries/2024-10-12_bhs.html">
+        BHS
+    </a>
+</p> <em>2024-10-12</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
         <a href="entries/2024-10-09_inpomnet.html">#</a>
     <h1>Inpomnet</h1>
 <p>My interweb connection has mostly been 0b/S since yesterday morning. Problem started coincident with a rainstorm. Almost certainly down to the antenna here being a bit out of line.</p>
@@ -46,7 +98,7 @@
     <a href="entries/2024-10-09_inpomnet.html">
         Inpomnet
     </a>
-</p> <em>2024-10-11</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-10-12</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-10-08_xmlns0.html">#</a>
@@ -69,7 +121,7 @@
     <a href="entries/2024-10-08_xmlns0.html">
         XMLNS
     </a>
-</p> <em>2024-10-11</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-10-12</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-10-08_xmlns.html">#</a>
@@ -96,7 +148,7 @@ ln -s ~/github-danny/postcraft/danny.ayers.name/content-raw
     <a href="entries/2024-10-08_xmlns.html">
         XMLNS
     </a>
-</p> <em>2024-10-11</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-10-12</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-10-08_offline.html">#</a>
@@ -152,55 +204,7 @@ def main():
     <a href="entries/2024-10-08_offline.html">
         Offline Ignorance
     </a>
-</p> <em>2024-10-11</em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="entries/2024-10-08_doc-structure.html">#</a>
-    <h1>Postcraft Docs</h1>
-<p><em>proper doc links etc. will follow soon, so if you want to know more, most of the material I&#39;m talking about is up at GitHub danja</em></p>
-<p>#:todo #:tldr tl;dr handling</p>
-<p>I&#39;ll mostly be posting stuff here (and nearby) in these categories :</p>
-<ul>
-<li><strong>articles</strong> for quasi-complete, permanent-ish material</li>
-<li><strong>entries</strong> for things like trad blog posts, of the moment but relatively single-topic, self-contained</li>
-<li><strong>journal</strong> for <em>anything</em>, mostly notes as I&#39;m going along, very unlikely to make much sense on their own</li>
-<li><strong>todo</strong> daily notes-to-self etc</li>
-</ul>
-<p>It may be a week or two before I get around to making these accessible online, I need to do a bit of work on site layout/templating. But I am gradually starting to capture my keyboard-hammering more systematically.</p>
-<p>After having this part up for a few weeks I&#39;ve inadvertently drifted into randomly dumping stuff from the 4 categories here. Today, I attempt restarting self-discipline. (I am concurrently working on UI bits that some time soon should help me with this).</p>
-<p>Boo! Internet connection has dropped...</p>
-<p>#:postcraft (an is just at a stage where I can use it, so as I&#39;ve been organizing my projects I&#39;ve been dogfooding by using it to capture documentation.</p>
-<p>It occurred to me quite early on that it&#39;ll be fine to drop in to pretty much every project because the overhead is actually very low. (Will be even lower once I move the layout bits etc. to a common area).</p>
-<p>The current default dir structure for #:postcraft material looks like this :</p>
-<pre><code class="language-sh">tree -d -L 2 tree -d -L 2 /home/danny/github-danny/postcraft/postcraft-template
-
-/home/danny/github-danny/postcraft/postcraft-template
-├── cache
-├── content-raw
-│   ├── articles
-│   ├── entries
-│   ├── journal
-│   └── todo
-├── content-static
-│   └── references
-├── layouts
-│   ├── fancier
-│   ├── logos
-│   ├── mediocre
-│   ├── misc
-│   └── trials
-├── media
-│   └── images
-├── prompts
-└── public
-</code></pre>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="entries/2024-10-08_doc-structure.html">
-        Postcraft Docs
-    </a>
-</p> <em>2024-10-11</em>
+</p> <em>2024-10-12</em>
             </article>
         </div>
         <div class="main-grid-item about">
