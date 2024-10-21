@@ -30,6 +30,74 @@
                 <!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
+        <a href="entries/2024-10-20_dogmo.html">#</a>
+    <h1>Dog Mood</h1>
+<p>Earlier I rediscovered my <a href="https://hyperdata.it/xmlns/dogmood/">Dog Mood Vocabulary</a> from 2020. Useful in the context of agents!!</p>
+<p>#:todo model today&#39;s encounter with other folks &amp; dogs</p>
+<pre><code class="language-turtle">@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix pets: &lt;http://purl.org/stuff/pets/&gt; .
+@prefix dogmo: &lt;http://purl.org/stuff/dogmood#&gt; .
+@prefix mz: &lt;http://purl.org/stuff/mozzanella/&gt; .
+
+
+mz:Claudio a pets:Dog;
+           foaf:name &quot;Claudio&quot;;
+           dogmo:currentMood dogmo:scared .
+
+_:blackDog   a pets:Dog;
+           dogmo:currentMood dogmo:happy .
+</code></pre>
+<p>#:farelo <strong>being able to capture ideas quickly is vital</strong> - and one of the best ways is as placeholder code etc. Get AI to make a proof-of-concept!</p>
+<p>It occurred to me I could do with a sandboxed Linux machine. So just before dog walk I created <a href="https://github.com/danja/tbox">tbox</a>. After a bit of chat with Claude, I&#39;ve got first pass bits for Docker.</p>
+<p>len bullard : Don’t become a musician if you can be happy doing anything else.  Like marriage, if there is any doubt, the answer is probably no.  -  John Rutter, Composer</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="entries/2024-10-20_dogmo.html">
+        Dog Mood
+    </a>
+</p> <em>2024-10-21</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="entries/2024-10-19_fuzzy.html">#</a>
+    <h1>Fuzzy</h1>
+<p>My head&#39;s a bit fuzzy this morning. I&#39;ve a vague memory of coughing a lot in the night, my lungs don&#39;t feel 100%. Smoking too much plus wet weather.</p>
+<p>#:next postcrafts - make a combined runner so all instances get rendered to where I want them (locally)</p>
+<p>#:next
+#:next #:fam move it along a bit</p>
+<h2>Server</h2>
+<p>My notes about #:postcraft deployment etc should go under <code>~/github-danny/server</code>, but apparently I haven&#39;t got a postcraft instance there. Which is kinda convenient, I&#39;ll set that up. Being empty it&#39;ll make a good starting point for the rest.</p>
+<p>#:todo add comments to these, it&#39;ll help with figuring out automation</p>
+<ol>
+<li><p>copy <code>postcraft/postcraft-template</code> to <code>server/docs/postcraft</code></p>
+</li>
+<li><p>add symlink for #:hyperdata-desktop</p>
+</li>
+</ol>
+<pre><code class="language-sh">danny@danny-desktop:~/github-danny/hyperdata/workspaces$ ln -s /home/danny/github-danny/server/docs/postcraft/content-raw server
+</code></pre>
+<ol start="3">
+<li><p>add symlink as project in #:hyperdata-desktop</p>
+</li>
+<li><p>add <code>server</code> as project in VSCode</p>
+</li>
+</ol>
+<p>Ok, now I can make some placeholder docs there.</p>
+<ul>
+<li><code>server/articles/deploy/build-site-transmission.md</code></li>
+<li><code>server/entries/server-setup_2024-10-19.md</code></li>
+<li><code>server/journal/2024-10-19.md</code></li>
+<li><code>server/todo/next-steps.md</code></li>
+</ul>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="entries/2024-10-19_fuzzy.html">
+        Fuzzy
+    </a>
+</p> <em>2024-10-21</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
         <a href="entries/2024-10-17_builders-caffe.html">#</a>
     <h1>Builder&#39;s Caffè</h1>
 <h2>TODAY THIS</h2>
@@ -79,7 +147,7 @@ This project of his I must #:todo revisit : <a href="https://modelling-music.com
     <a href="entries/2024-10-17_builders-caffe.html">
         Builder's Caffè
     </a>
-</p> <em>2024-10-17</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-10-21</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-10-13_sheltopusik.html">#</a>
@@ -92,7 +160,7 @@ git submodule add https://github.com/danja/sheltopusik.git sheltopusik
     <a href="entries/2024-10-13_sheltopusik.html">
         Sheltopusik
     </a>
-</p> <em>2024-10-17</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-10-21</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-10-12_bhs.html">#</a>
@@ -144,49 +212,7 @@ transmissions/src/processors/fs/manifest.ttl
     <a href="entries/2024-10-12_bhs.html">
         BHS
     </a>
-</p> <em>2024-10-17</em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="entries/2024-10-09_inpomnet.html">#</a>
-    <h1>Inpomnet</h1>
-<p>My interweb connection has mostly been 0b/S since yesterday morning. Problem started coincident with a rainstorm. Almost certainly down to the antenna here being a bit out of line.</p>
-<p>My service provider is generally pretty good, which is fortunate because right now they&#39;re the only real option for me here. Friendly &amp; helpful, but clearly short of field engineers - we are up in the  hills. (I&#39;ve been tempted to ping them about work even though I don&#39;t have transport - I get the feeling they might be desperate enough to find a workaround).</p>
-<blockquote>
-<p>#:aside I was a total bookworm from an early age (until I moved to this harder drug when the Web came along). Odd really, I&#39;m not sure how it started. Even though both my parents were very hot on education, neither were big readers, not a bookish family. But incredibly lucky in how it opened the world to me. Anyhow, my English language mechanical skills got to be really good, I had automatic correct usage (I&#39;m crap at other languages, btw). But nowadays my spelling is... hesitant. The exposure to en-US online and a fair bit of Italian has scrambled it, I have to double check all the time. Ditto my grammar. Both understandable, I don&#39;t feel bad. But my bloody punctuation is broken too! Example just now ^^^, putting a whole sentence in braces. Where, by the Frenchman&#39;s f&#39;ing&#39; <em>fin</em> does the full stop/period go..?       </p>
-</blockquote>
-<p>Ok, what I have been working on (always) is heavily dependent on the Web. But I still have vast numbers of things to do which don&#39;t need it. No problem. Hah!</p>
-<p>I&#39;ve been fortunate in only having experienced sexual impotence a couple of times in my life, despite having a taste for the booze. Found it slightly embarrassing, very frustrating (tragic on a one-night stand). But that pales in comparison with having to wait, possibly a day or two, for an engineer to get here.</p>
-<p>Claudio and I are not long back from walk #1, I&#39;ve just been getting my breath back. I noticed coming in that my antenna is <em>securely</em> mounted by means of cable ties to a drainpipe. So I&#39;m now going to get out the ladders and give it a wiggle. Even if I had a clue about what freqs it operates on it&#39;s unlikely I&#39;ve a suitable meter. But I do have <strong>ping</strong> (on termux) on my phone.  </p>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="entries/2024-10-09_inpomnet.html">
-        Inpomnet
-    </a>
-</p> <em>2024-10-17</em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="entries/2024-10-08_xmlns0.html">#</a>
-    <h1>XMLNS</h1>
-<p>I can&#39;t remember the last time I did any memorable work with XML. But still I have a load of stuff under the URL</p>
-<p>#:todo count #:danny content references to a particular #:todo, boost priority</p>
-<p>#:todo #:hashtags markdown formatter with personal disambiguator with #:rdf outputter, data pumped into #:pkb personal/project knowledgebase</p>
-<p>pv: , : <a href="http://purl.org/stuff/pivot/">http://purl.org/stuff/pivot/</a></p>
-<p>:Project :knowledge</p>
-<p> Classes</p>
-<p> KnowledgeBase
- Pivot
- Status</p>
-<p> Properties</p>
-<p> DependencyProperty</p>
-<p> :helps a  DependencyProperty</p>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="entries/2024-10-08_xmlns0.html">
-        XMLNS
-    </a>
-</p> <em>2024-10-17</em>
+</p> <em>2024-10-21</em>
             </article>
         </div>
         <div class="main-grid-item about">
