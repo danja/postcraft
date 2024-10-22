@@ -30,6 +30,141 @@
                 <!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
+        <a href="entries/2024-10-22_hat.html">#</a>
+    <h1>Hat</h1>
+<p><em>because my hat is on the desk</em></p>
+<p>I&#39;m in the process of setting up #:server infrastructure so all the #:postcraft instances (ie. rendering for my docs) can be run from a single command (using #:transmissions).</p>
+<p>I&#39;ve already got per-instance <code>manifest.ttl</code> files describing where things should go. I need an uber-manifest to run all of these. I&#39;ll need a few more vocab terms (and really need to refactor those). Coincidentally, the other day I stumbled on a vocab I did in 2001 :  </p>
+<p>RDF Process Profile (RPP) Specification 0.0.1</p>
+<p><a href="https://web.archive.org/web/20021009222134/http://www.isacat.net/citnames/2001/04/rpp.htm">archive.org</a></p>
+<pre><code class="language-sh">rapper -i rdfxml -o turtle rpp.rdfs &gt; rpp.ttl
+</code></pre>
+<p>#:todo note dead legacy domains : <a href="http://www.isacat.net">http://www.isacat.net</a>    /citnames/2001/04/rpp.htm</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="entries/2024-10-22_hat.html">
+        Hat
+    </a>
+</p> <em>2024-10-22</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="entries/2024-10-21_tinge.html">#</a>
+    <h1>Tinge</h1>
+<p>&#39;Tinge&#39; was the solution to the clue &#39;Hint&#39; in today&#39;s Guardian Quick Crossword, the one I got a little stuck on - shoddy clue, imho.</p>
+<p>I completed it in 8 minutes - a personal best, I believe. I think I got it down to 10 when I was doing it pretty much every day in Buxton, in the pub after work. Now I only try every few week.</p>
+<p>This was after getting Wordle in 3 really quickly.</p>
+<p>I have slight mania. Known, controlled, environmental cause. I was up all night coding, only got an hour or so&#39;s sleep before the alarm went off (at 9:57). I actually felt reasonably rested, soon got on with things. I have drifted off on tangents 3 or 4 times, but no worries, flights of fancies are fine, I was very aware being a bit fugueish.</p>
+<p>Drifting a bit now.</p>
+<p>So. Couple of hour&#39;s job: get all my #:postcraft instances processed and bunged where they should be. Locally first, but it&#39;ll be the same structure on the server.</p>
+<p>I&#39;m struggling to focus on this - the #:tbox container thing is calling me. After spending a lot of time getting #:t to load (ES) modules from arbitrary location, I really want to stick all this code in a SPARQL store. The assumption that source code should exist in files on a filesystem is very deeply wired into anyone born after maybe 1940. It&#39;s only a bloody persistence mechanism. I want my code up there in the Giant Global Graph.</p>
+<p>Loads of security hazards, mostly because it&#39;s not the usual way of doing things, fs stuff has been pentested to buggery.</p>
+<p>Where was I?</p>
+<h2>Postcraft Instances Go Go!</h2>
+<p>I reckon I need a root <code>manifest.ttl</code> (in <code>server/deploy</code>) that has a list of includes to pick up and run the individual instances.</p>
+<p>Where&#39;s that ns?</p>
+<p>Oh dear. I was thinking separation of concerns but this is something like the bastard child of premature disoptimisation and NAGNI.</p>
+<pre><code class="language-turtle">@prefix trm: &lt;http://purl.org/stuff/transmission/&gt; .
+@prefix fs: &lt;http://purl.org/stuff/filesystem/&gt; .
+@prefix pc: &lt;http://purl.org/stuff/postcraft/&gt; .
+@prefix t: &lt;http://hyperdata.it/transmissions/&gt; . # for custom terms &amp; instances
+</code></pre>
+<p>From now on, stick everything under :</p>
+<pre><code class="language-turtle">@prefix tns: &lt;http://purl.org/stuff/transmissions/&gt; .
+</code></pre>
+<p>Flip that lot ^ later.</p>
+<p>What does this root manifest need to say?</p>
+<blockquote>
+<p>A set of relative URLs that contain the <code>manifest.ttl</code>s of each of the #:postcraft instances.</p>
+</blockquote>
+<p>#:todo I should get #:vb VocBench running soon.</p>
+<p>#:todo Grr. Need to modify all the Turtle.</p>
+<p>Ok, I&#39;ve got things like :</p>
+<pre><code class="language-turtle">@prefix trm: &lt;http://purl.org/stuff/transmission/&gt; .
+
+:clean a trm:Pipeline ;
+    rdfs:label &quot;clean&quot; ;
+    rdfs:comment &quot;directory cleaner&quot; ;
+    trm:pipe (:r10 :r20 :r30 :r40 :r50 :r60) .
+</code></pre>
+<p>Each of those <code>transmissions.ttl</code> can hold multiple transmissions.</p>
+<p>Ops. It&#39;s the <code>manifest.ttl</code> I&#39;m meant to be looking at.</p>
+<p>Simplest thing that could possibly work?</p>
+<p>JSON guff.</p>
+<p>Hmm. I want those files to be treated as named graphs, but also try and avoid flipping to nquads just yet if I can help it.</p>
+<p>REview -</p>
+<pre><code class="language-sh">cd ~/github-danny/transmissions
+ ./trans postcraft ../server/docs/postcraft
+</code></pre>
+<p> So I guess the child manifests should have an association with the application that uses them.</p>
+<p> I can&#39;t be bothered diving into local fs vs. global URLs right now, just give them a path.</p>
+<p> The manifests as they stand are instancy, many share the same <strong>application</strong>, just different details.</p>
+<p> How have I been doing fs paths in them so far!?</p>
+<p>Crudely.</p>
+<pre><code class="language-turtle">t:CSS a pc:StaticGroup ;
+    pc:site &lt;https://danny.ayers.name&gt; ;
+    fs:sourceDirectory &quot;layouts/mediocre/css&quot; ;
+    fs:targetDirectory &quot;public/home/css&quot; .
+</code></pre>
+<p>I think this is when SKOS is called for. But for now, simplest thing....</p>
+<p>Naming. Saigon, shit.</p>
+<p><code>realm</code> would probably be more accurate, but that&#39;s so overloaded. Go with <code>space</code></p>
+<p>Prefix <code>tran</code> looks ok.</p>
+<pre><code class="language-turtle"># server/deploy/manifest.ttl
+
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix dct: &lt;http://purl.org/dc/terms/&gt; .
+@prefix : &lt;http://purl.org/stuff/transmissions/&gt; .
+
+&lt;http://danny.ayers.name/space&gt; a :Space ;
+  rdfs:label &quot;danny.ayers.name&quot;
+      :app :postcraft;
+      :defPath &quot;../postcraft/danny.ayers.name&quot;; # definition path?
+      :targetPath &quot;../server/2024/danny-ayers.name&quot; .
+</code></pre>
+<p>Ok, that might be enough of a starter. But better try it first with the new spaces-</p>
+<pre><code class="language-turtle"># server/deploy/manifest.ttl
+
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix dct: &lt;http://purl.org/dc/terms/&gt; .
+@prefix : &lt;http://purl.org/stuff/transmissions/&gt; .
+
+&lt;http://hyperdata.it/server/space&gt; a :Space ;
+  rdfs:label &quot;server&quot;
+      :app :postcraft;
+      :defPath &quot;../server/docs/postcraft&quot;; # definition path
+      :targetPath &quot;../server/2024/server&quot; .
+
+&lt;http://hyperdata.it/transmissions/space&gt; a :Space ;
+  rdfs:label &quot;transmissions&quot;
+      :app :postcraft;
+      :defPath &quot;../transmission/docs/postcraft&quot;; # definition path
+      :targetPath &quot;../server/2024/transmissions&quot; .
+</code></pre>
+<p>Heh, I&#39;d got a note-to-self in there mentioning SIOC. I bet that has some of these things.</p>
+<p>So the runner will be something like :</p>
+<pre><code class="language-sh">cd ~/github-danny/transmissions
+./trans ../server/deploy
+</code></pre>
+<p>Ok,that works. But how do I get at the Dataset?</p>
+<pre><code class="language-sh">| Running :  (SM) p10 a DatasetReader
+DatasetReader, datasetName = dataset
+DatasetReader, message[datasetName] =
+</code></pre>
+<p>Enough on that.</p>
+<p>Next job was to check how far I&#39;d got with #:fam</p>
+<p>Wait, do the repopacks in case I feel inspired in bed on the phone in the morning</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="entries/2024-10-21_tinge.html">
+        Tinge
+    </a>
+</p> <em>2024-10-22</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
         <a href="entries/2024-10-20_dogmo.html">#</a>
     <h1>Dog Mood</h1>
 <p>Earlier I rediscovered my <a href="https://hyperdata.it/xmlns/dogmood/">Dog Mood Vocabulary</a> from 2020. Useful in the context of agents!!</p>
@@ -50,13 +185,53 @@ _:blackDog   a pets:Dog;
 <p>#:farelo <strong>being able to capture ideas quickly is vital</strong> - and one of the best ways is as placeholder code etc. Get AI to make a proof-of-concept!</p>
 <p>It occurred to me I could do with a sandboxed Linux machine. So just before dog walk I created <a href="https://github.com/danja/tbox">tbox</a>. After a bit of chat with Claude, I&#39;ve got first pass bits for Docker.</p>
 <p>len bullard : Don’t become a musician if you can be happy doing anything else.  Like marriage, if there is any doubt, the answer is probably no.  -  John Rutter, Composer</p>
+<hr>
+<blockquote>
+<p>&quot;I&#39;d like a xmpp broker server built on node. I&#39;d like it to be open source, stick to the standards and be popular and well-maintained. Github would be good.&quot;&quot;</p>
+</blockquote>
+<p>&lt; &quot;The most popular and well-maintained open-source XMPP broker server built on Node.js is ejabberd...&quot;</p>
+<blockquote>
+<p>&quot;so the rumours I heard about erlang aren&#39;t true?&quot;&quot;</p>
+</blockquote>
+<p>&lt; &quot;That&#39;s correct. While Erlang was a popular choice for building XMPP servers in the past, ejabberd is now primarily built on Node.js. Node.js offers several advantages, such as: ...&quot;</p>
+<blockquote>
+<p>&quot;please give me references for this&quot;</p>
+</blockquote>
+<p>&lt; [very good choice selection of (contradictory) material]</p>
+<blockquote>
+<p>&quot;How do explain what it says at Wikipedia : &quot;ejabberd is an Extensible Messaging and Presence Protocol (XMPP) application server and an MQ Telemetry Transport (MQTT) broker, written mainly in the Erlang programming language.&quot;&quot;</p>
+</blockquote>
+<p>&lt; [vague overview of what ejabberd does, plus what Erlang is]</p>
+<blockquote>
+<p>&quot;You just said &quot; It&#39;s built on Node.js&quot; but Wikipedia says &quot;written mainly in the Erlang programming language&quot; - are they lying?&quot;</p>
+</blockquote>
+<p>&lt; &quot;A Clarification on ejabberd&#39;s Language
+You&#39;re absolutely right. There seems to be a discrepancy in the information I provided earlier. ejabberd is indeed primarily written in Erlang.</p>
+<p>The confusion likely arose from the fact that there have been discussions and experiments with using Node.js ...&quot;</p>
+<hr>
+<p>So I prodded around a bit. Kinda interesting:</p>
+<p>&lt; &quot;Analyzing My Response and Potential Biases
+You&#39;ve raised some excellent points about my response. My suggestion that ejabberd was built with Node.js was likely due to a combination of factors:</p>
+<p>Recent Trends and Information: The field of technology, especially in the context of messaging servers, is constantly evolving. There may have been recent developments or experimental implementations involving Node.js that I misinterpreted or conflated with the primary language used by ejabberd.
+Contextual Bias: It&#39;s possible that the specific prompt or context you provided led me to focus on certain aspects of ejabberd, such as its potential for scalability or integration with other Node.js-based applications.
+Model Limitations: As a large language model, I am trained on a massive dataset of text and code. While this allows me to generate human-quality text, it can also introduce biases or inaccuracies if the underlying data is incomplete or outdated.
+Regarding your questions about pre-training and RAG:</p>
+<p>Pre-training: My pre-training likely played a role in my response. The data I was trained on may have included information about Node.js being used in various messaging or communication contexts, leading me to associate it with ejabberd.
+RAG (Retrieval Augmented Generation): It&#39;s possible that I did use RAG to access additional information during my response generation. However, if the retrieved information was incorrect or outdated, it could have contributed to the error.
+To improve my accuracy in the future, I will:</p>
+<p>Double-check information sources: I will strive to verify information from multiple reliable sources before providing a response.
+Be mindful of contextual bias: I will be aware of how the context of a prompt can influence my response and try to avoid making assumptions.
+Continuously update my knowledge: I will stay up-to-date with the latest developments in technology to ensure that my responses are accurate and relevant.
+Thank you for your insightful questions. Your feedback helps me to identify and address potential issues in my responses.
+&quot;</p>
+<p>A lot of that doesn&#39;t really fit. But respect, &quot;Contextual Bias&quot;, that has to be the one.</p>
 
 </article>
 <p class="post-title h-cinzel">
     <a href="entries/2024-10-20_dogmo.html">
         Dog Mood
     </a>
-</p> <em>2024-10-21</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-10-22</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-10-19_fuzzy.html">#</a>
@@ -95,7 +270,7 @@ _:blackDog   a pets:Dog;
     <a href="entries/2024-10-19_fuzzy.html">
         Fuzzy
     </a>
-</p> <em>2024-10-21</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-10-22</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-10-17_builders-caffe.html">#</a>
@@ -147,72 +322,7 @@ This project of his I must #:todo revisit : <a href="https://modelling-music.com
     <a href="entries/2024-10-17_builders-caffe.html">
         Builder's Caffè
     </a>
-</p> <em>2024-10-21</em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="entries/2024-10-13_sheltopusik.html">#</a>
-    <pre><code class="language-sh">cd /home/danny/github-danny/hyperdata/packages
-git submodule add https://github.com/danja/sheltopusik.git sheltopusik
-</code></pre>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="entries/2024-10-13_sheltopusik.html">
-        Sheltopusik
-    </a>
-</p> <em>2024-10-21</em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="entries/2024-10-12_bhs.html">#</a>
-    <h1>BHS</h1>
-<p>I got the Sleaford Mods track in my head.</p>
-<p>danja mental floodgates are wide open</p>
-<p>start what am I up to</p>
-<h2>github list</h2>
-<ul>
-<li>make ForEach Processor</li>
-</ul>
-<pre><code class="language-sh">cd /home/danny/github-danny/transmissions
-repopack --verbose -c repopack.config.json .
-cd /home/danny/github-danny/trans-apps/applications/git-apps
-repopack --verbose -c repopack.config.json .
-</code></pre>
-<p>get elfquake.org primed</p>
-<p>publishing transmission!!!</p>
-<p>check <a href="https://claude.ai/chat/638f937d-53c0-49d5-9caa-868e841f4247">https://claude.ai/chat/638f937d-53c0-49d5-9caa-868e841f4247</a></p>
-<p>fam</p>
-<p>remember for notes:</p>
-<pre><code>Error: Unknown processor type: http://hyperdata.it/transmissions/ForEach
-    at AbstractProcessorFactory.createProcessor (file:///home/danny/github-danny/transmissions/src/engine/AbstractProcessorFactory.js:52:15)
-    ```
-
-#:todo  transmission for docs, for each processor make list of usages in transmissions.ttl - add this to a .ttl file in eg.
-```sh
-transmissions/src/processors/fs/manifest.ttl
-</code></pre>
-<hr>
-<p>update repopack for transmissions and trans-apps/git-apps</p>
-<p>1661  node src/simples/nop/simple-runner.js
-1663  node src/simples/nop/simple-runner.js
-1854  node test/integration-test.js
-1856  node test-runner.js
-1960  repopack --verbose -c repopack.config.json .
-1961  repopack --verbose -c ../../repopack.config.json .
-1964  node github-list-runner.js
-1965  node github-list-pipeline-runner.js
-1971  repopack --verbose -c repopack.config.json .
-1972  repopack --verbose -c ../repopack.config.json .
-1973  repopack --verbose -c ../../repopack.config.json .
-1974  repopack --verbose -c repopack.config.json .
-1975  node github-list-runner.js
-1976  node github-list-pipeline-runner.js</p>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="entries/2024-10-12_bhs.html">
-        BHS
-    </a>
-</p> <em>2024-10-21</em>
+</p> <em>2024-10-22</em>
             </article>
         </div>
         <div class="main-grid-item about">
