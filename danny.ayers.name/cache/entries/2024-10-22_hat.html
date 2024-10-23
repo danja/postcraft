@@ -8,16 +8,20 @@
 <p>I&#39;ve already got per-instance <code>manifest.ttl</code> files describing where things should go. I need an uber-manifest to run all of these. I&#39;ll need a few more vocab terms (and really need to refactor those). Coincidentally, the other day I stumbled on a vocab I did in 2001 :  </p>
 <p>RDF Process Profile (RPP) Specification 0.0.1</p>
 <p><a href="https://web.archive.org/web/20021009222134/http://www.isacat.net/citnames/2001/04/rpp.htm">archive.org</a></p>
+<p>Claude summarises :</p>
+<blockquote>
+<p>RDF Process Profile (RPP) is a lightweight XML-based specification from 2001 that describes processes using RDF (Resource Description Framework). It aims to standardize how data processors are described, moving away from data-centric approaches toward resource-centric ones. RPP allows both online and offline processes to be represented as web resources, with descriptions of all required resources needed to carry out data processing. The specification includes a vocabulary of classes (like Profile, Component, Algorithm) and properties (like location, availability, input/output) that can be used to describe processes. RPP is designed to be extensible and can serve as a foundation for more sophisticated layers of process description, potentially enabling automated process discovery and execution.</p>
+</blockquote>
 <pre><code class="language-sh">rapper -i rdfxml -o turtle rpp.rdfs &gt; rpp.ttl
 </code></pre>
 <p>#:todo note dead legacy domains : <a href="http://www.isacat.net">http://www.isacat.net</a>    /citnames/2001/04/rpp.htm <a href="https://web.archive.org/web/20021009222134/http://www.isacat.net/">https://web.archive.org/web/20021009222134/http://www.isacat.net/</a></p>
 <p>Ok, I&#39;ve set up :</p>
-<p>@prefix rpp: <a href="http://purl.org/stuff/rpp/">http://purl.org/stuff/rpp/</a> .</p>
-<p><a href="https://vocbench.uniroma2.it/doc/">https://vocbench.uniroma2.it/doc/</a></p>
+<pre><code class="language-sh">@prefix rpp: &lt;http://purl.org/stuff/rpp/&gt; .
+</code></pre>
 
 </article>
 <p class="post-title h-cinzel">
     <a href="entries/2024-10-22_hat.html">
         Hat
     </a>
-</p> <em>2024-10-22</em>
+</p> <em>2024-10-23</em>

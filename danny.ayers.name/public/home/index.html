@@ -30,6 +30,59 @@
                 <!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
+        <a href="entries/2024-10-23_damp.html">#</a>
+    <h1>Damp</h1>
+<p><em>It&#39;s wet out again also my spirits are a little soggy.</em></p>
+<ul>
+<li>publish #:postcrafts now! It&#39;s quite an interesting little task but it&#39;s close enough to admin to feel like a chore and I keep getting distracted...</li>
+</ul>
+<p>Quick look at VocBench (below)...moving on...where was I...</p>
+<pre><code class="language-sh">cd ~/github-danny/transmissions
+./trans ../server/deploy
+</code></pre>
+<p>Ok, <code>transmissions/src/applications/postcraft/transmission.ttl</code> includes :</p>
+<pre><code class="language-sh">:s10 a :DatasetReader . # read the manifest
+# trm:configKey trm:describe .
+
+:s20 a :ConfigMap ;
+    trm:configKey :postcraftMap .
+</code></pre>
+<p>Hang on, how am I doing the multi-pipeline call (#:todo rename <code>pipeline</code> -&gt; <code>transmission</code>) for #:postcraft..?</p>
+<p>#:todo automate creation of project handover #:ho docs <strong>for my future self</strong></p>
+<p>Ok, <code>./trans</code> calls <code>run.js</code> which calls <code>transmissions/src/utils/CommandUtils.js</code>.</p>
+<p>The <code>CommandUtils.run()</code> calls <code>transmissions/src/engine/TransmissionBuilder.js</code> to build all the transmissions in <code>transmissions.ttl</code> and then runs them.</p>
+<p><code>TransmissionBuilder.js</code> has :</p>
+<pre><code class="language-javascript">for (const q of poi.out(ns.rdf.type).quads()) {
+  if (q.object.equals(ns.trm.Pipeline)) {
+</code></pre>
+<h2>VocBench</h2>
+<p>Ah, I do have to go on a slight tangent first. Little bit of vocab needed. Coincidentally Claudio B. reminded me about <a href="https://vocbench.uniroma2.it/doc/">VocBench</a> the other day, just what I need. I&#39;m pretty sure I&#39;ve used it before, can&#39;t remember at all. Can&#39;t see it on this machine, downloaded, unzipped, giving me a fun path. <strong>Semantic Turkey!</strong> - love it.</p>
+<pre><code class="language-sh">danny@danny-desktop:~/Apps/VocBench/vocbench3-12.2.0-full/semanticturkey-12.2/bin$ ./semanticturkey.sh
+
+   ____                    __  _       ______         __
+  / __/__ __ _  ___ ____  / /_(_)___  /_  __/_ ______/ /_____ __ __
+ _\ \/ -_)  &#39; \/ _ `/ _ \/ __/ / __/   / / / // / __/  &#39;_/ -_) // /
+/___/\__/_/_/_/\_,_/_//_/\__/_/\__/   /_/  \_,_/_/ /_/\_\__/\_,  /
+                                                            /___/
+
+Developed by ART (Artificial Intelligence Research at Tor Vergata).
+Version: 12.2. Build: 2024-07-09T11:01:05Z. Spring Boot version: 3.2.5
+
+
+ST Started
+</code></pre>
+<p>Good-o, running nicely, access via <code>http://localhost:1979/vocbench3</code></p>
+<p>Ah. Claudio mentioned the manual. Now I see why. This thing seems big and arcane.</p>
+<p>I&#39;ll leave for now, hack the Turtle for the terms I need, get back to that manual later.</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="entries/2024-10-23_damp.html">
+        Damp
+    </a>
+</p> <em>2024-10-23</em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
         <a href="entries/2024-10-22_hat.html">#</a>
     <h1>Hat</h1>
 <p><em>because my hat is on the desk</em></p>
@@ -37,19 +90,23 @@
 <p>I&#39;ve already got per-instance <code>manifest.ttl</code> files describing where things should go. I need an uber-manifest to run all of these. I&#39;ll need a few more vocab terms (and really need to refactor those). Coincidentally, the other day I stumbled on a vocab I did in 2001 :  </p>
 <p>RDF Process Profile (RPP) Specification 0.0.1</p>
 <p><a href="https://web.archive.org/web/20021009222134/http://www.isacat.net/citnames/2001/04/rpp.htm">archive.org</a></p>
+<p>Claude summarises :</p>
+<blockquote>
+<p>RDF Process Profile (RPP) is a lightweight XML-based specification from 2001 that describes processes using RDF (Resource Description Framework). It aims to standardize how data processors are described, moving away from data-centric approaches toward resource-centric ones. RPP allows both online and offline processes to be represented as web resources, with descriptions of all required resources needed to carry out data processing. The specification includes a vocabulary of classes (like Profile, Component, Algorithm) and properties (like location, availability, input/output) that can be used to describe processes. RPP is designed to be extensible and can serve as a foundation for more sophisticated layers of process description, potentially enabling automated process discovery and execution.</p>
+</blockquote>
 <pre><code class="language-sh">rapper -i rdfxml -o turtle rpp.rdfs &gt; rpp.ttl
 </code></pre>
 <p>#:todo note dead legacy domains : <a href="http://www.isacat.net">http://www.isacat.net</a>    /citnames/2001/04/rpp.htm <a href="https://web.archive.org/web/20021009222134/http://www.isacat.net/">https://web.archive.org/web/20021009222134/http://www.isacat.net/</a></p>
 <p>Ok, I&#39;ve set up :</p>
-<p>@prefix rpp: <a href="http://purl.org/stuff/rpp/">http://purl.org/stuff/rpp/</a> .</p>
-<p><a href="https://vocbench.uniroma2.it/doc/">https://vocbench.uniroma2.it/doc/</a></p>
+<pre><code class="language-sh">@prefix rpp: &lt;http://purl.org/stuff/rpp/&gt; .
+</code></pre>
 
 </article>
 <p class="post-title h-cinzel">
     <a href="entries/2024-10-22_hat.html">
         Hat
     </a>
-</p> <em>2024-10-22</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-10-23</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-10-21_tinge.html">#</a>
@@ -165,7 +222,7 @@ DatasetReader, message[datasetName] =
     <a href="entries/2024-10-21_tinge.html">
         Tinge
     </a>
-</p> <em>2024-10-22</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-10-23</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-10-20_dogmo.html">#</a>
@@ -234,7 +291,7 @@ Thank you for your insightful questions. Your feedback helps me to identify and 
     <a href="entries/2024-10-20_dogmo.html">
         Dog Mood
     </a>
-</p> <em>2024-10-22</em><!-- POST CONTENT TEMPLATE -->
+</p> <em>2024-10-23</em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
         <a href="entries/2024-10-19_fuzzy.html">#</a>
@@ -273,59 +330,7 @@ Thank you for your insightful questions. Your feedback helps me to identify and 
     <a href="entries/2024-10-19_fuzzy.html">
         Fuzzy
     </a>
-</p> <em>2024-10-22</em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="entries/2024-10-17_builders-caffe.html">#</a>
-    <h1>Builder&#39;s Caffè</h1>
-<h2>TODAY THIS</h2>
-<p>#:next GitHub repo #:transmission
-#:next &quot;what I am up to&quot;
-#:next  #:postcraft *<strong>sites</strong>
-#:next  review #:fam
-#:next  make a start with <a href="https://github.com/trustgraph-ai/trustgraph">https://github.com/trustgraph-ai/trustgraph</a>
-#:next  check recent links from danbri</p>
-<p>#:todo think about logos/branding for individual projects - OpenAI, free about one pic a day. Gemini? Other generators?</p>
-<p>#:todo You&#39;ll stop getting emails on 9 Nov</p>
-<blockquote>
-<p>You&#39;ve run out of storage from increased backup. You don&#39;t have enough storage. Starting on 9 Nov, emails sent to you will be bounced back to the sender and can&#39;t be recovered.</p>
-</blockquote>
-<hr>
-<p>My essential daytime beverage is <strong>Caffé Americano, Macchiato, à la Turk</strong>.</p>
-<p>In the UK I used to drink the classic <strong>Brit Instant</strong>. One or two spoonfuls of powder from a jar, in a mug, good splash of milk, spoonful of sugar. Of necessity, usually the cheap stuff, but Nescafé by preference and/or in posh company.
-I can&#39;t bear the silage run-off now.</p>
-<ul>
-<li>to be continued...</li>
-</ul>
-<hr>
-<p>Christ on an e-bike, so many distractions today. Oriana just called, due up from Siena in 10 mins, asked if I can give her a hand shifting stuff.</p>
-<hr>
-<p>Golly, via Duolingo, a name I believe I recognise from the distant past, #:foaf <a href="https://jtauber.com">James Tauber</a>. I can&#39;t place him yet, my mental sorting office will take a while to locate the relevant pile.  I doubt I know him through his main field, he does lots of Ancient Greek as <a href="https://jktauber.com">J.K. Tauber</a> -</p>
-<blockquote>
-<p>at the intersection of computing, linguistics, philology, and learning science</p>
-</blockquote>
-<p>He has written up <a href="https://thoughtstreams.io/jtauber/my-history-with-the-web/">My History with the Web</a>, which mentions the W3C, may be a hint for the backend posties.
-This project of his I must #:todo revisit : <a href="https://modelling-music.com">https://modelling-music.com</a></p>
-<p>#:todo come up with a short #:semtag that I&#39;ll remember for check it out/revisit.</p>
-<p>Reminds me, I need to see if I got around to doing one of these : <a href="https://linktr.ee/jtauber">https://linktr.ee/jtauber</a></p>
-<p>His <em>History</em> is on <a href="https://thoughtstreams.io">https://thoughtstreams.io</a>, not sure I&#39;ve seen that before. But <strong>microblogging</strong> is very strongly in scope for <em>my stuff</em>, #:todo check it out. Over there the page has :</p>
-<blockquote>
-<p>get stream as: <a href="https://thoughtstreams.io/jtauber/my-history-with-the-web.md">markdown</a> or <a href="https://thoughtstreams.io/jtauber/my-history-with-the-web.atom">atom</a></p>
-</blockquote>
-<p>The Atom feed follows the usual reverse-chrono sequence of posts (which is kinda irrelevant, they are datetime-stamped). #:todo remember bloody Atom, is important here.</p>
-<p>The Markdown feed is forward-chrono (which makes sense here, the <em>History..</em> is a sequential, self-contained article). Just the usual #:md syntax, with <code>---</code> (ie. <code>&lt;br&gt;</code>) inserted as post separators.</p>
-<p>Coincidentally I woke up this morning with a closely related thing on my mind, #:chunks or for here -</p>
-<h2>Chunky Chunks</h2>
-<p>I need dynamically modifiable, identifiable blocks of text.</p>
-<p><em>to be continued...</em></p>
-<p>So many distractions today.</p>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="entries/2024-10-17_builders-caffe.html">
-        Builder's Caffè
-    </a>
-</p> <em>2024-10-22</em>
+</p> <em>2024-10-23</em>
             </article>
         </div>
         <div class="main-grid-item about">
