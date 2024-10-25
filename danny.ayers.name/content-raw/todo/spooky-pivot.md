@@ -1,8 +1,36 @@
-# Spooky Pivot
+# ToDo : Spooky Pivot (for 2024-10-31)
+
+* Publish ALL!
+
+* Branding
+
+* Demos in container (separate one for VocBench)
+
+#:todo use prov vocab
+
+* auto-build Feed Reader (for strandz)
+
+* prompt generator!
+
+* Italian docs
+* theme
+* help box
+
+* KIA
+* Rename Pivot, the methodology - Hyperdata Anonymous Methodology, Agile ? Agent?
+
+
+pivot ok for the term
+
+```turtle
+@prefix prj: <http://purl.org/stuff/project/> .
+@prefix ham: <http://purl.org/stuff/ham/> .
+@prefix kia: <http://purl.org/stuff/kia/> .
+```
 
 **2024-10-16**
 
-a debrief/review is needed.
+* a debrief/review is needed after a pivot
 
 ---
 
