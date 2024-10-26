@@ -6,7 +6,17 @@ But one reason for this will be my use of repopack as-is for project knowledge. 
 
 Need docs.
 
-A refactoring first : execute() -> process()
+A renaming refactoring first : execute() -> process(). Everywhere!
+
+Ok, for now I'll use :
+```sh
+transmissions/src/processors/staging/
+```
+for new stuff. Get back to module loading when I've got my own repopack.
+
+
+
+## Renaming
 
 Hmm. Looks like I've changed things since I last used the Jasmine tests.
 But I've still got `p` (#:postcraft runner) and `./trans test_fork` (a fairly simple runner) as integration tests.
@@ -60,4 +70,4 @@ and in
 ../docs/postcraft
 ```
 
-Ok. Seems good. Time I committed. 
+Ok. Seems good. Time I committed.
