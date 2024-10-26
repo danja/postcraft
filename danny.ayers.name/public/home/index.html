@@ -36,15 +36,36 @@
 <p>But one reason for this will be my use of repopack as-is for project knowledge. I need RAG material to be custom to the target. My own repopack.</p>
 <p>Need docs.</p>
 <p>A refactoring first : execute() -&gt; process()</p>
-<pre><code class="language-sh">grep -r execute | grep &quot;.js&quot; | grep -v &quot;^processors&quot;
-
-grep -r &quot;process&quot; | grep &quot;.js&quot;
+<pre><code class="language-sh">grep -r &quot;process&quot; | grep &quot;.js&quot;
 
 grep -r &quot;.js&quot; | grep -v &quot;^processors&quot; | grep &quot;process&quot;
 
 grep -r &quot;execute&quot; | grep -v &quot;^node_modules&quot; | grep &quot;.md&quot;
 </code></pre>
-<p>&quot;execute(&quot; with &quot;process(&quot;</p>
+<pre><code class="language-sh">cd src
+grep -r execute | grep &quot;.js&quot; | grep -v &quot;^processors&quot;
+...
+engine/Transmission.js:  async execute(message) {
+engine/Transmission.js:      logger.error(&quot;No valid processor found to execute&quot;)
+engine/Transmission.js:  async execute(message) {
+engine/Transmission.js:    //  processor.execute(message)
+engine/TransmissionRunner.js:                    await transmission.execute(message)
+simples/nop/nop copy.js:message = await p10.execute(message)
+simples/nop/nop copy.js:// message = await p20.execute(message)
+simples/nop/nop.js:message = await nop.execute(message)
+simples/nop/simple-runner.js:    const outputs = await processor.execute(message)
+simples/nop/simple-runner.js:    var outputs = await nop.execute(message)
+simples/nop/simple-runner.js:    outputs = await fork.execute(message)
+simples/env-loader/env-loader.js:message = await p10.execute(message)
+simples/env-loader/env-loader.js:message = await p20.execute(message)
+
+grep -r &quot;.execute&quot; | grep &quot;.js&quot; | grep -v &quot;^processors&quot;
+</code></pre>
+<blockquote>
+<p>Please give me a command that will scan the current directory tree and replace all occurrences in files of the string &quot; execute(&quot; with &quot; process(&quot;</p>
+</blockquote>
+<pre><code class="language-sh">find . -type f -exec sed -i &#39;s/ execute(/ process(/g&#39; {} +
+</code></pre>
 
 </article>
 <p class="post-title h-cinzel">
