@@ -24,7 +24,12 @@
 <p>I&#39;ve spent the past few hours at desk going around in circle with module loading in #:transmissions. Most of this was down to my over-reliance on Claude AI. The code required for core operations is just a bit too complex.</p>
 <p>But one reason for this will be my use of repopack as-is for project knowledge. I need RAG material to be custom to the target. My own repopack.</p>
 <p>Need docs.</p>
-<p>A refactoring first : execute() -&gt; process()</p>
+<p>A renaming refactoring first : execute() -&gt; process(). Everywhere!</p>
+<p>Ok, for now I&#39;ll use :</p>
+<pre><code class="language-sh">transmissions/src/processors/staging/
+</code></pre>
+<p>for new stuff. Get back to module loading when I&#39;ve got my own repopack.</p>
+<h2>Renaming</h2>
 <p>Hmm. Looks like I&#39;ve changed things since I last used the Jasmine tests.
 But I&#39;ve still got <code>p</code> (#:postcraft runner) and <code>./trans test_fork</code> (a fairly simple runner) as integration tests.</p>
 <pre><code class="language-sh">grep -r &quot;process&quot; | grep &quot;.js&quot;
@@ -72,7 +77,7 @@ find . -type f -exec sed -i &#39;s/\.execute(/\.process(/g&#39; {} +
 and in
 ../docs/postcraft
 </code></pre>
-<p>Ok. Seems good. Time I committed. </p>
+<p>Ok. Seems good. Time I committed.</p>
 
 </article>
 <p class="post-title h-cinzel">
