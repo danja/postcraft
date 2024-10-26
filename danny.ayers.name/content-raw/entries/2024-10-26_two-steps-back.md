@@ -8,6 +8,9 @@ Need docs.
 
 A refactoring first : execute() -> process()
 
+Hmm. Looks like I've changed things since I last used the Jasmine tests.
+But I've still got `p` (#:postcraft runner) and `./trans test_fork` (a fairly simple runner) as integration tests.
+
 ```sh
 grep -r "process" | grep ".js"
 
@@ -35,10 +38,26 @@ simples/env-loader/env-loader.js:message = await p10.execute(message)
 simples/env-loader/env-loader.js:message = await p20.execute(message)
 
 grep -r ".execute" | grep ".js" | grep -v "^processors"
+
+cd ../tests
+grep -r "execute" | grep ".js"
 ```
 
 > Please give me a command that will scan the current directory tree and replace all occurrences in files of the string " execute(" with " process("
 
+> Please give me a command that will scan the current directory tree and replace all occurrences in files of the string ".execute(" with ".process("
+
 ```sh
+cd src
 find . -type f -exec sed -i 's/ execute(/ process(/g' {} +
+find . -type f -exec sed -i 's/\.execute(/\.process(/g' {} +
+
+cd ../tests
+find . -type f -exec sed -i 's/ execute(/ process(/g' {} +
+find . -type f -exec sed -i 's/\.execute(/\.process(/g' {} +
+
+and in
+../docs/postcraft
 ```
+
+Ok. Seems good. Time I committed. 

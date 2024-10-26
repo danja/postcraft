@@ -25,6 +25,8 @@
 <p>But one reason for this will be my use of repopack as-is for project knowledge. I need RAG material to be custom to the target. My own repopack.</p>
 <p>Need docs.</p>
 <p>A refactoring first : execute() -&gt; process()</p>
+<p>Hmm. Looks like I&#39;ve changed things since I last used the Jasmine tests.
+But I&#39;ve still got <code>p</code> (#:postcraft runner) and <code>./trans test_fork</code> (a fairly simple runner) as integration tests.</p>
 <pre><code class="language-sh">grep -r &quot;process&quot; | grep &quot;.js&quot;
 
 grep -r &quot;.js&quot; | grep -v &quot;^processors&quot; | grep &quot;process&quot;
@@ -49,12 +51,28 @@ simples/env-loader/env-loader.js:message = await p10.execute(message)
 simples/env-loader/env-loader.js:message = await p20.execute(message)
 
 grep -r &quot;.execute&quot; | grep &quot;.js&quot; | grep -v &quot;^processors&quot;
+
+cd ../tests
+grep -r &quot;execute&quot; | grep &quot;.js&quot;
 </code></pre>
 <blockquote>
 <p>Please give me a command that will scan the current directory tree and replace all occurrences in files of the string &quot; execute(&quot; with &quot; process(&quot;</p>
 </blockquote>
-<pre><code class="language-sh">find . -type f -exec sed -i &#39;s/ execute(/ process(/g&#39; {} +
+<blockquote>
+<p>Please give me a command that will scan the current directory tree and replace all occurrences in files of the string &quot;.execute(&quot; with &quot;.process(&quot;</p>
+</blockquote>
+<pre><code class="language-sh">cd src
+find . -type f -exec sed -i &#39;s/ execute(/ process(/g&#39; {} +
+find . -type f -exec sed -i &#39;s/\.execute(/\.process(/g&#39; {} +
+
+cd ../tests
+find . -type f -exec sed -i &#39;s/ execute(/ process(/g&#39; {} +
+find . -type f -exec sed -i &#39;s/\.execute(/\.process(/g&#39; {} +
+
+and in
+../docs/postcraft
 </code></pre>
+<p>Ok. Seems good. Time I committed. </p>
 
 </article>
 <p class="post-title h-cinzel">
