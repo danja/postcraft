@@ -14,7 +14,11 @@ transmissions/src/processors/staging/
 ```
 for new stuff. Get back to module loading when I've got my own repopack.
 
+Break time.
 
+also later:
+
+* make the claude-json-to-md thing in staging
 
 ## Renaming
 
