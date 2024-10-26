@@ -23,9 +23,12 @@
 pivot ok for the term
 
 ```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix prj: <http://purl.org/stuff/project/> .
 @prefix ham: <http://purl.org/stuff/ham/> .
 @prefix kia: <http://purl.org/stuff/kia/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 ```
 
 **2024-10-16**
