@@ -6,6 +6,24 @@
 
 * Demos in container (separate one for VocBench)
 
+* Dogbot!!
+
+* Turing
+* AI APIs connectors
+* Logic connector : Eye
+* little language : thingy
+* github "pro"
+
+* REPL
+* Web endpoint
+* feedback loop - build yourself - */sandbox
+
+### Use Cases
+* postcraft
+* foaf-retro
+* vocbench
+* agents
+
 #:todo use prov vocab
 
 * auto-build Feed Reader (for strandz)
