@@ -8,6 +8,9 @@
 
 * Dogbot!!
 
+* https://github.com/comfyanonymous/ComfyUI
+https://www.comfy.org/
+
 * Turing
 * AI APIs connectors
 * Logic connector : Eye
