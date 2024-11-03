@@ -22,6 +22,8 @@ Use to guide build  collation systems
 
 Exploit impulses (check for similar things in neurodiversity literature)
 
+Spikes are good, but a mechanism is needed to avoid rabbit holes/tar pits. Pre-determined timed deadlines, evaluation metrics.
+
 The pivot system is an agency, a cooperating community of agents to help get things done
 
 ---

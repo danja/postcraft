@@ -1,0 +1,1 @@
+Starting from the definition in Transmission.js, the pipeline structure of any transmission.js and the simple function operation of classes such as in NOP.js, how might support for recursion be added to the system? First think which approaches might work, then choose the one which looks best, and tell me how to implement it.

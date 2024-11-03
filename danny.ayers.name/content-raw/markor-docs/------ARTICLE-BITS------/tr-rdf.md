@@ -1,0 +1,1 @@
+Can you think of a better way of representing the processing pipelines in the rdf model that has more useful semantics than lists? It must be expressible in turtle syntax in a simple form, comparable to the current version.

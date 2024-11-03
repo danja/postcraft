@@ -1,0 +1,1 @@
+I would like you to create a web page to try out the following UI, intended for a using a tiny touch screen for text input.

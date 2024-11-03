@@ -1,5 +1,16 @@
 # Releases for Halloween
 
+
+PV:fallback
+
+PV:fall forward
+
+PV:Activity !!!!
+
+Little things for prep - download libs, repos, docs
+
+Download some bloody Vids/music!
+
 Mega : have #:kia autonomously write an app using #:: transmissions (newsmonitor?)
 
 Train custom models : rdf/controlled English
@@ -14,9 +25,11 @@ ABC notation/midi
 
 #:music Tasty EP
 
-
+Sprint, dash
 
 #:music make a sample set - synth + natural combos - use on Tasty
+
+Kia ont - with agent profile, include service description - rpp & the owl / xml one, ref to json api spec?
 
 Stems
 
