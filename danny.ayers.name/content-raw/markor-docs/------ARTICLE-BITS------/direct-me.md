@@ -1,3 +1,5 @@
+Ps. Found on Reddit : "Claude is really great with empathy and intuitively understanding what you want / need."
+
 The following text is from a person looking for a kind of business advice. I'd like you to use it to develop a model of the ideal person who might be able to advise them. Consider the necessary skill set of the adviser, the kind of person that might be most helpful, down to their personality. Then take this model of an adviser and formulate it a format that can be given as a system prompt to a general purpose chat gpt with a 100k token context window, so it can take on the role.
 
 "I have a lot of experience across software development. But I am not very good at working for employers in the traditional manner. I have ADHD traits which mean my level of interest in a topic has an exagerrated influence of how well I can work on it. I need money to live on but am terrible at the admin involved in finding suitable work.
