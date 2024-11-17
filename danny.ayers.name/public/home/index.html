@@ -30,118 +30,121 @@
                 <!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
-        <a href="entries/2024-11-01_nov.html">#</a>
-    <h1>Nov</h1>
-<p><em>it&#39;s 2024-11-01</em></p>
-<p>Continuing with #:server:deploy</p>
-<p>Give it an hour.</p>
-<h2>Deploy</h2>
-<p>Ok, remember I need to modify all <code>manifest.ttl</code>s</p>
-<p>Oh dear, I need to do the rendering for each of:</p>
-<pre><code class="language-sh">.
-├── articles
-├── entries
-├── journal
-└── todo
-</code></pre>
-<p>for every instance. The <code>transmissions.ttl</code> for postcraft app is already really long.</p>
-<p>Two-pronged attack :</p>
+        <a href="">#</a>
+    <h1>In Cline</h1>
+<p>Needs templates - plop</p>
+<p>src/applications/postcraft</p>
+<p>I want to be able to add further content group blocks into <code>manifest.ttl</code> files</p>
+<p>danny.ayers.name/manifest.ttl</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="">
+        
+    </a>
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="">#</a>
+    <h1>Pingy-ping</h1>
+<p><em>While tidying up the other day I found an old phone. I wasn&#39;t sure whether or not to throw it, so put it on to charge. Broken screen. Now it keeps going pingy-ping.</em></p>
 <ol>
-<li>modularise <code>transmissions.ttl</code></li>
-<li>render-on-save (the node watch thing)</li>
+<li>#:todo <code>/home/danny/github-danny/hyperdata/workspaces/transmissions/todo/next-steps.md</code></li>
+<li>#:todo Verbo photo</li>
+<li>#:todo carving prep</li>
+<li>#:todo 1-page docs (Transmissions urgent)</li>
 </ol>
-<p>I started the modularisation, I can&#39;t remember where I got up to. See if Claude remembers.</p>
-<p>#:todo the node watch thing - record recent changes, pass to AI</p>
+<p>AGAIN</p>
+<p>But I have got past the annoying restructure problem with Transmissions, so can move on.</p>
+<ul>
+<li>aider</li>
+<li>cline</li>
+<li>continue</li>
+</ul>
+<p>APIs
+Qwen2.5 Tools: A 14B and 32B parameter model designed for general tool use and task completion</p>
+<p>Qwen2.5 Coder Tools: A 1.5B and 7B parameter model specifically optimized for coding tasks</p>
+<p>Qwen2.5 Tools: <a href="https://ollama.com/hhao/qwen2.5-tools">https://ollama.com/hhao/qwen2.5-tools</a></p>
+<p>Qwen2.5 Coder Tools: <a href="https://ollama.com/hhao/qwen2.5-coder-tools">https://ollama.com/hhao/qwen2.5-coder-tools</a></p>
+<p><a href="https://www.reddit.com/r/ClaudeAI/comments/1g3fhcp/save_money_on_claude_with_new_qwen25_specialized/">https://www.reddit.com/r/ClaudeAI/comments/1g3fhcp/save_money_on_claude_with_new_qwen25_specialized/</a></p>
 <hr>
-<p>#:todo I want #:transmissions to run as a daemon, in a container, hot-pluggable</p>
-<p>#:todo #:t transmissions watchdog, record stuff from node watch, for #:farelo - what is getting attention?</p>
-<p>#:todo #:farelo - remember llama fs</p>
 
 </article>
 <p class="post-title h-cinzel">
-    <a href="entries/2024-11-01_nov.html">
-        Nov
+    <a href="">
+        
     </a>
-</p> <em>2024-11-01</em><!-- POST CONTENT TEMPLATE -->
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
-        <a href="entries/2024-10-31_spooky.html">#</a>
-    <h1>Spooky</h1>
-<p>A project pivot is here defined as a kind of milestone or landmark date by which certain tasks should have been done. There is a strong analogy with a mechanical pivot, it&#39;s a point at which a change of direction may be called for. The project today is a software project involving software pipelines so as well as components like a an engine transmission, plumbing may be involved. Today is Halloween.
-A promotional poster, like a movie poster,  is needed for this project pivot. Imagine a conceptual  notion that incorporates all the key features  you find in your project knowledge about it. Make it spooky. Now, be creative and condense all this into a description of a striking image that even the most stupid graphic designer will understand and be able to paint.</p>
+        <a href="">#</a>
+    <h1>Brrr</h1>
+<p>NOTE TO SELF : GRDDL</p>
+<p><em>it&#39;s chilly</em></p>
+<p><em>four times I&#39;ve changed the date in this&#39; filename. It is still chilly</em></p>
+<p>Aside from some priority #:todos I won&#39;t forget, I have :</p>
+<ol>
+<li>#:todo <code>/home/danny/github-danny/hyperdata/workspaces/transmissions/todo/next-steps.md</code></li>
+<li>#:todo Verbo photo</li>
+<li>#:todo carving prep</li>
+<li>#:todo 1-page docs (Transmissions urgent)</li>
+</ol>
+<p>No. 1. here is :</p>
+<h2>Restructure</h2>
+<p>A #:transmissions processor that changes the shape of a (JSON) message.</p>
+<p>Notes in Transmissions Journal #:todo link, today in :
+<code>/home/danny/github-danny/hyperdata/workspaces/transmissions/journal/2024-11-15.md</code></p>
+<p>I need to use <code>Restructure</code> in two places right away :</p>
+<ol>
+<li>render messages from Claude&#39;s <code>conversations.json</code></li>
+<li>get <code>README.md</code>s from all my GitHub repos</li>
+<li>tidy up #:postcraft, sort out publishing things.</li>
+</ol>
+<p>For 1. I also needed a <code>JSONWalker</code>.</p>
+<p>I got hopelessly confused...</p>
+<p>I&#39;ve spent way too long on these as <em>necessary tasks</em>, but it has useful as a learning experience.</p>
+<p>At many points I was tempted to simply hack the code for 1. &amp; 2. but at some point last week I broke the #:postcraft transmission in the parts that involve restructuring, so INSERT TOKI PONA</p>
+<p>strange, the message is sometimes undefined...</p>
+<h2>Transmissions</h2>
+<p>I&#39;m so desperate to automate this thing! My current process with Claude is close, just needs a little bit more push...</p>
+<p>What I&#39;m lacking in the #:transmissions dev is immediacy and integration, like you get in Smalltalk. MORE - it&#39;s not engaging me. I need to be told why I should do something.</p>
+<p>Near future, I&#39;ll have #:hyperdata-desktop for that. In the interim...</p>
+<p>I guess I should try Cline.</p>
 
 </article>
 <p class="post-title h-cinzel">
-    <a href="entries/2024-10-31_spooky.html">
-        Spooky
+    <a href="">
+        
     </a>
-</p> <em>2024-11-01</em><!-- POST CONTENT TEMPLATE -->
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
-        <a href="entries/2024-10-30_halloweeneen.html">#</a>
-    <h1>Halloweeneen</h1>
-<p><a href="https://github.com/iyaja/llama-fs">https://github.com/iyaja/llama-fs</a></p>
-<p><a href="https://github.com/Marker-Inc-Korea/AutoRAG">https://github.com/Marker-Inc-Korea/AutoRAG</a></p>
-<h2>Publish all</h2>
-<ul>
-<li>hacky runner</li>
-<li>template for #:postcraft sites, generic &amp; minimal</li>
-</ul>
-<h3>Docs</h3>
-<ul>
-<li>What I&#39;m up to</li>
-<li>tools</li>
-</ul>
-<h2>What I&#39;m up to</h2>
-<h3>Tools</h3>
-<ul>
-<li><p>github lister</p>
-</li>
-<li><p>claude-json renderer</p>
-</li>
-</ul>
+        <a href="">#</a>
+    <h1>Bills.</h1>
+<p>A few things to pay, boo.</p>
 
 </article>
 <p class="post-title h-cinzel">
-    <a href="entries/2024-10-30_halloweeneen.html">
-        Halloweeneen
+    <a href="">
+        
     </a>
-</p> <em>2024-11-01</em><!-- POST CONTENT TEMPLATE -->
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
 
 <article class="post-content">
-        <a href="entries/2024-10-29_rabbit.html">#</a>
-    <h1>Rabbit</h1>
-<p><em>I don&#39;t think I&#39;ll be pulling a rabbit out of the hat</em></p>
+        <a href="">#</a>
+    <h1>New Desk</h1>
+<p><em>insert images</em></p>
+<p>#:transmissions breakage to fix, tests to make...</p>
+<p>#:todo #:um terms #:um:spike #um:wave #um:loop ?</p>
+<p>Doing some :</p>
+<p><code>transmissions/todo/next-steps.md</code></p>
 
 </article>
 <p class="post-title h-cinzel">
-    <a href="entries/2024-10-29_rabbit.html">
-        Rabbit
+    <a href="">
+        
     </a>
-</p> <em>2024-11-01</em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="entries/2024-10-29_benn.html">#</a>
-    <h1>Benn</h1>
-<p>#:todo : ComfyUI node for #:transmissions!</p>
-<p>more...</p>
-<blockquote>
-<p>please create a ho that can be used by someone familiar with the current version of comfyui but who has no knowledge of transmissions. They will be working on integrating the two systems, somehow mapping the workflows across</p>
-</blockquote>
-<p><code>transmissions/articles/transcom/2024-10-29_trans-handover.md</code></p>
-<blockquote>
-<p>please create a ho that can be used by someone familiar with transmissions but who has no knowledge of comfyui. They will be working on integrating the two systems.</p>
-</blockquote>
-<blockquote>
-<p>if transmissions were to have workflow running support using the eye reasoner to make it operate more like comfyui, what would be the next steps in transmissions towards integration with comfyui?</p>
-</blockquote>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="entries/2024-10-29_benn.html">
-        Benn
-    </a>
-</p> <em>2024-11-01</em>
+</p> <em></em>
             </article>
         </div>
         <div class="main-grid-item about">
