@@ -1,6 +1,6 @@
 # Fool Danny
 
-_"Doctor doctor! It hurts when I do this..._
+_**"Doctor doctor! It hurts when I do this...**_
 
 I've had a recurring problem with `npm` installs etc, because in the bunch of submodules I have below `hyperdata/packages` I have `hyperdata-static` which currently needs to be pinned to node v16. Anything nearby chokes on `node-gyp rebuild`.
 In an idiot-party with Claude, ended up destroying `hyperdata-static` without fixing the gyp issue.
