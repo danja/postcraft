@@ -31,11 +31,121 @@
 
 <article class="post-content">
         <a href="">#</a>
+    <h1>Semem</h1>
+<p><em>a new subproject seeded</em></p>
+<p>The stuff below got messed up.</p>
+<p>Recovered enough to continue, but to clear my head, a little timesaver -</p>
+<p>hmm, wait - need a <code>cat</code> of my nginx sites-enabled...</p>
+<pre><code class="language-prompt">
+
+There are #:todo bits I need to pull out of the past few day&#39;s entries here to go in their correct todo areas...
+
+Today, something like :
+
+1. #:todo #:semem #:spike
+2. #:todo `/home/danny/github-danny/hyperdata/workspaces/transmissions/todo/next-steps.md`
+3. #:todo Verbo photo
+4. #:todo carving prep
+5. #:todo 1-page docs (Transmissions urgent)
+
+I need to be keeping ClaudioB informed of what I&#39;m working on, so around those #:transmissions next steps I need to bear that in mind.
+Also notes on AI tools I&#39;m using/trying :
+
+- OpenAI API
+- Claude projects + API
+- Mistral API
+- [cline](https://github.com/cline/cline)
+- [aider](https://github.com/Aider-AI/aider)
+- []
+
+etc.
+
+Grr, lost a lot of time with node module stupidity.
+
+#:todo add rule to #:um - failure is part of the process, but a goal is that things shouldn&#39;t fail more than once for the same reason
+
+A thought crossed my mind on dogwalk, must-have base functions for processors :
+
+```javascript
+message = expandLD(message, options); // enlarge the Logical Dimension/Linked Data
+message = contractLD(message, options);
+message = expandLM(message, options); // enlarge the Language Model dimension
+message = contractLM(message, options);
+</code></pre>
+<h2>Semem</h2>
+<p>#:semem</p>
+<p>This morning Google&#39;s &#39;Discover&#39; (on Chrome on Android) shortcircuited my morning reading in bed with a link to this from MarkTechPost : <a href="https://www.marktechpost.com/2024/11/17/meet-memoripy-a-python-library-that-brings-real-memory-capabilities-to-ai-applications/">Meet Memoripy: A Python Library that Brings Real Memory Capabilities to AI Applications</a> which led me to this on GitHub :</p>
+<blockquote>
+<p><a href="https://github.com/caspianmoon/memoripy">Memoripy</a> is a Python library designed to manage and retrieve context-aware memory interactions using both short-term and long-term storage. It supports AI-driven applications requiring memory management, with compatibility for OpenAI and Ollama APIs. Features include contextual memory retrieval, memory decay and reinforcement, hierarchical clustering, and graph-based associations.</p>
+</blockquote>
+<p>Long story short, it gives me a nice inroad into the <em>practicals</em> of the hybrid SPARQL+vector store bits high on my todo list.</p>
+<p>First job, give this a place of its own. I&#39;ve got lots of material related to the hybrid store scattered around, best I make an anchor. I&#39;ve made a GitHub repo, now pop that in here :</p>
+<pre><code class="language-sh">cd /home/danny/github-danny/hyperdata/packages
+git submodule add https://github.com/danja/semem.git semem
+</code></pre>
+<p>I&#39;ll put dev notes &amp; docs as they emerge over on #:hyperdata.</p>
+<p>First I need a plan, then port Memoripy from Python into Javascript.</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="">
+        
+    </a>
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="">#</a>
+    <h1>Fool Danny</h1>
+<p><em>&quot;Doctor doctor! It hurts when I do this...</em></p>
+<p>I&#39;ve had a recurring problem with <code>npm</code> installs etc, because in the bunch of submodules I have below <code>hyperdata/packages</code> I have <code>hyperdata-static</code> which currently needs to be pinned to node v16. Anything nearby chokes on <code>node-gyp rebuild</code>.
+In an idiot-party with Claude, ended up destroying <code>hyperdata-static</code> without fixing the gyp issue.</p>
+<p><em><strong>Stop doing that.</strong></em></p>
+<p>Continuing from <code>/home/danny/github-danny/hyperdata/docs/postcraft/content-raw/journal/2024-11-18.md</code></p>
+<pre><code class="language-sh"># packages/hyperdata-desktop copied elsewhere first, just in case
+cd ~/github-danny/hyperdata/
+git submodule deinit -f packages/hyperdata-desktop
+git rm -f packages/hyperdata-desktop
+git commit -m &quot;Removed submodule&quot;
+rm -rf .git/modules/packages/hyperdata-desktop
+</code></pre>
+<p>Hmm -</p>
+<pre><code class="language-sh">...
+fatal: could not migrate git directory from &#39;/home/danny/github-danny/hyperdata/packages/hyperdata-desktop/.git&#39; to &#39;/home/danny/github-danny/hyperdata/.git/modules/packages/hyperdata-desktop&#39;: Directory not empty
+...
+</code></pre>
+<p>Dunno, try :</p>
+<pre><code class="language-sh">cd ~/github-danny/hyperdata/packages/semem
+npm cache clean --force
+rm -rf node_modules
+npm install jasmine --save-dev
+</code></pre>
+<pre><code class="language-sh">npm WARN ignoring workspace config at /home/danny/github-danny/hyperdata/packages/semem/.npmrc
+</code></pre>
+<p>ffs.</p>
+<pre><code class="language-sh">npm cache clean --force
+rm -rf node_modules
+nvm use default
+npm install -g node-gyp
+ npm install jasmine --save-dev
+</code></pre>
+<p>Finally!</p>
+<p>I can&#39;t be arsed fixing <code>hyperdata-desktop</code> right now. Back to what I was trying to do 12 hours ago...</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="">
+        
+    </a>
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="">#</a>
     <h1>In Cline</h1>
 <p>Needs templates - plop</p>
 <p>src/applications/postcraft</p>
 <p>I want to be able to add further content group blocks into <code>manifest.ttl</code> files</p>
 <p>danny.ayers.name/manifest.ttl</p>
+<p>/home/danny/github-danny/postcraft/danny.ayers.name/public/home</p>
 
 </article>
 <p class="post-title h-cinzel">
@@ -110,34 +220,6 @@ Qwen2.5 Tools: A 14B and 32B parameter model designed for general tool use and t
 <p>What I&#39;m lacking in the #:transmissions dev is immediacy and integration, like you get in Smalltalk. MORE - it&#39;s not engaging me. I need to be told why I should do something.</p>
 <p>Near future, I&#39;ll have #:hyperdata-desktop for that. In the interim...</p>
 <p>I guess I should try Cline.</p>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="">
-        
-    </a>
-</p> <em></em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="">#</a>
-    <h1>Bills.</h1>
-<p>A few things to pay, boo.</p>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="">
-        
-    </a>
-</p> <em></em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="">#</a>
-    <h1>New Desk</h1>
-<p><em>insert images</em></p>
-<p>#:transmissions breakage to fix, tests to make...</p>
-<p>#:todo #:um terms #:um:spike #um:wave #um:loop ?</p>
-<p>Doing some :</p>
-<p><code>transmissions/todo/next-steps.md</code></p>
 
 </article>
 <p class="post-title h-cinzel">
