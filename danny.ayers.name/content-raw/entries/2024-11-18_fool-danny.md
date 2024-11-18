@@ -38,3 +38,17 @@ npm install jasmine --save-dev
 ```sh
 npm WARN ignoring workspace config at /home/danny/github-danny/hyperdata/packages/semem/.npmrc
 ```
+
+ffs.
+
+```sh
+npm cache clean --force
+rm -rf node_modules
+nvm use default
+npm install -g node-gyp
+ npm install jasmine --save-dev
+```
+
+Finally!
+
+I can't be arsed fixing `hyperdata-desktop` right now. Back to what I was trying to do 12 hours ago...
