@@ -1,0 +1,1 @@
+In the context of ai, how might the intent of a message be captured?
