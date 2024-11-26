@@ -2,7 +2,7 @@
 
 *The first CD I have tried playing with office computer. Mad winds last night took one tree onto a power line and others on nearby roads, Mozzanella was well blocked. Power now back, still no interwebs. Italian radio music got tired after a while. Remembered I've got loads of CDs.)*
 
-I think I've finally sorted out the module thing. So with :
+I think I've finally sorted out the module thing. Bloody paths. So with :
 ```sh
 ./trans ../trans-apps/applications/test_module-load -m '{"first":"one","second":"two"}'
 ```
@@ -26,3 +26,11 @@ Most of all I need to dive back to #:farelo so I'm managing my time most effecti
 Which needs a bit of work on #:ns.
 
 But **This is Fine.**. All according to plan. (#:todo:link John Finnemore 'Plans' sketch). Claude is already carrying a lot of my load, as I start being able to use my own bits instead, the net *volume* of work for me should descend rapidly.
+
+Shit. Still some breakage around my paths stuff. An extra hassle being that my publish script for #:postcraft, 'p', seems to have dropped off my PATH.
+
+Fuckity fuck. The `manifest.ttl` bit seems to have dropped out. Before I've even documented how it's meant to (did) work.
+
+**target** isn't being resolved properly. Grr. Bloody path stuff again. Bloody fool dannys again for not having tests in place to catch that sooner.
+
+I remembered to run `backup.sh` so at least this stuff is backed up to a second local drive.

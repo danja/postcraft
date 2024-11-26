@@ -31,52 +31,49 @@
 
 <article class="post-content">
         <a href="">#</a>
-    <h1>Semem</h1>
-<p><em>a new subproject seeded</em></p>
-<p>The stuff below got messed up.</p>
-<p>Recovered enough to continue, but to clear my head, a little timesaver -</p>
-<p>hmm, wait - need a <code>cat</code> of my nginx sites-enabled...</p>
-<p>There are #:todo bits I need to pull out of the past few day&#39;s entries here to go in their correct todo areas...</p>
-<p>Today, something like :</p>
-<ol>
-<li>#:todo #:semem #:spike</li>
-<li>#:todo <code>/home/danny/github-danny/hyperdata/workspaces/transmissions/todo/next-steps.md</code></li>
-<li>#:todo Verbo photo</li>
-<li>#:todo carving prep</li>
-<li>#:todo 1-page docs (Transmissions urgent)</li>
-</ol>
-<p>I need to be keeping ClaudioB informed of what I&#39;m working on, so around those #:transmissions next steps I need to bear that in mind.
-Also notes on AI tools I&#39;m using/trying :</p>
+    <h1>Overwhelmed</h1>
+<p><em>That familiar feeling.</em></p>
+<p>temporal chunking - any analogy for #:farelo?</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="">
+        
+    </a>
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="">#</a>
+    <h1>Desk</h1>
+<p><em>I&#39;ve cleaned my desk. The rest of the spring cleaning is still in-progress.</em></p>
+<p>Resurrecting HAL the C7 box. Downloading <a href="https://dl-cdn.alpinelinux.org/alpine/v3.20/releases/x86/alpine-extended-3.20.3-x86.iso">https://dl-cdn.alpinelinux.org/alpine/v3.20/releases/x86/alpine-extended-3.20.3-x86.iso</a>  I don&#39;t know how big that&#39;ll be. Ideally I want the OS to fit on the 1GB flash drive inside the box. Ok, set <a href="https://dl-cdn.alpinelinux.org/alpine/v3.20/releases/x86/alpine-standard-3.20.3-x86.iso">https://dl-cdn.alpinelinux.org/alpine/v3.20/releases/x86/alpine-standard-3.20.3-x86.iso</a> as well, just in case. Dogwalk time.</p>
 <ul>
-<li>OpenAI API</li>
-<li>Claude projects + API</li>
-<li>Mistral API</li>
-<li><a href="https://github.com/cline/cline">cline</a></li>
-<li><a href="https://github.com/Aider-AI/aider">aider</a></li>
-<li>[]</li>
+<li>download Claude data</li>
+<li>fix #:postcraft</li>
+<li>move #:farelo on a bit - #:squirt!</li>
 </ul>
-<p>etc.</p>
-<p>Grr, lost a lot of time with node module stupidity.</p>
-<p>#:todo add rule to #:um - failure is part of the process, but a goal is that things shouldn&#39;t fail more than once for the same reason</p>
-<p>A thought crossed my mind on dogwalk, must-have base functions for processors :</p>
-<pre><code class="language-javascript">message = expandLD(message, options); // enlarge the Logical Dimension/Linked Data
-message = contractLD(message, options);
-message = expandLM(message, options); // enlarge the Language Model dimension
-message = contractLM(message, options);
-</code></pre>
-<h2>Semem</h2>
-<p>#:semem</p>
-<p>This morning Google&#39;s &#39;Discover&#39; (on Chrome on Android) shortcircuited my morning reading in bed with a link to this from MarkTechPost : <a href="https://www.marktechpost.com/2024/11/17/meet-memoripy-a-python-library-that-brings-real-memory-capabilities-to-ai-applications/">Meet Memoripy: A Python Library that Brings Real Memory Capabilities to AI Applications</a> which led me to this on GitHub :</p>
+<h1>Today&#39;s links</h1>
+<p><a href="https://github.com/phillord/tawny-owl">Tawny OWL IDE</a></p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="">
+        
+    </a>
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="">#</a>
+    <h1>Brr</h1>
+<p><em>it&#39;s very cold again</em></p>
+<p>MLX90640 - thermal camera</p>
+<p>Funny Claude gave me this in a response:</p>
 <blockquote>
-<p><a href="https://github.com/caspianmoon/memoripy">Memoripy</a> is a Python library designed to manage and retrieve context-aware memory interactions using both short-term and long-term storage. It supports AI-driven applications requiring memory management, with compatibility for OpenAI and Ollama APIs. Features include contextual memory retrieval, memory decay and reinforcement, hierarchical clustering, and graph-based associations.</p>
+<p>Use nullish coalescing (??) for null/undefined checks</p>
 </blockquote>
-<p>Long story short, it gives me a nice inroad into the <em>practicals</em> of the hybrid SPARQL+vector store bits high on my todo list.</p>
-<p>First job, give this a place of its own. I&#39;ve got lots of material related to the hybrid store scattered around, best I make an anchor. I&#39;ve made a GitHub repo, now pop that in here :</p>
-<pre><code class="language-sh">cd /home/danny/github-danny/hyperdata/packages
-git submodule add https://github.com/danja/semem.git semem
-</code></pre>
-<p>I&#39;ll put dev notes &amp; docs as they emerge over on #:hyperdata.</p>
-<p>First I need a plan, then port Memoripy from Python into Javascript.</p>
+<p>Some issues with #:transmissions to get out of the way before I do anything else.
+Needed :</p>
+<p><a href="https://lodash.com/docs/4.17.15#merge">https://lodash.com/docs/4.17.15#merge</a></p>
 
 </article>
 <p class="post-title h-cinzel">
@@ -87,41 +84,16 @@ git submodule add https://github.com/danja/semem.git semem
 
 <article class="post-content">
         <a href="">#</a>
-    <h1>Fool Danny</h1>
-<p><em><strong>&quot;Doctor doctor! It hurts when I do this...</strong></em></p>
-<p>I&#39;ve had a recurring problem with <code>npm</code> installs etc, because in the bunch of submodules I have below <code>hyperdata/packages</code> I have <code>hyperdata-static</code> which currently needs to be pinned to node v16. Anything nearby chokes on <code>node-gyp rebuild</code>.
-In an idiot-party with Claude, ended up destroying <code>hyperdata-static</code> without fixing the gyp issue.</p>
-<p><em><strong>Stop doing that.</strong></em></p>
-<p>Continuing from <code>/home/danny/github-danny/hyperdata/docs/postcraft/content-raw/journal/2024-11-18.md</code></p>
-<pre><code class="language-sh"># packages/hyperdata-desktop copied elsewhere first, just in case
-cd ~/github-danny/hyperdata/
-git submodule deinit -f packages/hyperdata-desktop
-git rm -f packages/hyperdata-desktop
-git commit -m &quot;Removed submodule&quot;
-rm -rf .git/modules/packages/hyperdata-desktop
-</code></pre>
-<p>Hmm -</p>
-<pre><code class="language-sh">...
-fatal: could not migrate git directory from &#39;/home/danny/github-danny/hyperdata/packages/hyperdata-desktop/.git&#39; to &#39;/home/danny/github-danny/hyperdata/.git/modules/packages/hyperdata-desktop&#39;: Directory not empty
-...
-</code></pre>
-<p>Dunno, try :</p>
-<pre><code class="language-sh">cd ~/github-danny/hyperdata/packages/semem
-npm cache clean --force
-rm -rf node_modules
-npm install jasmine --save-dev
-</code></pre>
-<pre><code class="language-sh">npm WARN ignoring workspace config at /home/danny/github-danny/hyperdata/packages/semem/.npmrc
-</code></pre>
-<p>ffs.</p>
-<pre><code class="language-sh">npm cache clean --force
-rm -rf node_modules
-nvm use default
-npm install -g node-gyp
- npm install jasmine --save-dev
-</code></pre>
-<p>Finally!</p>
-<p>I can&#39;t be arsed fixing <code>hyperdata-desktop</code> right now. Back to what I was trying to do 12 hours ago...</p>
+    <h1>Offline</h1>
+<p><em>because I am</em></p>
+<p>I&#39;ve been through many phases with #:transmissions, with varying levels of progress. Most recently, wasting a lot of time because of bad organization in the core. And lack of tests.</p>
+<p>So I reckon I need a big refactor, something like : <code>transmissions/todo/refactoring-plan_2024-11-03.md</code></p>
+<p>But I need to be clear. Describe things first.</p>
+<p>First (not!) pass: <code>transmissions/articles/transmission-model/architecture.md</code></p>
+<p>Online again!!</p>
+<p>Remember #:elfquake civic + danny emergency planning. Any vocabs in use already?</p>
+<p>Kali on termux</p>
+<p>ADB</p>
 
 </article>
 <p class="post-title h-cinzel">
@@ -132,86 +104,25 @@ npm install -g node-gyp
 
 <article class="post-content">
         <a href="">#</a>
-    <h1>In Cline</h1>
-<p>Needs templates - plop</p>
-<p>src/applications/postcraft</p>
-<p>I want to be able to add further content group blocks into <code>manifest.ttl</code> files</p>
-<p>danny.ayers.name/manifest.ttl</p>
-<p>/home/danny/github-danny/postcraft/danny.ayers.name/public/home</p>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="">
-        
-    </a>
-</p> <em></em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="">#</a>
-    <h1>Pingy-ping</h1>
-<p><em>While tidying up the other day I found an old phone. I wasn&#39;t sure whether or not to throw it, so put it on to charge. Broken screen. Now it keeps going pingy-ping.</em></p>
-<ol>
-<li>#:todo <code>/home/danny/github-danny/hyperdata/workspaces/transmissions/todo/next-steps.md</code></li>
-<li>#:todo Verbo photo</li>
-<li>#:todo carving prep</li>
-<li>#:todo 1-page docs (Transmissions urgent)</li>
-</ol>
-<p>AGAIN</p>
-<p>But I have got past the annoying restructure problem with Transmissions, so can move on.</p>
-<ul>
-<li>aider</li>
-<li>cline</li>
-<li>continue</li>
-</ul>
-<p>APIs
-Qwen2.5 Tools: A 14B and 32B parameter model designed for general tool use and task completion</p>
-<p>Qwen2.5 Coder Tools: A 1.5B and 7B parameter model specifically optimized for coding tasks</p>
-<p>Qwen2.5 Tools: <a href="https://ollama.com/hhao/qwen2.5-tools">https://ollama.com/hhao/qwen2.5-tools</a></p>
-<p>Qwen2.5 Coder Tools: <a href="https://ollama.com/hhao/qwen2.5-coder-tools">https://ollama.com/hhao/qwen2.5-coder-tools</a></p>
-<p><a href="https://www.reddit.com/r/ClaudeAI/comments/1g3fhcp/save_money_on_claude_with_new_qwen25_specialized/">https://www.reddit.com/r/ClaudeAI/comments/1g3fhcp/save_money_on_claude_with_new_qwen25_specialized/</a></p>
-<hr>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="">
-        
-    </a>
-</p> <em></em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="">#</a>
-    <h1>Brrr</h1>
-<p>NOTE TO SELF : GRDDL</p>
-<p><em>it&#39;s chilly</em></p>
-<p><em>four times I&#39;ve changed the date in this&#39; filename. It is still chilly</em></p>
-<p>Aside from some priority #:todos I won&#39;t forget, I have :</p>
-<ol>
-<li>#:todo <code>/home/danny/github-danny/hyperdata/workspaces/transmissions/todo/next-steps.md</code></li>
-<li>#:todo Verbo photo</li>
-<li>#:todo carving prep</li>
-<li>#:todo 1-page docs (Transmissions urgent)</li>
-</ol>
-<p>No. 1. here is :</p>
-<h2>Restructure</h2>
-<p>A #:transmissions processor that changes the shape of a (JSON) message.</p>
-<p>Notes in Transmissions Journal #:todo link, today in :
-<code>/home/danny/github-danny/hyperdata/workspaces/transmissions/journal/2024-11-15.md</code></p>
-<p>I need to use <code>Restructure</code> in two places right away :</p>
-<ol>
-<li>render messages from Claude&#39;s <code>conversations.json</code></li>
-<li>get <code>README.md</code>s from all my GitHub repos</li>
-<li>tidy up #:postcraft, sort out publishing things.</li>
-</ol>
-<p>For 1. I also needed a <code>JSONWalker</code>.</p>
-<p>I got hopelessly confused...</p>
-<p>I&#39;ve spent way too long on these as <em>necessary tasks</em>, but it has useful as a learning experience.</p>
-<p>At many points I was tempted to simply hack the code for 1. &amp; 2. but at some point last week I broke the #:postcraft transmission in the parts that involve restructuring, so INSERT TOKI PONA</p>
-<p>strange, the message is sometimes undefined...</p>
-<h2>Transmissions</h2>
-<p>I&#39;m so desperate to automate this thing! My current process with Claude is close, just needs a little bit more push...</p>
-<p>What I&#39;m lacking in the #:transmissions dev is immediacy and integration, like you get in Smalltalk. MORE - it&#39;s not engaging me. I need to be told why I should do something.</p>
-<p>Near future, I&#39;ll have #:hyperdata-desktop for that. In the interim...</p>
-<p>I guess I should try Cline.</p>
+    <h1>Buzzkunst</h1>
+<p><em>The first CD I have tried playing with office computer. Mad winds last night took one tree onto a power line and others on nearby roads, Mozzanella was well blocked. Power now back, still no interwebs. Italian radio music got tired after a while. Remembered I&#39;ve got loads of CDs.)</em></p>
+<p>I think I&#39;ve finally sorted out the module thing. Bloody paths. So with :</p>
+<pre><code class="language-sh">./trans ../trans-apps/applications/test_module-load -m &#39;{&quot;first&quot;:&quot;one&quot;,&quot;second&quot;:&quot;two&quot;}&#39;
+</code></pre>
+<p>The <em>application</em> is loaded from over there. It uses modules from <code>/home/danny/github-danny/transmissions/src/processors</code> and one from <code>/home/danny/github-danny/trans-apps/applications/test_module-load/processors</code> that isn&#39;t mentioned in the &#39;local&#39; JS at all, is dynamically loaded from the place of the application.</p>
+<p>This bit is as much about decrufting the <code>transmissions</code> repo as anything. The next bit is where it&#39;ll star getting fun. Working in a similar fashion, the processor modules can be loaded from <em>anywhere</em>. They are identified with URIs in the transmission. The most popular form of URI is the URL. Do a HTTP GET, matey! <em>(microservices proximal)</em>.</p>
+<p>But I really should remember to pace how I do things. I did get some way into defining multiple transmissions at the same time. The composability is key to where I want to go with autonomous agents.</p>
+<p>I need to go serious on the tests. There&#39;s core refactoring to do, but to save wasting time I should take it methodically.</p>
+<p>While going around in circles on this part I stumbled on what looks like a nice way of doing the GETable bits - <strong>Spin</strong> #:todo:link. Some WASM-based thingy.</p>
+<p>I also need to do my own version of s/repopack/repomix</p>
+<p>I also need to make the #:semem thing.</p>
+<p>Most of all I need to dive back to #:farelo so I&#39;m managing my time most effectively.</p>
+<p>Which needs a bit of work on #:ns.</p>
+<p>But <strong>This is Fine.</strong>. All according to plan. (#:todo:link John Finnemore &#39;Plans&#39; sketch). Claude is already carrying a lot of my load, as I start being able to use my own bits instead, the net <em>volume</em> of work for me should descend rapidly.</p>
+<p>Shit. Still some breakage around my paths stuff. An extra hassle being that my publish script for #:postcraft, &#39;p&#39;, seems to have dropped off my PATH.</p>
+<p>Fuckity fuck. The <code>manifest.ttl</code> bit seems to have dropped out. Before I&#39;ve even documented how it&#39;s meant to (did) work.</p>
+<p><strong>target</strong> isn&#39;t being resolved properly. Grr. Bloody path stuff again. Bloody fool dannys again for not having tests in place to catch that sooner.</p>
+<p>I remembered to run <code>backup.sh</code> so at least this stuff is backed up to a second local drive.</p>
 
 </article>
 <p class="post-title h-cinzel">
