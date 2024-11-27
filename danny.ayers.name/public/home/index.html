@@ -31,6 +31,29 @@
 
 <article class="post-content">
         <a href="">#</a>
+    <h1>Trust Graphs!</h1>
+<p><em>I had a server issue - overshooting mem &amp; cpu limits. I&#39;d forgotten I&#39;d left <a href="https://trustgraph.ai/">TrustGraph</a> running. #:ops</em></p>
+<p>Problem identified with :</p>
+<pre><code class="language-sh">free -m
+ps -eo pmem,pcpu,rss,vsize,args | sort -k 1 -r | less
+</code></pre>
+<p><a href="https://techdocs.akamai.com/cloud-computing/docs/troubleshooting-memory-issues-on-compute-instances">https://techdocs.akamai.com/cloud-computing/docs/troubleshooting-memory-issues-on-compute-instances</a></p>
+<p>Fixed with :</p>
+<pre><code class="language-sh">cd /home/services/trustgraph/docker-compose/
+docker compose -f danja-tg-openai-neo4j.yaml down -v
+docker ps
+</code></pre>
+<p><a href="https://trustgraph.ai/docs/running/docker">https://trustgraph.ai/docs/running/docker</a></p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="">
+        
+    </a>
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="">#</a>
     <h1>Groundhog</h1>
 <p><em>I want to avoid those days.</em></p>
 <p>I really want to get on with new code while the plan details are still in my head. But I&#39;d better do a little to solidify #:transmissions. Started as below. Very quickly semi-distracted.</p>
@@ -210,28 +233,6 @@ Jeez, cp took a couple of seconds...</p>
 <li><a href="https://docs.celeryq.dev/en/main/getting-started/index.html">Celery</a> - comms stuff</li>
 <li><a href="https://github.com/jrowberg/i2cdevlib">https://github.com/jrowberg/i2cdevlib</a></li>
 <li><a href="https://github.com/Wei1234c/Broccoli/blob/master/notebooks%2Fdemo%2FBroccoli_readme_en.md">https://github.com/Wei1234c/Broccoli/blob/master/notebooks%2Fdemo%2FBroccoli_readme_en.md</a></li>
-</ul>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="">
-        
-    </a>
-</p> <em></em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="">#</a>
-    <h1>Desk</h1>
-<p><em>I&#39;ve cleaned my desk. The rest of the spring cleaning is still in-progress.</em></p>
-<p>Resurrecting HAL the C7 box. Downloading <a href="https://dl-cdn.alpinelinux.org/alpine/v3.20/releases/x86/alpine-extended-3.20.3-x86.iso">https://dl-cdn.alpinelinux.org/alpine/v3.20/releases/x86/alpine-extended-3.20.3-x86.iso</a>  I don&#39;t know how big that&#39;ll be. Ideally I want the OS to fit on the 1GB flash drive inside the box. Ok, set <a href="https://dl-cdn.alpinelinux.org/alpine/v3.20/releases/x86/alpine-standard-3.20.3-x86.iso">https://dl-cdn.alpinelinux.org/alpine/v3.20/releases/x86/alpine-standard-3.20.3-x86.iso</a> as well, just in case. Dogwalk time.</p>
-<ul>
-<li>download Claude data</li>
-<li>fix #:postcraft</li>
-<li>move #:farelo on a bit - #:squirt!</li>
-</ul>
-<h2>Links</h2>
-<ul>
-<li><a href="https://github.com/phillord/tawny-owl">Tawny OWL IDE</a> #:todo autogenerate/insert dc:descriptions</li>
 </ul>
 
 </article>
