@@ -31,6 +31,113 @@
 
 <article class="post-content">
         <a href="">#</a>
+    <h1>Groundhog</h1>
+<p><em>I want to avoid those days.</em></p>
+<p>I really want to get on with new code while the plan details are still in my head. But I&#39;d better do a little to solidify #:transmissions. Started as below. Very quickly semi-distracted.</p>
+<p>For #:postcraft docs, I want to get past the <em>build-everything</em> setup I&#39;ve got currently. I want the system to watch for fs changes and update in near real time.</p>
+<p>I have an approach I think will work. It&#39;s something Claude should be good at building, but I need to check for refactorings that would be useful to do first.</p>
+<p>The two main components are general-purpose, but the #:postcraft docs  :</p>
+<ol>
+<li>#:transmissions running as a daemon (quasi-micro) service with a HTTP API</li>
+<li>a #:transmission running as a client that will post job descriptions to the server</li>
+</ol>
+<p><em>Remember requirements for #:kia - this should be able to act as an agent.</em></p>
+<h2>Service</h2>
+<p>I&#39;ve had success with running node services under pm2, but I can start and stop things manually for now.</p>
+<p>It might be useful to use the (unsafe) system call processor I started for service runtime updating.</p>
+<h2>Client</h2>
+<p>A big requirement here is a clear description of the description - for this I need to clarify the #:transmissions system structure.</p>
+<p>The #:postcraft use case is a nice one though. To watch for fs changes it&#39;ll need to operate as a local service, ie. pretty much the same as the server component. But I can start with a very much reduced form.</p>
+<p>a transmissions service is running continually.</p>
+<p>It watches for filesystem changes in a given directory</p>
+<hr>
+<p>#:ops. While building up some tests I hit Claude&#39;s message limit. Ok, for 7pm (it&#39;s now 3:15pm) :</p>
+<pre><code class="language-ho">Can you please create a ho doc, as well as step-by-step instructions on how to create a test application, together with a set of files that can act as a template, following the style of test_fs-rw . Please give me complete individual artifacts for each of these
+</code></pre>
+<hr>
+<h2>Solidify...</h2>
+<ol>
+<li>test coverage</li>
+<li>docs</li>
+<li>GitHub CI/CD</li>
+<li>refactoring</li>
+</ol>
+<h2>1. Test Coverage</h2>
+<p>I <strong>really</strong> need proper coverage.</p>
+<p>Ok, now nyc is mostly working : <code>http://localhost/GITHUB-DANNY/transmissions/spec/coverage/lcov-report/</code></p>
+<h2>2. Docs</h2>
+<h3>jsdocs</h3>
+<p>Ew. I want to customise quite a lot, come back to this later.</p>
+<h3>#:postcraft</h3>
+<h2>3. GitHub CI/CD</h2>
+<p>I have looked into it before...completely forgotten.</p>
+<h2>4. Refactoring</h2>
+<p>I sketched out a plan last week, need to revisit.</p>
+<h2>5. Tests</h2>
+<p>I need some integration tests that start with CLI calls.</p>
+<h3>CLI Core Tests</h3>
+<p>Did I make a <code>ConditionTest</code> processor? Compare the <code>message</code> with a pattern, match/no match for test result.</p>
+<p>Hmm.</p>
+<pre><code class="language-prompt">I would like an integration test runner `tests/integration/test_apps.spec.js` in a similar form to `tests/integration/fs-rw.spec.js` that will do the following :
+
+* scan for directories that match `src/applications/test_*`, eg. `src/applications/test_fs-rw`
+then for each of these :
+* set up test data as necessary in `src/applications/*/data/input`, eg. `src/applications/test_fs-rw/data/input/input-01.md`
+* run them : eg. `./trans test_fs-rw`
+* compare the output message with what is expected, which (if necessary) will appear in a file eg. `src/applications/test_fs-rw/data/output/required-01.md`
+
+Provision should be included to support trying different command-line arguments, so eg. an input message may be given via a string or filename, and/or a target (where a `manifest.ttl` and/or modules may be found), eg :
+` ./trans ../trans-apps/applications/test_module-load -m &#39;{&quot;first&quot;:&quot;one&quot;,&quot;second&quot;:&quot;two&quot;}&#39;`
+
+Please create the necessary code as complete artifacts.
+</code></pre>
+<p>Yay! That worked a treat (by the 6th cycle).</p>
+<ul>
+<li><code>(:DatasetReader :FileWriter)</code></li>
+<li></li>
+</ul>
+<h3>FS Remote App Test</h3>
+<pre><code class="language-sh">./trans ../trans-apps/applications/test_module-load -m &#39;{&quot;first&quot;:&quot;one&quot;,&quot;second&quot;:&quot;two&quot;}&#39;
+</code></pre>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="">
+        
+    </a>
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="">#</a>
+    <h1>New features can be their own tests</h1>
+<p><em>Something to go in my #:um methodology, as and when I can state it a little more formally</em></p>
+<p>I have the common tendency to rush ahead building the fun new shiny interesting bits, and neglecting the existing <em>working code</em>. It&#39;s kind-of axiomatic in dev that you need tests. Coincidentally, this morning I saw reference to a book <a href="https://www.amazon.com/dp/1732102201?ref=blog.pragmaticengineer.com">A Philosophy of Software Design</a> (John Ousterhout, 2018) which apparently downplays tests in favour of comments. To which I&#39;ll give a resounding <strong><em>wtf?!</em></strong>. I&#39;ve lost the link of a blog post which the not-much-testing aspect more plainly, but Gergely Orosz&#39;s <a href="https://blog.pragmaticengineer.com/a-philosophy-of-software-design-review/">A Philosophy of Software Design: My Take (and a Book Review)</a> answer to mucho-comments rings true.</p>
+<h3>Regarding comments -</h3>
+<p>For sure comments are must have, <em>at the module/class/method levels</em>. Document the API right next to its code, use a tool to extract &amp; publish the formal bits, pad with friendlier text at a different layer. <em>Some</em> inline comments are desirable, but only when operation isn&#39;t immediately evident from the code. This is often the case when lesser-known libs are used, or when an unusual idiom is called into play. I use inline comments a lot, but almost always there with be a <code>// TODO : ...</code> nearby.</p>
+<p>To use the lingo of men with greyer beards than mine, lots of inline comments are a <em>Bad Smell</em>. A strong hint that refactoring is needed. Pull that stuff out into its own functional block, give it a meaningful name.  </p>
+<h3>Back to tests -</h3>
+<p><strong>Impatience is more motivational than Best Practices</strong>.</p>
+<p>I guess this is an instance of a general tendency in human cognition : the <strong>more visceral</strong> an experience is, the <strong>more attention</strong> it will receive.   </p>
+<p>Acknowledge that, find a workaround if its called for. As in this case.</p>
+<h2>Scenario</h2>
+<p>I have wasted lots over the past couple weeks having to backtrack a long way due to <em>more haste...</em> Today I decided to bite the bullet and improve my testing. I&#39;d set up <a href="https://jasmine.github.io">Jasmine</a> right at the start of the project, ready to support both unit and integration tests. Today I got <a href="https://github.com/istanbuljs/nyc">nyc</a> (the CLI of <a href="https://istanbul.js.org/">Istanbul</a>) working after a fashion from <code>npm</code>. This told me what I already knew - my test coverage was ballpark 1%. Not as terrible as it sounds, because I was running the #:postcraft #:transmission most days to publish this blog, and that exercised lots of the code. <em>Errm,</em> and frequently it didn&#39;t work.</p>
+<p>But here&#39;s the thing. Aside from the #:transmissions project&#39;s core engine bits, the application functionality is strongly decomposed. To develop most new features/applications, I start by making a fairly minimal runner for that particular processor. For example, one that is still in a somewhat hacky state is a thing to restructure a message expressed in JSON structure (as preparation for rending in markdown of Claude data export). To get this working I rigged up a little thing where I gave it a small sample JSON file (Claude&#39;s stuff is huge), saving the output to visually check.    </p>
+<p>I&#39;d got a bunch of these. Most with the word <code>test</code> in their name - subtle hint!</p>
+<p>So earlier I did a fresh s/repopack/<a href="https://github.com/yamadashy/repomix">repomix</a> of my codebase, gave this to Claude as project knowledge (I reuse the same project, system prompt stays the same I just update the knowledge, start new chat sessions). Spent 15 mins on a prompt. After a further 30 mins maybe (6 artifact revisions needed), I had a functioning Jasmine test spec that will run through each <code>src/applications/test_*</code> dir, pick up a tiny JSON config file and run the application.</p>
+<p>In the space of an hour I&#39;d effectively upped my test coverage to something like 50%.</p>
+<p>I still need to do a bit of work on the flow &amp; reporting, right now some of the mini-apps do break with exceptions and the runner doesn&#39;t notice.</p>
+<p>But essentially these things can make true integration tests, because the test is totally about a (mini) application setup, without any real artificiality coming in from the test framework.</p>
+<p>So these, as running code, can be a single source of truth on how things work (once they do...). Docs &amp; RDF/OWL descriptions will be generate from there.  </p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="">
+        
+    </a>
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="">#</a>
     <h1>trans-dev</h1>
 <p>#:yapp : Yet Another Placeholder Project : <a href="https://github.com/danja/trans-dev">https://github.com/danja/trans-dev</a></p>
 <p><em>Maybe</em> more justifiable than usual...</p>
@@ -126,46 +233,6 @@ Jeez, cp took a couple of seconds...</p>
 <ul>
 <li><a href="https://github.com/phillord/tawny-owl">Tawny OWL IDE</a> #:todo autogenerate/insert dc:descriptions</li>
 </ul>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="">
-        
-    </a>
-</p> <em></em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="">#</a>
-    <h1>Brr</h1>
-<p><em>it&#39;s very cold again</em></p>
-<p>MLX90640 - thermal camera</p>
-<p>Funny Claude gave me this in a response:</p>
-<blockquote>
-<p>Use nullish coalescing (??) for null/undefined checks</p>
-</blockquote>
-<p>Some issues with #:transmissions to get out of the way before I do anything else.
-Needed :</p>
-<p><a href="https://lodash.com/docs/4.17.15#merge">https://lodash.com/docs/4.17.15#merge</a></p>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="">
-        
-    </a>
-</p> <em></em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="">#</a>
-    <h1>Offline</h1>
-<p><em>because I am</em></p>
-<p>I&#39;ve been through many phases with #:transmissions, with varying levels of progress. Most recently, wasting a lot of time because of bad organization in the core. And lack of tests.</p>
-<p>So I reckon I need a big refactor, something like : <code>transmissions/todo/refactoring-plan_2024-11-03.md</code></p>
-<p>But I need to be clear. Describe things first.</p>
-<p>First (not!) pass: <code>transmissions/articles/transmission-model/architecture.md</code></p>
-<p>Online again!!</p>
-<p>Remember #:elfquake civic + danny emergency planning. Any vocabs in use already?</p>
-<p>Kali on termux</p>
-<p>ADB</p>
 
 </article>
 <p class="post-title h-cinzel">
