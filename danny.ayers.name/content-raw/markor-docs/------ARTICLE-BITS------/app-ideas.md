@@ -1,3 +1,5 @@
+Mobile ai with pdf rag, an intelligent readera
+
 Whiteboard watcher - camera
 
 YouTube substitute with recommendation engine
