@@ -1,0 +1,3 @@
+@guardian @misszing 
+"ADHD is a neurodevelopmental disorder..." - whoah there!
+While disorderliness is a hallmark symptom, the use of "disorder" in the medical sense is wide of the mark, and as misleading as "deficit" and "hyperactivity". It implies an abnormal condition. But it isn't, in and of itself, pathological (but very often leads to such secondary conditions). It's only a little off the norm in the statistical sense. Which might suggest that the associated traits evolved because they were beneficial in human society. It has been posited that ADHD made for good foragers, compelled to explore. I don''t know about that, but it is credible that having a variety of skill sets, including cognitive skills, is a good thing for the group. 
