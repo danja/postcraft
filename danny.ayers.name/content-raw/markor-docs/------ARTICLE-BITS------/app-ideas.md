@@ -13,3 +13,5 @@ Myers-Briggs, any dsm-5?
 
 Tarot should be able to illuminate what you’ve overlooked and tell you things you don’t know yet
 https://www.interrobangtarot.com/blog/the-pages-journey-tips-for-tarot-beginners
+
+Dictaphone
