@@ -1,6 +1,7 @@
-#
+# What am I up to?
 
-hkms-desktop
+
+markmap rendering would be nice here
 
 **Active Projects**
 
@@ -15,6 +16,8 @@ hkms-desktop
 ### [strandz.it](https://strandz.it "Future project, a bookmarker+")
 
 ## **Projects**
+
+#:todo involve w6 vocab
 
 ### [hyperdata.it](https://hyperdata.it "Online work")
 
