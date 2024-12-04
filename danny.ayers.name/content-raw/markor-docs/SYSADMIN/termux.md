@@ -5,3 +5,6 @@ https://android.stackexchange.com/questions/166538/where-is-the-folder-that-term
 termux-setup-storage
 
 ~/storage/shared
+
+termux-home.txt
+ubuntu-home-root.txt

@@ -1,5 +1,6 @@
 # danny.ayers.name : Next Steps
 
+## AI Aider Compose, things in the vids
 
 ## ID etc
 
