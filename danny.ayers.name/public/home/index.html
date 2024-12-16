@@ -31,6 +31,24 @@
 
 <article class="post-content">
         <a href="">#</a>
+    <h1>Matches</h1>
+<p>I had a very distracting trip to the UK, and now I&#39;m trying to pick up from where I left off with code projects. I started yesterday, but my brain wasn&#39;t yet in gear, so went for something near the top of my to-dos, Install Aider Composer #:link. Did that, called it a day.</p>
+<p>This morning when I got to desk the machine was playing silly buggers, so I had to start with an hour of tedious sysadmin.</p>
+<p><em>Finally</em>, got to my code proper. Apparently I&#39;d made a good start on #:squirt, essentially (for now) a simple bit of HTML form-based UI for posting stuff to a SPARQL server. I&#39;d been working with Claude Projects, starting with quite a lengthy requirements spec and a bunch of relevant knowledge files.</p>
+<p>I ran the latest <code>npm build dev</code>, which is hooked into webpack #:link for bundling. I&#39;m using vanilla JS but a key dependency is the RDF-Ext lib #:link. When opening what should have been a form, I got an error : <code>dataset.removeMatches()</code>. I&#39;ve not got my workflow for Aider Composer figured out yet, and couldn&#39;t be bothered doing another cycle with Claude just yet. Plan C : <strong>view source</strong>. Took 2 mins to find that it should have been <code>dataset.deleteMatches()</code>. Claude may have been drawing on an old version of the RDF-Ext material, but I had given it a bunch of current code in the Project knowledge, so maybe it just got mixed up/hallucinated.</p>
+<p>So that&#39;s me reminded re. #:squirt. While away, the state of my current online material went under the headlights a couple of times, so that&#39;s been pushed up priorities. Make <strong>this</strong> look nice!</p>
+<p>I&#39;ve also got loads of fairly urgent real world stuff to do this week, like taking down a couple of trees. Sunny today, so I&#39;d better make a start on that.</p>
+<p>Dogwalk first.  </p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="">
+        
+    </a>
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="">#</a>
     <h1>Sun Freeze</h1>
 <p><em>Bright sunshine this morning, office was 7°C</em></p>
 <p>Installing <a href="https://github.com/lee88688/aider-composer">Aider Composer</a> VSCode extension...</p>
@@ -145,43 +163,6 @@
     <h1>Not Dead</h1>
 <p><em>Title has a grim angle and a funny angle. Grim : it sounds like my mother is probably on her way out. My cousin estimates days not weeks, but he has a tendency to think the worst. I&#39;m trying to get more information to find out whether or not I need to fly over (the logistics are difficult, and last time I made the mistake of being too hasty). Funny : Just now on daily dogwalk #1, as we were going up the lane towards the cemetery, it looked like there was someone collapsed in the field just below. As I got closer - yes, definitely a person...small movement... I would have quickened my pace but Claudio already had me at top (not-fall-over) speed. Then I got close enough to see it was a man lying on his side on the ground, with a water drain cover open and him peering inside. Phew!</em></p>
 <p>I&#39;ve got a <em>lot</em> of integration &amp; suchlike jobs to do. But pausing that I&#39;m going to do a quick spike of #:squirt.</p>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="">
-        
-    </a>
-</p> <em></em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="">#</a>
-    <h1>Lark</h1>
-<p><em>I&#39;m at desk by 9:50, that me up with the lark.</em></p>
-<p>So much to do...</p>
-<p>December, ok. That means I can start <code>danny.ayers.name/todo/2024-12.md</code>. I&#39;m still juggling the todo lists, that file will point to project-specific files like <code>transmissions/todo</code>, and each of these areas has a <code>todo/next-steps.md</code>.</p>
-<p>This tells me I need to push #:farelo (project management stuff) up my priorities. That depends to a great extent on my knowledge base. I&#39;ve got a significant amount of local content-knowledge, but navigating it is painful, I need to get #:semem running.</p>
-<p>Sifting the above points me to <code>danny.ayers.name/entries/2024-11-29_carrot.md</code>, writing down the project descriptions and todos quasi-formally (markdown that can be transformed into RDF and used in #:farelo) under <code>danny.ayers.name/projects</code>.</p>
-<p>#:todo use the word &#39;sift&#39; more frequently, it&#39;s more visualisable than &#39;filter&#39;
-#:todo use the word &#39;primitives&#39; in #:transmissions docs (I heard it used in a tech podcast I heard 5 minutes of before getting up, it&#39;ll be useful)</p>
-<p>But first thing today, tidy up some nuts &amp; bolts in #:transmissions.</p>
-<p>Before that, I need to get the latest Claude export.</p>
-<p><code> &lt;antArtifact identifier=&quot;project-handover&quot; type=&quot;text/markdown&quot; title=&quot;Resource Ontology Project Handover&quot;&gt;</code></p>
-<p><strong>14:17</strong> When I went to my todos, they were lacking structure. So I did a little #:yak around #:MarkMap. Just had a #:dogwalk, back to desk :</p>
-<blockquote>
-<p>Message limit reached for Claude 3.5 Sonnet until 4 PM.</p>
-</blockquote>
-<p>I need to do a bit on #:squirt !!</p>
-<p>posters : #:squirt, #:chauvin, #:semem</p>
-<ul>
-<li><p>#:fam - refactor for #:transmission - so it uses processors, but has <code>simple.js</code></p>
-</li>
-<li><p>#:farelo-proximate, update #:trellis, #:foolicious, #:foowiki using #:fam - RDF-Ext inside</p>
-</li>
-</ul>
-<blockquote>
-<p>Using the RDF vocabularies you know of together with those in your project knowledge, please create an rdf/owl turtle version of the Model Context Protocol schema...</p>
-</blockquote>
-<p>...later : <a href="https://hyperdata.it/xmlns/mcp">Model Context Protocol Ontology</a></p>
 
 </article>
 <p class="post-title h-cinzel">
