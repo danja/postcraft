@@ -1,0 +1,1 @@
+Before UK trip I'd read good things about Aider Composer, VSCode extension. You've probably heard similar. Yesterday I installed it. It wasn't entirely straightforward so I wrote notes - scroll down at https://danny.ayers.name Funny first interaction - scroll to 'French'. (Yeah, site layout bits are high on my to-dos).
