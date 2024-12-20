@@ -85,8 +85,21 @@ I&#39;ll just check what happens when I tweak the path :</p>
 <pre><code class="language-turtle">t:copyStatic a trm:ServiceConfig ;
     trm:key t:staticCopy ;
     trm:source &quot;content-static&quot; ;
-    trm:destination &quot;../../danny.ayers.name&quot; .
+    trm:destination &quot;../../danny.ayers.name/static&quot; .
 </code></pre>
+<pre><code class="language-sh">./trans postcraft ../postcraft/danny.ayers.name | grep content-static
+
+...
+Copying directory: /home/danny/github-danny/postcraft/danny.ayers.name/content-static to /home/danny/github-danny/danny.ayers.name/static
+</code></pre>
+<p>Good-o, just as I&#39;d hoped.</p>
+<p>So now I&#39;ll just flip the path back, type <code>p</code> on my local machine - a script which will run the above, then push the result up to the server.
+Next I <code>ssh</code> into the server, another little script :</p>
+<pre><code class="language-sh">cd /home/github-danny
+./pull-all.sh
+</code></pre>
+<p>And this here should be live.</p>
+<p>Break time. </p>
 
 </article>
 <p class="post-title h-cinzel">

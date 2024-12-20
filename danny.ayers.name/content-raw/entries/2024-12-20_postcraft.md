@@ -106,5 +106,25 @@ I'll just check what happens when I tweak the path :
 t:copyStatic a trm:ServiceConfig ;
     trm:key t:staticCopy ;
     trm:source "content-static" ;
-    trm:destination "../../danny.ayers.name" .
+    trm:destination "../../danny.ayers.name/static" .
 ```
+
+```sh
+./trans postcraft ../postcraft/danny.ayers.name | grep content-static
+
+...
+Copying directory: /home/danny/github-danny/postcraft/danny.ayers.name/content-static to /home/danny/github-danny/danny.ayers.name/static
+```
+
+Good-o, just as I'd hoped.
+
+So now I'll just flip the path back, type `p` on my local machine - a script which will run the above, then push the result up to the server.
+Next I `ssh` into the server, another little script :
+```sh
+cd /home/github-danny
+./pull-all.sh
+```
+
+And this here should be live.
+
+Break time. 
