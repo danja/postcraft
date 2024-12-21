@@ -31,6 +31,41 @@
 
 <article class="post-content">
         <a href="">#</a>
+    <h1>Solstice</h1>
+<p><em>It&#39;s the shortest day!</em></p>
+<p>I&#39;m ambivalent about Christmas, don&#39;t think I&#39;ve ever partaken of any of the other rituals of the season. But I sure do celebrate the <strong>winter solstice</strong>, in spirit if not in much action (I plan to get a few <strong>beers</strong> later). I can explain best by quoting a late friend of mine :    </p>
+<blockquote>
+<p>&quot;Nights are drawing in.&quot;
+- Geoff Beswick of Taddington, every year soon after 21st June</p>
+</blockquote>
+<p>I&#39;m pretty sure I don&#39;t suffer from <a href="https://en.wikipedia.org/wiki/Seasonal_affective_disorder">Seasonal Affective Disorder</a> in the clinical sense. But I&#39;m a late riser, short days (with the associated unpleasant weather) really do impact my mood, however indirectly. So here, I&#39;ll claim the quote :</p>
+<blockquote>
+<p>&quot;Nights are drawing out!&quot;</p>
+</blockquote>
+<hr>
+<h2>More Postcraft</h2>
+<p>Grrr. Returning to the #:postcraft bits from yesterday, I just discovered a bug that&#39;s crept into #:transmissions. I wanted to check how the paths are allocated, so went to isolate that particular operation. But...</p>
+<p>The command :</p>
+<pre><code class="language-sh">./trans postcraft.copy ../postcraft/danny.ayers.name
+</code></pre>
+<p>should only run the subsection of the application <code>postcraft</code> called <code>copy</code>. This is a single #:transmission (= pipeline) in  <a href="/static/artifacts/postcraft/2024-12-20/transmissions.ttl">transmissions.ttl</a>. I did put the wiring in place for this, but <strong>fool Danny</strong> once again didn&#39;t get around to giving it a corresponding <strong>test</strong>. Or did I..?</p>
+<pre><code class="language-sh">npm run test
+</code></pre>
+<p>-bombs straight out with an error during a test on the <code>FilenameMapper</code> processor (still no idea if there&#39;s a test for the <code>transmissions.sub</code> selector).</p>
+<p>Hah! <strong>Fool Danny</strong> once again forgot to run <strong>tests</strong>.</p>
+<p><em>Bloody hell</em>, all I wanted to do with this when I got to desk yesterday was to fix a trivial CSS bug.</p>
+<p>I suppose I&#39;d best just put a bandaid on the CSS for now, then check the tests. I&#39;ve been meaning to set up <a href="https://en.wikipedia.org/wiki/CI/CD">CI/CD</a> bits on GitHub for a while... (I really want such things embedded in #:transmissions itself, so it can notify of any problems preemptively, declare it&#39;s own status - <a href="https://en.wikipedia.org/wiki/Shift-left_testing">Shift-Left</a> to the max).</p>
+<p>Heh ho. I&#39;ll have to leave that for now, got some jobs to do that require <strong>daylight</strong>.</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="">
+        
+    </a>
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="">#</a>
     <h1>Postcraft</h1>
 <p>#:postcraft is an application of #:transmissions which I put while figuring out #:transmissions. It&#39;s a static site builder, you&#39;re looking at its product. Right now it&#39;s <strong>a crufty, fragile, seriously over-engineered and breathtakingly inefficient static site builder</strong>. But that&#39;s not a problem. Things <em>should</em> be coupled loosely enough that I can incrementally improve all this with minimal breakage along the way. <em>Should</em> be.</p>
 <p>The fact that I&#39;ve messed up the CSS somewhere but have no idea where suggests there <em>is</em> a problem.</p>
@@ -216,24 +251,6 @@ Next I <code>ssh</code> into the server, another little script :</p>
 <p>I spent a couple of hours last night trying to get comms going so external net machines could see hosts on my home LAN. Too tired, I should have stopped after an hour... Come back to this later.</p>
 <p>Claude tells me I have to reserve an IP on the router here with the local machine&#39;s MAC address.</p>
 <p>Router - I remember this. Default login is  </p>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="">
-        
-    </a>
-</p> <em></em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="">#</a>
-    <h1>Matches</h1>
-<p>I had a very distracting trip to the UK, and now I&#39;m trying to pick up from where I left off with code projects. I started yesterday, but my brain wasn&#39;t yet in gear, so went for something near the top of my to-dos, Install Aider Composer #:link. Did that, called it a day.</p>
-<p>This morning when I got to desk the machine was playing silly buggers, so I had to start with an hour of tedious sysadmin.</p>
-<p><em>Finally</em>, got to my code proper. Apparently I&#39;d made a good start on #:squirt, essentially (for now) a simple bit of HTML form-based UI for posting stuff to a SPARQL server. I&#39;d been working with Claude Projects, starting with quite a lengthy requirements spec and a bunch of relevant knowledge files.</p>
-<p>I ran the latest <code>npm build dev</code>, which is hooked into webpack #:link for bundling. I&#39;m using vanilla JS but a key dependency is the RDF-Ext lib #:link. When opening what should have been a form, I got an error : <code>dataset.removeMatches()</code>. I&#39;ve not got my workflow for Aider Composer figured out yet, and couldn&#39;t be bothered doing another cycle with Claude just yet. Plan C : <strong>view source</strong>. Took 2 mins to find that it should have been <code>dataset.deleteMatches()</code>. Claude may have been drawing on an old version of the RDF-Ext material, but I had given it a bunch of current code in the Project knowledge, so maybe it just got mixed up/hallucinated.</p>
-<p>So that&#39;s me reminded re. #:squirt. While away, the state of my current online material went under the headlights a couple of times, so that&#39;s been pushed up priorities. Make <strong>this</strong> look nice!</p>
-<p>I&#39;ve also got loads of fairly urgent real world stuff to do this week, like taking down a couple of trees. Sunny today, so I&#39;d better make a start on that.</p>
-<p>Dogwalk first.  </p>
 
 </article>
 <p class="post-title h-cinzel">
