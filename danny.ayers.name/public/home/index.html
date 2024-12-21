@@ -72,6 +72,114 @@
 
 <article class="post-content">
         <a href="">#</a>
+    <h1>Layout</h1>
+<p>With Claude&#39;s help (I gave the <code>index.html</code> + CSS files as attachments), I&#39;ve fixed the immediate layout bug I had here. My system prompt (which I&#39;ll post in a mo) asks Claude for suggestions, and after this it suggested :</p>
+<blockquote>
+<p>q4: Should we implement a sticky header or navigation elements?</p>
+</blockquote>
+<p>A sticky menu button was already in my todos, so I went <code>q4</code>. Claude gave me a bunch of code using React.  To which I responded:</p>
+<blockquote>
+<p>It must be vanilla JS, please revise</p>
+</blockquote>
+<p>Now I have a sticky button! I&#39;ll populate it later, daylight activities to do.</p>
+<p>When I tried it on my phone it still wasn&#39;t quite right, but clearing the cache sorted it out. So I&#39;ve added this -</p>
+<pre><code class="language-html">&lt;!-- #:todo remove when stable --&gt;
+&lt;meta http-equiv=&quot;Cache-Control&quot; content=&quot;no-cache, no-store, must-revalidate&quot;&gt;
+&lt;meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;&gt;
+&lt;meta http-equiv=&quot;Expires&quot; content=&quot;0&quot;&gt;
+</code></pre>
+<p>The stuff here is all lightweight, so that may stay a while.</p>
+<p>All good!</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="">
+        
+    </a>
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="">#</a>
+    <h1>Claude System Prompt</h1>
+<p>The prompt I use with Claude projects is continually changing, and being tweaked per-project. Below is the one I&#39;ve currently got for #:transmissions, I think it&#39;s the most recent. Size-wise, when used with a heap of Project knowledge the context window does get a bit stretched. The <strong>handover</strong> document is useful. After a few cycles in a chat session, some little job done, I use it to give a bit of recent memory to the next session. The RDF rendition I&#39;m recording to give to #:farelo (project management) later. (I&#39;ll be glad when I&#39;ve got all this automated. <em>Work in progress...</em>).</p>
+<p>The q1, q2... part is really good. Very often one suggestion is exactly what I want next, so it saves typing. Quite often there are suggestions that are good ideas I hadn&#39;t thought of. Good machine-human colab, innit.</p>
+<p>I frequently do an export from Claude. I&#39;ve got a #:transmissions application <a href="https://github.com/danja/transmissions/tree/main/src/applications/claude-json-converter">claude-json-converter</a> to split the big JSON file into smaller dirs of markdown files. It&#39;s rough &amp; ready, but good enough to enable me to usefully search the stuff (and should be usable with RAG later).</p>
+<p>Time for a solstice beer.</p>
+<pre><code class="language-markdown"># Role Definition
+- Primary Role: Expert adviser in knowledge management R&amp;D
+- Secondary Role: Expert Javascript programmer (ES modules) favoring Agile methodologies
+- Communication Style: Terse, precise technical language
+- Code Style: ES modules with brief comments where appropriate
+
+# Core Behavior Rules
+- Keep non-code communications concise
+- Request specific reference material if needed
+- Prioritize accuracy over speed
+- Focus on most promising approaches when multiple solutions exist
+- Respond &quot;I don&#39;t know&quot; for uncertain/unknown items without elaboration
+
+# Problem-Solving Methodology
+1. Analyze question at high level (silent)
+2. Identify key concepts and components (silent)
+3. Break problem into small steps (silent)
+4. Execute tasks sequentially
+5. Provide one-line summary per task
+6. Compile into concise solution description
+
+# Response Structure
+- Keep responses brief and precise
+- Use appropriate technical terms
+- Avoid repetition
+- Include four follow-up questions (labeled q1-q4)
+
+# Command Interface
+## Analysis Commands
+- `q1`, `q2`, `q3`, `q4`: Address specific follow-up question
+- `q`: Address all follow-up questions
+- `f`: Repeat previous request with fresh analysis
+- `w`: Mark response as successful (for learning)
+
+## Knowledge Management Commands
+- `h`: Generate handover document (project-specific points only)
+- `rh`: Check &quot;Handover Document&quot; in Project Knowledge files
+- `rk`: Review Project Knowledge files for task relevance
+- `ho`: Prepare comprehensive handover with RDF summary
+
+## Utility Commands
+- `l`: List available commands
+- `t`: Generate RDF summary (title, description, status, keywords)
+
+# RDF Summary Format
+```turtle
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .
+@prefix prj: &lt;http://purl.org/stuff/project/&gt; .
+[
+    a prj:Pivot, prj:Handover ;
+    dcterms:title &quot;Title&quot; ;
+    dcterms:description &quot;Brief description&quot; ;
+    dcterms:creator &lt;http://purl.org/stuff/agents/ClaudeAI&gt;, &lt;http://danny.ayers.name&gt; ;
+    prj:status &quot;Current status&quot; ;
+    prj:keywords &quot;keyword1, keyword2, ...&quot; ;
+    prov:wasGeneratedBy [
+      a prov:Activity ;
+      prj:includes &lt;http://hyperdata.it/prompts/system-prompt&gt;
+    ]
+] .
+</code></pre>
+<p>Unless a code change is very minor, always supply listings and documents as complete, individual artifacts.</p>
+<pre><code>
+</code></pre>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="">
+        
+    </a>
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="">#</a>
     <h1>Postcraft</h1>
 <p>#:postcraft is an application of #:transmissions which I put while figuring out #:transmissions. It&#39;s a static site builder, you&#39;re looking at its product. Right now it&#39;s <strong>a crufty, fragile, seriously over-engineered and breathtakingly inefficient static site builder</strong>. But that&#39;s not a problem. Things <em>should</em> be coupled loosely enough that I can incrementally improve all this with minimal breakage along the way. <em>Should</em> be.</p>
 <p>The fact that I&#39;ve messed up the CSS somewhere but have no idea where suggests there <em>is</em> a problem.</p>
@@ -203,60 +311,6 @@ Next I <code>ssh</code> into the server, another little script :</p>
 <p>[11:49, 19/12/2024] Claudio Baldassarre: btw how did you produce the documentation?
 [11:49, 19/12/2024] Claudio Baldassarre: and who do you have the web hosting with?</p>
 <h2>Lingue Franche</h2>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="">
-        
-    </a>
-</p> <em></em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="">#</a>
-    <h1>SigMod</h1>
-<p><em>Not that <a href="https://sigmod.org/">SIGMOD</a></em></p>
-<p>Mari gave me a lift into town earlier for a Dr&#39;s appt. We arrived early so waited in the car for a while. Phones out.</p>
-<p>Among the more recent of the 1987 Chrome tabs I had open <sup><a id="footnote-ref-1" href="#footnote-1" data-footnote-ref aria-describedby="footnote-label">1</a></sup> was <a href="https://dspy.ai/">DSPy</a>. It&#39;d buzzed my radar on some previous occasion, when I only did the most cursory of skims. Today it reappeared from a different direction so I had a better look. A line in the page made me laugh out loud.</p>
-<p>I&#39;m sure you&#39;re familiar with :</p>
-<blockquote>
-<p>There are only two hard things in Computer Science: cache invalidation and naming things.</p>
-</blockquote>
-<p>- Phil Karlton (<a href="https://martinfowler.com/bliki/TwoHardThings.html">Martin Fowler</a> has backstory &amp; variants)</p>
-<p>I&#39;ve struggled a lot with naming in my #:transmissions pipeliney-thing <em>sub</em>project. The fine line between getting the correct term <em>semantically</em> but without using a term that is so heavily overloaded as to confuse. A good example was <strong>Service</strong>, which I started with for a particular kind of unit of code. It worked ok for these fairly independent little <strong>node</strong>js chunks that act as processing <strong>node</strong>s in the <del>s/pipeline/graph</del> <strong>Transmission</strong>. But although these things might be implemented as eg. microservices, that term brought the potential implication that some remote-calling protocol (like HTTP) <em>had</em> to be involved (they are identified with URIs, another layer of misdirection). Going in the other direction, <strong>Function</strong> was another candidate. The shape is <code>y = f(x)</code>. But that&#39;s rather a no-no in a language where it&#39;s already a reserved word, not to mention that most won&#39;t be pure functions, hell to pay from the <a href="https://en.wikipedia.org/wiki/Alonzo_Church">Church</a>.</p>
-<p>These things appear in the current and only implementation of #:transmissions as a single function wrapped in a class inside an EcmaScript <strong>module</strong>. But they have a single object as input, a single transformed object as output (not really, but ok as first approx, the rest is tangential). Their purpose (first approx) is to process a message. Name I settled on <strong>Process</strong>.</p>
-<p>I&#39;ve been working on #:transmissions for about a year now. The initial motivation was that I had a variety of things to build, they all shared (at a suitable level of abstraction) the same pipeliney structure. I roughed something out, first just for a static site generator. In the <em>process</em> bringing LLMs into my workflow, serendipity kicked in. It turned out to be fairly optimal for what you can get in an LLM&#39;s <strong>context window</strong>. The <strong>Transmission</strong> at the planning level, and individual <strong>Process</strong>es are all at a level of complexity that the LLM can handle comfortably. It&#39;s also humanly-checkable, programming best practices, testable etc. The structural, nuts &amp; bolts bits of #:transmissions do go beyond. I have actually had to think about things myself there (boo!). Still not nailed down enough to proclaim a v1.0.0, still loads in flux.</p>
-<p>Going back to the naming. So a <strong>Process</strong> has an <strong>input</strong> (message) and <strong>output</strong> (message) as well as internal <strong>behaviour</strong>. To be able to collaborate with the LLM on these things (and for any future use) there needs to be some #:LingueFranche to describe these things. A quasi-formal language, perhaps. I started with a comment block in the code (so it&#39;d work with JSDoc), since going much more RDF (because WWW). I&#39;ve still not got the details ironed out, but early on I settled on a name for these descriptions of process <strong>module</strong>s, things in a space not quite <strong>Contract</strong>s, but different from OO/service <strong>Interface</strong>s : <strong>Signature</strong>.  </p>
-<p>Imagine my delight on finding this line in the <a href="https://dspy.ai/">DSPy</a> docs :</p>
-<blockquote>
-<p>For every AI component in your system, you specify input/output behavior as a signature and select a module to assign a strategy for invoking your LM.</p>
-</blockquote>
-<p>Yeah, I laughed out loud. The context is only slightly different (major overlaps), but I love that I, and the folks behind this had converged on pretty much the same vocab.</p>
-<section class="footnotes" data-footnotes>
-<h2 id="footnote-label" class="sr-only">Footnotes</h2>
-<ol>
-<li id="footnote-1">
-<p>On Android Chrome, click on the Tabs icon (starts as a number, turns into a <code>:D</code> on day one), then click on the (#:todo find Unicode for) 3-dot colon settings icon. This offers Select Tabs. Then you can Select All. It then tells you how many tabs you have open (here, 1991 <sup><a id="footnote-ref-2" href="#footnote-2" data-footnote-ref aria-describedby="footnote-label">2</a></sup>), which you can then Save. <a href="#footnote-ref-1" data-footnote-backref aria-label="Back to reference 1">↩</a></p>
-</li>
-<li id="footnote-2">
-<p><em>Tell me you&#39;re ADHD without telling me you&#39;re ADHD</em>   <a href="#footnote-ref-2" data-footnote-backref aria-label="Back to reference 2">↩</a></p>
-</li>
-</ol>
-</section>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="">
-        
-    </a>
-</p> <em></em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="">#</a>
-    <h1>Any Port</h1>
-<p><em>...in a storm.</em></p>
-<p>I spent a couple of hours last night trying to get comms going so external net machines could see hosts on my home LAN. Too tired, I should have stopped after an hour... Come back to this later.</p>
-<p>Claude tells me I have to reserve an IP on the router here with the local machine&#39;s MAC address.</p>
-<p>Router - I remember this. Default login is  </p>
 
 </article>
 <p class="post-title h-cinzel">
