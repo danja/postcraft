@@ -1,0 +1,1 @@
+This morning I fixed a stupid thing with my blog layout. Floodgates opened. Most writing I've done this year, shortest day! Mostly my-stuff rambling, but scroll down, I think there are a couple of worthwhile points in my sweary rant about AGI. 
