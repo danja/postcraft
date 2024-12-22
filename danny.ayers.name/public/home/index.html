@@ -37,6 +37,28 @@
 
 <article class="post-content">
         <a href="">#</a>
+    <h1>Misty</h1>
+<p><em>It was very misty this afternoon for dogwalk</em></p>
+<p>I&#39;ve a misty head today, now to ramble a bit to see what condenses.</p>
+<p>Nice reminder, #:todo #:squirt handle images etc.</p>
+<p>It also reminded me of the name of Led Zep&#39;s <a href="https://www.youtube.com/watch?v=y6M3YQ_EF2E">Misty Mountain Hop</a>, but I couldn&#39;t think why that might stick in my head until I had a listen. I really like that &quot;<strong>dog dog dog, doggy dog dog...</strong>&quot;. I bet I&#39;ve already played with it somewhere, but I haven&#39;t a clue where.</p>
+<p>This leads straight to my <strong>misty memory</strong>. My memory for day-to-day things is pretty lousy, main workaround being written reminders, lists and lists and lists... But I&#39;ve actually got an exceptionally good memory for things around tech and suchlike, <em>in a sense</em>. Like, the capacity and retention of system ideas is really good, but the connectivity between them is poor, retrieval can often be hopeless. (This is almost certainly an #:adhd thing).</p>
+<p>One specific issue comes up regularly. If I&#39;ve got a plan for something worked out, but haven&#39;t been active on it for a little while, I forget which bits I&#39;ve done. Very often I imagine I&#39;ve implemented something I haven&#39;t even started, but that&#39;s not a major problem, because at that point I&#39;ll have a pretty good idea of how to do it. A fun, kind-of example of this is a (probably false) memory I have, of having a dream where I was playing the guitar chords to &quot;Wild Thing&quot; before I&#39;d learned them. Following day I could play it.
+I strongly suspect this is a false memory because at the time it would have been <a href="https://www.youtube.com/watch?v=xVN8_7wVSG0">Hendrix&#39;s version</a> I&#39;d have had most exposure to, and the version I learned in the dream was open G-C-D-C-G chords on a nylon-strung acoustic, rather different. <em>The <a href="https://www.youtube.com/watch?v=5zN2wWGbGyM">Goodies version</a> is quite a thing, though the classic <a href="https://www.youtube.com/watch?v=gSWInYFVksg">Troggs version</a> would be my go-to these days. Now where did I leave that ocarina..?</em>  </p>
+<p>The converse of this is a relatively minor problem, but one that&#39;s incredibly annoying when it happens. I forget I&#39;ve implemented something and proceed to implement it again. Like buying eggs &amp; potatoes when you&#39;ve already got a larder full of eggs &amp; potatoes. Except they can go into extra <em>tortillas españolas</em>.   </p>
+<h2>Actionable : Docs!</h2>
+<p>Ah...ok, something has condensed. Sort out project docs. The #:postcraft doc rendering bits are still fresh in my head, this would be a good opportunity. I did a #:transmission a while back to pull a list of my <a href="https://github.com/danja?tab=repositories">GitHub repos</a>. My plan then was to have it pull the <code>README.md</code> for each, use those to bootstrap docs. Slight snag, few had a worthwhile readme, certainly not up-to-date.</p>
+<p>But I should be able to identify the currently active repos (they&#39;ll be a bit tangled up in Claude projects too - I&#39;ve quite a lot there yet to find a proper home). There&#39;s my starting point. Writing some readmes should give me good anchor points from which to bootstrap the rest.</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="">
+        
+    </a>
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="">#</a>
     <h1>Solstice</h1>
 <p><em>It&#39;s the shortest day!</em></p>
 <p>I&#39;m ambivalent about Christmas, don&#39;t think I&#39;ve ever partaken of any of the other rituals of the season. But I sure do celebrate the <strong>winter solstice</strong>, in spirit if not in much action (I plan to get a few <strong>beers</strong> later). I can explain best by quoting a late friend of mine :    </p>
@@ -213,114 +235,6 @@ So please :</p>
 <p>Unless a code change is very minor, always supply listings and documents as complete, individual artifacts.</p>
 <pre><code>
 </code></pre>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="">
-        
-    </a>
-</p> <em></em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="">#</a>
-    <h1>Postcraft</h1>
-<p>#:postcraft is an application of #:transmissions which I put while figuring out #:transmissions. It&#39;s a static site builder, you&#39;re looking at its product. Right now it&#39;s <strong>a crufty, fragile, seriously over-engineered and breathtakingly inefficient static site builder</strong>. But that&#39;s not a problem. Things <em>should</em> be coupled loosely enough that I can incrementally improve all this with minimal breakage along the way. <em>Should</em> be.</p>
-<p>The fact that I&#39;ve messed up the CSS somewhere but have no idea where suggests there <em>is</em> a problem.</p>
-<p>I&#39;m only using HTML/CSS/Vanilla JS for presentation, but it&#39;s all a bit of a lump right now. I need to tease out the bits that are actually in use, relocate and organise them in a way that I can work on them in isolation.</p>
-<p><strong>Ew.</strong> The current filesystem setup really is a shambles.</p>
-<p>Ok, the root of this site when published locally is :</p>
-<pre><code class="language-sh">/home/danny/github-danny/postcraft/danny.ayers.name/public/home
-...
-ls
-css  entries  fonts  index.html  js  media  static
-</code></pre>
-<p>In <code>index.html</code> is :</p>
-<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/fonts.css&quot; type=&quot;text/css&quot; /&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;css/grid-columns.css&quot; type=&quot;text/css&quot; /&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot; type=&quot;text/css&quot; /&gt;
-</code></pre>
-<p>Hmmm. I put the <code>danny.ayers.name</code> material under <code>.../postcraft/</code> because it&#39;s been acting as test data. This might be a good time to move it somewhere more production-like. Ok, new repo : <a href="https://github.com/danja/danny.ayers.name">https://github.com/danja/danny.ayers.name</a></p>
-<p>As a static site builder #:postcraft currently :</p>
-<ul>
-<li>copies a bunch of stuff from A -&gt; B</li>
-<li>walks dirs transforming markdown -&gt; html</li>
-<li>templates the individual entry pages</li>
-<li>templates <code>index.html</code></li>
-</ul>
-<p>I&#39;d better remind myself of the #:postcraft #:transmission and the manifest I&#39;m using for <code>danny.ayers.name</code>. Might as well make copies for future ref. It seems I&#39;m using <a href="https://danny.ayers.name/static/">https://danny.ayers.name/static/</a> as the base for material that should be published verbatim. The word <code>static</code> isn&#39;t quite right, but I guess it fits ok with not-quite-right conventions.</p>
-<p>There&#39;s a bit of chicken &amp; egg here, the documentation for #:transmissions will be published using #:transmissions. Short version :</p>
-<ul>
-<li>A #:transmissions <strong>application</strong> is defined by its -<ul>
-<li><strong>transmissions</strong>, the topology of the processing pipelines</li>
-<li><strong>configuration</strong>, the settings for the nodes in the pipelines, which are <strong>processors</strong></li>
-</ul>
-</li>
-</ul>
-<p>The #:postcraft application has :</p>
-<ul>
-<li><a href="/static/artifacts/postcraft/2024-12-20/transmissions.ttl">transmissions.ttl</a></li>
-<li><a href="/static/artifacts/postcraft/2024-12-20/config.ttl">config.ttl</a></li>
-<li><a href="/static/artifacts/postcraft/2024-12-20/about.md">about.md</a> - the applications should mostly be self-documenting in the Turtle files (together with the processor signatures), but I&#39;ve included these for out-of-band info, notes-to-self. I&#39;ll probably add an <code>about.ttl</code> later, hints for the machines.</li>
-</ul>
-<p>When a #:transmissions application is invoked, a <strong>target</strong> may be provided for instance-specific data. In this case, there&#39;s a <code>manifest.ttl</code> on the filesystem with the necessary for building the <code>danny.ayers.name</code> site.</p>
-<ul>
-<li><a href="/static/artifacts/postcraft/2024-12-20/manifest.ttl">manifest.ttl</a></li>
-</ul>
-<p>I&#39;ve a <em>huge</em> amount of refactoring &amp; tweaking to do around #:transmissions. Here the separation of concerns between config &amp; manifest isn&#39;t very clean, vocab clunky. But I&#39;m happy to call this fundamental structure done for now. There are a bunch of new features I plan to implement in the near future. But I&#39;ve got to be careful about <strong>priorities</strong> (this is what I need #:farelo, kind-of project management tooling, also in-progress).  </p>
-<p>Dogwalk...
-...where was I?</p>
-<p>Oh yeah, sources &amp; destinations of things. First, I want another set of copies of those files. I should be more systematic and use for-purpose version control better. Showing my age here, I predate VCS. But simply making a copy of the application dir and calling it <code>postcraft-previous</code> works pragmatically.</p>
-<p><code>trans</code> is simply symlinked to a <code>run.js</code>, partial prep for something I dare put on the <code>$PATH</code>. <code>postcraft</code> the <strong>application</strong> here appears in #:transmissions&#39; source tree (it doesn&#39;t have to, I&#39;m following a strategy of minimising ties to the filesystem as I go along, but there&#39;s no rush to move it). The <strong>target</strong> is given as a relative path, where to look for a <code>manifest.ttl</code>.</p>
-<p>I&#39;ve slipped into my own little convention for locating repos on these Ubuntu machines :</p>
-<pre><code class="language-sh"> /home/danny/github-danny
- /home/danny/github-other
-</code></pre>
-<p>So most of the time when I&#39;m coding I use <code>~/github-danny</code> as a temporary home.</p>
-<p>Now how am I expressing the paths in <a href="/static/artifacts/postcraft/2024-12-20/config.ttl">config.ttl</a>?</p>
-<pre><code class="language-turtle">t:copyStatic a trm:ServiceConfig ;
-    trm:key t:staticCopy ;
-    trm:source &quot;content-static&quot; ;
-    trm:destination &quot;public/home/static&quot; .
-</code></pre>
-<p>And where does that wind up using when it&#39;s run?</p>
-<p>Ok, I need that <code>about.md</code> note-to-self, give it a little tweak :</p>
-<pre><code class="language-sh">cd ~/github-danny/transmissions
-
-./trans postcraft ../postcraft/danny.ayers.name | grep content-static
-</code></pre>
-<p>Ah. On my to-do list is swapping the hacky logger that&#39;s in #:transmissions now for a proper one, and have the thing support a <code>--verbose</code> flag. Not a biggy, I can force the log level to debug inside whichever <strong>processor</strong> is doing the copy.
-Ok, here it is in</p>
-<pre><code class="language-turtle">### static dirs
-:cp10 a :FileCopy ;
-    trm:configKey :staticCopy .
-</code></pre>
-<p>I&#39;ve only just added support for <strong>processors</strong> (implemented as ES modules) outside of the #:transmissions source tree, so this&#39;ll be:</p>
-<pre><code class="language-sh">src/processors/fs/FileCopy.js
-</code></pre>
-<p>Pop in <code> logger.setLogLevel(&quot;debug&quot;)</code>, rerun the application+grep,</p>
-<pre><code>Copying directory from /home/danny/github-danny/postcraft/danny.ayers.name/content-static to /home/danny/github-danny/postcraft/danny.ayers.name/public/home/static
-</code></pre>
-<p><em>It said that twice. Odd, but not a worry for today.</em></p>
-<p>Grr. Some jobs I need to do before it goes dark.
-I&#39;ll just check what happens when I tweak the path :</p>
-<pre><code class="language-turtle">t:copyStatic a trm:ServiceConfig ;
-    trm:key t:staticCopy ;
-    trm:source &quot;content-static&quot; ;
-    trm:destination &quot;../../danny.ayers.name/static&quot; .
-</code></pre>
-<pre><code class="language-sh">./trans postcraft ../postcraft/danny.ayers.name | grep content-static
-
-...
-Copying directory: /home/danny/github-danny/postcraft/danny.ayers.name/content-static to /home/danny/github-danny/danny.ayers.name/static
-</code></pre>
-<p>Good-o, just as I&#39;d hoped.</p>
-<p>So now I&#39;ll just flip the path back, type <code>p</code> on my local machine - a script which will run the above, then push the result up to the server.
-Next I <code>ssh</code> into the server, another little script :</p>
-<pre><code class="language-sh">cd /home/github-danny
-./pull-all.sh
-</code></pre>
-<p>And this here should be live.</p>
-<p>Break time. </p>
 
 </article>
 <p class="post-title h-cinzel">
