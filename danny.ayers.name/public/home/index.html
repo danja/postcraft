@@ -37,6 +37,26 @@
 
 <article class="post-content">
         <a href="">#</a>
+    <h1>Indigestion</h1>
+<p><em>Despite in being traditional to overeat at this time of year, it&#39;s not me but my code that&#39;s got tummy ache.</em></p>
+<p>The other night I had a quick stab at adding an <strong>Atom feed</strong> here. Claude gave me some convincing-looking code, which didn&#39;t work. I only had a quick look then, it looked like it might take a while to fix. It turned out to be easy, but only once I&#39;d figured out what my #:postcraft code (from months ago) was doing, which took ages. My bad, I&#39;m not surprised Claude got things wrong, my stuff was well obfuscated.</p>
+<p>The immediate issue was in the handling of <code>manifest.ttl</code>, the purpose of which in this case was to provide <code>danny.ayers.name</code> site-specific information to the <code>postcraft</code> #:transmissions application. I was already well aware that a bunch of <strong>refactoring</strong> was needed around the <code>transmissions.ttl</code>/<code>config.ttl</code>/<code>manifest.ttl</code> <strong>separation of concerns</strong>. It turned out to be worse than I thought : the handling of <code>manifest.ttl</code> was pretty much <strong>hardcoded</strong> in <code>src/processors/rdf/ConfigMap.js</code>. <strong>Ops!</strong></p>
+<p>To get a feed rendering, as a quick workaround I copy &amp; pasted the method that handled the <strong>RDF resource</strong> <code>t:IndexPage</code> and tweaked for <code>t:AtomFeed</code>.</p>
+<p>Not pretty, but it&#39;ll do for now. That was a useful exercise, it added another flag to a specific group of #:todos, pushing up their priority in my head. What it <strong>should</strong> have done is push up the priorities declared in the project description, managed by #:farelo. Which pushes the in-progress #:farelo up priorities (in my head).</p>
+<p>Associated with that is <strong>all project docs</strong>, already high on my priorities.</p>
+<p>I&#39;m not in the mood for being systematic today, but today that&#39;s fine. To get the docs together I need to poke around with all the subprojects, remind myself where I&#39;m at, write down their descriptions, current status &amp; todos (which will ultimately be fed into #:farelo).
+I can pick any part I fancy to play around with and in doing so I&#39;m doing something that will be close to critical paths.</p>
+<p>But right now, #:dogwalk #2 before it gets dark. </p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="">
+        
+    </a>
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="">#</a>
     <h1>Sites</h1>
 <p>I don&#39;t want to break any URLs on my sites as they stand, but I&#39;ve got loads of (currently badly organised) material to add, mostly project docs which will be rendered through #:postcraft. Everything is going on the same Ubuntu server. Right now the material is mostly split per-project in repos on GitHub. I reckon the raw material (mostly markdown) is best left where it is, but the rendered versions can all go all go together. Pretty all the new stuff should go under the umbrella (and domain name) of <a href="https://hyperdata.it">hyperdata.it</a>. The older material I have that&#39;s actually live now is in the repo <code>hyperdata-static</code>, I&#39;ll leave that alone. But I do have a more recent repo <code>hyperdata</code>, with a lot of the current (sub-)projects as git submodules. So to keep things simple, for now I&#39;ll have #:postcraft render the corresponding docs under the local dir :</p>
 <pre><code class="language-sh">~/github-danny/hyperdata/site
@@ -142,41 +162,6 @@ I strongly suspect this is a false memory because at the time it would have been
 <p>Ah...ok, something has condensed. Sort out project docs. The #:postcraft doc rendering bits are still fresh in my head, this would be a good opportunity. I did a #:transmission a while back to pull a list of my <a href="https://github.com/danja?tab=repositories">GitHub repos</a>. My plan then was to have it pull the <code>README.md</code> for each, use those to bootstrap docs. Slight snag, few had a worthwhile readme, certainly not up-to-date.</p>
 <p>But I should be able to identify the currently active repos (they&#39;ll be a bit tangled up in Claude projects too - I&#39;ve quite a lot there yet to find a proper home). There&#39;s my starting point. Writing some readmes should give me good anchor points from which to bootstrap the rest.</p>
 <p>First though, a dogwalk in the dark.</p>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="">
-        
-    </a>
-</p> <em></em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="">#</a>
-    <h1>Solstice</h1>
-<p><em>It&#39;s the shortest day!</em></p>
-<p>I&#39;m ambivalent about Christmas, don&#39;t think I&#39;ve ever partaken of any of the other rituals of the season. But I sure do celebrate the <strong>winter solstice</strong>, in spirit if not in much action (I plan to get a few <strong>beers</strong> later). I can explain best by quoting a late friend of mine :    </p>
-<blockquote>
-<p>&quot;Nights are drawing in.&quot;
-- Geoff Beswick of Priestcliffe (every year soon after 21st June)</p>
-</blockquote>
-<p>I&#39;m pretty sure I don&#39;t suffer from <a href="https://en.wikipedia.org/wiki/Seasonal_affective_disorder">Seasonal Affective Disorder</a> in the clinical sense. But I&#39;m a late riser, short days (with the associated unpleasant weather) really do impact my mood, however indirectly. So here, I&#39;ll claim the quote :</p>
-<blockquote>
-<p>&quot;Nights are drawing out!&quot;</p>
-</blockquote>
-<hr>
-<h2>More Postcraft</h2>
-<p>Grrr. Returning to the #:postcraft bits from yesterday, I just discovered a bug that&#39;s crept into #:transmissions. I wanted to check how the paths are allocated, so went to isolate that particular operation. But...</p>
-<p>The command :</p>
-<pre><code class="language-sh">./trans postcraft.copy ../postcraft/danny.ayers.name
-</code></pre>
-<p>should only run the subsection of the application <code>postcraft</code> called <code>copy</code>. This is a single #:transmission (= pipeline) in  <a href="/static/artifacts/postcraft/2024-12-20/transmissions.ttl">transmissions.ttl</a>. I did put the wiring in place for this, but <strong>fool Danny</strong> once again didn&#39;t get around to giving it a corresponding <strong>test</strong>. Or did I..?</p>
-<pre><code class="language-sh">npm run test
-</code></pre>
-<p>-bombs straight out with an error during a test on the <code>FilenameMapper</code> processor (still no idea if there&#39;s a test for the <code>transmissions.sub</code> selector).</p>
-<p>Hah! <strong>Fool Danny</strong> once again forgot to run <strong>tests</strong>.</p>
-<p><em>Bloody hell</em>, all I wanted to do with this when I got to desk yesterday was to fix a trivial CSS bug.</p>
-<p>I suppose I&#39;d best just put a bandaid on the CSS for now, then check the tests. I&#39;ve been meaning to set up <a href="https://en.wikipedia.org/wiki/CI/CD">CI/CD</a> bits on GitHub for a while... (I really want such things embedded in #:transmissions itself, so it can notify of any problems preemptively, declare it&#39;s own status - <a href="https://en.wikipedia.org/wiki/Shift-left_testing">Shift-Left</a> to the max).</p>
-<p>Heh ho. I&#39;ll have to leave that for now, got some jobs to do that require <strong>daylight</strong>.</p>
 
 </article>
 <p class="post-title h-cinzel">

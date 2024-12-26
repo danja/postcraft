@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2024-12-26T14:40:59.702Z</updated>
+    <updated>2024-12-26T15:25:08.547Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -12,10 +12,38 @@
 
     
     <entry>
+        <title>Entry 2024-12-26_indigestion</title>
+        <link href="https://danny.ayers.name/entries/2024-12-26_indigestion.html"/>
+        <id>https://danny.ayers.name/entries/2024-12-26_indigestion.html</id>
+        <updated>2024-12-26T15:25:08.547Z</updated>
+        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
+
+&lt;article class=&quot;post-content&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
+    &lt;h1&gt;Indigestion&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Despite in being traditional to overeat at this time of year, it&amp;#39;s not me but my code that&amp;#39;s got tummy ache.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The other night I had a quick stab at adding an &lt;strong&gt;Atom feed&lt;/strong&gt; here. Claude gave me some convincing-looking code, which didn&amp;#39;t work. I only had a quick look then, it looked like it might take a while to fix. It turned out to be easy, but only once I&amp;#39;d figured out what my #:postcraft code (from months ago) was doing, which took ages. My bad, I&amp;#39;m not surprised Claude got things wrong, my stuff was well obfuscated.&lt;/p&gt;
+&lt;p&gt;The immediate issue was in the handling of &lt;code&gt;manifest.ttl&lt;/code&gt;, the purpose of which in this case was to provide &lt;code&gt;danny.ayers.name&lt;/code&gt; site-specific information to the &lt;code&gt;postcraft&lt;/code&gt; #:transmissions application. I was already well aware that a bunch of &lt;strong&gt;refactoring&lt;/strong&gt; was needed around the &lt;code&gt;transmissions.ttl&lt;/code&gt;/&lt;code&gt;config.ttl&lt;/code&gt;/&lt;code&gt;manifest.ttl&lt;/code&gt; &lt;strong&gt;separation of concerns&lt;/strong&gt;. It turned out to be worse than I thought : the handling of &lt;code&gt;manifest.ttl&lt;/code&gt; was pretty much &lt;strong&gt;hardcoded&lt;/strong&gt; in &lt;code&gt;src/processors/rdf/ConfigMap.js&lt;/code&gt;. &lt;strong&gt;Ops!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To get a feed rendering, as a quick workaround I copy &amp;amp; pasted the method that handled the &lt;strong&gt;RDF resource&lt;/strong&gt; &lt;code&gt;t:IndexPage&lt;/code&gt; and tweaked for &lt;code&gt;t:AtomFeed&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Not pretty, but it&amp;#39;ll do for now. That was a useful exercise, it added another flag to a specific group of #:todos, pushing up their priority in my head. What it &lt;strong&gt;should&lt;/strong&gt; have done is push up the priorities declared in the project description, managed by #:farelo. Which pushes the in-progress #:farelo up priorities (in my head).&lt;/p&gt;
+&lt;p&gt;Associated with that is &lt;strong&gt;all project docs&lt;/strong&gt;, already high on my priorities.&lt;/p&gt;
+&lt;p&gt;I&amp;#39;m not in the mood for being systematic today, but today that&amp;#39;s fine. To get the docs together I need to poke around with all the subprojects, remind myself where I&amp;#39;m at, write down their descriptions, current status &amp;amp; todos (which will ultimately be fed into #:farelo).
+I can pick any part I fancy to play around with and in doing so I&amp;#39;m doing something that will be close to critical paths.&lt;/p&gt;
+&lt;p&gt;But right now, #:dogwalk #2 before it gets dark. &lt;/p&gt;
+
+&lt;/article&gt;
+&lt;p class=&quot;post-title h-cinzel&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;
+        
+    &lt;/a&gt;
+&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
+    </entry>
+    
+    <entry>
         <title>Entry 2024-12-23_sites</title>
         <link href="https://danny.ayers.name/entries/2024-12-23_sites.html"/>
         <id>https://danny.ayers.name/entries/2024-12-23_sites.html</id>
-        <updated>2024-12-26T14:40:59.702Z</updated>
+        <updated>2024-12-26T15:25:08.547Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -58,7 +86,7 @@
         <title>Entry 2024-12-23_eat-me</title>
         <link href="https://danny.ayers.name/entries/2024-12-23_eat-me.html"/>
         <id>https://danny.ayers.name/entries/2024-12-23_eat-me.html</id>
-        <updated>2024-12-26T14:40:59.702Z</updated>
+        <updated>2024-12-26T15:25:08.548Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -101,7 +129,7 @@ Nope. That is &lt;a href=&quot;https://www.amazon.com/Web-2-0-Teknolojileri-Eric
         <title>Entry 2024-12-23_chilly</title>
         <link href="https://danny.ayers.name/entries/2024-12-23_chilly.html"/>
         <id>https://danny.ayers.name/entries/2024-12-23_chilly.html</id>
-        <updated>2024-12-26T14:40:59.702Z</updated>
+        <updated>2024-12-26T15:25:08.548Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -131,7 +159,7 @@ Nope. That is &lt;a href=&quot;https://www.amazon.com/Web-2-0-Teknolojileri-Eric
         <title>Entry 2024-12-22_misty</title>
         <link href="https://danny.ayers.name/entries/2024-12-22_misty.html"/>
         <id>https://danny.ayers.name/entries/2024-12-22_misty.html</id>
-        <updated>2024-12-26T14:40:59.702Z</updated>
+        <updated>2024-12-26T15:25:08.548Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -149,49 +177,6 @@ I strongly suspect this is a false memory because at the time it would have been
 &lt;p&gt;Ah...ok, something has condensed. Sort out project docs. The #:postcraft doc rendering bits are still fresh in my head, this would be a good opportunity. I did a #:transmission a while back to pull a list of my &lt;a href=&quot;https://github.com/danja?tab=repositories&quot;&gt;GitHub repos&lt;/a&gt;. My plan then was to have it pull the &lt;code&gt;README.md&lt;/code&gt; for each, use those to bootstrap docs. Slight snag, few had a worthwhile readme, certainly not up-to-date.&lt;/p&gt;
 &lt;p&gt;But I should be able to identify the currently active repos (they&amp;#39;ll be a bit tangled up in Claude projects too - I&amp;#39;ve quite a lot there yet to find a proper home). There&amp;#39;s my starting point. Writing some readmes should give me good anchor points from which to bootstrap the rest.&lt;/p&gt;
 &lt;p&gt;First though, a dogwalk in the dark.&lt;/p&gt;
-
-&lt;/article&gt;
-&lt;p class=&quot;post-title h-cinzel&quot;&gt;
-    &lt;a href=&quot;&quot;&gt;
-        
-    &lt;/a&gt;
-&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
-    </entry>
-    
-    <entry>
-        <title>Entry 2024-12-21_solstice</title>
-        <link href="https://danny.ayers.name/entries/2024-12-21_solstice.html"/>
-        <id>https://danny.ayers.name/entries/2024-12-21_solstice.html</id>
-        <updated>2024-12-26T14:40:59.702Z</updated>
-        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
-
-&lt;article class=&quot;post-content&quot;&gt;
-        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
-    &lt;h1&gt;Solstice&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;It&amp;#39;s the shortest day!&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;I&amp;#39;m ambivalent about Christmas, don&amp;#39;t think I&amp;#39;ve ever partaken of any of the other rituals of the season. But I sure do celebrate the &lt;strong&gt;winter solstice&lt;/strong&gt;, in spirit if not in much action (I plan to get a few &lt;strong&gt;beers&lt;/strong&gt; later). I can explain best by quoting a late friend of mine :    &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&amp;quot;Nights are drawing in.&amp;quot;
-- Geoff Beswick of Priestcliffe (every year soon after 21st June)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I&amp;#39;m pretty sure I don&amp;#39;t suffer from &lt;a href=&quot;https://en.wikipedia.org/wiki/Seasonal_affective_disorder&quot;&gt;Seasonal Affective Disorder&lt;/a&gt; in the clinical sense. But I&amp;#39;m a late riser, short days (with the associated unpleasant weather) really do impact my mood, however indirectly. So here, I&amp;#39;ll claim the quote :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&amp;quot;Nights are drawing out!&amp;quot;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h2&gt;More Postcraft&lt;/h2&gt;
-&lt;p&gt;Grrr. Returning to the #:postcraft bits from yesterday, I just discovered a bug that&amp;#39;s crept into #:transmissions. I wanted to check how the paths are allocated, so went to isolate that particular operation. But...&lt;/p&gt;
-&lt;p&gt;The command :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;./trans postcraft.copy ../postcraft/danny.ayers.name
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;should only run the subsection of the application &lt;code&gt;postcraft&lt;/code&gt; called &lt;code&gt;copy&lt;/code&gt;. This is a single #:transmission (= pipeline) in  &lt;a href=&quot;/static/artifacts/postcraft/2024-12-20/transmissions.ttl&quot;&gt;transmissions.ttl&lt;/a&gt;. I did put the wiring in place for this, but &lt;strong&gt;fool Danny&lt;/strong&gt; once again didn&amp;#39;t get around to giving it a corresponding &lt;strong&gt;test&lt;/strong&gt;. Or did I..?&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;npm run test
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;-bombs straight out with an error during a test on the &lt;code&gt;FilenameMapper&lt;/code&gt; processor (still no idea if there&amp;#39;s a test for the &lt;code&gt;transmissions.sub&lt;/code&gt; selector).&lt;/p&gt;
-&lt;p&gt;Hah! &lt;strong&gt;Fool Danny&lt;/strong&gt; once again forgot to run &lt;strong&gt;tests&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Bloody hell&lt;/em&gt;, all I wanted to do with this when I got to desk yesterday was to fix a trivial CSS bug.&lt;/p&gt;
-&lt;p&gt;I suppose I&amp;#39;d best just put a bandaid on the CSS for now, then check the tests. I&amp;#39;ve been meaning to set up &lt;a href=&quot;https://en.wikipedia.org/wiki/CI/CD&quot;&gt;CI/CD&lt;/a&gt; bits on GitHub for a while... (I really want such things embedded in #:transmissions itself, so it can notify of any problems preemptively, declare it&amp;#39;s own status - &lt;a href=&quot;https://en.wikipedia.org/wiki/Shift-left_testing&quot;&gt;Shift-Left&lt;/a&gt; to the max).&lt;/p&gt;
-&lt;p&gt;Heh ho. I&amp;#39;ll have to leave that for now, got some jobs to do that require &lt;strong&gt;daylight&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;/article&gt;
 &lt;p class=&quot;post-title h-cinzel&quot;&gt;
