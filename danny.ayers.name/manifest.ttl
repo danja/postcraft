@@ -40,6 +40,11 @@ t:IndexPage a pc:ContentGroup ; # TODO naming!
     fs:filepath "public/home/index.html" ;
     pc:template "layouts/middlin/templates/index-page_template.njk" .
 
+t:AtomFeed a pc:ContentGroup ; # TODO naming!
+    pc:site <https://danny.ayers.name> ;
+    fs:filepath "public/home/index.xml" ;
+    pc:template "layouts/middlin/templates/atom_template.njk" .
+
 #################################
 # ENTRIES CONTENT
 t:TodoContent a pc:ContentGroup ;

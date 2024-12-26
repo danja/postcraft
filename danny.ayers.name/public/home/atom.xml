@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Danny Ayers' Blog</title>
+    
+    <link href="https://danny.ayers.name"/>
+    <updated>2024-12-26T14:40:59.702Z</updated>
+    <id>https://danny.ayers.name</id>
+    <author>
+        <name>Danny Ayers</name>
+        <email>danny.ayers@gmail.com</email>
+    </author>
+
+    
+    <entry>
+        <title>Entry 2024-12-23_sites</title>
+        <link href="https://danny.ayers.name/entries/2024-12-23_sites.html"/>
+        <id>https://danny.ayers.name/entries/2024-12-23_sites.html</id>
+        <updated>2024-12-26T14:40:59.702Z</updated>
+        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
+
+&lt;article class=&quot;post-content&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
+    &lt;h1&gt;Sites&lt;/h1&gt;
+&lt;p&gt;I don&amp;#39;t want to break any URLs on my sites as they stand, but I&amp;#39;ve got loads of (currently badly organised) material to add, mostly project docs which will be rendered through #:postcraft. Everything is going on the same Ubuntu server. Right now the material is mostly split per-project in repos on GitHub. I reckon the raw material (mostly markdown) is best left where it is, but the rendered versions can all go all go together. Pretty all the new stuff should go under the umbrella (and domain name) of &lt;a href=&quot;https://hyperdata.it&quot;&gt;hyperdata.it&lt;/a&gt;. The older material I have that&amp;#39;s actually live now is in the repo &lt;code&gt;hyperdata-static&lt;/code&gt;, I&amp;#39;ll leave that alone. But I do have a more recent repo &lt;code&gt;hyperdata&lt;/code&gt;, with a lot of the current (sub-)projects as git submodules. So to keep things simple, for now I&amp;#39;ll have #:postcraft render the corresponding docs under the local dir :&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;~/github-danny/hyperdata/site
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Hmm. A slight complication is that I&amp;#39;ve also got non-postcraft docs, &lt;code&gt;jsdoc&lt;/code&gt; etc. Postcraft will be providing the index page etc, so I guess the easiest is to go for eg. :&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;# postcraft
+~/github-danny/hyperdata/site/transmissions/index.html
+~/github-danny/hyperdata/site/transmissions/entries/2024-12-23_today.html`
+...
+
+# non-postcraft
+~/github-danny/hyperdata/site/transmissions/jsdoc
+~/github-danny/hyperdata/site/transmissions/jsdoc/index.html
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Yeah.&lt;/p&gt;
+&lt;p&gt;Most of the new material will want the same kind of layout/styling, so I&amp;#39;d better also have a :&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;~/github-danny/hyperdata/site/common
+~/github-danny/hyperdata/site/common/css
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I can do the routing via symlinks on the server and/or nginx routing. There might be some existing potential conflicts, eg. there could well be a &lt;code&gt;https://hyperdata.it/transmissions&lt;/code&gt; already. But I don&amp;#39;t need to worry about that right away. First get the stuff rendering in an organised fashion, figure out the plumbing later.&lt;/p&gt;
+&lt;p&gt;Speaking of plumbing, I&amp;#39;ve a toilet cistern over at No.7 to fix today if I can (might need new parts). The power&amp;#39;s off over there at the moment so I should take advantage of the daylight.&lt;/p&gt;
+&lt;p&gt;#:todo check ufw status on server&lt;/p&gt;
+&lt;p&gt;#:breakpoint&lt;/p&gt;
+
+&lt;/article&gt;
+&lt;p class=&quot;post-title h-cinzel&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;
+        
+    &lt;/a&gt;
+&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
+    </entry>
+    
+    <entry>
+        <title>Entry 2024-12-23_eat-me</title>
+        <link href="https://danny.ayers.name/entries/2024-12-23_eat-me.html"/>
+        <id>https://danny.ayers.name/entries/2024-12-23_eat-me.html</id>
+        <updated>2024-12-26T14:40:59.702Z</updated>
+        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
+
+&lt;article class=&quot;post-content&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
+    &lt;h1&gt;Eat Me&lt;/h1&gt;
+&lt;p&gt;I&amp;#39;m sorting out docs, one thing I remembered I don&amp;#39;t have in place yet is a syndication feed for these things. An absolute &lt;strong&gt;didn&amp;#39;t I do that aready?&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Like, &lt;strong&gt;I have history&lt;/strong&gt; in this space. I caught the tail end of the &lt;a href=&quot;https://en.wikipedia.org/wiki/History_of_web_syndication_technology&quot;&gt;RSS wars&lt;/a&gt;. Such a daft (multi-fronted) war. Initially I was religiously RSS 1.0, the RDF. But despite my dogmatism, I was already aware at the time how awful RDF/XML was as a format in practice. It was an easy one to get sucked into, I was enchanted by the RDF model (still am, a sweetspot IMO, but it did need Turtle syntax and named graphs to properly make it viable for a regular dev). Good folks I knew were on &lt;strong&gt;that side&lt;/strong&gt; and &lt;a href=&quot;https://en.wikipedia.org/wiki/Dave_Winer&quot;&gt;Dave Winer&lt;/a&gt; could be such a massively annoying arse. Really really massively.&lt;/p&gt;
+&lt;p&gt;In retrospect, respect where it&amp;#39;s due, Winer did push things forward. Ok, a lot of that was in folks thinking about how to do this thing right, to counter his approach, which had an overabundance of ego at it&amp;#39;s heart. That was a bit annoying itself, an intelligent, creative guy, you know I could begrudgingly call him  &lt;strong&gt;visionary&lt;/strong&gt;. Except it was overshadowed by narcissism and belligerence.&lt;/p&gt;
+&lt;p&gt;Heh, I nearly put &amp;quot;IMHO&amp;quot; there. But that reminds me of an interchange I had with him where he was incredibly dismissive of my points, passive-aggressively using Valley acronyms. I responded with &amp;quot;UYB&amp;quot;. I had made it up on the spur. But apparently it had made it into the urban dics, I lost the high ground.&lt;/p&gt;
+&lt;p&gt;But with the naming of &lt;strong&gt;RSS 2.0&lt;/strong&gt; he showed some serious genious. Marketing-wise, awesome.     &lt;/p&gt;
+&lt;p&gt;Anyway, back to &lt;strong&gt;my&lt;/strong&gt; ego. I&amp;#39;ve contributed content to 10 printed books. The only one I was the lead author on was &lt;a href=&quot;https://www.amazon.com/Beginning-Atom-Programming-Danny-Ayers/dp/0764579169&quot;&gt;Beginning RSS and Atom Programming&lt;/a&gt;. Heh, combined rating of 1.6 on reviews there.
+It was probably pretty good. Not through my efforts directly, but Wrox Press at the time had a legion of expert/expert-ish reviewers that forced you to revise, think, revise. Also Andrew was very good at his stuff. I can&amp;#39;t check, I gave all the copies I had away... oh wait, I might have the Turkish translation...(&lt;em&gt;mouldy shelves...&lt;/em&gt;)
+Nope. That is &lt;a href=&quot;https://www.amazon.com/Web-2-0-Teknolojileri-Eric-Vlist/dp/975297855X/&quot;&gt;Web 2.0 Teknolojileri&lt;/a&gt;. Wtf did I do for that? Was the same period as the RSS. Probably something with that, shoehorning in RDF somehow.&lt;/p&gt;
+&lt;p&gt;Oh yeah. Gorblimey, quite a lot of this looks like my stuff. &lt;strong&gt;FOAF!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Over the decade or so I was doing the freelance writing stuff, I did learn how to play the publishers somewhat. &lt;strong&gt;Engage the reviewer, not the reader&lt;/strong&gt;.  &lt;/p&gt;
+&lt;p&gt;Code examples in Python ffs. So I must have learnt a little bit of it at some point before forgetting it again. Also XSLT involved (on RDF/XML, eek!). But XSLT was a good language, despite the horror syntax. &lt;a href=&quot;https://en.wikipedia.org/wiki/Jeni_Tennison&quot;&gt;Jeni Tennison&lt;/a&gt; frequently sent me dizzy with the elegance she pulled out of the hat.  &lt;/p&gt;
+&lt;p&gt;It is surprising what still lives. I recently rediscovered this &lt;a href=&quot;https://hyperdata.it/xmlns/pets/&quot;&gt;Pet Profiles&lt;/a&gt; thing I did in, er...2004. Most of the associated code around there is now totally broken. But &lt;a href=&quot;https://hyperdata.it/xmlns/pets/2004-04-24/sambuca-css.xml&quot;&gt;Sambuca&amp;#39;s Profile&lt;/a&gt;, using CSS on RDF/XML, sweet. Has exactly the same little layout probs I didn&amp;#39;t get around to fixing 20 years ago.   &lt;/p&gt;
+&lt;h2&gt;I&amp;#39;ve not quite finished with my ego&lt;/h2&gt;
+&lt;p&gt;So in this fog of RSS war, some righteous folks came up with a cunning plan: &lt;a href=&quot;https://en.wikipedia.org/wiki/Atom_(web_standard)&quot;&gt;Atom&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I get an ack on &lt;a href=&quot;https://datatracker.ietf.org/doc/html/rfc4287&quot;&gt;RFC4287&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;OK, ego spent.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I was all-in with Atom Format, but kind-of backstepped out of the &lt;a href=&quot;https://datatracker.ietf.org/doc/html/rfc5023&quot;&gt;Protocol, RFC5023&lt;/a&gt;. I&amp;#39;d love to say it was because I saw the redundancy of that on top of &lt;strong&gt;Fielding-compliant REST&lt;/strong&gt;, but really it was because the other folks were shitloads better at protocols, I was out of my depth, had nothing to offer. &lt;em&gt;In retrospect&lt;/em&gt;, good move. Now I see the redundancy. And the Web stage has shifted to make absolutely awful practices that have issues dating back to &lt;a href=&quot;https://en.wikipedia.org/wiki/SOAP&quot;&gt;SOAP&lt;/a&gt;. I&amp;#39;m sure, hope and pray (in an atheistic manner)  &lt;a href=&quot;https://en.wikipedia.org/wiki/Tim_Berners-Lee&quot;&gt;timbl&lt;/a&gt; has many years left on this mortal coil, because he has a hella lotta grave-spinning backed up.&lt;/p&gt;
+&lt;p&gt;Yeah, in retrospect, Atom was the right idea. The folks around microformats, (hat tip &lt;a href=&quot;https://en.wikipedia.org/wiki/Tantek_%C3%87elik&quot;&gt;Tantek&lt;/a&gt;) had a valid point that HTML could easily carry the same information just as easily, no need for a different content format. But pragmatically, one sliver of a little toenail towards the Winer, it does now make sense to use a different format. I can still get on a high horse about content negotiation being there if you want it, &lt;strong&gt;so merrr!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;#:todo check media types/extensions known by nginx&lt;/p&gt;
+&lt;p&gt;Anyway, however long ago I got to desk this session, I had feed on mind. This is a nice little exercise. With my current workflow &amp;amp; tooling, &lt;strong&gt;how long will it take me to add a feed&lt;/strong&gt; to this site?&lt;/p&gt;
+&lt;p&gt;On my own I would guess maybe 2 very stumbly hours. I have to remember how to use the templater I&amp;#39;ve got here, I&amp;#39;ve not looked at for a few months (&lt;a href=&quot;https://mozilla.github.io/nunjucks/&quot;&gt;nunjucks&lt;/a&gt; - it looked best at the time) and also some of my own code from a day ago... (#:adhd is a thing).&lt;/p&gt;
+&lt;p&gt;But I don&amp;#39;t want to waste my own scant cognitive resources on something like this. Claude understands my setup, I made it so for his kind.&lt;/p&gt;
+&lt;p&gt;#:timestamp 23:58&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(I will need a pee, cigarette and another mug of beer first, dear Countdown Clock)&lt;/em&gt;&lt;/p&gt;
+
+&lt;/article&gt;
+&lt;p class=&quot;post-title h-cinzel&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;
+        
+    &lt;/a&gt;
+&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
+    </entry>
+    
+    <entry>
+        <title>Entry 2024-12-23_chilly</title>
+        <link href="https://danny.ayers.name/entries/2024-12-23_chilly.html"/>
+        <id>https://danny.ayers.name/entries/2024-12-23_chilly.html</id>
+        <updated>2024-12-26T14:40:59.702Z</updated>
+        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
+
+&lt;article class=&quot;post-content&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
+    &lt;h1&gt;Chilly&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;It is very chilly. I&amp;#39;m struggling to type, fingers stiff.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Last week I was still feeling scrambled after the intense UK trip. But that was a good weekend. I didn&amp;#39;t get much done, but did manage some decent relaxation, beer-assisted mental reset. This morning back to my good-enough routine, starting with catching up with AI papers while still in bed. Claudio got me up because he heard people outside, gone by the time I got to look (maybe visitors next door or maybe hardcore hikers). But this was a &lt;em&gt;good thing&lt;/em&gt;, I&amp;#39;m &lt;strong&gt;at desk before noon!&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2&gt;Position Paper Planned&lt;/h2&gt;
+&lt;p&gt;While looking at papers I had what I think might be a good idea. I&amp;#39;ve got project docs at the top of my todos right now. But a problem for me with sorting these out is that it&amp;#39;s open-ended, the things I&amp;#39;m working on are all in-progress. This makes it difficult to focus, no single, clear target. But &lt;strong&gt;idea&lt;/strong&gt; - write a &lt;strong&gt;position paper&lt;/strong&gt;. Moments after thinking that, a title sprang into my head : &amp;quot;&lt;strong&gt;The Revolution will be Automated&lt;/strong&gt;&amp;quot;. My subconscious liked the idea. Checking if that title had been used, &lt;em&gt;of course it has&lt;/em&gt;: &lt;a href=&quot;https://mirror.xyz/nyewarburton.eth/fHxCu_xF7lqci741FkdhfXtStjZjCdBmFQqbL-JL4QI&quot;&gt;The Revolution will be Automated&lt;/a&gt;, a shortish post from this September by &lt;a href=&quot;https://mirror.xyz/nyewarburton.eth/fHxCu_xF7lqci741FkdhfXtStjZjCdBmFQqbL-JL4QI&quot;&gt;Nye Warburton&lt;/a&gt;. Same domain/similar gist as what I&amp;#39;ve got in mind, except I have a lot of &lt;em&gt;other stuff&lt;/em&gt;. Nothing of that title jumps out on Google Scholar, so it&amp;#39;s good to go.&lt;/p&gt;
+&lt;h2&gt;In Camera&lt;/h2&gt;
+&lt;p&gt;I also had another little idea before getting up. I&amp;#39;ve got vocabulary work in progress as a keypart of the above (which also needs a proper write-up, status management). Scope is very broad, running across project management, methodology and the primary use will be inter-agent #:linguefranche. I&amp;#39;ll rough out what I have, get Claude&amp;#39;s opinion (in a Claude project I have called &lt;code&gt;NS&lt;/code&gt; which has a bunch of pre-existing vocabs and some of my work-in-progress as knowledge).&lt;/p&gt;
+&lt;p&gt;Ok:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-prompt&quot;&gt;I&amp;#39;m trying to find terms and their descriptions to capture a set of ideas to use in knowledge engineering and project management. Call the main notion a &amp;quot;Camera&amp;quot;. The general idea is about the attention given to a subject matter in various conceptual dimensions. I want to use the terms in project management. Drawing on the photographic camera, the pan and tilt can offer an analogy for a general direction or vector in the information space, but those words aren&amp;#39;t quite right. &amp;quot;Zoom&amp;quot; is great for the notion of changing the level of knowledge granularity, similar to to the abstract pyramid of data, information, knowledge, wisdom. But somehow expressed more concretely, so it can be applied to specific practical projects. Something along the lines of &amp;quot;Scene&amp;quot; is needed, to give the context. But the word &amp;quot;Camera&amp;quot; already carries this meaning in its Latin etymology : room. In practice I want to use constructs expressing containership of collections, probably named graphs best for that. These could be ontologies, document collections, datasets and vector stores (possibly using the Data Cube (qb) Vocabulary) or suchlike. What do you suggest for crystalizing this? rh and check for concurrencies and interop potential with the existing vocabularies in your project knowledge and elsewhere.  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I ran through a few cycles with Claude, got some things that will do for now, then the browser (Opera) crashed. I did an &lt;code&gt;apt upgrade&lt;/code&gt; earlier, so this is probably a good point for a reboot &amp;amp; break. #:breakpoint&lt;/p&gt;
+&lt;p&gt;#:todo remember &lt;a href=&quot;https://lov.linkeddata.es/dataset/lov/vocabs/scovo&quot;&gt;scovo&lt;/a&gt; in history docs&lt;/p&gt;
+
+&lt;/article&gt;
+&lt;p class=&quot;post-title h-cinzel&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;
+        
+    &lt;/a&gt;
+&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
+    </entry>
+    
+    <entry>
+        <title>Entry 2024-12-22_misty</title>
+        <link href="https://danny.ayers.name/entries/2024-12-22_misty.html"/>
+        <id>https://danny.ayers.name/entries/2024-12-22_misty.html</id>
+        <updated>2024-12-26T14:40:59.702Z</updated>
+        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
+
+&lt;article class=&quot;post-content&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
+    &lt;h1&gt;Misty&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;It was very misty this afternoon for dogwalk&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I&amp;#39;ve a misty head today, now to ramble a bit to see what condenses.&lt;/p&gt;
+&lt;p&gt;Nice reminder, #:todo #:squirt handle images etc.&lt;/p&gt;
+&lt;p&gt;It also reminded me of the name of Led Zep&amp;#39;s &lt;a href=&quot;https://www.youtube.com/watch?v=y6M3YQ_EF2E&quot;&gt;Misty Mountain Hop&lt;/a&gt;, but I couldn&amp;#39;t think why that might stick in my head until I had a listen. I really like that &amp;quot;&lt;strong&gt;dog dog dog, doggy dog dog...&lt;/strong&gt;&amp;quot;. I bet I&amp;#39;ve already played with it somewhere, but I haven&amp;#39;t a clue where.&lt;/p&gt;
+&lt;p&gt;This leads straight to my &lt;strong&gt;misty memory&lt;/strong&gt;. My memory for day-to-day things is pretty lousy, main workaround being written reminders, lists and lists and lists... But I&amp;#39;ve actually got an exceptionally good memory for things around tech and suchlike, &lt;em&gt;in a sense&lt;/em&gt;. Like, the capacity and retention of system ideas is really good, but the connectivity between them is poor, retrieval can often be hopeless. (This is almost certainly an #:adhd thing).&lt;/p&gt;
+&lt;p&gt;One specific issue comes up regularly. If I&amp;#39;ve got a plan for something worked out, but haven&amp;#39;t been active on it for a little while, I forget which bits I&amp;#39;ve done. Very often I imagine I&amp;#39;ve implemented something I haven&amp;#39;t even started, but that&amp;#39;s not a major problem, because at that point I&amp;#39;ll have a pretty good idea of how to do it. A fun, kind-of example of this is a (probably false) memory I have, of having a dream where I was playing the guitar chords to &amp;quot;Wild Thing&amp;quot; before I&amp;#39;d learned them. Following day I could play it.
+I strongly suspect this is a false memory because at the time it would have been &lt;a href=&quot;https://www.youtube.com/watch?v=xVN8_7wVSG0&quot;&gt;Hendrix&amp;#39;s version&lt;/a&gt; I&amp;#39;d have had most exposure to, and the version I learned in the dream was open G-C-D-C-G chords on a nylon-strung acoustic, rather different. &lt;em&gt;The &lt;a href=&quot;https://www.youtube.com/watch?v=5zN2wWGbGyM&quot;&gt;Goodies version&lt;/a&gt; is quite a thing, though the classic &lt;a href=&quot;https://www.youtube.com/watch?v=gSWInYFVksg&quot;&gt;Troggs version&lt;/a&gt; would be my go-to these days. Now where did I leave that ocarina..?&lt;/em&gt;  &lt;/p&gt;
+&lt;p&gt;The converse of this is a relatively minor problem, but one that&amp;#39;s incredibly annoying when it happens. I forget I&amp;#39;ve implemented something and proceed to implement it again. Like buying eggs &amp;amp; potatoes when you&amp;#39;ve already got a larder full of eggs &amp;amp; potatoes. Except they can go into extra &lt;em&gt;tortillas españolas&lt;/em&gt;.   &lt;/p&gt;
+&lt;h2&gt;Actionable : Docs!&lt;/h2&gt;
+&lt;p&gt;Ah...ok, something has condensed. Sort out project docs. The #:postcraft doc rendering bits are still fresh in my head, this would be a good opportunity. I did a #:transmission a while back to pull a list of my &lt;a href=&quot;https://github.com/danja?tab=repositories&quot;&gt;GitHub repos&lt;/a&gt;. My plan then was to have it pull the &lt;code&gt;README.md&lt;/code&gt; for each, use those to bootstrap docs. Slight snag, few had a worthwhile readme, certainly not up-to-date.&lt;/p&gt;
+&lt;p&gt;But I should be able to identify the currently active repos (they&amp;#39;ll be a bit tangled up in Claude projects too - I&amp;#39;ve quite a lot there yet to find a proper home). There&amp;#39;s my starting point. Writing some readmes should give me good anchor points from which to bootstrap the rest.&lt;/p&gt;
+&lt;p&gt;First though, a dogwalk in the dark.&lt;/p&gt;
+
+&lt;/article&gt;
+&lt;p class=&quot;post-title h-cinzel&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;
+        
+    &lt;/a&gt;
+&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
+    </entry>
+    
+    <entry>
+        <title>Entry 2024-12-21_solstice</title>
+        <link href="https://danny.ayers.name/entries/2024-12-21_solstice.html"/>
+        <id>https://danny.ayers.name/entries/2024-12-21_solstice.html</id>
+        <updated>2024-12-26T14:40:59.702Z</updated>
+        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
+
+&lt;article class=&quot;post-content&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
+    &lt;h1&gt;Solstice&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;It&amp;#39;s the shortest day!&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I&amp;#39;m ambivalent about Christmas, don&amp;#39;t think I&amp;#39;ve ever partaken of any of the other rituals of the season. But I sure do celebrate the &lt;strong&gt;winter solstice&lt;/strong&gt;, in spirit if not in much action (I plan to get a few &lt;strong&gt;beers&lt;/strong&gt; later). I can explain best by quoting a late friend of mine :    &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;Nights are drawing in.&amp;quot;
+- Geoff Beswick of Priestcliffe (every year soon after 21st June)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I&amp;#39;m pretty sure I don&amp;#39;t suffer from &lt;a href=&quot;https://en.wikipedia.org/wiki/Seasonal_affective_disorder&quot;&gt;Seasonal Affective Disorder&lt;/a&gt; in the clinical sense. But I&amp;#39;m a late riser, short days (with the associated unpleasant weather) really do impact my mood, however indirectly. So here, I&amp;#39;ll claim the quote :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;Nights are drawing out!&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2&gt;More Postcraft&lt;/h2&gt;
+&lt;p&gt;Grrr. Returning to the #:postcraft bits from yesterday, I just discovered a bug that&amp;#39;s crept into #:transmissions. I wanted to check how the paths are allocated, so went to isolate that particular operation. But...&lt;/p&gt;
+&lt;p&gt;The command :&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;./trans postcraft.copy ../postcraft/danny.ayers.name
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;should only run the subsection of the application &lt;code&gt;postcraft&lt;/code&gt; called &lt;code&gt;copy&lt;/code&gt;. This is a single #:transmission (= pipeline) in  &lt;a href=&quot;/static/artifacts/postcraft/2024-12-20/transmissions.ttl&quot;&gt;transmissions.ttl&lt;/a&gt;. I did put the wiring in place for this, but &lt;strong&gt;fool Danny&lt;/strong&gt; once again didn&amp;#39;t get around to giving it a corresponding &lt;strong&gt;test&lt;/strong&gt;. Or did I..?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;npm run test
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;-bombs straight out with an error during a test on the &lt;code&gt;FilenameMapper&lt;/code&gt; processor (still no idea if there&amp;#39;s a test for the &lt;code&gt;transmissions.sub&lt;/code&gt; selector).&lt;/p&gt;
+&lt;p&gt;Hah! &lt;strong&gt;Fool Danny&lt;/strong&gt; once again forgot to run &lt;strong&gt;tests&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Bloody hell&lt;/em&gt;, all I wanted to do with this when I got to desk yesterday was to fix a trivial CSS bug.&lt;/p&gt;
+&lt;p&gt;I suppose I&amp;#39;d best just put a bandaid on the CSS for now, then check the tests. I&amp;#39;ve been meaning to set up &lt;a href=&quot;https://en.wikipedia.org/wiki/CI/CD&quot;&gt;CI/CD&lt;/a&gt; bits on GitHub for a while... (I really want such things embedded in #:transmissions itself, so it can notify of any problems preemptively, declare it&amp;#39;s own status - &lt;a href=&quot;https://en.wikipedia.org/wiki/Shift-left_testing&quot;&gt;Shift-Left&lt;/a&gt; to the max).&lt;/p&gt;
+&lt;p&gt;Heh ho. I&amp;#39;ll have to leave that for now, got some jobs to do that require &lt;strong&gt;daylight&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;/article&gt;
+&lt;p class=&quot;post-title h-cinzel&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;
+        
+    &lt;/a&gt;
+&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
+    </entry>
+    
+</feed>
