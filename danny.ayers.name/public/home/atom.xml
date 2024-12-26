@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2024-12-26T15:26:54.955Z</updated>
+    <updated>2024-12-26T15:29:18.279Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -15,21 +15,22 @@
         <title>Entry 2024-12-26_indigestion</title>
         <link href="https://danny.ayers.name/entries/2024-12-26_indigestion.html"/>
         <id>https://danny.ayers.name/entries/2024-12-26_indigestion.html</id>
-        <updated>2024-12-26T15:26:54.955Z</updated>
+        <updated>2024-12-26T15:29:18.280Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
         &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
     &lt;h1&gt;Indigestion&lt;/h1&gt;
 &lt;p&gt;&lt;em&gt;Despite in being traditional to overeat at this time of year, it&amp;#39;s not me but my code that&amp;#39;s got tummy ache.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;The other night I had a quick stab at adding an &lt;strong&gt;Atom feed&lt;/strong&gt; here. Claude gave me some convincing-looking code, which didn&amp;#39;t work. I only had a quick look then, it looked like it might take a while to fix. It turned out to be easy, but only once I&amp;#39;d figured out what my #:postcraft code (from months ago) was doing, which took ages. My bad, I&amp;#39;m not surprised Claude got things wrong, my stuff was well obfuscated.&lt;/p&gt;
+&lt;p&gt;This blog now has an &lt;a href=&quot;https://danny.ayers.name/atom.xml&quot;&gt;Atom Feed&lt;/a&gt;. I&amp;#39;ve only done an eyeball check, but it looks ok.&lt;/p&gt;
+&lt;p&gt;The other night I had a quick stab at adding this. Claude gave me some convincing-looking code, which didn&amp;#39;t work. I only had a quick look then, it looked like it might take a while to fix. It turned out to be easy, but only once I&amp;#39;d figured out what my #:postcraft code (from months ago) was doing, which took ages. My bad, I&amp;#39;m not surprised Claude got things wrong, my stuff was well obfuscated.&lt;/p&gt;
 &lt;p&gt;The immediate issue was in the handling of &lt;code&gt;manifest.ttl&lt;/code&gt;, the purpose of which in this case was to provide &lt;code&gt;danny.ayers.name&lt;/code&gt; site-specific information to the &lt;code&gt;postcraft&lt;/code&gt; #:transmissions application. I was already well aware that a bunch of &lt;strong&gt;refactoring&lt;/strong&gt; was needed around the &lt;code&gt;transmissions.ttl&lt;/code&gt;/&lt;code&gt;config.ttl&lt;/code&gt;/&lt;code&gt;manifest.ttl&lt;/code&gt; &lt;strong&gt;separation of concerns&lt;/strong&gt;. It turned out to be worse than I thought : the handling of &lt;code&gt;manifest.ttl&lt;/code&gt; was pretty much &lt;strong&gt;hardcoded&lt;/strong&gt; in &lt;code&gt;src/processors/rdf/ConfigMap.js&lt;/code&gt;. &lt;strong&gt;Ops!&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;To get a feed rendering, as a quick workaround I copy &amp;amp; pasted the method that handled the &lt;strong&gt;RDF resource&lt;/strong&gt; &lt;code&gt;t:IndexPage&lt;/code&gt; and tweaked for &lt;code&gt;t:AtomFeed&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Not pretty, but it&amp;#39;ll do for now. That was a useful exercise, it added another flag to a specific group of #:todos, pushing up their priority in my head. What it &lt;strong&gt;should&lt;/strong&gt; have done is push up the priorities declared in the project description, managed by #:farelo. Which pushes the in-progress #:farelo up priorities (in my head).&lt;/p&gt;
 &lt;p&gt;Associated with that is &lt;strong&gt;all project docs&lt;/strong&gt;, already high on my priorities.&lt;/p&gt;
 &lt;p&gt;I&amp;#39;m not in the mood for being systematic today, but today that&amp;#39;s fine. To get the docs together I need to poke around with all the subprojects, remind myself where I&amp;#39;m at, write down their descriptions, current status &amp;amp; todos (which will ultimately be fed into #:farelo).
 I can pick any part I fancy to play around with and in doing so I&amp;#39;m doing something that will be close to critical paths.&lt;/p&gt;
-&lt;p&gt;But right now, #:dogwalk #2 before it gets dark. &lt;/p&gt;
+&lt;p&gt;But right now, #:dogwalk #2 before it gets dark.&lt;/p&gt;
 
 &lt;/article&gt;
 &lt;p class=&quot;post-title h-cinzel&quot;&gt;
@@ -43,7 +44,7 @@ I can pick any part I fancy to play around with and in doing so I&amp;#39;m doin
         <title>Entry 2024-12-23_sites</title>
         <link href="https://danny.ayers.name/entries/2024-12-23_sites.html"/>
         <id>https://danny.ayers.name/entries/2024-12-23_sites.html</id>
-        <updated>2024-12-26T15:26:54.955Z</updated>
+        <updated>2024-12-26T15:29:18.280Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -86,7 +87,7 @@ I can pick any part I fancy to play around with and in doing so I&amp;#39;m doin
         <title>Entry 2024-12-23_eat-me</title>
         <link href="https://danny.ayers.name/entries/2024-12-23_eat-me.html"/>
         <id>https://danny.ayers.name/entries/2024-12-23_eat-me.html</id>
-        <updated>2024-12-26T15:26:54.956Z</updated>
+        <updated>2024-12-26T15:29:18.280Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -129,7 +130,7 @@ Nope. That is &lt;a href=&quot;https://www.amazon.com/Web-2-0-Teknolojileri-Eric
         <title>Entry 2024-12-23_chilly</title>
         <link href="https://danny.ayers.name/entries/2024-12-23_chilly.html"/>
         <id>https://danny.ayers.name/entries/2024-12-23_chilly.html</id>
-        <updated>2024-12-26T15:26:54.956Z</updated>
+        <updated>2024-12-26T15:29:18.280Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -159,7 +160,7 @@ Nope. That is &lt;a href=&quot;https://www.amazon.com/Web-2-0-Teknolojileri-Eric
         <title>Entry 2024-12-22_misty</title>
         <link href="https://danny.ayers.name/entries/2024-12-22_misty.html"/>
         <id>https://danny.ayers.name/entries/2024-12-22_misty.html</id>
-        <updated>2024-12-26T15:26:54.956Z</updated>
+        <updated>2024-12-26T15:29:18.280Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
