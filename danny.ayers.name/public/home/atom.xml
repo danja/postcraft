@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2024-12-26T15:29:18.279Z</updated>
+    <updated>2024-12-27T12:15:52.868Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -12,10 +12,54 @@
 
     
     <entry>
+        <title>Entry 2024-12-27_projects</title>
+        <link href="https://danny.ayers.name/entries/2024-12-27_projects.html"/>
+        <id>https://danny.ayers.name/entries/2024-12-27_projects.html</id>
+        <updated>2024-12-27T12:15:52.868Z</updated>
+        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
+
+&lt;article class=&quot;post-content&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
+    &lt;h1&gt;Projects&lt;/h1&gt;
+&lt;p&gt;Project docs are a priority for me right now. But interdependencies are crazy-convoluted.&lt;/p&gt;
+&lt;p&gt;First problem is identifying the projects...&lt;/p&gt;
+&lt;p&gt;Most of the things I&amp;#39;ve been most active with recently are still early-stage as Claude projects and/or on notes I&amp;#39;ve got scattered around, or in repos which appear two dirs on my office machine. I&amp;#39;ll get back to that later.&lt;/p&gt;
+&lt;p&gt;First I need to remind myself where I was up to with :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;#:tbox - a Docker container for &lt;em&gt;stuff&lt;/em&gt;, most relevant right know, &lt;strong&gt;knowledgebases&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;#:semem - a &lt;strong&gt;knowledgebase interface&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;tbox&lt;/h2&gt;
+&lt;p&gt;Hah! I&amp;#39;d got further than I remembered. The Job One &lt;a href=&quot;https://jena.apache.org/documentation/fuseki2/&quot;&gt;Fuseki SPARQL Server&lt;/a&gt; is already in place. Exposed at &lt;a href=&quot;http://localhost:4030&quot;&gt;http://localhost:4030&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Looks like I got &lt;a href=&quot;https://prosody.im/&quot;&gt;Prosody IM Server&lt;/a&gt; in there too, but I&amp;#39;m pretty sure I haven&amp;#39;t tested.&lt;/p&gt;
+&lt;p&gt;I need to get #:transmissions and other core #:hyperdata projects in here too.&lt;/p&gt;
+&lt;p&gt;Because I need #:semem to organise my existing docs.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;I saved a link about setting up Docker as a dev container, best read that first.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;semem&lt;/h2&gt;
+&lt;p&gt;Dog walk now, coffee with Mari &amp;amp; plumbing supplies run soon. &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;github-danny$ ls
+backup.sh         dogbot        elfquake.org           getting-things-diced-on-paper  hyperdata-static   ls.txt       postcraft                server_      strandz     transmissions
+claude-sync       elfquake      foaf-retro             hyperdata                      hyperdata-support  markor-docs  postcraft-raw-hyperdata  sparqlpress  temp
+danny.ayers.name  elfquake-old  foaf-retro-non-github  hyperdata-desktop_ex-packages  jsbrains           mcp-o        postcraft-support        StoneRDF     trans-apps
+
+~/github-danny/hyperdata/packages$ ls
+auth-test  common   dogbot  graph-editor       kia            ns                    progressive-scraper  server       sparql-store-lite  strandz  trans-dev  utils
+chauvin    danping  farelo  hyperdata-android  ldap-auth-app  open-world-interface  semem                sheltopusik  store-wrapper      tbox     trellis
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;/article&gt;
+&lt;p class=&quot;post-title h-cinzel&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;
+        
+    &lt;/a&gt;
+&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
+    </entry>
+    
+    <entry>
         <title>Entry 2024-12-26_indigestion</title>
         <link href="https://danny.ayers.name/entries/2024-12-26_indigestion.html"/>
         <id>https://danny.ayers.name/entries/2024-12-26_indigestion.html</id>
-        <updated>2024-12-26T15:29:18.280Z</updated>
+        <updated>2024-12-27T12:15:52.869Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -44,7 +88,7 @@ I can pick any part I fancy to play around with and in doing so I&amp;#39;m doin
         <title>Entry 2024-12-23_sites</title>
         <link href="https://danny.ayers.name/entries/2024-12-23_sites.html"/>
         <id>https://danny.ayers.name/entries/2024-12-23_sites.html</id>
-        <updated>2024-12-26T15:29:18.280Z</updated>
+        <updated>2024-12-27T12:15:52.869Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -87,7 +131,7 @@ I can pick any part I fancy to play around with and in doing so I&amp;#39;m doin
         <title>Entry 2024-12-23_eat-me</title>
         <link href="https://danny.ayers.name/entries/2024-12-23_eat-me.html"/>
         <id>https://danny.ayers.name/entries/2024-12-23_eat-me.html</id>
-        <updated>2024-12-26T15:29:18.280Z</updated>
+        <updated>2024-12-27T12:15:52.869Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -130,7 +174,7 @@ Nope. That is &lt;a href=&quot;https://www.amazon.com/Web-2-0-Teknolojileri-Eric
         <title>Entry 2024-12-23_chilly</title>
         <link href="https://danny.ayers.name/entries/2024-12-23_chilly.html"/>
         <id>https://danny.ayers.name/entries/2024-12-23_chilly.html</id>
-        <updated>2024-12-26T15:29:18.280Z</updated>
+        <updated>2024-12-27T12:15:52.869Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -147,37 +191,6 @@ Nope. That is &lt;a href=&quot;https://www.amazon.com/Web-2-0-Teknolojileri-Eric
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I ran through a few cycles with Claude, got some things that will do for now, then the browser (Opera) crashed. I did an &lt;code&gt;apt upgrade&lt;/code&gt; earlier, so this is probably a good point for a reboot &amp;amp; break. #:breakpoint&lt;/p&gt;
 &lt;p&gt;#:todo remember &lt;a href=&quot;https://lov.linkeddata.es/dataset/lov/vocabs/scovo&quot;&gt;scovo&lt;/a&gt; in history docs&lt;/p&gt;
-
-&lt;/article&gt;
-&lt;p class=&quot;post-title h-cinzel&quot;&gt;
-    &lt;a href=&quot;&quot;&gt;
-        
-    &lt;/a&gt;
-&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
-    </entry>
-    
-    <entry>
-        <title>Entry 2024-12-22_misty</title>
-        <link href="https://danny.ayers.name/entries/2024-12-22_misty.html"/>
-        <id>https://danny.ayers.name/entries/2024-12-22_misty.html</id>
-        <updated>2024-12-26T15:29:18.280Z</updated>
-        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
-
-&lt;article class=&quot;post-content&quot;&gt;
-        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
-    &lt;h1&gt;Misty&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;It was very misty this afternoon for dogwalk&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;I&amp;#39;ve a misty head today, now to ramble a bit to see what condenses.&lt;/p&gt;
-&lt;p&gt;Nice reminder, #:todo #:squirt handle images etc.&lt;/p&gt;
-&lt;p&gt;It also reminded me of the name of Led Zep&amp;#39;s &lt;a href=&quot;https://www.youtube.com/watch?v=y6M3YQ_EF2E&quot;&gt;Misty Mountain Hop&lt;/a&gt;, but I couldn&amp;#39;t think why that might stick in my head until I had a listen. I really like that &amp;quot;&lt;strong&gt;dog dog dog, doggy dog dog...&lt;/strong&gt;&amp;quot;. I bet I&amp;#39;ve already played with it somewhere, but I haven&amp;#39;t a clue where.&lt;/p&gt;
-&lt;p&gt;This leads straight to my &lt;strong&gt;misty memory&lt;/strong&gt;. My memory for day-to-day things is pretty lousy, main workaround being written reminders, lists and lists and lists... But I&amp;#39;ve actually got an exceptionally good memory for things around tech and suchlike, &lt;em&gt;in a sense&lt;/em&gt;. Like, the capacity and retention of system ideas is really good, but the connectivity between them is poor, retrieval can often be hopeless. (This is almost certainly an #:adhd thing).&lt;/p&gt;
-&lt;p&gt;One specific issue comes up regularly. If I&amp;#39;ve got a plan for something worked out, but haven&amp;#39;t been active on it for a little while, I forget which bits I&amp;#39;ve done. Very often I imagine I&amp;#39;ve implemented something I haven&amp;#39;t even started, but that&amp;#39;s not a major problem, because at that point I&amp;#39;ll have a pretty good idea of how to do it. A fun, kind-of example of this is a (probably false) memory I have, of having a dream where I was playing the guitar chords to &amp;quot;Wild Thing&amp;quot; before I&amp;#39;d learned them. Following day I could play it.
-I strongly suspect this is a false memory because at the time it would have been &lt;a href=&quot;https://www.youtube.com/watch?v=xVN8_7wVSG0&quot;&gt;Hendrix&amp;#39;s version&lt;/a&gt; I&amp;#39;d have had most exposure to, and the version I learned in the dream was open G-C-D-C-G chords on a nylon-strung acoustic, rather different. &lt;em&gt;The &lt;a href=&quot;https://www.youtube.com/watch?v=5zN2wWGbGyM&quot;&gt;Goodies version&lt;/a&gt; is quite a thing, though the classic &lt;a href=&quot;https://www.youtube.com/watch?v=gSWInYFVksg&quot;&gt;Troggs version&lt;/a&gt; would be my go-to these days. Now where did I leave that ocarina..?&lt;/em&gt;  &lt;/p&gt;
-&lt;p&gt;The converse of this is a relatively minor problem, but one that&amp;#39;s incredibly annoying when it happens. I forget I&amp;#39;ve implemented something and proceed to implement it again. Like buying eggs &amp;amp; potatoes when you&amp;#39;ve already got a larder full of eggs &amp;amp; potatoes. Except they can go into extra &lt;em&gt;tortillas españolas&lt;/em&gt;.   &lt;/p&gt;
-&lt;h2&gt;Actionable : Docs!&lt;/h2&gt;
-&lt;p&gt;Ah...ok, something has condensed. Sort out project docs. The #:postcraft doc rendering bits are still fresh in my head, this would be a good opportunity. I did a #:transmission a while back to pull a list of my &lt;a href=&quot;https://github.com/danja?tab=repositories&quot;&gt;GitHub repos&lt;/a&gt;. My plan then was to have it pull the &lt;code&gt;README.md&lt;/code&gt; for each, use those to bootstrap docs. Slight snag, few had a worthwhile readme, certainly not up-to-date.&lt;/p&gt;
-&lt;p&gt;But I should be able to identify the currently active repos (they&amp;#39;ll be a bit tangled up in Claude projects too - I&amp;#39;ve quite a lot there yet to find a proper home). There&amp;#39;s my starting point. Writing some readmes should give me good anchor points from which to bootstrap the rest.&lt;/p&gt;
-&lt;p&gt;First though, a dogwalk in the dark.&lt;/p&gt;
 
 &lt;/article&gt;
 &lt;p class=&quot;post-title h-cinzel&quot;&gt;
