@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2024-12-27T12:15:52.868Z</updated>
+    <updated>2024-12-28T16:29:10.602Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -12,10 +12,37 @@
 
     
     <entry>
+        <title>Entry 2024-12-28_db</title>
+        <link href="https://danny.ayers.name/entries/2024-12-28_db.html"/>
+        <id>https://danny.ayers.name/entries/2024-12-28_db.html</id>
+        <updated>2024-12-28T16:29:10.602Z</updated>
+        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
+
+&lt;article class=&quot;post-content&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
+    &lt;h1&gt;DB&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;I&amp;#39;ve got drum &amp;amp; bass playing&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Brain slow today because I had a very late night. But I&amp;#39;m quite happy with that, because I actually made it into the music room for a couple of hours. I&amp;#39;m working on a suite of tracks that will share some common elements. What was the word for those 70s prog rock...gottit, I want to make a &lt;strong&gt;concept album&lt;/strong&gt;. Unlike virtually all the prog rocks, I want this thing to be interesting.
+Anyway, there was a specific idea I wanted to try. The music room has often been painful recently, random bits of gear failing. So I was expecting to waste loads of time being the engineer. Except - everything worked a treat. I got a good first draft of the idea down. In the early hours, this particular part is at 160 bpm. After a couple of hours of that my body had gone a bit hyper. So I ended up taking Claudio for a walk at 5 am. Was enjoyable in a Blair Witch Project way.&lt;/p&gt;
+&lt;h2&gt;tbox&lt;/h2&gt;
+&lt;p&gt;I&amp;#39;ve been doing a bit more on this. I need some advice on DNS handling, but to get that out of Claude I need to let him known what I&amp;#39;m trying to do with #:tbox.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I need your advice on DNS handling. Please consider the following description and tell me your recommendations. The goal of the tbox project is to create an intelligent agent ecosystem, including a knowledgebase, in a Docker container. It will interact with the outside world primarily through HTTP (using custom node services) and the XMPP protocol. It is intended to be used in two ways : as a development environment on a desktop computer or as an online service. Online, I plan to use a domain I control, &lt;code&gt;strandz.it&lt;/code&gt;, possibly with services on subdomains eg. &lt;code&gt;xmpp.strandz.it&lt;/code&gt;. I already have nginx set up on the server for routing with https support, so it&amp;#39;s fine for the Docker container to expose regular http &amp;amp; xmpp ports without encryption. Locally, a priority is to be able to do selective hot code updates while leaving other services on the container, eg. fuseki and prosody live.  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;/article&gt;
+&lt;p class=&quot;post-title h-cinzel&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;
+        
+    &lt;/a&gt;
+&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
+    </entry>
+    
+    <entry>
         <title>Entry 2024-12-27_projects</title>
         <link href="https://danny.ayers.name/entries/2024-12-27_projects.html"/>
         <id>https://danny.ayers.name/entries/2024-12-27_projects.html</id>
-        <updated>2024-12-27T12:15:52.868Z</updated>
+        <updated>2024-12-28T16:29:10.602Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -59,7 +86,7 @@ chauvin    danping  farelo  hyperdata-android  ldap-auth-app  open-world-interfa
         <title>Entry 2024-12-26_indigestion</title>
         <link href="https://danny.ayers.name/entries/2024-12-26_indigestion.html"/>
         <id>https://danny.ayers.name/entries/2024-12-26_indigestion.html</id>
-        <updated>2024-12-27T12:15:52.869Z</updated>
+        <updated>2024-12-28T16:29:10.602Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -88,7 +115,7 @@ I can pick any part I fancy to play around with and in doing so I&amp;#39;m doin
         <title>Entry 2024-12-23_sites</title>
         <link href="https://danny.ayers.name/entries/2024-12-23_sites.html"/>
         <id>https://danny.ayers.name/entries/2024-12-23_sites.html</id>
-        <updated>2024-12-27T12:15:52.869Z</updated>
+        <updated>2024-12-28T16:29:10.602Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -131,7 +158,7 @@ I can pick any part I fancy to play around with and in doing so I&amp;#39;m doin
         <title>Entry 2024-12-23_eat-me</title>
         <link href="https://danny.ayers.name/entries/2024-12-23_eat-me.html"/>
         <id>https://danny.ayers.name/entries/2024-12-23_eat-me.html</id>
-        <updated>2024-12-27T12:15:52.869Z</updated>
+        <updated>2024-12-28T16:29:10.603Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -161,36 +188,6 @@ Nope. That is &lt;a href=&quot;https://www.amazon.com/Web-2-0-Teknolojileri-Eric
 &lt;p&gt;But I don&amp;#39;t want to waste my own scant cognitive resources on something like this. Claude understands my setup, I made it so for his kind.&lt;/p&gt;
 &lt;p&gt;#:timestamp 23:58&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;(I will need a pee, cigarette and another mug of beer first, dear Countdown Clock)&lt;/em&gt;&lt;/p&gt;
-
-&lt;/article&gt;
-&lt;p class=&quot;post-title h-cinzel&quot;&gt;
-    &lt;a href=&quot;&quot;&gt;
-        
-    &lt;/a&gt;
-&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
-    </entry>
-    
-    <entry>
-        <title>Entry 2024-12-23_chilly</title>
-        <link href="https://danny.ayers.name/entries/2024-12-23_chilly.html"/>
-        <id>https://danny.ayers.name/entries/2024-12-23_chilly.html</id>
-        <updated>2024-12-27T12:15:52.869Z</updated>
-        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
-
-&lt;article class=&quot;post-content&quot;&gt;
-        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
-    &lt;h1&gt;Chilly&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;It is very chilly. I&amp;#39;m struggling to type, fingers stiff.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Last week I was still feeling scrambled after the intense UK trip. But that was a good weekend. I didn&amp;#39;t get much done, but did manage some decent relaxation, beer-assisted mental reset. This morning back to my good-enough routine, starting with catching up with AI papers while still in bed. Claudio got me up because he heard people outside, gone by the time I got to look (maybe visitors next door or maybe hardcore hikers). But this was a &lt;em&gt;good thing&lt;/em&gt;, I&amp;#39;m &lt;strong&gt;at desk before noon!&lt;/strong&gt;.&lt;/p&gt;
-&lt;h2&gt;Position Paper Planned&lt;/h2&gt;
-&lt;p&gt;While looking at papers I had what I think might be a good idea. I&amp;#39;ve got project docs at the top of my todos right now. But a problem for me with sorting these out is that it&amp;#39;s open-ended, the things I&amp;#39;m working on are all in-progress. This makes it difficult to focus, no single, clear target. But &lt;strong&gt;idea&lt;/strong&gt; - write a &lt;strong&gt;position paper&lt;/strong&gt;. Moments after thinking that, a title sprang into my head : &amp;quot;&lt;strong&gt;The Revolution will be Automated&lt;/strong&gt;&amp;quot;. My subconscious liked the idea. Checking if that title had been used, &lt;em&gt;of course it has&lt;/em&gt;: &lt;a href=&quot;https://mirror.xyz/nyewarburton.eth/fHxCu_xF7lqci741FkdhfXtStjZjCdBmFQqbL-JL4QI&quot;&gt;The Revolution will be Automated&lt;/a&gt;, a shortish post from this September by &lt;a href=&quot;https://mirror.xyz/nyewarburton.eth/fHxCu_xF7lqci741FkdhfXtStjZjCdBmFQqbL-JL4QI&quot;&gt;Nye Warburton&lt;/a&gt;. Same domain/similar gist as what I&amp;#39;ve got in mind, except I have a lot of &lt;em&gt;other stuff&lt;/em&gt;. Nothing of that title jumps out on Google Scholar, so it&amp;#39;s good to go.&lt;/p&gt;
-&lt;h2&gt;In Camera&lt;/h2&gt;
-&lt;p&gt;I also had another little idea before getting up. I&amp;#39;ve got vocabulary work in progress as a keypart of the above (which also needs a proper write-up, status management). Scope is very broad, running across project management, methodology and the primary use will be inter-agent #:linguefranche. I&amp;#39;ll rough out what I have, get Claude&amp;#39;s opinion (in a Claude project I have called &lt;code&gt;NS&lt;/code&gt; which has a bunch of pre-existing vocabs and some of my work-in-progress as knowledge).&lt;/p&gt;
-&lt;p&gt;Ok:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-prompt&quot;&gt;I&amp;#39;m trying to find terms and their descriptions to capture a set of ideas to use in knowledge engineering and project management. Call the main notion a &amp;quot;Camera&amp;quot;. The general idea is about the attention given to a subject matter in various conceptual dimensions. I want to use the terms in project management. Drawing on the photographic camera, the pan and tilt can offer an analogy for a general direction or vector in the information space, but those words aren&amp;#39;t quite right. &amp;quot;Zoom&amp;quot; is great for the notion of changing the level of knowledge granularity, similar to to the abstract pyramid of data, information, knowledge, wisdom. But somehow expressed more concretely, so it can be applied to specific practical projects. Something along the lines of &amp;quot;Scene&amp;quot; is needed, to give the context. But the word &amp;quot;Camera&amp;quot; already carries this meaning in its Latin etymology : room. In practice I want to use constructs expressing containership of collections, probably named graphs best for that. These could be ontologies, document collections, datasets and vector stores (possibly using the Data Cube (qb) Vocabulary) or suchlike. What do you suggest for crystalizing this? rh and check for concurrencies and interop potential with the existing vocabularies in your project knowledge and elsewhere.  
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I ran through a few cycles with Claude, got some things that will do for now, then the browser (Opera) crashed. I did an &lt;code&gt;apt upgrade&lt;/code&gt; earlier, so this is probably a good point for a reboot &amp;amp; break. #:breakpoint&lt;/p&gt;
-&lt;p&gt;#:todo remember &lt;a href=&quot;https://lov.linkeddata.es/dataset/lov/vocabs/scovo&quot;&gt;scovo&lt;/a&gt; in history docs&lt;/p&gt;
 
 &lt;/article&gt;
 &lt;p class=&quot;post-title h-cinzel&quot;&gt;
