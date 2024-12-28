@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2024-12-28T16:29:10.602Z</updated>
+    <updated>2024-12-28T16:31:40.251Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -15,7 +15,7 @@
         <title>Entry 2024-12-28_db</title>
         <link href="https://danny.ayers.name/entries/2024-12-28_db.html"/>
         <id>https://danny.ayers.name/entries/2024-12-28_db.html</id>
-        <updated>2024-12-28T16:29:10.602Z</updated>
+        <updated>2024-12-28T16:31:40.251Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -29,6 +29,9 @@ Anyway, there was a specific idea I wanted to try. The music room has often been
 &lt;blockquote&gt;
 &lt;p&gt;I need your advice on DNS handling. Please consider the following description and tell me your recommendations. The goal of the tbox project is to create an intelligent agent ecosystem, including a knowledgebase, in a Docker container. It will interact with the outside world primarily through HTTP (using custom node services) and the XMPP protocol. It is intended to be used in two ways : as a development environment on a desktop computer or as an online service. Online, I plan to use a domain I control, &lt;code&gt;strandz.it&lt;/code&gt;, possibly with services on subdomains eg. &lt;code&gt;xmpp.strandz.it&lt;/code&gt;. I already have nginx set up on the server for routing with https support, so it&amp;#39;s fine for the Docker container to expose regular http &amp;amp; xmpp ports without encryption. Locally, a priority is to be able to do selective hot code updates while leaving other services on the container, eg. fuseki and prosody live.  &lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;Ok, after a few cycles Claude gave me some material that looks good, I&amp;#39;ve saved as-is under:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;/home/danny/github-danny/hyperdata/packages/tbox/docs/artifacts_2024-12-28
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;/article&gt;
 &lt;p class=&quot;post-title h-cinzel&quot;&gt;
@@ -42,7 +45,7 @@ Anyway, there was a specific idea I wanted to try. The music room has often been
         <title>Entry 2024-12-27_projects</title>
         <link href="https://danny.ayers.name/entries/2024-12-27_projects.html"/>
         <id>https://danny.ayers.name/entries/2024-12-27_projects.html</id>
-        <updated>2024-12-28T16:29:10.602Z</updated>
+        <updated>2024-12-28T16:31:40.251Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -86,7 +89,7 @@ chauvin    danping  farelo  hyperdata-android  ldap-auth-app  open-world-interfa
         <title>Entry 2024-12-26_indigestion</title>
         <link href="https://danny.ayers.name/entries/2024-12-26_indigestion.html"/>
         <id>https://danny.ayers.name/entries/2024-12-26_indigestion.html</id>
-        <updated>2024-12-28T16:29:10.602Z</updated>
+        <updated>2024-12-28T16:31:40.251Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -115,7 +118,7 @@ I can pick any part I fancy to play around with and in doing so I&amp;#39;m doin
         <title>Entry 2024-12-23_sites</title>
         <link href="https://danny.ayers.name/entries/2024-12-23_sites.html"/>
         <id>https://danny.ayers.name/entries/2024-12-23_sites.html</id>
-        <updated>2024-12-28T16:29:10.602Z</updated>
+        <updated>2024-12-28T16:31:40.251Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -158,7 +161,7 @@ I can pick any part I fancy to play around with and in doing so I&amp;#39;m doin
         <title>Entry 2024-12-23_eat-me</title>
         <link href="https://danny.ayers.name/entries/2024-12-23_eat-me.html"/>
         <id>https://danny.ayers.name/entries/2024-12-23_eat-me.html</id>
-        <updated>2024-12-28T16:29:10.603Z</updated>
+        <updated>2024-12-28T16:31:40.251Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
