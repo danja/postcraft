@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2024-12-29T11:10:53.562Z</updated>
+    <updated>2024-12-29T13:19:54.608Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -15,7 +15,7 @@
         <title>Entry 2024-12-29_sunny-day</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_sunny-day.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_sunny-day.html</id>
-        <updated>2024-12-29T11:10:53.562Z</updated>
+        <updated>2024-12-29T13:19:54.608Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -40,10 +40,49 @@
     </entry>
     
     <entry>
+        <title>Entry 2024-12-29_semem-ollama</title>
+        <link href="https://danny.ayers.name/entries/2024-12-29_semem-ollama.html"/>
+        <id>https://danny.ayers.name/entries/2024-12-29_semem-ollama.html</id>
+        <updated>2024-12-29T13:19:54.609Z</updated>
+        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
+
+&lt;article class=&quot;post-content&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
+    &lt;h1&gt;Semem Ollama&lt;/h1&gt;
+&lt;p&gt;#:semem, the &lt;strong&gt;Semantic Memory&lt;/strong&gt; component of #:hyperdata I&amp;#39;m working on is a high priority for me, there are a lot of places I want to use it.&lt;/p&gt;
+&lt;p&gt;I want to try and get the most out of &lt;a href=&quot;https://en.wikipedia.org/wiki/Large_language_model&quot;&gt;Large Language Model&lt;/a&gt; and &lt;a href=&quot;https://en.wikipedia.org/wiki/Linked_data&quot;&gt;Linked Data&lt;/a&gt; integration. It&amp;#39;s a seriously fertile space, huge potential, lots of &lt;strong&gt;blue sky&lt;/strong&gt; for research. I&amp;#39;ve got a stack of ideas to try (many roughed out in scattered notes), but I&amp;#39;m following the dev strategy of prioritizing activities for which I have an immediate use. This has led me to &lt;a href=&quot;https://en.wikipedia.org/wiki/SPARQL&quot;&gt;SPARQL&lt;/a&gt; store-backed Graph &lt;a href=&quot;https://en.wikipedia.org/wiki/Retrieval-augmented_generation&quot;&gt;RAG&lt;/a&gt; as the inroad. About a year ago, to help get my head around this, I made a little &lt;a href=&quot;https://www.llamaindex.ai/&quot;&gt;LlamaIndex&lt;/a&gt; extension, &lt;a href=&quot;https://github.com/danja/nlp/tree/main/GraphRAG&quot;&gt;GraphRAG with SPARQL&lt;/a&gt;. This was only a minimal proof-of-concept, but did give me a mental foothold.&lt;/p&gt;
+&lt;p&gt;The majority of the current activity in this space seems focused on using LLMs to derive &lt;a href=&quot;https://en.wikipedia.org/wiki/Resource_Description_Framework&quot;&gt;RDF&lt;/a&gt; models from text (this is what the bits above did). For my needs I&amp;#39;m putting the emphasis more on aligning LLM-interpreted text with existing ontologies. Ok, I&amp;#39;m developing ontologies in a just-in-time fashion, but still treating the resources there as &amp;quot;digital&amp;quot; (logically defined) anchor points for the &amp;quot;analog&amp;quot; (probabilistic) shapes around LLMs.&lt;/p&gt;
+&lt;p&gt;I made a couple of underlying design choices around my #:hyperdata uber-project. One is to favour Javascript. Not everyone&amp;#39;s preferred language (see &lt;a href=&quot;https://www.youtube.com/watch?v=03lRzf7iSiU&quot;&gt;What&amp;#39;s Your Least Favourite Programming Language? (2024 soundcheck question) - Computerphile&lt;/a&gt;), especially with AI dev being Python-first. But as I need to use JS in the browser it&amp;#39;s a way of reducing my cognitive load (I&amp;#39;m really bad at remembering syntax). Another is to do things kind-of from scratch, avoiding frameworks (libs ok). I&amp;#39;m &lt;a href=&quot;https://en.wikipedia.org/wiki/Eating_your_own_dog_food&quot;&gt;dogfooding&lt;/a&gt; to the max because I want to understand what&amp;#39;s going on.&lt;/p&gt;
+&lt;p&gt;A key part of #:semem is embeddings derived from text. A key tool I need asap is a similarity-based search across my scattered docs (so I&amp;#39;m not continually repeating myself). &lt;a href=&quot;https://github.com/trustgraph-ai/trustgraph&quot;&gt;TrustGraph&lt;/a&gt; is broadly the kind of system I&amp;#39;m aiming for, but that&amp;#39;s big and quite blackboxy. While I was still going around in circles at a lower level, trying to decide which &lt;strong&gt;vector DB&lt;/strong&gt; tooling to use, I stumbled on &lt;a href=&quot;https://github.com/caspianmoon/memoripy&quot;&gt;memoripy&lt;/a&gt;. As the name suggests, it&amp;#39;s Python. But it&amp;#39;s an understandable size, has the general shape I&amp;#39;m after and uses specific well-known libs (eg. &lt;a href=&quot;https://github.com/facebookresearch/faiss&quot;&gt;Faiss&lt;/a&gt;) that all have &lt;strong&gt;JS APIs&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;So for an initial setup for #:semem, the other week I got Claude to help me port it to JS. Once I&amp;#39;d got what appeared to be necessary coverage, I left it there, untested.&lt;/p&gt;
+&lt;p&gt;Coming back to it today I see most of the examples use the OpenAI API. I don&amp;#39;t have any credit on that right now. But &lt;a href=&quot;https://github.com/ollama/ollama&quot;&gt;Ollama&lt;/a&gt; is also an option. I&amp;#39;ve got that set up locally, should do nicely to kickstart #:semem.&lt;/p&gt;
+&lt;p&gt;I had a quick skim of the available small &lt;a href=&quot;https://ollama.com/search&quot;&gt;models&lt;/a&gt;. One I hadn&amp;#39;t noticed before is &lt;a href=&quot;https://ollama.com/library/nomic-embed-text&quot;&gt;nomic-embed-text&lt;/a&gt;. Ok, that looks a good candidate for my embeddings. When playing, I got very promising results with &lt;code&gt;orca&lt;/code&gt;, &lt;code&gt;phi&lt;/code&gt; and &lt;code&gt;qwen&lt;/code&gt;. They still seem to be up there in the populars, so I some have initial LLM candidates already installed.
+I can&amp;#39;t remember when I last update Ollama itself, I&amp;#39;d better do that now.
+The &lt;a href=&quot;https://github.com/ollama/ollama/blob/main/docs/linux.md&quot;&gt;manual install docs&lt;/a&gt; have this :&lt;/p&gt;
+&lt;blockquote&gt;
+If you are upgrading from a prior version, you should remove the old libraries with sudo rm -rf /usr/lib/ollama first.
+
+&lt;p&gt;Download and extract the package:   &lt;/p&gt;
+&lt;p&gt;curl -L &lt;a href=&quot;https://ollama.com/download/ollama-linux-amd64.tgz&quot;&gt;https://ollama.com/download/ollama-linux-amd64.tgz&lt;/a&gt; -o ollama-linux-amd64.tgz
+sudo tar -C /usr -xzf ollama-linux-amd64.tgz&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;That&amp;#39;ll take a while on this connection.&lt;/p&gt;
+&lt;p&gt;Dogwalk time.&lt;/p&gt;
+
+&lt;/article&gt;
+&lt;p class=&quot;post-title h-cinzel&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;
+        
+    &lt;/a&gt;
+&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
+    </entry>
+    
+    <entry>
         <title>Entry 2024-12-29_pivots</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_pivots.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_pivots.html</id>
-        <updated>2024-12-29T11:10:53.562Z</updated>
+        <updated>2024-12-29T13:19:54.609Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -74,7 +113,7 @@ In quasi-parallel, towards #:ProofPivot, two must-haves : write down core projec
         <title>Entry 2024-12-28_db</title>
         <link href="https://danny.ayers.name/entries/2024-12-28_db.html"/>
         <id>https://danny.ayers.name/entries/2024-12-28_db.html</id>
-        <updated>2024-12-29T11:10:53.563Z</updated>
+        <updated>2024-12-29T13:19:54.609Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -104,7 +143,7 @@ Anyway, there was a specific idea I wanted to try. The music room has often been
         <title>Entry 2024-12-27_projects</title>
         <link href="https://danny.ayers.name/entries/2024-12-27_projects.html"/>
         <id>https://danny.ayers.name/entries/2024-12-27_projects.html</id>
-        <updated>2024-12-29T11:10:53.564Z</updated>
+        <updated>2024-12-29T13:19:54.609Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -135,35 +174,6 @@ danny.ayers.name  elfquake-old  foaf-retro-non-github  hyperdata-desktop_ex-pack
 auth-test  common   dogbot  graph-editor       kia            ns                    progressive-scraper  server       sparql-store-lite  strandz  trans-dev  utils
 chauvin    danping  farelo  hyperdata-android  ldap-auth-app  open-world-interface  semem                sheltopusik  store-wrapper      tbox     trellis
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;/article&gt;
-&lt;p class=&quot;post-title h-cinzel&quot;&gt;
-    &lt;a href=&quot;&quot;&gt;
-        
-    &lt;/a&gt;
-&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
-    </entry>
-    
-    <entry>
-        <title>Entry 2024-12-26_indigestion</title>
-        <link href="https://danny.ayers.name/entries/2024-12-26_indigestion.html"/>
-        <id>https://danny.ayers.name/entries/2024-12-26_indigestion.html</id>
-        <updated>2024-12-29T11:10:53.564Z</updated>
-        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
-
-&lt;article class=&quot;post-content&quot;&gt;
-        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
-    &lt;h1&gt;Indigestion&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;Despite in being traditional to overeat at this time of year, it&amp;#39;s not me but my code that&amp;#39;s got tummy ache.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;This blog now has an &lt;a href=&quot;https://danny.ayers.name/atom.xml&quot;&gt;Atom Feed&lt;/a&gt;. I&amp;#39;ve only done an eyeball check, but it looks ok.&lt;/p&gt;
-&lt;p&gt;The other night I had a quick stab at adding this. Claude gave me some convincing-looking code, which didn&amp;#39;t work. I only had a quick look then, it looked like it might take a while to fix. It turned out to be easy, but only once I&amp;#39;d figured out what my #:postcraft code (from months ago) was doing, which took ages. My bad, I&amp;#39;m not surprised Claude got things wrong, my stuff was well obfuscated.&lt;/p&gt;
-&lt;p&gt;The immediate issue was in the handling of &lt;code&gt;manifest.ttl&lt;/code&gt;, the purpose of which in this case was to provide &lt;code&gt;danny.ayers.name&lt;/code&gt; site-specific information to the &lt;code&gt;postcraft&lt;/code&gt; #:transmissions application. I was already well aware that a bunch of &lt;strong&gt;refactoring&lt;/strong&gt; was needed around the &lt;code&gt;transmissions.ttl&lt;/code&gt;/&lt;code&gt;config.ttl&lt;/code&gt;/&lt;code&gt;manifest.ttl&lt;/code&gt; &lt;strong&gt;separation of concerns&lt;/strong&gt;. It turned out to be worse than I thought : the handling of &lt;code&gt;manifest.ttl&lt;/code&gt; was pretty much &lt;strong&gt;hardcoded&lt;/strong&gt; in &lt;code&gt;src/processors/rdf/ConfigMap.js&lt;/code&gt;. &lt;strong&gt;Ops!&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;To get a feed rendering, as a quick workaround I copy &amp;amp; pasted the method that handled the &lt;strong&gt;RDF resource&lt;/strong&gt; &lt;code&gt;t:IndexPage&lt;/code&gt; and tweaked for &lt;code&gt;t:AtomFeed&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Not pretty, but it&amp;#39;ll do for now. That was a useful exercise, it added another flag to a specific group of #:todos, pushing up their priority in my head. What it &lt;strong&gt;should&lt;/strong&gt; have done is push up the priorities declared in the project description, managed by #:farelo. Which pushes the in-progress #:farelo up priorities (in my head).&lt;/p&gt;
-&lt;p&gt;Associated with that is &lt;strong&gt;all project docs&lt;/strong&gt;, already high on my priorities.&lt;/p&gt;
-&lt;p&gt;I&amp;#39;m not in the mood for being systematic today, but today that&amp;#39;s fine. To get the docs together I need to poke around with all the subprojects, remind myself where I&amp;#39;m at, write down their descriptions, current status &amp;amp; todos (which will ultimately be fed into #:farelo).
-I can pick any part I fancy to play around with and in doing so I&amp;#39;m doing something that will be close to critical paths.&lt;/p&gt;
-&lt;p&gt;But right now, #:dogwalk #2 before it gets dark.&lt;/p&gt;
 
 &lt;/article&gt;
 &lt;p class=&quot;post-title h-cinzel&quot;&gt;

@@ -57,6 +57,37 @@
 
 <article class="post-content">
         <a href="">#</a>
+    <h1>Semem Ollama</h1>
+<p>#:semem, the <strong>Semantic Memory</strong> component of #:hyperdata I&#39;m working on is a high priority for me, there are a lot of places I want to use it.</p>
+<p>I want to try and get the most out of <a href="https://en.wikipedia.org/wiki/Large_language_model">Large Language Model</a> and <a href="https://en.wikipedia.org/wiki/Linked_data">Linked Data</a> integration. It&#39;s a seriously fertile space, huge potential, lots of <strong>blue sky</strong> for research. I&#39;ve got a stack of ideas to try (many roughed out in scattered notes), but I&#39;m following the dev strategy of prioritizing activities for which I have an immediate use. This has led me to <a href="https://en.wikipedia.org/wiki/SPARQL">SPARQL</a> store-backed Graph <a href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation">RAG</a> as the inroad. About a year ago, to help get my head around this, I made a little <a href="https://www.llamaindex.ai/">LlamaIndex</a> extension, <a href="https://github.com/danja/nlp/tree/main/GraphRAG">GraphRAG with SPARQL</a>. This was only a minimal proof-of-concept, but did give me a mental foothold.</p>
+<p>The majority of the current activity in this space seems focused on using LLMs to derive <a href="https://en.wikipedia.org/wiki/Resource_Description_Framework">RDF</a> models from text (this is what the bits above did). For my needs I&#39;m putting the emphasis more on aligning LLM-interpreted text with existing ontologies. Ok, I&#39;m developing ontologies in a just-in-time fashion, but still treating the resources there as &quot;digital&quot; (logically defined) anchor points for the &quot;analog&quot; (probabilistic) shapes around LLMs.</p>
+<p>I made a couple of underlying design choices around my #:hyperdata uber-project. One is to favour Javascript. Not everyone&#39;s preferred language (see <a href="https://www.youtube.com/watch?v=03lRzf7iSiU">What&#39;s Your Least Favourite Programming Language? (2024 soundcheck question) - Computerphile</a>), especially with AI dev being Python-first. But as I need to use JS in the browser it&#39;s a way of reducing my cognitive load (I&#39;m really bad at remembering syntax). Another is to do things kind-of from scratch, avoiding frameworks (libs ok). I&#39;m <a href="https://en.wikipedia.org/wiki/Eating_your_own_dog_food">dogfooding</a> to the max because I want to understand what&#39;s going on.</p>
+<p>A key part of #:semem is embeddings derived from text. A key tool I need asap is a similarity-based search across my scattered docs (so I&#39;m not continually repeating myself). <a href="https://github.com/trustgraph-ai/trustgraph">TrustGraph</a> is broadly the kind of system I&#39;m aiming for, but that&#39;s big and quite blackboxy. While I was still going around in circles at a lower level, trying to decide which <strong>vector DB</strong> tooling to use, I stumbled on <a href="https://github.com/caspianmoon/memoripy">memoripy</a>. As the name suggests, it&#39;s Python. But it&#39;s an understandable size, has the general shape I&#39;m after and uses specific well-known libs (eg. <a href="https://github.com/facebookresearch/faiss">Faiss</a>) that all have <strong>JS APIs</strong>.</p>
+<p>So for an initial setup for #:semem, the other week I got Claude to help me port it to JS. Once I&#39;d got what appeared to be necessary coverage, I left it there, untested.</p>
+<p>Coming back to it today I see most of the examples use the OpenAI API. I don&#39;t have any credit on that right now. But <a href="https://github.com/ollama/ollama">Ollama</a> is also an option. I&#39;ve got that set up locally, should do nicely to kickstart #:semem.</p>
+<p>I had a quick skim of the available small <a href="https://ollama.com/search">models</a>. One I hadn&#39;t noticed before is <a href="https://ollama.com/library/nomic-embed-text">nomic-embed-text</a>. Ok, that looks a good candidate for my embeddings. When playing, I got very promising results with <code>orca</code>, <code>phi</code> and <code>qwen</code>. They still seem to be up there in the populars, so I some have initial LLM candidates already installed.
+I can&#39;t remember when I last update Ollama itself, I&#39;d better do that now.
+The <a href="https://github.com/ollama/ollama/blob/main/docs/linux.md">manual install docs</a> have this :</p>
+<blockquote>
+If you are upgrading from a prior version, you should remove the old libraries with sudo rm -rf /usr/lib/ollama first.
+
+<p>Download and extract the package:   </p>
+<p>curl -L <a href="https://ollama.com/download/ollama-linux-amd64.tgz">https://ollama.com/download/ollama-linux-amd64.tgz</a> -o ollama-linux-amd64.tgz
+sudo tar -C /usr -xzf ollama-linux-amd64.tgz</p>
+</blockquote>
+
+<p>That&#39;ll take a while on this connection.</p>
+<p>Dogwalk time.</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="">
+        
+    </a>
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="">#</a>
     <h1>Pivots</h1>
 <p><em>Thinking aloud to find the actionables</em>.</p>
 <p>Two artificial deadlines I want to set myself. I&#39;ve got some vocab in-progress for expressing these, the term being #:pivot. There are two dates coming soon for good markers :</p>
@@ -128,27 +159,6 @@ danny.ayers.name  elfquake-old  foaf-retro-non-github  hyperdata-desktop_ex-pack
 auth-test  common   dogbot  graph-editor       kia            ns                    progressive-scraper  server       sparql-store-lite  strandz  trans-dev  utils
 chauvin    danping  farelo  hyperdata-android  ldap-auth-app  open-world-interface  semem                sheltopusik  store-wrapper      tbox     trellis
 </code></pre>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="">
-        
-    </a>
-</p> <em></em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="">#</a>
-    <h1>Indigestion</h1>
-<p><em>Despite in being traditional to overeat at this time of year, it&#39;s not me but my code that&#39;s got tummy ache.</em></p>
-<p>This blog now has an <a href="https://danny.ayers.name/atom.xml">Atom Feed</a>. I&#39;ve only done an eyeball check, but it looks ok.</p>
-<p>The other night I had a quick stab at adding this. Claude gave me some convincing-looking code, which didn&#39;t work. I only had a quick look then, it looked like it might take a while to fix. It turned out to be easy, but only once I&#39;d figured out what my #:postcraft code (from months ago) was doing, which took ages. My bad, I&#39;m not surprised Claude got things wrong, my stuff was well obfuscated.</p>
-<p>The immediate issue was in the handling of <code>manifest.ttl</code>, the purpose of which in this case was to provide <code>danny.ayers.name</code> site-specific information to the <code>postcraft</code> #:transmissions application. I was already well aware that a bunch of <strong>refactoring</strong> was needed around the <code>transmissions.ttl</code>/<code>config.ttl</code>/<code>manifest.ttl</code> <strong>separation of concerns</strong>. It turned out to be worse than I thought : the handling of <code>manifest.ttl</code> was pretty much <strong>hardcoded</strong> in <code>src/processors/rdf/ConfigMap.js</code>. <strong>Ops!</strong></p>
-<p>To get a feed rendering, as a quick workaround I copy &amp; pasted the method that handled the <strong>RDF resource</strong> <code>t:IndexPage</code> and tweaked for <code>t:AtomFeed</code>.</p>
-<p>Not pretty, but it&#39;ll do for now. That was a useful exercise, it added another flag to a specific group of #:todos, pushing up their priority in my head. What it <strong>should</strong> have done is push up the priorities declared in the project description, managed by #:farelo. Which pushes the in-progress #:farelo up priorities (in my head).</p>
-<p>Associated with that is <strong>all project docs</strong>, already high on my priorities.</p>
-<p>I&#39;m not in the mood for being systematic today, but today that&#39;s fine. To get the docs together I need to poke around with all the subprojects, remind myself where I&#39;m at, write down their descriptions, current status &amp; todos (which will ultimately be fed into #:farelo).
-I can pick any part I fancy to play around with and in doing so I&#39;m doing something that will be close to critical paths.</p>
-<p>But right now, #:dogwalk #2 before it gets dark.</p>
 
 </article>
 <p class="post-title h-cinzel">
