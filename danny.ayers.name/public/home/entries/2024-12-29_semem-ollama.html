@@ -41,6 +41,33 @@ sudo tar -C /usr -xzf ollama-linux-amd64.tgz</p>
 
 <p>That&#39;ll take a while on this connection.</p>
 <p>Dogwalk time.</p>
+<hr>
+<pre><code class="language-sh">ollama serve
+Error: listen tcp 127.0.0.1:11434: bind: address already in use
+</code></pre>
+<p>Reboot o&#39;clock.</p>
+<pre><code class="language-sh">danny@danny-desktop:~$ ollama run qwen2:1.5b  
+&gt;&gt;&gt; how are you?
+I am an AI language model. How can I assist you today?
+</code></pre>
+<p>Sooo...</p>
+<pre><code class="language-sh">ollama pull nomic-embed-text
+...
+curl http://localhost:11434/api/embeddings -d &#39;{
+  &quot;model&quot;: &quot;nomic-embed-text&quot;,
+  &quot;prompt&quot;: &quot;The sky is blue because of Rayleigh scattering&quot;
+}&#39;
+</code></pre>
+<p>...which produces a lot of numbers. <strong>Yay!</strong></p>
+<p>The <a href="https://ollama.com/library/nomic-embed-text">Ollama page for nomic-embed-text</a> has the cURL line above as well as py &amp; JS snippets. It also links to a <a href="https://www.nomic.ai/blog/posts/nomic-embed-text-v1">nomic blog post</a> about it. <a href="https://docs.nomic.ai/reference/api/embed-text-v-1-embedding-text-post">Nomic have an API</a> for using the model, but I&#39;ll stick with Ollama&#39;s since I want to use it for GPT models as well.</p>
+<p>I believe <a href="https://github.com/facebookresearch/faiss">Faiss</a> has all the similarity search bits I need to get going on that front.</p>
+<h2>Visualization</h2>
+<p>Nomic have a Data Mapping (#:visualization) blog post series, this one&#39;s very handy for me : <a href="https://www.nomic.ai/blog/posts/see-your-data-with-dimensionality-reduction">See Your Data With Dimensionality Reduction</a>. I&#39;ve read papers on various algorithms but could only remember trad <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">PCA</a> off the top of my head. Mentioned here are also <a href="https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding">t-SNE</a>, Hinton &amp; co&#39;s algorithm from 2008, <a href="https://arxiv.org/abs/1802.03426">UMAP</a> from 2018 and one which appears to be proprietary, Nomic Project. I&#39;m not sure if I&#39;ve encountered UMAP before, but it sounds like a good choice for my purposes.</p>
+<p>The next post in the series is <a href="https://www.nomic.ai/blog/posts/why-are-web-browsers-the-best-data-browsers">Why Are Web Browsers The Best Data Browsers?</a>, which, after preliminaries goes on to describe their own (open sourced) <a href="https://github.com/nomic-ai/deepscatter">deepscatter</a>. It looks good, but I&#39;ve been around the block a few times with this stuff.</p>
+<p>I&#39;m using <a href="https://rdf-ext.org">RDF-Ext</a> (RDF JS libs) nearby, and in there Bergi has a [RdfNetwork component]<a href="https://examples.rdf-ext.org/rdf-elements/">RDF-Ext</a>. This is built on <a href="https://js.cytoscape.org/">Cytoscape.js</a>, which is a mature renderer from bioinformatics circles, so should be plenty good on scalability and scatterplotty things.</p>
+<p>#:todo what was that cytoscape plugin that looked good for pipelines from somewhere around Eclipse?
+#:todo check out the cytoscape/<a href="https://mermaid.js.org/ecosystem/integrations-community.html">mermaid integrations</a></p>
+<p>Ok, I guess I should actually look at what I&#39;ve got for #:semem code so far...</p>
 
 </article>
 <p class="post-title h-cinzel">

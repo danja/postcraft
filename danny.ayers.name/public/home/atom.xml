@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2024-12-29T13:19:54.608Z</updated>
+    <updated>2024-12-29T18:20:36.985Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -15,7 +15,7 @@
         <title>Entry 2024-12-29_sunny-day</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_sunny-day.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_sunny-day.html</id>
-        <updated>2024-12-29T13:19:54.608Z</updated>
+        <updated>2024-12-29T18:20:36.985Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -43,7 +43,7 @@
         <title>Entry 2024-12-29_semem-ollama</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_semem-ollama.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_semem-ollama.html</id>
-        <updated>2024-12-29T13:19:54.609Z</updated>
+        <updated>2024-12-29T18:20:36.985Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -69,6 +69,33 @@ sudo tar -C /usr -xzf ollama-linux-amd64.tgz&lt;/p&gt;
 
 &lt;p&gt;That&amp;#39;ll take a while on this connection.&lt;/p&gt;
 &lt;p&gt;Dogwalk time.&lt;/p&gt;
+&lt;hr&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;ollama serve
+Error: listen tcp 127.0.0.1:11434: bind: address already in use
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Reboot o&amp;#39;clock.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;danny@danny-desktop:~$ ollama run qwen2:1.5b  
+&amp;gt;&amp;gt;&amp;gt; how are you?
+I am an AI language model. How can I assist you today?
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Sooo...&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;ollama pull nomic-embed-text
+...
+curl http://localhost:11434/api/embeddings -d &amp;#39;{
+  &amp;quot;model&amp;quot;: &amp;quot;nomic-embed-text&amp;quot;,
+  &amp;quot;prompt&amp;quot;: &amp;quot;The sky is blue because of Rayleigh scattering&amp;quot;
+}&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;...which produces a lot of numbers. &lt;strong&gt;Yay!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;https://ollama.com/library/nomic-embed-text&quot;&gt;Ollama page for nomic-embed-text&lt;/a&gt; has the cURL line above as well as py &amp;amp; JS snippets. It also links to a &lt;a href=&quot;https://www.nomic.ai/blog/posts/nomic-embed-text-v1&quot;&gt;nomic blog post&lt;/a&gt; about it. &lt;a href=&quot;https://docs.nomic.ai/reference/api/embed-text-v-1-embedding-text-post&quot;&gt;Nomic have an API&lt;/a&gt; for using the model, but I&amp;#39;ll stick with Ollama&amp;#39;s since I want to use it for GPT models as well.&lt;/p&gt;
+&lt;p&gt;I believe &lt;a href=&quot;https://github.com/facebookresearch/faiss&quot;&gt;Faiss&lt;/a&gt; has all the similarity search bits I need to get going on that front.&lt;/p&gt;
+&lt;h2&gt;Visualization&lt;/h2&gt;
+&lt;p&gt;Nomic have a Data Mapping (#:visualization) blog post series, this one&amp;#39;s very handy for me : &lt;a href=&quot;https://www.nomic.ai/blog/posts/see-your-data-with-dimensionality-reduction&quot;&gt;See Your Data With Dimensionality Reduction&lt;/a&gt;. I&amp;#39;ve read papers on various algorithms but could only remember trad &lt;a href=&quot;https://en.wikipedia.org/wiki/Principal_component_analysis&quot;&gt;PCA&lt;/a&gt; off the top of my head. Mentioned here are also &lt;a href=&quot;https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding&quot;&gt;t-SNE&lt;/a&gt;, Hinton &amp;amp; co&amp;#39;s algorithm from 2008, &lt;a href=&quot;https://arxiv.org/abs/1802.03426&quot;&gt;UMAP&lt;/a&gt; from 2018 and one which appears to be proprietary, Nomic Project. I&amp;#39;m not sure if I&amp;#39;ve encountered UMAP before, but it sounds like a good choice for my purposes.&lt;/p&gt;
+&lt;p&gt;The next post in the series is &lt;a href=&quot;https://www.nomic.ai/blog/posts/why-are-web-browsers-the-best-data-browsers&quot;&gt;Why Are Web Browsers The Best Data Browsers?&lt;/a&gt;, which, after preliminaries goes on to describe their own (open sourced) &lt;a href=&quot;https://github.com/nomic-ai/deepscatter&quot;&gt;deepscatter&lt;/a&gt;. It looks good, but I&amp;#39;ve been around the block a few times with this stuff.&lt;/p&gt;
+&lt;p&gt;I&amp;#39;m using &lt;a href=&quot;https://rdf-ext.org&quot;&gt;RDF-Ext&lt;/a&gt; (RDF JS libs) nearby, and in there Bergi has a [RdfNetwork component]&lt;a href=&quot;https://examples.rdf-ext.org/rdf-elements/&quot;&gt;RDF-Ext&lt;/a&gt;. This is built on &lt;a href=&quot;https://js.cytoscape.org/&quot;&gt;Cytoscape.js&lt;/a&gt;, which is a mature renderer from bioinformatics circles, so should be plenty good on scalability and scatterplotty things.&lt;/p&gt;
+&lt;p&gt;#:todo what was that cytoscape plugin that looked good for pipelines from somewhere around Eclipse?
+#:todo check out the cytoscape/&lt;a href=&quot;https://mermaid.js.org/ecosystem/integrations-community.html&quot;&gt;mermaid integrations&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ok, I guess I should actually look at what I&amp;#39;ve got for #:semem code so far...&lt;/p&gt;
 
 &lt;/article&gt;
 &lt;p class=&quot;post-title h-cinzel&quot;&gt;
@@ -82,7 +109,7 @@ sudo tar -C /usr -xzf ollama-linux-amd64.tgz&lt;/p&gt;
         <title>Entry 2024-12-29_pivots</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_pivots.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_pivots.html</id>
-        <updated>2024-12-29T13:19:54.609Z</updated>
+        <updated>2024-12-29T18:20:36.985Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -113,7 +140,7 @@ In quasi-parallel, towards #:ProofPivot, two must-haves : write down core projec
         <title>Entry 2024-12-28_db</title>
         <link href="https://danny.ayers.name/entries/2024-12-28_db.html"/>
         <id>https://danny.ayers.name/entries/2024-12-28_db.html</id>
-        <updated>2024-12-29T13:19:54.609Z</updated>
+        <updated>2024-12-29T18:20:36.986Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -143,7 +170,7 @@ Anyway, there was a specific idea I wanted to try. The music room has often been
         <title>Entry 2024-12-27_projects</title>
         <link href="https://danny.ayers.name/entries/2024-12-27_projects.html"/>
         <id>https://danny.ayers.name/entries/2024-12-27_projects.html</id>
-        <updated>2024-12-29T13:19:54.609Z</updated>
+        <updated>2024-12-29T18:20:36.986Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;

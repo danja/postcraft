@@ -30,3 +30,47 @@ sudo tar -C /usr -xzf ollama-linux-amd64.tgz
 That'll take a while on this connection.
 
 Dogwalk time.
+
+---
+
+```sh
+ollama serve
+Error: listen tcp 127.0.0.1:11434: bind: address already in use
+```
+
+Reboot o'clock.
+
+```sh
+danny@danny-desktop:~$ ollama run qwen2:1.5b  
+>>> how are you?
+I am an AI language model. How can I assist you today?
+```
+
+Sooo...
+
+```sh
+ollama pull nomic-embed-text
+...
+curl http://localhost:11434/api/embeddings -d '{
+  "model": "nomic-embed-text",
+  "prompt": "The sky is blue because of Rayleigh scattering"
+}'
+```
+...which produces a lot of numbers. **Yay!**
+
+The [Ollama page for nomic-embed-text](https://ollama.com/library/nomic-embed-text) has the cURL line above as well as py & JS snippets. It also links to a [nomic blog post](https://www.nomic.ai/blog/posts/nomic-embed-text-v1) about it. [Nomic have an API](https://docs.nomic.ai/reference/api/embed-text-v-1-embedding-text-post) for using the model, but I'll stick with Ollama's since I want to use it for GPT models as well.
+
+I believe [Faiss](https://github.com/facebookresearch/faiss) has all the similarity search bits I need to get going on that front.
+
+## Visualization
+
+Nomic have a Data Mapping (#:visualization) blog post series, this one's very handy for me : [See Your Data With Dimensionality Reduction](https://www.nomic.ai/blog/posts/see-your-data-with-dimensionality-reduction). I've read papers on various algorithms but could only remember trad [PCA](https://en.wikipedia.org/wiki/Principal_component_analysis) off the top of my head. Mentioned here are also [t-SNE](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding), Hinton & co's algorithm from 2008, [UMAP](https://arxiv.org/abs/1802.03426) from 2018 and one which appears to be proprietary, Nomic Project. I'm not sure if I've encountered UMAP before, but it sounds like a good choice for my purposes.
+
+The next post in the series is [Why Are Web Browsers The Best Data Browsers?](https://www.nomic.ai/blog/posts/why-are-web-browsers-the-best-data-browsers), which, after preliminaries goes on to describe their own (open sourced) [deepscatter](https://github.com/nomic-ai/deepscatter). It looks good, but I've been around the block a few times with this stuff.
+
+I'm using [RDF-Ext](https://rdf-ext.org) (RDF JS libs) nearby, and in there Bergi has a [RdfNetwork component][RDF-Ext](https://examples.rdf-ext.org/rdf-elements/). This is built on [Cytoscape.js](https://js.cytoscape.org/), which is a mature renderer from bioinformatics circles, so should be plenty good on scalability and scatterplotty things.
+
+#:todo what was that cytoscape plugin that looked good for pipelines from somewhere around Eclipse?
+#:todo check out the cytoscape/[mermaid integrations](https://mermaid.js.org/ecosystem/integrations-community.html)
+
+Ok, I guess I should actually look at what I've got for #:semem code so far...
