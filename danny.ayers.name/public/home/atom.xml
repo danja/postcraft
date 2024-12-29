@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2024-12-28T16:31:40.251Z</updated>
+    <updated>2024-12-29T11:10:53.562Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -12,10 +12,69 @@
 
     
     <entry>
+        <title>Entry 2024-12-29_sunny-day</title>
+        <link href="https://danny.ayers.name/entries/2024-12-29_sunny-day.html"/>
+        <id>https://danny.ayers.name/entries/2024-12-29_sunny-day.html</id>
+        <updated>2024-12-29T11:10:53.562Z</updated>
+        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
+
+&lt;article class=&quot;post-content&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
+    &lt;h1&gt;Sunny Day&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;It&amp;#39;s a sunny Sunday day.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;My must-dos for today are plumbing. Actual plumbing :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sealant on leaky pipe at No.7&lt;/li&gt;
+&lt;li&gt;Fix the &lt;em&gt;second&lt;/em&gt; hole I hadn&amp;#39;t seen under the sink here at #:New place&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I also really need to make a start on some tree removal while the weather&amp;#39;s dry. Stretching the notion of plumbing, first I need to sort out climbing gear, ropes, pulleys etc.&lt;/p&gt;
+&lt;p&gt;Financial plumbing, I need to sort a stack of papers, find the relevant forms I have somewhere, to sort out pension flow from Derbyshire County Council. I had a small (but very useful) monthly sum coming from there. Caroline worked at a DCC special needs place for a few years, I inherited her pension. It stalled a couple of months ago, I missed some kind of update step. I did do a little towards sorting it out, in the process discovered that I&amp;#39;m probably due some funds from the years I worked at High Peak College.&lt;/p&gt;
+&lt;p&gt;Software plumbing...things to join together. Separate posts here for them.&lt;/p&gt;
+
+&lt;/article&gt;
+&lt;p class=&quot;post-title h-cinzel&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;
+        
+    &lt;/a&gt;
+&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
+    </entry>
+    
+    <entry>
+        <title>Entry 2024-12-29_pivots</title>
+        <link href="https://danny.ayers.name/entries/2024-12-29_pivots.html"/>
+        <id>https://danny.ayers.name/entries/2024-12-29_pivots.html</id>
+        <updated>2024-12-29T11:10:53.562Z</updated>
+        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
+
+&lt;article class=&quot;post-content&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
+    &lt;h1&gt;Pivots&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Thinking aloud to find the actionables&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Two artificial deadlines I want to set myself. I&amp;#39;ve got some vocab in-progress for expressing these, the term being #:pivot. There are two dates coming soon for good markers :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Poggi Pivot : Mari&amp;#39;s birthday, 2024-01-05&lt;/li&gt;
+&lt;li&gt;Proof Pivot : my birthday, 2024-01-14&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The first one, primary goal is getting &lt;strong&gt;some&lt;/strong&gt; docs online for &lt;strong&gt;all&lt;/strong&gt; my currently active projects. Skeleton summaries/placeholders at minimum, the #:what, a little #:how. But I really want to capture how they relate to each other, the #:why. &lt;/p&gt;
+&lt;p&gt;The second one, primary goal is creating a proof-of-concept for each project. The minimum here again is little more than skeletal placeholders. But again, capture of the interrelations is the part I&amp;#39;m aiming for. Get the overall dependency graph formalised enough that it can be used in planning. It&amp;#39;s twisty.&lt;/p&gt;
+&lt;p&gt;Ok, I&amp;#39;ve got actionables (not far off what I was doing already). For #:PoggiPivot, first step is to wire up all the #:postcraft spaces, make them live.
+In quasi-parallel, towards #:ProofPivot, two must-haves : write down core project description for each, maybe in a proposal-like form; write down the #:poc requirements.&lt;/p&gt;
+&lt;p&gt;This lot in itself is a major grind. But I need to remind myself where I&amp;#39;m up to with everything. Best way to do this and keep it interesting is to see what I have noted for next step #:todos, code up the next little step.&lt;/p&gt;
+&lt;p&gt;I just did this with #:tbox. While going over it with Claude he gave me an architectural diagram (in Mermaid format) which I found really helpful. I&amp;#39;ve already got visualisations on the lists, but I reckon this is an aspect I should revisit very soon, to help with &lt;em&gt;everything else&lt;/em&gt;.&lt;/p&gt;
+
+&lt;/article&gt;
+&lt;p class=&quot;post-title h-cinzel&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;
+        
+    &lt;/a&gt;
+&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
+    </entry>
+    
+    <entry>
         <title>Entry 2024-12-28_db</title>
         <link href="https://danny.ayers.name/entries/2024-12-28_db.html"/>
         <id>https://danny.ayers.name/entries/2024-12-28_db.html</id>
-        <updated>2024-12-28T16:31:40.251Z</updated>
+        <updated>2024-12-29T11:10:53.563Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -45,7 +104,7 @@ Anyway, there was a specific idea I wanted to try. The music room has often been
         <title>Entry 2024-12-27_projects</title>
         <link href="https://danny.ayers.name/entries/2024-12-27_projects.html"/>
         <id>https://danny.ayers.name/entries/2024-12-27_projects.html</id>
-        <updated>2024-12-28T16:31:40.251Z</updated>
+        <updated>2024-12-29T11:10:53.564Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -89,7 +148,7 @@ chauvin    danping  farelo  hyperdata-android  ldap-auth-app  open-world-interfa
         <title>Entry 2024-12-26_indigestion</title>
         <link href="https://danny.ayers.name/entries/2024-12-26_indigestion.html"/>
         <id>https://danny.ayers.name/entries/2024-12-26_indigestion.html</id>
-        <updated>2024-12-28T16:31:40.251Z</updated>
+        <updated>2024-12-29T11:10:53.564Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -105,92 +164,6 @@ chauvin    danping  farelo  hyperdata-android  ldap-auth-app  open-world-interfa
 &lt;p&gt;I&amp;#39;m not in the mood for being systematic today, but today that&amp;#39;s fine. To get the docs together I need to poke around with all the subprojects, remind myself where I&amp;#39;m at, write down their descriptions, current status &amp;amp; todos (which will ultimately be fed into #:farelo).
 I can pick any part I fancy to play around with and in doing so I&amp;#39;m doing something that will be close to critical paths.&lt;/p&gt;
 &lt;p&gt;But right now, #:dogwalk #2 before it gets dark.&lt;/p&gt;
-
-&lt;/article&gt;
-&lt;p class=&quot;post-title h-cinzel&quot;&gt;
-    &lt;a href=&quot;&quot;&gt;
-        
-    &lt;/a&gt;
-&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
-    </entry>
-    
-    <entry>
-        <title>Entry 2024-12-23_sites</title>
-        <link href="https://danny.ayers.name/entries/2024-12-23_sites.html"/>
-        <id>https://danny.ayers.name/entries/2024-12-23_sites.html</id>
-        <updated>2024-12-28T16:31:40.251Z</updated>
-        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
-
-&lt;article class=&quot;post-content&quot;&gt;
-        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
-    &lt;h1&gt;Sites&lt;/h1&gt;
-&lt;p&gt;I don&amp;#39;t want to break any URLs on my sites as they stand, but I&amp;#39;ve got loads of (currently badly organised) material to add, mostly project docs which will be rendered through #:postcraft. Everything is going on the same Ubuntu server. Right now the material is mostly split per-project in repos on GitHub. I reckon the raw material (mostly markdown) is best left where it is, but the rendered versions can all go all go together. Pretty all the new stuff should go under the umbrella (and domain name) of &lt;a href=&quot;https://hyperdata.it&quot;&gt;hyperdata.it&lt;/a&gt;. The older material I have that&amp;#39;s actually live now is in the repo &lt;code&gt;hyperdata-static&lt;/code&gt;, I&amp;#39;ll leave that alone. But I do have a more recent repo &lt;code&gt;hyperdata&lt;/code&gt;, with a lot of the current (sub-)projects as git submodules. So to keep things simple, for now I&amp;#39;ll have #:postcraft render the corresponding docs under the local dir :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;~/github-danny/hyperdata/site
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Hmm. A slight complication is that I&amp;#39;ve also got non-postcraft docs, &lt;code&gt;jsdoc&lt;/code&gt; etc. Postcraft will be providing the index page etc, so I guess the easiest is to go for eg. :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;# postcraft
-~/github-danny/hyperdata/site/transmissions/index.html
-~/github-danny/hyperdata/site/transmissions/entries/2024-12-23_today.html`
-...
-
-# non-postcraft
-~/github-danny/hyperdata/site/transmissions/jsdoc
-~/github-danny/hyperdata/site/transmissions/jsdoc/index.html
-...
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Yeah.&lt;/p&gt;
-&lt;p&gt;Most of the new material will want the same kind of layout/styling, so I&amp;#39;d better also have a :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;~/github-danny/hyperdata/site/common
-~/github-danny/hyperdata/site/common/css
-...
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I can do the routing via symlinks on the server and/or nginx routing. There might be some existing potential conflicts, eg. there could well be a &lt;code&gt;https://hyperdata.it/transmissions&lt;/code&gt; already. But I don&amp;#39;t need to worry about that right away. First get the stuff rendering in an organised fashion, figure out the plumbing later.&lt;/p&gt;
-&lt;p&gt;Speaking of plumbing, I&amp;#39;ve a toilet cistern over at No.7 to fix today if I can (might need new parts). The power&amp;#39;s off over there at the moment so I should take advantage of the daylight.&lt;/p&gt;
-&lt;p&gt;#:todo check ufw status on server&lt;/p&gt;
-&lt;p&gt;#:breakpoint&lt;/p&gt;
-
-&lt;/article&gt;
-&lt;p class=&quot;post-title h-cinzel&quot;&gt;
-    &lt;a href=&quot;&quot;&gt;
-        
-    &lt;/a&gt;
-&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
-    </entry>
-    
-    <entry>
-        <title>Entry 2024-12-23_eat-me</title>
-        <link href="https://danny.ayers.name/entries/2024-12-23_eat-me.html"/>
-        <id>https://danny.ayers.name/entries/2024-12-23_eat-me.html</id>
-        <updated>2024-12-28T16:31:40.251Z</updated>
-        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
-
-&lt;article class=&quot;post-content&quot;&gt;
-        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
-    &lt;h1&gt;Eat Me&lt;/h1&gt;
-&lt;p&gt;I&amp;#39;m sorting out docs, one thing I remembered I don&amp;#39;t have in place yet is a syndication feed for these things. An absolute &lt;strong&gt;didn&amp;#39;t I do that aready?&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Like, &lt;strong&gt;I have history&lt;/strong&gt; in this space. I caught the tail end of the &lt;a href=&quot;https://en.wikipedia.org/wiki/History_of_web_syndication_technology&quot;&gt;RSS wars&lt;/a&gt;. Such a daft (multi-fronted) war. Initially I was religiously RSS 1.0, the RDF. But despite my dogmatism, I was already aware at the time how awful RDF/XML was as a format in practice. It was an easy one to get sucked into, I was enchanted by the RDF model (still am, a sweetspot IMO, but it did need Turtle syntax and named graphs to properly make it viable for a regular dev). Good folks I knew were on &lt;strong&gt;that side&lt;/strong&gt; and &lt;a href=&quot;https://en.wikipedia.org/wiki/Dave_Winer&quot;&gt;Dave Winer&lt;/a&gt; could be such a massively annoying arse. Really really massively.&lt;/p&gt;
-&lt;p&gt;In retrospect, respect where it&amp;#39;s due, Winer did push things forward. Ok, a lot of that was in folks thinking about how to do this thing right, to counter his approach, which had an overabundance of ego at it&amp;#39;s heart. That was a bit annoying itself, an intelligent, creative guy, you know I could begrudgingly call him  &lt;strong&gt;visionary&lt;/strong&gt;. Except it was overshadowed by narcissism and belligerence.&lt;/p&gt;
-&lt;p&gt;Heh, I nearly put &amp;quot;IMHO&amp;quot; there. But that reminds me of an interchange I had with him where he was incredibly dismissive of my points, passive-aggressively using Valley acronyms. I responded with &amp;quot;UYB&amp;quot;. I had made it up on the spur. But apparently it had made it into the urban dics, I lost the high ground.&lt;/p&gt;
-&lt;p&gt;But with the naming of &lt;strong&gt;RSS 2.0&lt;/strong&gt; he showed some serious genious. Marketing-wise, awesome.     &lt;/p&gt;
-&lt;p&gt;Anyway, back to &lt;strong&gt;my&lt;/strong&gt; ego. I&amp;#39;ve contributed content to 10 printed books. The only one I was the lead author on was &lt;a href=&quot;https://www.amazon.com/Beginning-Atom-Programming-Danny-Ayers/dp/0764579169&quot;&gt;Beginning RSS and Atom Programming&lt;/a&gt;. Heh, combined rating of 1.6 on reviews there.
-It was probably pretty good. Not through my efforts directly, but Wrox Press at the time had a legion of expert/expert-ish reviewers that forced you to revise, think, revise. Also Andrew was very good at his stuff. I can&amp;#39;t check, I gave all the copies I had away... oh wait, I might have the Turkish translation...(&lt;em&gt;mouldy shelves...&lt;/em&gt;)
-Nope. That is &lt;a href=&quot;https://www.amazon.com/Web-2-0-Teknolojileri-Eric-Vlist/dp/975297855X/&quot;&gt;Web 2.0 Teknolojileri&lt;/a&gt;. Wtf did I do for that? Was the same period as the RSS. Probably something with that, shoehorning in RDF somehow.&lt;/p&gt;
-&lt;p&gt;Oh yeah. Gorblimey, quite a lot of this looks like my stuff. &lt;strong&gt;FOAF!&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Over the decade or so I was doing the freelance writing stuff, I did learn how to play the publishers somewhat. &lt;strong&gt;Engage the reviewer, not the reader&lt;/strong&gt;.  &lt;/p&gt;
-&lt;p&gt;Code examples in Python ffs. So I must have learnt a little bit of it at some point before forgetting it again. Also XSLT involved (on RDF/XML, eek!). But XSLT was a good language, despite the horror syntax. &lt;a href=&quot;https://en.wikipedia.org/wiki/Jeni_Tennison&quot;&gt;Jeni Tennison&lt;/a&gt; frequently sent me dizzy with the elegance she pulled out of the hat.  &lt;/p&gt;
-&lt;p&gt;It is surprising what still lives. I recently rediscovered this &lt;a href=&quot;https://hyperdata.it/xmlns/pets/&quot;&gt;Pet Profiles&lt;/a&gt; thing I did in, er...2004. Most of the associated code around there is now totally broken. But &lt;a href=&quot;https://hyperdata.it/xmlns/pets/2004-04-24/sambuca-css.xml&quot;&gt;Sambuca&amp;#39;s Profile&lt;/a&gt;, using CSS on RDF/XML, sweet. Has exactly the same little layout probs I didn&amp;#39;t get around to fixing 20 years ago.   &lt;/p&gt;
-&lt;h2&gt;I&amp;#39;ve not quite finished with my ego&lt;/h2&gt;
-&lt;p&gt;So in this fog of RSS war, some righteous folks came up with a cunning plan: &lt;a href=&quot;https://en.wikipedia.org/wiki/Atom_(web_standard)&quot;&gt;Atom&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I get an ack on &lt;a href=&quot;https://datatracker.ietf.org/doc/html/rfc4287&quot;&gt;RFC4287&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;OK, ego spent.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;I was all-in with Atom Format, but kind-of backstepped out of the &lt;a href=&quot;https://datatracker.ietf.org/doc/html/rfc5023&quot;&gt;Protocol, RFC5023&lt;/a&gt;. I&amp;#39;d love to say it was because I saw the redundancy of that on top of &lt;strong&gt;Fielding-compliant REST&lt;/strong&gt;, but really it was because the other folks were shitloads better at protocols, I was out of my depth, had nothing to offer. &lt;em&gt;In retrospect&lt;/em&gt;, good move. Now I see the redundancy. And the Web stage has shifted to make absolutely awful practices that have issues dating back to &lt;a href=&quot;https://en.wikipedia.org/wiki/SOAP&quot;&gt;SOAP&lt;/a&gt;. I&amp;#39;m sure, hope and pray (in an atheistic manner)  &lt;a href=&quot;https://en.wikipedia.org/wiki/Tim_Berners-Lee&quot;&gt;timbl&lt;/a&gt; has many years left on this mortal coil, because he has a hella lotta grave-spinning backed up.&lt;/p&gt;
-&lt;p&gt;Yeah, in retrospect, Atom was the right idea. The folks around microformats, (hat tip &lt;a href=&quot;https://en.wikipedia.org/wiki/Tantek_%C3%87elik&quot;&gt;Tantek&lt;/a&gt;) had a valid point that HTML could easily carry the same information just as easily, no need for a different content format. But pragmatically, one sliver of a little toenail towards the Winer, it does now make sense to use a different format. I can still get on a high horse about content negotiation being there if you want it, &lt;strong&gt;so merrr!&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;#:todo check media types/extensions known by nginx&lt;/p&gt;
-&lt;p&gt;Anyway, however long ago I got to desk this session, I had feed on mind. This is a nice little exercise. With my current workflow &amp;amp; tooling, &lt;strong&gt;how long will it take me to add a feed&lt;/strong&gt; to this site?&lt;/p&gt;
-&lt;p&gt;On my own I would guess maybe 2 very stumbly hours. I have to remember how to use the templater I&amp;#39;ve got here, I&amp;#39;ve not looked at for a few months (&lt;a href=&quot;https://mozilla.github.io/nunjucks/&quot;&gt;nunjucks&lt;/a&gt; - it looked best at the time) and also some of my own code from a day ago... (#:adhd is a thing).&lt;/p&gt;
-&lt;p&gt;But I don&amp;#39;t want to waste my own scant cognitive resources on something like this. Claude understands my setup, I made it so for his kind.&lt;/p&gt;
-&lt;p&gt;#:timestamp 23:58&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;(I will need a pee, cigarette and another mug of beer first, dear Countdown Clock)&lt;/em&gt;&lt;/p&gt;
 
 &lt;/article&gt;
 &lt;p class=&quot;post-title h-cinzel&quot;&gt;

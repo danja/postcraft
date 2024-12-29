@@ -1,0 +1,2 @@
+I've lived in Italy 20-odd years. When I visited the UK a few weeks ago, it was a foreign country. I felt very much the stranger. My Italian language is still rubbish, I only have a tiny handful of friends. But this is my normal, this is my home.
+Yet it can still surprise. Local supermarket, truffle-flavoured crisps. (Gnam gnam!).
