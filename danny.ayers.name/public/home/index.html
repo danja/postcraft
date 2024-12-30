@@ -37,6 +37,43 @@
 
 <article class="post-content">
         <a href="">#</a>
+    <h1>Perplexed</h1>
+<p><em>Before getting out of bed, I signed up for a free month of <a href="https://www.perplexity.ai/">Perplexity</a> and perplexed Claude</em></p>
+<h2>Paths</h2>
+<p> A note-to-self before I forget.</p>
+<p> #:todo check how the <a href="https://eyereasoner.github.io/eye/">EYE</a> reasoner uses <a href="https://en.wikipedia.org/wiki/Leonhard_Euler">Euler</a> paths for #:semem</p>
+<p> I had a few overlapping requirements for a classical reasoner. Long story short, I found <a href="https://eyereasoner.github.io/eye/">EYE</a> ticked many boxes. Notably it&#39;s <a href="https://en.wikipedia.org/wiki/Semantic_Web">semantic Web</a>-friendly.</p>
+<p>I have a lot of unknowns (in the <a href="https://en.wikipedia.org/wiki/There_are_unknown_unknowns">Donald Rumsfeld senses</a>) around #:semem. I might have a short summary of what I&#39;m after :</p>
+<p><strong>Semem is an LLM-compatible context-aware, open-ended graph knowledgebase combining the advantages of vector embeddings and Linked Data technologies.</strong></p>
+<p>Right now I&#39;m still on the nuts &amp; bolts, I&#39;ve got fairly straightforward next steps to implement before the fun starts. The fun has many dimensions. From the above,</p>
+<ul>
+<li><strong>LLM-compatible</strong> - this starts with boilerplate connectors to Ollama, the OpenAI API, the <a href="https://www.anthropic.com/news/model-context-protocol">Model Context Protocol</a> etc. But an aspect of the <em>open-ended</em> I have in mind more broadly is exploring connectivity from a different perspective, that of inter-agent comms. This will go under the umbrella of #:LinguaFranche.  </li>
+<li><strong>open-ended graph</strong> - this is the Web. Low-hanging fruit is hooking into existing SPARQL endpoints, eg. WikiData</li>
+<li><strong>context-aware</strong> - I&#39;m working on the vocabulary around this to express it more clearly, but the general idea is that you want more relevant knowledge getting more attention</li>
+</ul>
+<p>Vector embeddings offer similarity measures, but the RDF (Web) model offers a whole different dimension.</p>
+<p>Grrr! I went to LinkedIn to find a ref. related to this, instant distractions :</p>
+<ul>
+<li><a href="https://arxiv.org/abs/2411.03252">Spontaneous Emergence of Agent Individuality through Social Interactions in LLM-Based Communities</a> [sent to printer for later]</li>
+<li><a href="https://chimezie.medium.com/declarative-prompts-llm-agents-and-their-programs-oh-my-aab1d0da6fef">Declarative Prompts, LLM Agents, and their Programs. Oh my…</a> [from Chimezie, left open in tab for sooner]</li>
+</ul>
+<p>A ref I can remember offhand is Bergi&#39;s material :</p>
+<ul>
+<li><a href="https://www.bergnet.org/2024/05/unified-landscape/">Unveiling the Unified Landscape: Bridging Knowledge Graphs and Machine Learning</a>  </li>
+<li><a href="https://www.bergnet.org/2024/09/llm-kg-wombat/">Language Models Meet Knowledge Graphs - A Powerful Duo (plus a Wombat)</a></li>
+<li><em>linked from there</em> <a href="https://towardsdatascience.com/how-to-implement-graph-rag-using-knowledge-graphs-and-vector-databases-60bb69a22759">How to Implement Graph RAG Using Knowledge Graphs and Vector Databases</a> - Steve Hedden</li>
+</ul>
+<p>Enough gab, I&#39;d better get on with this thing.</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="">
+        
+    </a>
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="">#</a>
     <h1>Sunny Day</h1>
 <p><em>It&#39;s a sunny Sunday day.</em></p>
 <p>My must-dos for today are plumbing. Actual plumbing :</p>
@@ -115,6 +152,28 @@ curl http://localhost:11434/api/embeddings -d &#39;{
 
 <article class="post-content">
         <a href="">#</a>
+    <h1>Prill</h1>
+<p>#:TIL the word <a href="https://en.wiktionary.org/wiki/prill">prill</a>, &quot;a pellet, a granule, a small bead&quot;, while watching this: <a href="https://youtu.be/dhW4XFGQB4o">Iron knife made from bacteria</a>. </p>
+<p>The ety of #:prill :</p>
+<blockquote>
+<p>Unknown. OED mentions Cornish pryl (“sheep-droppings”) as a likely loan from English.</p>
+</blockquote>
+<p>CF. #:nurdle</p>
+<p>The guy&#39;s <a href="https://primitivetechnology.wordpress.com/">Primitive Technology blog</a> and <a href="https://youtube.com/@primitivetechnology9550">videos</a> <strong>turn on subtitles</strong> are great for us <em>poltroniste</em>  (armchair enthusiasts (including chair-oriented politicians)).</p>
+<p>Having to look it up, this came to mind:</p>
+<blockquote>
+<p>Text is cheap, knowledge is worth it.</p>
+</blockquote>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="">
+        
+    </a>
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="">#</a>
     <h1>Pivots</h1>
 <p><em>Thinking aloud to find the actionables</em>.</p>
 <p>Two artificial deadlines I want to set myself. I&#39;ve got some vocab in-progress for expressing these, the term being #:pivot. There are two dates coming soon for good markers :</p>
@@ -128,64 +187,6 @@ curl http://localhost:11434/api/embeddings -d &#39;{
 In quasi-parallel, towards #:ProofPivot, two must-haves : write down core project description for each, maybe in a proposal-like form; write down the #:poc requirements.</p>
 <p>This lot in itself is a major grind. But I need to remind myself where I&#39;m up to with everything. Best way to do this and keep it interesting is to see what I have noted for next step #:todos, code up the next little step.</p>
 <p>I just did this with #:tbox. While going over it with Claude he gave me an architectural diagram (in Mermaid format) which I found really helpful. I&#39;ve already got visualisations on the lists, but I reckon this is an aspect I should revisit very soon, to help with <em>everything else</em>.</p>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="">
-        
-    </a>
-</p> <em></em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="">#</a>
-    <h1>DB</h1>
-<p><em>I&#39;ve got drum &amp; bass playing</em></p>
-<p>Brain slow today because I had a very late night. But I&#39;m quite happy with that, because I actually made it into the music room for a couple of hours. I&#39;m working on a suite of tracks that will share some common elements. What was the word for those 70s prog rock...gottit, I want to make a <strong>concept album</strong>. Unlike virtually all the prog rocks, I want this thing to be interesting.
-Anyway, there was a specific idea I wanted to try. The music room has often been painful recently, random bits of gear failing. So I was expecting to waste loads of time being the engineer. Except - everything worked a treat. I got a good first draft of the idea down. In the early hours, this particular part is at 160 bpm. After a couple of hours of that my body had gone a bit hyper. So I ended up taking Claudio for a walk at 5 am. Was enjoyable in a Blair Witch Project way.</p>
-<h2>tbox</h2>
-<p>I&#39;ve been doing a bit more on this. I need some advice on DNS handling, but to get that out of Claude I need to let him known what I&#39;m trying to do with #:tbox.</p>
-<blockquote>
-<p>I need your advice on DNS handling. Please consider the following description and tell me your recommendations. The goal of the tbox project is to create an intelligent agent ecosystem, including a knowledgebase, in a Docker container. It will interact with the outside world primarily through HTTP (using custom node services) and the XMPP protocol. It is intended to be used in two ways : as a development environment on a desktop computer or as an online service. Online, I plan to use a domain I control, <code>strandz.it</code>, possibly with services on subdomains eg. <code>xmpp.strandz.it</code>. I already have nginx set up on the server for routing with https support, so it&#39;s fine for the Docker container to expose regular http &amp; xmpp ports without encryption. Locally, a priority is to be able to do selective hot code updates while leaving other services on the container, eg. fuseki and prosody live.  </p>
-</blockquote>
-<p>Ok, after a few cycles Claude gave me some material that looks good, I&#39;ve saved as-is under:</p>
-<pre><code class="language-sh">/home/danny/github-danny/hyperdata/packages/tbox/docs/artifacts_2024-12-28
-</code></pre>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="">
-        
-    </a>
-</p> <em></em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="">#</a>
-    <h1>Projects</h1>
-<p>Project docs are a priority for me right now. But interdependencies are crazy-convoluted.</p>
-<p>First problem is identifying the projects...</p>
-<p>Most of the things I&#39;ve been most active with recently are still early-stage as Claude projects and/or on notes I&#39;ve got scattered around, or in repos which appear two dirs on my office machine. I&#39;ll get back to that later.</p>
-<p>First I need to remind myself where I was up to with :</p>
-<ul>
-<li>#:tbox - a Docker container for <em>stuff</em>, most relevant right know, <strong>knowledgebases</strong></li>
-<li>#:semem - a <strong>knowledgebase interface</strong></li>
-</ul>
-<h2>tbox</h2>
-<p>Hah! I&#39;d got further than I remembered. The Job One <a href="https://jena.apache.org/documentation/fuseki2/">Fuseki SPARQL Server</a> is already in place. Exposed at <a href="http://localhost:4030">http://localhost:4030</a></p>
-<p>Looks like I got <a href="https://prosody.im/">Prosody IM Server</a> in there too, but I&#39;m pretty sure I haven&#39;t tested.</p>
-<p>I need to get #:transmissions and other core #:hyperdata projects in here too.</p>
-<p>Because I need #:semem to organise my existing docs.</p>
-<p><strong>I saved a link about setting up Docker as a dev container, best read that first.</strong></p>
-<h2>semem</h2>
-<p>Dog walk now, coffee with Mari &amp; plumbing supplies run soon. </p>
-<pre><code class="language-sh">github-danny$ ls
-backup.sh         dogbot        elfquake.org           getting-things-diced-on-paper  hyperdata-static   ls.txt       postcraft                server_      strandz     transmissions
-claude-sync       elfquake      foaf-retro             hyperdata                      hyperdata-support  markor-docs  postcraft-raw-hyperdata  sparqlpress  temp
-danny.ayers.name  elfquake-old  foaf-retro-non-github  hyperdata-desktop_ex-packages  jsbrains           mcp-o        postcraft-support        StoneRDF     trans-apps
-
-~/github-danny/hyperdata/packages$ ls
-auth-test  common   dogbot  graph-editor       kia            ns                    progressive-scraper  server       sparql-store-lite  strandz  trans-dev  utils
-chauvin    danping  farelo  hyperdata-android  ldap-auth-app  open-world-interface  semem                sheltopusik  store-wrapper      tbox     trellis
-</code></pre>
 
 </article>
 <p class="post-title h-cinzel">

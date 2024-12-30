@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2024-12-29T18:20:36.985Z</updated>
+    <updated>2024-12-30T11:58:02.637Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -12,10 +12,55 @@
 
     
     <entry>
+        <title>Entry 2024-12-30_perplexed</title>
+        <link href="https://danny.ayers.name/entries/2024-12-30_perplexed.html"/>
+        <id>https://danny.ayers.name/entries/2024-12-30_perplexed.html</id>
+        <updated>2024-12-30T11:58:02.637Z</updated>
+        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
+
+&lt;article class=&quot;post-content&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
+    &lt;h1&gt;Perplexed&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Before getting out of bed, I signed up for a free month of &lt;a href=&quot;https://www.perplexity.ai/&quot;&gt;Perplexity&lt;/a&gt; and perplexed Claude&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Paths&lt;/h2&gt;
+&lt;p&gt; A note-to-self before I forget.&lt;/p&gt;
+&lt;p&gt; #:todo check how the &lt;a href=&quot;https://eyereasoner.github.io/eye/&quot;&gt;EYE&lt;/a&gt; reasoner uses &lt;a href=&quot;https://en.wikipedia.org/wiki/Leonhard_Euler&quot;&gt;Euler&lt;/a&gt; paths for #:semem&lt;/p&gt;
+&lt;p&gt; I had a few overlapping requirements for a classical reasoner. Long story short, I found &lt;a href=&quot;https://eyereasoner.github.io/eye/&quot;&gt;EYE&lt;/a&gt; ticked many boxes. Notably it&amp;#39;s &lt;a href=&quot;https://en.wikipedia.org/wiki/Semantic_Web&quot;&gt;semantic Web&lt;/a&gt;-friendly.&lt;/p&gt;
+&lt;p&gt;I have a lot of unknowns (in the &lt;a href=&quot;https://en.wikipedia.org/wiki/There_are_unknown_unknowns&quot;&gt;Donald Rumsfeld senses&lt;/a&gt;) around #:semem. I might have a short summary of what I&amp;#39;m after :&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Semem is an LLM-compatible context-aware, open-ended graph knowledgebase combining the advantages of vector embeddings and Linked Data technologies.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Right now I&amp;#39;m still on the nuts &amp;amp; bolts, I&amp;#39;ve got fairly straightforward next steps to implement before the fun starts. The fun has many dimensions. From the above,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;LLM-compatible&lt;/strong&gt; - this starts with boilerplate connectors to Ollama, the OpenAI API, the &lt;a href=&quot;https://www.anthropic.com/news/model-context-protocol&quot;&gt;Model Context Protocol&lt;/a&gt; etc. But an aspect of the &lt;em&gt;open-ended&lt;/em&gt; I have in mind more broadly is exploring connectivity from a different perspective, that of inter-agent comms. This will go under the umbrella of #:LinguaFranche.  &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;open-ended graph&lt;/strong&gt; - this is the Web. Low-hanging fruit is hooking into existing SPARQL endpoints, eg. WikiData&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;context-aware&lt;/strong&gt; - I&amp;#39;m working on the vocabulary around this to express it more clearly, but the general idea is that you want more relevant knowledge getting more attention&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Vector embeddings offer similarity measures, but the RDF (Web) model offers a whole different dimension.&lt;/p&gt;
+&lt;p&gt;Grrr! I went to LinkedIn to find a ref. related to this, instant distractions :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2411.03252&quot;&gt;Spontaneous Emergence of Agent Individuality through Social Interactions in LLM-Based Communities&lt;/a&gt; [sent to printer for later]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://chimezie.medium.com/declarative-prompts-llm-agents-and-their-programs-oh-my-aab1d0da6fef&quot;&gt;Declarative Prompts, LLM Agents, and their Programs. Oh my…&lt;/a&gt; [from Chimezie, left open in tab for sooner]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A ref I can remember offhand is Bergi&amp;#39;s material :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.bergnet.org/2024/05/unified-landscape/&quot;&gt;Unveiling the Unified Landscape: Bridging Knowledge Graphs and Machine Learning&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.bergnet.org/2024/09/llm-kg-wombat/&quot;&gt;Language Models Meet Knowledge Graphs - A Powerful Duo (plus a Wombat)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;linked from there&lt;/em&gt; &lt;a href=&quot;https://towardsdatascience.com/how-to-implement-graph-rag-using-knowledge-graphs-and-vector-databases-60bb69a22759&quot;&gt;How to Implement Graph RAG Using Knowledge Graphs and Vector Databases&lt;/a&gt; - Steve Hedden&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Enough gab, I&amp;#39;d better get on with this thing.&lt;/p&gt;
+
+&lt;/article&gt;
+&lt;p class=&quot;post-title h-cinzel&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;
+        
+    &lt;/a&gt;
+&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
+    </entry>
+    
+    <entry>
         <title>Entry 2024-12-29_sunny-day</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_sunny-day.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_sunny-day.html</id>
-        <updated>2024-12-29T18:20:36.985Z</updated>
+        <updated>2024-12-30T11:58:02.638Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -43,7 +88,7 @@
         <title>Entry 2024-12-29_semem-ollama</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_semem-ollama.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_semem-ollama.html</id>
-        <updated>2024-12-29T18:20:36.985Z</updated>
+        <updated>2024-12-30T11:58:02.638Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -106,10 +151,40 @@ curl http://localhost:11434/api/embeddings -d &amp;#39;{
     </entry>
     
     <entry>
+        <title>Entry 2024-12-29_prill</title>
+        <link href="https://danny.ayers.name/entries/2024-12-29_prill.html"/>
+        <id>https://danny.ayers.name/entries/2024-12-29_prill.html</id>
+        <updated>2024-12-30T11:58:02.638Z</updated>
+        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
+
+&lt;article class=&quot;post-content&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
+    &lt;h1&gt;Prill&lt;/h1&gt;
+&lt;p&gt;#:TIL the word &lt;a href=&quot;https://en.wiktionary.org/wiki/prill&quot;&gt;prill&lt;/a&gt;, &amp;quot;a pellet, a granule, a small bead&amp;quot;, while watching this: &lt;a href=&quot;https://youtu.be/dhW4XFGQB4o&quot;&gt;Iron knife made from bacteria&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;The ety of #:prill :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Unknown. OED mentions Cornish pryl (“sheep-droppings”) as a likely loan from English.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;CF. #:nurdle&lt;/p&gt;
+&lt;p&gt;The guy&amp;#39;s &lt;a href=&quot;https://primitivetechnology.wordpress.com/&quot;&gt;Primitive Technology blog&lt;/a&gt; and &lt;a href=&quot;https://youtube.com/@primitivetechnology9550&quot;&gt;videos&lt;/a&gt; &lt;strong&gt;turn on subtitles&lt;/strong&gt; are great for us &lt;em&gt;poltroniste&lt;/em&gt;  (armchair enthusiasts (including chair-oriented politicians)).&lt;/p&gt;
+&lt;p&gt;Having to look it up, this came to mind:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Text is cheap, knowledge is worth it.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;/article&gt;
+&lt;p class=&quot;post-title h-cinzel&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;
+        
+    &lt;/a&gt;
+&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
+    </entry>
+    
+    <entry>
         <title>Entry 2024-12-29_pivots</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_pivots.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_pivots.html</id>
-        <updated>2024-12-29T18:20:36.985Z</updated>
+        <updated>2024-12-30T11:58:02.638Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -127,80 +202,6 @@ curl http://localhost:11434/api/embeddings -d &amp;#39;{
 In quasi-parallel, towards #:ProofPivot, two must-haves : write down core project description for each, maybe in a proposal-like form; write down the #:poc requirements.&lt;/p&gt;
 &lt;p&gt;This lot in itself is a major grind. But I need to remind myself where I&amp;#39;m up to with everything. Best way to do this and keep it interesting is to see what I have noted for next step #:todos, code up the next little step.&lt;/p&gt;
 &lt;p&gt;I just did this with #:tbox. While going over it with Claude he gave me an architectural diagram (in Mermaid format) which I found really helpful. I&amp;#39;ve already got visualisations on the lists, but I reckon this is an aspect I should revisit very soon, to help with &lt;em&gt;everything else&lt;/em&gt;.&lt;/p&gt;
-
-&lt;/article&gt;
-&lt;p class=&quot;post-title h-cinzel&quot;&gt;
-    &lt;a href=&quot;&quot;&gt;
-        
-    &lt;/a&gt;
-&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
-    </entry>
-    
-    <entry>
-        <title>Entry 2024-12-28_db</title>
-        <link href="https://danny.ayers.name/entries/2024-12-28_db.html"/>
-        <id>https://danny.ayers.name/entries/2024-12-28_db.html</id>
-        <updated>2024-12-29T18:20:36.986Z</updated>
-        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
-
-&lt;article class=&quot;post-content&quot;&gt;
-        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
-    &lt;h1&gt;DB&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;I&amp;#39;ve got drum &amp;amp; bass playing&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Brain slow today because I had a very late night. But I&amp;#39;m quite happy with that, because I actually made it into the music room for a couple of hours. I&amp;#39;m working on a suite of tracks that will share some common elements. What was the word for those 70s prog rock...gottit, I want to make a &lt;strong&gt;concept album&lt;/strong&gt;. Unlike virtually all the prog rocks, I want this thing to be interesting.
-Anyway, there was a specific idea I wanted to try. The music room has often been painful recently, random bits of gear failing. So I was expecting to waste loads of time being the engineer. Except - everything worked a treat. I got a good first draft of the idea down. In the early hours, this particular part is at 160 bpm. After a couple of hours of that my body had gone a bit hyper. So I ended up taking Claudio for a walk at 5 am. Was enjoyable in a Blair Witch Project way.&lt;/p&gt;
-&lt;h2&gt;tbox&lt;/h2&gt;
-&lt;p&gt;I&amp;#39;ve been doing a bit more on this. I need some advice on DNS handling, but to get that out of Claude I need to let him known what I&amp;#39;m trying to do with #:tbox.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;I need your advice on DNS handling. Please consider the following description and tell me your recommendations. The goal of the tbox project is to create an intelligent agent ecosystem, including a knowledgebase, in a Docker container. It will interact with the outside world primarily through HTTP (using custom node services) and the XMPP protocol. It is intended to be used in two ways : as a development environment on a desktop computer or as an online service. Online, I plan to use a domain I control, &lt;code&gt;strandz.it&lt;/code&gt;, possibly with services on subdomains eg. &lt;code&gt;xmpp.strandz.it&lt;/code&gt;. I already have nginx set up on the server for routing with https support, so it&amp;#39;s fine for the Docker container to expose regular http &amp;amp; xmpp ports without encryption. Locally, a priority is to be able to do selective hot code updates while leaving other services on the container, eg. fuseki and prosody live.  &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Ok, after a few cycles Claude gave me some material that looks good, I&amp;#39;ve saved as-is under:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;/home/danny/github-danny/hyperdata/packages/tbox/docs/artifacts_2024-12-28
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/article&gt;
-&lt;p class=&quot;post-title h-cinzel&quot;&gt;
-    &lt;a href=&quot;&quot;&gt;
-        
-    &lt;/a&gt;
-&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
-    </entry>
-    
-    <entry>
-        <title>Entry 2024-12-27_projects</title>
-        <link href="https://danny.ayers.name/entries/2024-12-27_projects.html"/>
-        <id>https://danny.ayers.name/entries/2024-12-27_projects.html</id>
-        <updated>2024-12-29T18:20:36.986Z</updated>
-        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
-
-&lt;article class=&quot;post-content&quot;&gt;
-        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
-    &lt;h1&gt;Projects&lt;/h1&gt;
-&lt;p&gt;Project docs are a priority for me right now. But interdependencies are crazy-convoluted.&lt;/p&gt;
-&lt;p&gt;First problem is identifying the projects...&lt;/p&gt;
-&lt;p&gt;Most of the things I&amp;#39;ve been most active with recently are still early-stage as Claude projects and/or on notes I&amp;#39;ve got scattered around, or in repos which appear two dirs on my office machine. I&amp;#39;ll get back to that later.&lt;/p&gt;
-&lt;p&gt;First I need to remind myself where I was up to with :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;#:tbox - a Docker container for &lt;em&gt;stuff&lt;/em&gt;, most relevant right know, &lt;strong&gt;knowledgebases&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;#:semem - a &lt;strong&gt;knowledgebase interface&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;tbox&lt;/h2&gt;
-&lt;p&gt;Hah! I&amp;#39;d got further than I remembered. The Job One &lt;a href=&quot;https://jena.apache.org/documentation/fuseki2/&quot;&gt;Fuseki SPARQL Server&lt;/a&gt; is already in place. Exposed at &lt;a href=&quot;http://localhost:4030&quot;&gt;http://localhost:4030&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Looks like I got &lt;a href=&quot;https://prosody.im/&quot;&gt;Prosody IM Server&lt;/a&gt; in there too, but I&amp;#39;m pretty sure I haven&amp;#39;t tested.&lt;/p&gt;
-&lt;p&gt;I need to get #:transmissions and other core #:hyperdata projects in here too.&lt;/p&gt;
-&lt;p&gt;Because I need #:semem to organise my existing docs.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;I saved a link about setting up Docker as a dev container, best read that first.&lt;/strong&gt;&lt;/p&gt;
-&lt;h2&gt;semem&lt;/h2&gt;
-&lt;p&gt;Dog walk now, coffee with Mari &amp;amp; plumbing supplies run soon. &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;github-danny$ ls
-backup.sh         dogbot        elfquake.org           getting-things-diced-on-paper  hyperdata-static   ls.txt       postcraft                server_      strandz     transmissions
-claude-sync       elfquake      foaf-retro             hyperdata                      hyperdata-support  markor-docs  postcraft-raw-hyperdata  sparqlpress  temp
-danny.ayers.name  elfquake-old  foaf-retro-non-github  hyperdata-desktop_ex-packages  jsbrains           mcp-o        postcraft-support        StoneRDF     trans-apps
-
-~/github-danny/hyperdata/packages$ ls
-auth-test  common   dogbot  graph-editor       kia            ns                    progressive-scraper  server       sparql-store-lite  strandz  trans-dev  utils
-chauvin    danping  farelo  hyperdata-android  ldap-auth-app  open-world-interface  semem                sheltopusik  store-wrapper      tbox     trellis
-&lt;/code&gt;&lt;/pre&gt;
 
 &lt;/article&gt;
 &lt;p class=&quot;post-title h-cinzel&quot;&gt;
