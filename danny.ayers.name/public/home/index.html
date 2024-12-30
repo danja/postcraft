@@ -37,6 +37,40 @@
 
 <article class="post-content">
         <a href="">#</a>
+    <h1>Semem SPARQ</h1>
+<p><em><a href="https://github.com/danja/semem">Semem</a> doesn&#39;t quite SPARQL yet</em></p>
+<p>I was able to sort out the Faiss API issues from earlier so dove right ahead in implementing storage for #:semem that uses a remote SPARQL endpoint. Well, not quite -</p>
+<pre><code class="language-sh">Executed 45 of 45 specs (4 ERRORS) (33 FAILED) in 1 sec.
+</code></pre>
+<p><a href="https://github.com/danja/semem/blob/main/src/SPARQLExample.js">SPARQLExample.js</a> also fails miserably, when it tries to <code>UPDATE</code>. This might well be a problem with the target SPARQL store (Fuseki in the #:tbox Docker), I only set that up yesterday (?), haven&#39;t tested it properly yet. I suspect <strong>auth</strong>.</p>
+<p>As usual Claude did most of the donkey work for me.</p>
+<p><a href="https://github.com/danja/semem/blob/main/src/stores/SPARQLStore.js">SPARQLStore.js</a> (and there&#39;s a <a href="https://github.com/danja/semem/blob/main/src/stores/CachedSPARQLStore.js">CachedSPARQLStore.js</a>) just use simple templating to create the SPARQL. But that&#39;s all it needs right now.</p>
+<pre><code class="language-javascript">_generateInsertStatements(memories, type) {
+    return memories.map((interaction, index) =&gt; `
+        _:interaction${type}${index} a mcp:Interaction ;
+            mcp:id &quot;${interaction.id}&quot; ;
+            mcp:prompt &quot;${this._escapeSparqlString(interaction.prompt)}&quot; ;
+            mcp:output &quot;${this._escapeSparqlString(interaction.output)}&quot; ;
+            mcp:embedding &quot;&quot;&quot;${JSON.stringify(interaction.embedding)}&quot;&quot;&quot; ;
+            mcp:timestamp &quot;${interaction.timestamp}&quot;^^xsd:integer ;
+            mcp:accessCount &quot;${interaction.accessCount}&quot;^^xsd:integer ;
+            mcp:concepts &quot;&quot;&quot;${JSON.stringify(interaction.concepts)}&quot;&quot;&quot; ;
+            mcp:decayFactor &quot;${interaction.decayFactor}&quot;^^xsd:decimal ;
+            mcp:memoryType &quot;${type}&quot; .
+    `).join(&#39;\n&#39;);
+}
+</code></pre>
+<p>Yeah, I finally found a use for the <a href="https://purl.org/stuff/mcp">Model Context Protocol Ontology</a> Claude &amp; I put together almost a month ago.</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="">
+        
+    </a>
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="">#</a>
     <h1>Semem Lives!</h1>
 <p><em><a href="https://github.com/danja/semem">Semem</a> <del>is</del> will be an LLM-compatible context-aware, open-ended graph knowledgebase system combining the advantages of vector embeddings and Linked Data technologies.</em></p>
 <p><a href="https://danny.ayers.name/entries/2024-12-29_semem-ollama.html">Notes from yesterday</a>, <a href="https://danny.ayers.name/entries/2024-12-30_perplexed.html">this morning</a></p>
@@ -209,28 +243,6 @@ curl http://localhost:11434/api/embeddings -d &#39;{
 <p>#:todo what was that cytoscape plugin that looked good for pipelines from somewhere around Eclipse?
 #:todo check out the cytoscape/<a href="https://mermaid.js.org/ecosystem/integrations-community.html">mermaid integrations</a></p>
 <p>Ok, I guess I should actually look at what I&#39;ve got for #:semem code so far...</p>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="">
-        
-    </a>
-</p> <em></em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="">#</a>
-    <h1>Prill</h1>
-<p>#:TIL the word <a href="https://en.wiktionary.org/wiki/prill">prill</a>, &quot;a pellet, a granule, a small bead&quot;, while watching this: <a href="https://youtu.be/dhW4XFGQB4o">Iron knife made from bacteria</a>. </p>
-<p>The ety of #:prill :</p>
-<blockquote>
-<p>Unknown. OED mentions Cornish pryl (“sheep-droppings”) as a likely loan from English.</p>
-</blockquote>
-<p>CF. #:nurdle</p>
-<p>The guy&#39;s <a href="https://primitivetechnology.wordpress.com/">Primitive Technology blog</a> and <a href="https://youtube.com/@primitivetechnology9550">videos</a> <strong>turn on subtitles</strong> are great for us <em>poltroniste</em>  (armchair enthusiasts (including chair-oriented politicians)).</p>
-<p>Having to look it up, this came to mind:</p>
-<blockquote>
-<p>Text is cheap, knowledge is worth it.</p>
-</blockquote>
 
 </article>
 <p class="post-title h-cinzel">

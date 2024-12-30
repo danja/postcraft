@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2024-12-30T14:47:46.989Z</updated>
+    <updated>2024-12-30T21:34:52.054Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -12,10 +12,52 @@
 
     
     <entry>
+        <title>Entry 2024-12-30_semem-sparq</title>
+        <link href="https://danny.ayers.name/entries/2024-12-30_semem-sparq.html"/>
+        <id>https://danny.ayers.name/entries/2024-12-30_semem-sparq.html</id>
+        <updated>2024-12-30T21:34:52.054Z</updated>
+        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
+
+&lt;article class=&quot;post-content&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
+    &lt;h1&gt;Semem SPARQ&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/danja/semem&quot;&gt;Semem&lt;/a&gt; doesn&amp;#39;t quite SPARQL yet&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I was able to sort out the Faiss API issues from earlier so dove right ahead in implementing storage for #:semem that uses a remote SPARQL endpoint. Well, not quite -&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;Executed 45 of 45 specs (4 ERRORS) (33 FAILED) in 1 sec.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/danja/semem/blob/main/src/SPARQLExample.js&quot;&gt;SPARQLExample.js&lt;/a&gt; also fails miserably, when it tries to &lt;code&gt;UPDATE&lt;/code&gt;. This might well be a problem with the target SPARQL store (Fuseki in the #:tbox Docker), I only set that up yesterday (?), haven&amp;#39;t tested it properly yet. I suspect &lt;strong&gt;auth&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;As usual Claude did most of the donkey work for me.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/danja/semem/blob/main/src/stores/SPARQLStore.js&quot;&gt;SPARQLStore.js&lt;/a&gt; (and there&amp;#39;s a &lt;a href=&quot;https://github.com/danja/semem/blob/main/src/stores/CachedSPARQLStore.js&quot;&gt;CachedSPARQLStore.js&lt;/a&gt;) just use simple templating to create the SPARQL. But that&amp;#39;s all it needs right now.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;_generateInsertStatements(memories, type) {
+    return memories.map((interaction, index) =&amp;gt; `
+        _:interaction${type}${index} a mcp:Interaction ;
+            mcp:id &amp;quot;${interaction.id}&amp;quot; ;
+            mcp:prompt &amp;quot;${this._escapeSparqlString(interaction.prompt)}&amp;quot; ;
+            mcp:output &amp;quot;${this._escapeSparqlString(interaction.output)}&amp;quot; ;
+            mcp:embedding &amp;quot;&amp;quot;&amp;quot;${JSON.stringify(interaction.embedding)}&amp;quot;&amp;quot;&amp;quot; ;
+            mcp:timestamp &amp;quot;${interaction.timestamp}&amp;quot;^^xsd:integer ;
+            mcp:accessCount &amp;quot;${interaction.accessCount}&amp;quot;^^xsd:integer ;
+            mcp:concepts &amp;quot;&amp;quot;&amp;quot;${JSON.stringify(interaction.concepts)}&amp;quot;&amp;quot;&amp;quot; ;
+            mcp:decayFactor &amp;quot;${interaction.decayFactor}&amp;quot;^^xsd:decimal ;
+            mcp:memoryType &amp;quot;${type}&amp;quot; .
+    `).join(&amp;#39;&#92;n&amp;#39;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Yeah, I finally found a use for the &lt;a href=&quot;https://purl.org/stuff/mcp&quot;&gt;Model Context Protocol Ontology&lt;/a&gt; Claude &amp;amp; I put together almost a month ago.&lt;/p&gt;
+
+&lt;/article&gt;
+&lt;p class=&quot;post-title h-cinzel&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;
+        
+    &lt;/a&gt;
+&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
+    </entry>
+    
+    <entry>
         <title>Entry 2024-12-30_semem-lives</title>
         <link href="https://danny.ayers.name/entries/2024-12-30_semem-lives.html"/>
         <id>https://danny.ayers.name/entries/2024-12-30_semem-lives.html</id>
-        <updated>2024-12-30T14:47:46.989Z</updated>
+        <updated>2024-12-30T21:34:52.054Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -88,7 +130,7 @@ TypeError: Invalid the first argument type, must be an Array.
         <title>Entry 2024-12-30_perplexed</title>
         <link href="https://danny.ayers.name/entries/2024-12-30_perplexed.html"/>
         <id>https://danny.ayers.name/entries/2024-12-30_perplexed.html</id>
-        <updated>2024-12-30T14:47:46.989Z</updated>
+        <updated>2024-12-30T21:34:52.054Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -135,7 +177,7 @@ TypeError: Invalid the first argument type, must be an Array.
         <title>Entry 2024-12-29_sunny-day</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_sunny-day.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_sunny-day.html</id>
-        <updated>2024-12-30T14:47:46.990Z</updated>
+        <updated>2024-12-30T21:34:52.055Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -163,7 +205,7 @@ TypeError: Invalid the first argument type, must be an Array.
         <title>Entry 2024-12-29_semem-ollama</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_semem-ollama.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_semem-ollama.html</id>
-        <updated>2024-12-30T14:47:46.990Z</updated>
+        <updated>2024-12-30T21:34:52.055Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -216,36 +258,6 @@ curl http://localhost:11434/api/embeddings -d &amp;#39;{
 &lt;p&gt;#:todo what was that cytoscape plugin that looked good for pipelines from somewhere around Eclipse?
 #:todo check out the cytoscape/&lt;a href=&quot;https://mermaid.js.org/ecosystem/integrations-community.html&quot;&gt;mermaid integrations&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Ok, I guess I should actually look at what I&amp;#39;ve got for #:semem code so far...&lt;/p&gt;
-
-&lt;/article&gt;
-&lt;p class=&quot;post-title h-cinzel&quot;&gt;
-    &lt;a href=&quot;&quot;&gt;
-        
-    &lt;/a&gt;
-&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
-    </entry>
-    
-    <entry>
-        <title>Entry 2024-12-29_prill</title>
-        <link href="https://danny.ayers.name/entries/2024-12-29_prill.html"/>
-        <id>https://danny.ayers.name/entries/2024-12-29_prill.html</id>
-        <updated>2024-12-30T14:47:46.990Z</updated>
-        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
-
-&lt;article class=&quot;post-content&quot;&gt;
-        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
-    &lt;h1&gt;Prill&lt;/h1&gt;
-&lt;p&gt;#:TIL the word &lt;a href=&quot;https://en.wiktionary.org/wiki/prill&quot;&gt;prill&lt;/a&gt;, &amp;quot;a pellet, a granule, a small bead&amp;quot;, while watching this: &lt;a href=&quot;https://youtu.be/dhW4XFGQB4o&quot;&gt;Iron knife made from bacteria&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt;The ety of #:prill :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Unknown. OED mentions Cornish pryl (“sheep-droppings”) as a likely loan from English.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;CF. #:nurdle&lt;/p&gt;
-&lt;p&gt;The guy&amp;#39;s &lt;a href=&quot;https://primitivetechnology.wordpress.com/&quot;&gt;Primitive Technology blog&lt;/a&gt; and &lt;a href=&quot;https://youtube.com/@primitivetechnology9550&quot;&gt;videos&lt;/a&gt; &lt;strong&gt;turn on subtitles&lt;/strong&gt; are great for us &lt;em&gt;poltroniste&lt;/em&gt;  (armchair enthusiasts (including chair-oriented politicians)).&lt;/p&gt;
-&lt;p&gt;Having to look it up, this came to mind:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Text is cheap, knowledge is worth it.&lt;/p&gt;
-&lt;/blockquote&gt;
 
 &lt;/article&gt;
 &lt;p class=&quot;post-title h-cinzel&quot;&gt;
