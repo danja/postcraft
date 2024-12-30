@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2024-12-30T14:47:23.135Z</updated>
+    <updated>2024-12-30T14:47:46.989Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -15,7 +15,7 @@
         <title>Entry 2024-12-30_semem-lives</title>
         <link href="https://danny.ayers.name/entries/2024-12-30_semem-lives.html"/>
         <id>https://danny.ayers.name/entries/2024-12-30_semem-lives.html</id>
-        <updated>2024-12-30T14:47:23.135Z</updated>
+        <updated>2024-12-30T14:47:46.989Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -74,6 +74,7 @@ In summary, AI technology is advancing rapidly across various fields, offering m
 [INFO] Adding interaction: &amp;#39;What&amp;#39;s the current state of AI technology?&amp;#39;
 TypeError: Invalid the first argument type, must be an Array.
 &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Tree time.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;/article&gt;
 &lt;p class=&quot;post-title h-cinzel&quot;&gt;
@@ -87,7 +88,7 @@ TypeError: Invalid the first argument type, must be an Array.
         <title>Entry 2024-12-30_perplexed</title>
         <link href="https://danny.ayers.name/entries/2024-12-30_perplexed.html"/>
         <id>https://danny.ayers.name/entries/2024-12-30_perplexed.html</id>
-        <updated>2024-12-30T14:47:23.136Z</updated>
+        <updated>2024-12-30T14:47:46.989Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -134,7 +135,7 @@ TypeError: Invalid the first argument type, must be an Array.
         <title>Entry 2024-12-29_sunny-day</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_sunny-day.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_sunny-day.html</id>
-        <updated>2024-12-30T14:47:23.136Z</updated>
+        <updated>2024-12-30T14:47:46.990Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -162,7 +163,7 @@ TypeError: Invalid the first argument type, must be an Array.
         <title>Entry 2024-12-29_semem-ollama</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_semem-ollama.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_semem-ollama.html</id>
-        <updated>2024-12-30T14:47:23.136Z</updated>
+        <updated>2024-12-30T14:47:46.990Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -228,7 +229,7 @@ curl http://localhost:11434/api/embeddings -d &amp;#39;{
         <title>Entry 2024-12-29_prill</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_prill.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_prill.html</id>
-        <updated>2024-12-30T14:47:23.136Z</updated>
+        <updated>2024-12-30T14:47:46.990Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
