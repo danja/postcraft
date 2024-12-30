@@ -32,4 +32,7 @@ A ref I can remember offhand is Bergi's material :
 * [Language Models Meet Knowledge Graphs - A Powerful Duo (plus a Wombat)](https://www.bergnet.org/2024/09/llm-kg-wombat/)
 * *linked from there* [How to Implement Graph RAG Using Knowledge Graphs and Vector Databases](https://towardsdatascience.com/how-to-implement-graph-rag-using-knowledge-graphs-and-vector-databases-60bb69a22759) - Steve Hedden
 
+#:todo put some FOAF where [Bergi's card](https://www.bergnet.org/people/bergi/card) links to it : http://danny.ayers.name/index.rdf#me
+#:todo W6 link on https://hyperdata.it/xmlns/ is broken - make broken link finder #:transmission?
+
 Enough gab, I'd better get on with this thing.

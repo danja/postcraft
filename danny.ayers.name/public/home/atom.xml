@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2024-12-30T11:58:02.637Z</updated>
+    <updated>2024-12-30T12:04:15.464Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -15,7 +15,7 @@
         <title>Entry 2024-12-30_perplexed</title>
         <link href="https://danny.ayers.name/entries/2024-12-30_perplexed.html"/>
         <id>https://danny.ayers.name/entries/2024-12-30_perplexed.html</id>
-        <updated>2024-12-30T11:58:02.637Z</updated>
+        <updated>2024-12-30T12:04:15.464Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -46,6 +46,8 @@
 &lt;li&gt;&lt;a href=&quot;https://www.bergnet.org/2024/09/llm-kg-wombat/&quot;&gt;Language Models Meet Knowledge Graphs - A Powerful Duo (plus a Wombat)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;linked from there&lt;/em&gt; &lt;a href=&quot;https://towardsdatascience.com/how-to-implement-graph-rag-using-knowledge-graphs-and-vector-databases-60bb69a22759&quot;&gt;How to Implement Graph RAG Using Knowledge Graphs and Vector Databases&lt;/a&gt; - Steve Hedden&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;#:todo put some FOAF where &lt;a href=&quot;https://www.bergnet.org/people/bergi/card&quot;&gt;Bergi&amp;#39;s card&lt;/a&gt; links to it : &lt;a href=&quot;http://danny.ayers.name/index.rdf#me&quot;&gt;http://danny.ayers.name/index.rdf#me&lt;/a&gt;
+#:todo W6 link on &lt;a href=&quot;https://hyperdata.it/xmlns/&quot;&gt;https://hyperdata.it/xmlns/&lt;/a&gt; is broken - make broken link finder #:transmission?&lt;/p&gt;
 &lt;p&gt;Enough gab, I&amp;#39;d better get on with this thing.&lt;/p&gt;
 
 &lt;/article&gt;
@@ -60,7 +62,7 @@
         <title>Entry 2024-12-29_sunny-day</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_sunny-day.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_sunny-day.html</id>
-        <updated>2024-12-30T11:58:02.638Z</updated>
+        <updated>2024-12-30T12:04:15.464Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -88,7 +90,7 @@
         <title>Entry 2024-12-29_semem-ollama</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_semem-ollama.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_semem-ollama.html</id>
-        <updated>2024-12-30T11:58:02.638Z</updated>
+        <updated>2024-12-30T12:04:15.464Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -154,7 +156,7 @@ curl http://localhost:11434/api/embeddings -d &amp;#39;{
         <title>Entry 2024-12-29_prill</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_prill.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_prill.html</id>
-        <updated>2024-12-30T11:58:02.638Z</updated>
+        <updated>2024-12-30T12:04:15.464Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -184,7 +186,7 @@ curl http://localhost:11434/api/embeddings -d &amp;#39;{
         <title>Entry 2024-12-29_pivots</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_pivots.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_pivots.html</id>
-        <updated>2024-12-30T11:58:02.638Z</updated>
+        <updated>2024-12-30T12:04:15.464Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
