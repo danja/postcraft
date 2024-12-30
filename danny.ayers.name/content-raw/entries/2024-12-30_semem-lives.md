@@ -1,6 +1,6 @@
 # Semem Lives!
 
-*[Semem](https://github.com/danja/semem) ~~is~~ will be an LLM-compatible context-aware, open-ended graph knowledgebase combining the advantages of vector embeddings and Linked Data technologies.*
+*[Semem](https://github.com/danja/semem) ~~is~~ will be an LLM-compatible context-aware, open-ended graph knowledgebase system combining the advantages of vector embeddings and Linked Data technologies.*
 
 [Notes from yesterday](https://danny.ayers.name/entries/2024-12-29_semem-ollama.html), [this morning](https://danny.ayers.name/entries/2024-12-30_perplexed.html)
 

@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2024-12-30T14:45:03.528Z</updated>
+    <updated>2024-12-30T14:47:23.135Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -15,13 +15,13 @@
         <title>Entry 2024-12-30_semem-lives</title>
         <link href="https://danny.ayers.name/entries/2024-12-30_semem-lives.html"/>
         <id>https://danny.ayers.name/entries/2024-12-30_semem-lives.html</id>
-        <updated>2024-12-30T14:45:03.528Z</updated>
+        <updated>2024-12-30T14:47:23.135Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
         &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
     &lt;h1&gt;Semem Lives!&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/danja/semem&quot;&gt;Semem&lt;/a&gt; &lt;del&gt;is&lt;/del&gt; will be an LLM-compatible context-aware, open-ended graph knowledgebase combining the advantages of vector embeddings and Linked Data technologies.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/danja/semem&quot;&gt;Semem&lt;/a&gt; &lt;del&gt;is&lt;/del&gt; will be an LLM-compatible context-aware, open-ended graph knowledgebase system combining the advantages of vector embeddings and Linked Data technologies.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://danny.ayers.name/entries/2024-12-29_semem-ollama.html&quot;&gt;Notes from yesterday&lt;/a&gt;, &lt;a href=&quot;https://danny.ayers.name/entries/2024-12-30_perplexed.html&quot;&gt;this morning&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Wow!&lt;/strong&gt;, that went remarkably well. I&amp;#39;m pretty familiar with the semweb bits, the embedding/chat interfacing side very inexperienced. So, hard part (for me) first.&lt;/p&gt;
 &lt;p&gt;Claude did most of the heavy lifting, a long session about a month ago, a bunch this morning. I only actually &lt;strong&gt;ran it for the first time about an hour ago&lt;/strong&gt;. Predictably Claude had left me with a load of manual &lt;em&gt;make-sane&lt;/em&gt; refactoring to do. One stumble remaining is down to Faiss libs. The npm package &lt;code&gt;faiss&lt;/code&gt; is an empty repo, Claude had hallucinated its API. What I needed was &lt;code&gt;faiss-node&lt;/code&gt;. So that&amp;#39;s where it stalls right now. I&amp;#39;ve got the tooling in place to quicky sort this out. But I&amp;#39;d used up my Claude Pro (!) token allowance by 11am, it&amp;#39;s not due to reset for 20 mins and I have at least one tree to cut down before it gets dark...&lt;/p&gt;
@@ -87,7 +87,7 @@ TypeError: Invalid the first argument type, must be an Array.
         <title>Entry 2024-12-30_perplexed</title>
         <link href="https://danny.ayers.name/entries/2024-12-30_perplexed.html"/>
         <id>https://danny.ayers.name/entries/2024-12-30_perplexed.html</id>
-        <updated>2024-12-30T14:45:03.528Z</updated>
+        <updated>2024-12-30T14:47:23.136Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -134,7 +134,7 @@ TypeError: Invalid the first argument type, must be an Array.
         <title>Entry 2024-12-29_sunny-day</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_sunny-day.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_sunny-day.html</id>
-        <updated>2024-12-30T14:45:03.528Z</updated>
+        <updated>2024-12-30T14:47:23.136Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -162,7 +162,7 @@ TypeError: Invalid the first argument type, must be an Array.
         <title>Entry 2024-12-29_semem-ollama</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_semem-ollama.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_semem-ollama.html</id>
-        <updated>2024-12-30T14:45:03.528Z</updated>
+        <updated>2024-12-30T14:47:23.136Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -228,7 +228,7 @@ curl http://localhost:11434/api/embeddings -d &amp;#39;{
         <title>Entry 2024-12-29_prill</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_prill.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_prill.html</id>
-        <updated>2024-12-30T14:45:03.528Z</updated>
+        <updated>2024-12-30T14:47:23.136Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
