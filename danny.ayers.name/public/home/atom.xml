@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2024-12-30T12:04:15.464Z</updated>
+    <updated>2024-12-30T14:45:03.528Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -12,10 +12,82 @@
 
     
     <entry>
+        <title>Entry 2024-12-30_semem-lives</title>
+        <link href="https://danny.ayers.name/entries/2024-12-30_semem-lives.html"/>
+        <id>https://danny.ayers.name/entries/2024-12-30_semem-lives.html</id>
+        <updated>2024-12-30T14:45:03.528Z</updated>
+        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
+
+&lt;article class=&quot;post-content&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
+    &lt;h1&gt;Semem Lives!&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/danja/semem&quot;&gt;Semem&lt;/a&gt; &lt;del&gt;is&lt;/del&gt; will be an LLM-compatible context-aware, open-ended graph knowledgebase combining the advantages of vector embeddings and Linked Data technologies.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://danny.ayers.name/entries/2024-12-29_semem-ollama.html&quot;&gt;Notes from yesterday&lt;/a&gt;, &lt;a href=&quot;https://danny.ayers.name/entries/2024-12-30_perplexed.html&quot;&gt;this morning&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Wow!&lt;/strong&gt;, that went remarkably well. I&amp;#39;m pretty familiar with the semweb bits, the embedding/chat interfacing side very inexperienced. So, hard part (for me) first.&lt;/p&gt;
+&lt;p&gt;Claude did most of the heavy lifting, a long session about a month ago, a bunch this morning. I only actually &lt;strong&gt;ran it for the first time about an hour ago&lt;/strong&gt;. Predictably Claude had left me with a load of manual &lt;em&gt;make-sane&lt;/em&gt; refactoring to do. One stumble remaining is down to Faiss libs. The npm package &lt;code&gt;faiss&lt;/code&gt; is an empty repo, Claude had hallucinated its API. What I needed was &lt;code&gt;faiss-node&lt;/code&gt;. So that&amp;#39;s where it stalls right now. I&amp;#39;ve got the tooling in place to quicky sort this out. But I&amp;#39;d used up my Claude Pro (!) token allowance by 11am, it&amp;#39;s not due to reset for 20 mins and I have at least one tree to cut down before it gets dark...&lt;/p&gt;
+&lt;p&gt;Still embryonic, but so pleasing, in &lt;a href=&quot;https://github.com/danja/semem/blob/main/src/OllamaExample.js&quot;&gt;OllamaExample.js&lt;/a&gt; there is :&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;chat: {
+    provider: &amp;#39;ollama&amp;#39;,
+    model: &amp;#39;qwen2:1.5b&amp;#39;
+},
+embedding: {
+    provider: &amp;#39;ollama&amp;#39;,
+    model: &amp;#39;nomic-embed-text&amp;#39;
+}
+...
+    const prompt = &amp;quot;What&amp;#39;s the current state of AI technology?&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;...and so...&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;node src/OllamaExample.js
+
+[INFO] Generating embedding...
+[INFO] No existing interaction history found in JSON. Starting fresh.
+[INFO] Memory initialized with 0 short-term and 0 long-term memories
+[INFO] Extracting concepts...
+[INFO] Extracted concepts: [ &amp;#39;AI technology&amp;#39; ]
+[INFO] No interactions available
+Response: AI (artificial intelligence) technology has come a long way since its inception in the 1950s. It is now a rapidly growing field, and there are numerous advancements being made across various industries.
+
+1. Machine Learning: This involves programming computers to learn from data without being explicitly programmed. It&amp;#39;s used for tasks like recognizing images, identifying voice commands, or predicting customer behavior.
+
+2. Natural Language Processing (NLP): AI systems can understand human language in ways that make them easier to interact with and more efficient. They are used for tasks like chatbots, virtual assistants, and text-based search engines.
+
+3. Robotics: As technology develops further, robots have become better at performing complex tasks autonomously. Some advanced robots now perform jobs such as manufacturing goods or even medical procedures.
+
+4. Computer Vision (CV): This uses AI to help computers understand visual information in images or videos. It&amp;#39;s used for applications like self-driving cars, security cameras, and facial recognition.
+
+5. Deep Learning: This branch of artificial intelligence involves creating algorithms that can learn from data without being explicitly programmed. It&amp;#39;s widely used in image classification tasks, natural language processing, and reinforcement learning.
+
+6. Neural Networks: These are a type of machine learning algorithm inspired by the human brain. They&amp;#39;re used for tasks such as recognizing handwriting, speech recognition, and playing games like chess or Go.
+
+In summary, AI technology is advancing rapidly across various fields, offering more efficient solutions to complex problems. However, there&amp;#39;s still room for improvement in areas like ethical considerations and ensuring that AI systems can be trusted by humans.
+[INFO] Generating embedding...
+[INFO] Extracting concepts...
+[INFO] Extracted concepts: [
+  &amp;#39;Machine Learning&amp;#39;,
+  &amp;#39;Natural Language Processing (NLP)&amp;#39;,
+  &amp;#39;Robotics&amp;#39;,
+  &amp;#39;Computer Vision (CV)&amp;#39;,
+  &amp;#39;Deep Learning&amp;#39;,
+  &amp;#39;Neural Networks&amp;#39;
+]
+[INFO] Adding interaction: &amp;#39;What&amp;#39;s the current state of AI technology?&amp;#39;
+TypeError: Invalid the first argument type, must be an Array.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;/article&gt;
+&lt;p class=&quot;post-title h-cinzel&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;
+        
+    &lt;/a&gt;
+&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
+    </entry>
+    
+    <entry>
         <title>Entry 2024-12-30_perplexed</title>
         <link href="https://danny.ayers.name/entries/2024-12-30_perplexed.html"/>
         <id>https://danny.ayers.name/entries/2024-12-30_perplexed.html</id>
-        <updated>2024-12-30T12:04:15.464Z</updated>
+        <updated>2024-12-30T14:45:03.528Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -62,7 +134,7 @@
         <title>Entry 2024-12-29_sunny-day</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_sunny-day.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_sunny-day.html</id>
-        <updated>2024-12-30T12:04:15.464Z</updated>
+        <updated>2024-12-30T14:45:03.528Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -90,7 +162,7 @@
         <title>Entry 2024-12-29_semem-ollama</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_semem-ollama.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_semem-ollama.html</id>
-        <updated>2024-12-30T12:04:15.464Z</updated>
+        <updated>2024-12-30T14:45:03.528Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -156,7 +228,7 @@ curl http://localhost:11434/api/embeddings -d &amp;#39;{
         <title>Entry 2024-12-29_prill</title>
         <link href="https://danny.ayers.name/entries/2024-12-29_prill.html"/>
         <id>https://danny.ayers.name/entries/2024-12-29_prill.html</id>
-        <updated>2024-12-30T12:04:15.464Z</updated>
+        <updated>2024-12-30T14:45:03.528Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -173,37 +245,6 @@ curl http://localhost:11434/api/embeddings -d &amp;#39;{
 &lt;blockquote&gt;
 &lt;p&gt;Text is cheap, knowledge is worth it.&lt;/p&gt;
 &lt;/blockquote&gt;
-
-&lt;/article&gt;
-&lt;p class=&quot;post-title h-cinzel&quot;&gt;
-    &lt;a href=&quot;&quot;&gt;
-        
-    &lt;/a&gt;
-&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
-    </entry>
-    
-    <entry>
-        <title>Entry 2024-12-29_pivots</title>
-        <link href="https://danny.ayers.name/entries/2024-12-29_pivots.html"/>
-        <id>https://danny.ayers.name/entries/2024-12-29_pivots.html</id>
-        <updated>2024-12-30T12:04:15.464Z</updated>
-        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
-
-&lt;article class=&quot;post-content&quot;&gt;
-        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
-    &lt;h1&gt;Pivots&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;Thinking aloud to find the actionables&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Two artificial deadlines I want to set myself. I&amp;#39;ve got some vocab in-progress for expressing these, the term being #:pivot. There are two dates coming soon for good markers :&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Poggi Pivot : Mari&amp;#39;s birthday, 2024-01-05&lt;/li&gt;
-&lt;li&gt;Proof Pivot : my birthday, 2024-01-14&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;The first one, primary goal is getting &lt;strong&gt;some&lt;/strong&gt; docs online for &lt;strong&gt;all&lt;/strong&gt; my currently active projects. Skeleton summaries/placeholders at minimum, the #:what, a little #:how. But I really want to capture how they relate to each other, the #:why. &lt;/p&gt;
-&lt;p&gt;The second one, primary goal is creating a proof-of-concept for each project. The minimum here again is little more than skeletal placeholders. But again, capture of the interrelations is the part I&amp;#39;m aiming for. Get the overall dependency graph formalised enough that it can be used in planning. It&amp;#39;s twisty.&lt;/p&gt;
-&lt;p&gt;Ok, I&amp;#39;ve got actionables (not far off what I was doing already). For #:PoggiPivot, first step is to wire up all the #:postcraft spaces, make them live.
-In quasi-parallel, towards #:ProofPivot, two must-haves : write down core project description for each, maybe in a proposal-like form; write down the #:poc requirements.&lt;/p&gt;
-&lt;p&gt;This lot in itself is a major grind. But I need to remind myself where I&amp;#39;m up to with everything. Best way to do this and keep it interesting is to see what I have noted for next step #:todos, code up the next little step.&lt;/p&gt;
-&lt;p&gt;I just did this with #:tbox. While going over it with Claude he gave me an architectural diagram (in Mermaid format) which I found really helpful. I&amp;#39;ve already got visualisations on the lists, but I reckon this is an aspect I should revisit very soon, to help with &lt;em&gt;everything else&lt;/em&gt;.&lt;/p&gt;
 
 &lt;/article&gt;
 &lt;p class=&quot;post-title h-cinzel&quot;&gt;
