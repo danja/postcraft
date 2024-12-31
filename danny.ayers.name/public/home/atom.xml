@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2024-12-30T21:34:52.054Z</updated>
+    <updated>2024-12-31T10:52:28.626Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -12,10 +12,94 @@
 
     
     <entry>
+        <title>Entry 2024-12-31_semem-poc</title>
+        <link href="https://danny.ayers.name/entries/2024-12-31_semem-poc.html"/>
+        <id>https://danny.ayers.name/entries/2024-12-31_semem-poc.html</id>
+        <updated>2024-12-31T10:52:28.626Z</updated>
+        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
+
+&lt;article class=&quot;post-content&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
+    &lt;h1&gt;Semem POC&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;First-thing morning ramblings, deep sea trawling for actionables again&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I have two upcoming deadlines I&amp;#39;ve set myself:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;#:PoggiPivot 2025-01-05 - get my #:hyperdata project docs sorted&lt;/li&gt;
+&lt;li&gt;#:ProofPivot 2025-01-14 - proofs of concept for projects&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Both racing towards me. But that&amp;#39;s the whole idea, use the purely artificial urgency to motivate myself to &lt;strong&gt;focus&lt;/strong&gt;. Success at achieving the goals is secondary, reflected in the fact I haven&amp;#39;t actually written down those criteria yet.&lt;/p&gt;
+&lt;p&gt;Anyway, since setting these I&amp;#39;ve made a good start on them for &lt;a href=&quot;https://github.com/danja/semem&quot;&gt;Semem&lt;/a&gt; (Semantic Memory). Which has highlighted one particular flaw in my current processes, that &lt;strong&gt;proof of concept&lt;/strong&gt; isn&amp;#39;t actually the phrase I intended in the above.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Somewhere&lt;/em&gt;, probably in a Claude project, hopefully condensed in a vocab, I have (work on) better terms. But I need to get my docs sorted...&lt;/p&gt;
+&lt;p&gt;The phrase is/should be closer to &lt;strong&gt;minimum viable product&lt;/strong&gt;. But I don&amp;#39;t like this phrase because &lt;strong&gt;product&lt;/strong&gt; &lt;em&gt;in this context, in my mind&lt;/em&gt; suggests a marketable commodity. As a dyed in the wool Capitalism-sceptic, I have a knee-jerk reaction to this kind of thing. In society at large there is an overarching conflation between a thing&amp;#39;s value in a &amp;quot;noble&amp;quot; utilitarian sense and it&amp;#39;s bottom line &lt;strong&gt;$ value&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Aside&lt;/strong&gt; : I have a vague memory of having the same kind of reaction while tech-reviewing some book material by &lt;a href=&quot;https://en.wikipedia.org/wiki/Shelley_Powers&quot;&gt;Shelley Powers&lt;/a&gt; a good few years ago. &lt;em&gt;(This may be a completely false memory, apologies to Shelley if that&amp;#39;s the case, but it is plausible and moreover nicely fits this narrative, &amp;quot;don&amp;#39;t let the truth get in way...&amp;quot; and all that).&lt;/em&gt;  Shelley is one of my heros of the Web-tech world, and a bloody good writer. But in this particular chapter she made repeated use of phrases like &amp;quot;business rules&amp;quot;. Which I repeatedly criticised. There is a legitimate definition of &amp;quot;business&amp;quot; in this context, to paraphrase &amp;quot;the important stuff&amp;quot;. But still in my mind the conflation with business in the common-English commercial activity sense made my hackles rise. &lt;/p&gt;
+&lt;p&gt;(Btw, I am an experienced reviewer, and key to that role is drawing attention to text that &lt;em&gt;might not&lt;/em&gt; be quite right. It might well be fine. But I&amp;#39;d say the diligent reviewer should err a little on the side of caution, flag things where suspicions are raised. As an experienced writer, Shelley would know many of such flags were tentative, a legitimate response being to reject them after a cursory mental check - which she probably did in this instance, if it ever happened. For sure, iffy crit is a pain and any crit can be demoralising when you get a downpour (I&amp;#39;d be one of many reviewers doing this). But the patience of Job and thick skin are job requirements.)&lt;/p&gt;
+&lt;p&gt;Any road... I do hope I did get some clear and accurate terminology nailed down for POC/MVC. Neutral language in the sense of not carrying misleading baggage. What I&amp;#39;m after is more like &amp;quot;demonstration of utility&amp;quot;. &lt;strong&gt;Clunky, eh&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2&gt;Semem Demonstration of Utility&lt;/h2&gt;
+&lt;p&gt;I delighted myself with the hubris I got into my working description of #:semem :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/danja/semem&quot;&gt;Semem&lt;/a&gt; is an LLM-compatible context-aware, open-ended graph knowledgebase system combining the advantages of vector embeddings and Linked Data technologies.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;But what am I aiming for by 2025-01-14? I actually have an immediate use case with low-end requirements :&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;A system I can point to my local FS containing scattered markdown notes etc etc so I can use the stuff efficiently.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I reckon a baseline #:Semem needs to :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;provide simple similarity search&lt;/li&gt;
+&lt;li&gt;cluster related topics at different scales&lt;/li&gt;
+&lt;li&gt;create quasi-formalised annotation (metadata)&lt;/li&gt;
+&lt;li&gt;make a disorganised, heterogenous corpus addressable as a coherent entity&lt;/li&gt;
+&lt;li&gt;exploit LLMs (and maybe trad reasoning) to facilitate new knowledge discovery&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ok, I have some actionables. Mari&amp;#39;s picking me up in 15 mins to go for a coffee and I&amp;#39;m not yet out of bed.&lt;/p&gt;
+
+&lt;/article&gt;
+&lt;p class=&quot;post-title h-cinzel&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;
+        
+    &lt;/a&gt;
+&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
+    </entry>
+    
+    <entry>
+        <title>Entry 2024-12-30_todos</title>
+        <link href="https://danny.ayers.name/entries/2024-12-30_todos.html"/>
+        <id>https://danny.ayers.name/entries/2024-12-30_todos.html</id>
+        <updated>2024-12-31T10:52:28.627Z</updated>
+        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
+
+&lt;article class=&quot;post-content&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
+    &lt;h1&gt;Todos&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;No todos los trabajos&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Oddments for &lt;strong&gt;soon&lt;/strong&gt; I might easily forget.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;#:foaf from wget &lt;a href=&quot;https://prod-dcd-datasets-cache-zipfiles.s3.eu-west-1.amazonaws.com/zp23s23xpb-1.zip&quot;&gt;https://prod-dcd-datasets-cache-zipfiles.s3.eu-west-1.amazonaws.com/zp23s23xpb-1.zip&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;#:todo check pivot terms - write for #:PoggiPivot &amp;amp; #:ProofPivot. Use &amp;#39;inflection point&amp;#39; in docs&lt;/li&gt;
+&lt;li&gt;#:todo form-a-matic - make my index.rdf&lt;/li&gt;
+&lt;li&gt;#:todo #:squirt to #:tbox&lt;/li&gt;
+&lt;li&gt;#:todo #:semem to #:tbox&lt;/li&gt;
+&lt;li&gt;#:todo block diagrams - Claude&lt;/li&gt;
+&lt;li&gt;#:todo pull descriptions from memoripy &amp;amp; trustgraph&lt;/li&gt;
+&lt;li&gt;#:todo GitHub ci/CD&lt;/li&gt;
+&lt;li&gt;#:todo docker dev env&lt;/li&gt;
+&lt;li&gt;#:todo #:postcraft CSS initial size&lt;/li&gt;
+&lt;li&gt;#:todo #:postcraft fix links&lt;/li&gt;
+&lt;li&gt;#:todo #:postcraft figure out #:semtags flow&lt;/li&gt;
+&lt;li&gt;#:todo #:transmissions generate type definitions&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/article&gt;
+&lt;p class=&quot;post-title h-cinzel&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;
+        
+    &lt;/a&gt;
+&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
+    </entry>
+    
+    <entry>
         <title>Entry 2024-12-30_semem-sparq</title>
         <link href="https://danny.ayers.name/entries/2024-12-30_semem-sparq.html"/>
         <id>https://danny.ayers.name/entries/2024-12-30_semem-sparq.html</id>
-        <updated>2024-12-30T21:34:52.054Z</updated>
+        <updated>2024-12-31T10:52:28.627Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -57,7 +141,7 @@
         <title>Entry 2024-12-30_semem-lives</title>
         <link href="https://danny.ayers.name/entries/2024-12-30_semem-lives.html"/>
         <id>https://danny.ayers.name/entries/2024-12-30_semem-lives.html</id>
-        <updated>2024-12-30T21:34:52.054Z</updated>
+        <updated>2024-12-31T10:52:28.627Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -130,7 +214,7 @@ TypeError: Invalid the first argument type, must be an Array.
         <title>Entry 2024-12-30_perplexed</title>
         <link href="https://danny.ayers.name/entries/2024-12-30_perplexed.html"/>
         <id>https://danny.ayers.name/entries/2024-12-30_perplexed.html</id>
-        <updated>2024-12-30T21:34:52.054Z</updated>
+        <updated>2024-12-31T10:52:28.627Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -164,100 +248,6 @@ TypeError: Invalid the first argument type, must be an Array.
 &lt;p&gt;#:todo put some FOAF where &lt;a href=&quot;https://www.bergnet.org/people/bergi/card&quot;&gt;Bergi&amp;#39;s card&lt;/a&gt; links to it : &lt;a href=&quot;http://danny.ayers.name/index.rdf#me&quot;&gt;http://danny.ayers.name/index.rdf#me&lt;/a&gt;
 #:todo W6 link on &lt;a href=&quot;https://hyperdata.it/xmlns/&quot;&gt;https://hyperdata.it/xmlns/&lt;/a&gt; is broken - make broken link finder #:transmission?&lt;/p&gt;
 &lt;p&gt;Enough gab, I&amp;#39;d better get on with this thing.&lt;/p&gt;
-
-&lt;/article&gt;
-&lt;p class=&quot;post-title h-cinzel&quot;&gt;
-    &lt;a href=&quot;&quot;&gt;
-        
-    &lt;/a&gt;
-&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
-    </entry>
-    
-    <entry>
-        <title>Entry 2024-12-29_sunny-day</title>
-        <link href="https://danny.ayers.name/entries/2024-12-29_sunny-day.html"/>
-        <id>https://danny.ayers.name/entries/2024-12-29_sunny-day.html</id>
-        <updated>2024-12-30T21:34:52.055Z</updated>
-        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
-
-&lt;article class=&quot;post-content&quot;&gt;
-        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
-    &lt;h1&gt;Sunny Day&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;It&amp;#39;s a sunny Sunday day.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;My must-dos for today are plumbing. Actual plumbing :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Sealant on leaky pipe at No.7&lt;/li&gt;
-&lt;li&gt;Fix the &lt;em&gt;second&lt;/em&gt; hole I hadn&amp;#39;t seen under the sink here at #:New place&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I also really need to make a start on some tree removal while the weather&amp;#39;s dry. Stretching the notion of plumbing, first I need to sort out climbing gear, ropes, pulleys etc.&lt;/p&gt;
-&lt;p&gt;Financial plumbing, I need to sort a stack of papers, find the relevant forms I have somewhere, to sort out pension flow from Derbyshire County Council. I had a small (but very useful) monthly sum coming from there. Caroline worked at a DCC special needs place for a few years, I inherited her pension. It stalled a couple of months ago, I missed some kind of update step. I did do a little towards sorting it out, in the process discovered that I&amp;#39;m probably due some funds from the years I worked at High Peak College.&lt;/p&gt;
-&lt;p&gt;Software plumbing...things to join together. Separate posts here for them.&lt;/p&gt;
-
-&lt;/article&gt;
-&lt;p class=&quot;post-title h-cinzel&quot;&gt;
-    &lt;a href=&quot;&quot;&gt;
-        
-    &lt;/a&gt;
-&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
-    </entry>
-    
-    <entry>
-        <title>Entry 2024-12-29_semem-ollama</title>
-        <link href="https://danny.ayers.name/entries/2024-12-29_semem-ollama.html"/>
-        <id>https://danny.ayers.name/entries/2024-12-29_semem-ollama.html</id>
-        <updated>2024-12-30T21:34:52.055Z</updated>
-        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
-
-&lt;article class=&quot;post-content&quot;&gt;
-        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
-    &lt;h1&gt;Semem Ollama&lt;/h1&gt;
-&lt;p&gt;#:semem, the &lt;strong&gt;Semantic Memory&lt;/strong&gt; component of #:hyperdata I&amp;#39;m working on is a high priority for me, there are a lot of places I want to use it.&lt;/p&gt;
-&lt;p&gt;I want to try and get the most out of &lt;a href=&quot;https://en.wikipedia.org/wiki/Large_language_model&quot;&gt;Large Language Model&lt;/a&gt; and &lt;a href=&quot;https://en.wikipedia.org/wiki/Linked_data&quot;&gt;Linked Data&lt;/a&gt; integration. It&amp;#39;s a seriously fertile space, huge potential, lots of &lt;strong&gt;blue sky&lt;/strong&gt; for research. I&amp;#39;ve got a stack of ideas to try (many roughed out in scattered notes), but I&amp;#39;m following the dev strategy of prioritizing activities for which I have an immediate use. This has led me to &lt;a href=&quot;https://en.wikipedia.org/wiki/SPARQL&quot;&gt;SPARQL&lt;/a&gt; store-backed Graph &lt;a href=&quot;https://en.wikipedia.org/wiki/Retrieval-augmented_generation&quot;&gt;RAG&lt;/a&gt; as the inroad. About a year ago, to help get my head around this, I made a little &lt;a href=&quot;https://www.llamaindex.ai/&quot;&gt;LlamaIndex&lt;/a&gt; extension, &lt;a href=&quot;https://github.com/danja/nlp/tree/main/GraphRAG&quot;&gt;GraphRAG with SPARQL&lt;/a&gt;. This was only a minimal proof-of-concept, but did give me a mental foothold.&lt;/p&gt;
-&lt;p&gt;The majority of the current activity in this space seems focused on using LLMs to derive &lt;a href=&quot;https://en.wikipedia.org/wiki/Resource_Description_Framework&quot;&gt;RDF&lt;/a&gt; models from text (this is what the bits above did). For my needs I&amp;#39;m putting the emphasis more on aligning LLM-interpreted text with existing ontologies. Ok, I&amp;#39;m developing ontologies in a just-in-time fashion, but still treating the resources there as &amp;quot;digital&amp;quot; (logically defined) anchor points for the &amp;quot;analog&amp;quot; (probabilistic) shapes around LLMs.&lt;/p&gt;
-&lt;p&gt;I made a couple of underlying design choices around my #:hyperdata uber-project. One is to favour Javascript. Not everyone&amp;#39;s preferred language (see &lt;a href=&quot;https://www.youtube.com/watch?v=03lRzf7iSiU&quot;&gt;What&amp;#39;s Your Least Favourite Programming Language? (2024 soundcheck question) - Computerphile&lt;/a&gt;), especially with AI dev being Python-first. But as I need to use JS in the browser it&amp;#39;s a way of reducing my cognitive load (I&amp;#39;m really bad at remembering syntax). Another is to do things kind-of from scratch, avoiding frameworks (libs ok). I&amp;#39;m &lt;a href=&quot;https://en.wikipedia.org/wiki/Eating_your_own_dog_food&quot;&gt;dogfooding&lt;/a&gt; to the max because I want to understand what&amp;#39;s going on.&lt;/p&gt;
-&lt;p&gt;A key part of #:semem is embeddings derived from text. A key tool I need asap is a similarity-based search across my scattered docs (so I&amp;#39;m not continually repeating myself). &lt;a href=&quot;https://github.com/trustgraph-ai/trustgraph&quot;&gt;TrustGraph&lt;/a&gt; is broadly the kind of system I&amp;#39;m aiming for, but that&amp;#39;s big and quite blackboxy. While I was still going around in circles at a lower level, trying to decide which &lt;strong&gt;vector DB&lt;/strong&gt; tooling to use, I stumbled on &lt;a href=&quot;https://github.com/caspianmoon/memoripy&quot;&gt;memoripy&lt;/a&gt;. As the name suggests, it&amp;#39;s Python. But it&amp;#39;s an understandable size, has the general shape I&amp;#39;m after and uses specific well-known libs (eg. &lt;a href=&quot;https://github.com/facebookresearch/faiss&quot;&gt;Faiss&lt;/a&gt;) that all have &lt;strong&gt;JS APIs&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;So for an initial setup for #:semem, the other week I got Claude to help me port it to JS. Once I&amp;#39;d got what appeared to be necessary coverage, I left it there, untested.&lt;/p&gt;
-&lt;p&gt;Coming back to it today I see most of the examples use the OpenAI API. I don&amp;#39;t have any credit on that right now. But &lt;a href=&quot;https://github.com/ollama/ollama&quot;&gt;Ollama&lt;/a&gt; is also an option. I&amp;#39;ve got that set up locally, should do nicely to kickstart #:semem.&lt;/p&gt;
-&lt;p&gt;I had a quick skim of the available small &lt;a href=&quot;https://ollama.com/search&quot;&gt;models&lt;/a&gt;. One I hadn&amp;#39;t noticed before is &lt;a href=&quot;https://ollama.com/library/nomic-embed-text&quot;&gt;nomic-embed-text&lt;/a&gt;. Ok, that looks a good candidate for my embeddings. When playing, I got very promising results with &lt;code&gt;orca&lt;/code&gt;, &lt;code&gt;phi&lt;/code&gt; and &lt;code&gt;qwen&lt;/code&gt;. They still seem to be up there in the populars, so I some have initial LLM candidates already installed.
-I can&amp;#39;t remember when I last update Ollama itself, I&amp;#39;d better do that now.
-The &lt;a href=&quot;https://github.com/ollama/ollama/blob/main/docs/linux.md&quot;&gt;manual install docs&lt;/a&gt; have this :&lt;/p&gt;
-&lt;blockquote&gt;
-If you are upgrading from a prior version, you should remove the old libraries with sudo rm -rf /usr/lib/ollama first.
-
-&lt;p&gt;Download and extract the package:   &lt;/p&gt;
-&lt;p&gt;curl -L &lt;a href=&quot;https://ollama.com/download/ollama-linux-amd64.tgz&quot;&gt;https://ollama.com/download/ollama-linux-amd64.tgz&lt;/a&gt; -o ollama-linux-amd64.tgz
-sudo tar -C /usr -xzf ollama-linux-amd64.tgz&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;That&amp;#39;ll take a while on this connection.&lt;/p&gt;
-&lt;p&gt;Dogwalk time.&lt;/p&gt;
-&lt;hr&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;ollama serve
-Error: listen tcp 127.0.0.1:11434: bind: address already in use
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Reboot o&amp;#39;clock.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;danny@danny-desktop:~$ ollama run qwen2:1.5b  
-&amp;gt;&amp;gt;&amp;gt; how are you?
-I am an AI language model. How can I assist you today?
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Sooo...&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;ollama pull nomic-embed-text
-...
-curl http://localhost:11434/api/embeddings -d &amp;#39;{
-  &amp;quot;model&amp;quot;: &amp;quot;nomic-embed-text&amp;quot;,
-  &amp;quot;prompt&amp;quot;: &amp;quot;The sky is blue because of Rayleigh scattering&amp;quot;
-}&amp;#39;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;...which produces a lot of numbers. &lt;strong&gt;Yay!&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;The &lt;a href=&quot;https://ollama.com/library/nomic-embed-text&quot;&gt;Ollama page for nomic-embed-text&lt;/a&gt; has the cURL line above as well as py &amp;amp; JS snippets. It also links to a &lt;a href=&quot;https://www.nomic.ai/blog/posts/nomic-embed-text-v1&quot;&gt;nomic blog post&lt;/a&gt; about it. &lt;a href=&quot;https://docs.nomic.ai/reference/api/embed-text-v-1-embedding-text-post&quot;&gt;Nomic have an API&lt;/a&gt; for using the model, but I&amp;#39;ll stick with Ollama&amp;#39;s since I want to use it for GPT models as well.&lt;/p&gt;
-&lt;p&gt;I believe &lt;a href=&quot;https://github.com/facebookresearch/faiss&quot;&gt;Faiss&lt;/a&gt; has all the similarity search bits I need to get going on that front.&lt;/p&gt;
-&lt;h2&gt;Visualization&lt;/h2&gt;
-&lt;p&gt;Nomic have a Data Mapping (#:visualization) blog post series, this one&amp;#39;s very handy for me : &lt;a href=&quot;https://www.nomic.ai/blog/posts/see-your-data-with-dimensionality-reduction&quot;&gt;See Your Data With Dimensionality Reduction&lt;/a&gt;. I&amp;#39;ve read papers on various algorithms but could only remember trad &lt;a href=&quot;https://en.wikipedia.org/wiki/Principal_component_analysis&quot;&gt;PCA&lt;/a&gt; off the top of my head. Mentioned here are also &lt;a href=&quot;https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding&quot;&gt;t-SNE&lt;/a&gt;, Hinton &amp;amp; co&amp;#39;s algorithm from 2008, &lt;a href=&quot;https://arxiv.org/abs/1802.03426&quot;&gt;UMAP&lt;/a&gt; from 2018 and one which appears to be proprietary, Nomic Project. I&amp;#39;m not sure if I&amp;#39;ve encountered UMAP before, but it sounds like a good choice for my purposes.&lt;/p&gt;
-&lt;p&gt;The next post in the series is &lt;a href=&quot;https://www.nomic.ai/blog/posts/why-are-web-browsers-the-best-data-browsers&quot;&gt;Why Are Web Browsers The Best Data Browsers?&lt;/a&gt;, which, after preliminaries goes on to describe their own (open sourced) &lt;a href=&quot;https://github.com/nomic-ai/deepscatter&quot;&gt;deepscatter&lt;/a&gt;. It looks good, but I&amp;#39;ve been around the block a few times with this stuff.&lt;/p&gt;
-&lt;p&gt;I&amp;#39;m using &lt;a href=&quot;https://rdf-ext.org&quot;&gt;RDF-Ext&lt;/a&gt; (RDF JS libs) nearby, and in there Bergi has a [RdfNetwork component]&lt;a href=&quot;https://examples.rdf-ext.org/rdf-elements/&quot;&gt;RDF-Ext&lt;/a&gt;. This is built on &lt;a href=&quot;https://js.cytoscape.org/&quot;&gt;Cytoscape.js&lt;/a&gt;, which is a mature renderer from bioinformatics circles, so should be plenty good on scalability and scatterplotty things.&lt;/p&gt;
-&lt;p&gt;#:todo what was that cytoscape plugin that looked good for pipelines from somewhere around Eclipse?
-#:todo check out the cytoscape/&lt;a href=&quot;https://mermaid.js.org/ecosystem/integrations-community.html&quot;&gt;mermaid integrations&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Ok, I guess I should actually look at what I&amp;#39;ve got for #:semem code so far...&lt;/p&gt;
 
 &lt;/article&gt;
 &lt;p class=&quot;post-title h-cinzel&quot;&gt;
