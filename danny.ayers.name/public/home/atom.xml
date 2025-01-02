@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2025-01-02T11:08:35.620Z</updated>
+    <updated>2025-01-02T11:14:32.301Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -15,7 +15,7 @@
         <title>Entry 2025-01-02_fix-deploy</title>
         <link href="https://danny.ayers.name/entries/2025-01-02_fix-deploy.html"/>
         <id>https://danny.ayers.name/entries/2025-01-02_fix-deploy.html</id>
-        <updated>2025-01-02T11:08:35.621Z</updated>
+        <updated>2025-01-02T11:14:32.301Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -28,6 +28,8 @@
 &lt;p&gt;But, &lt;strong&gt;what is it doing?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;What I want right now, as a bit of scaffolding for what I want to explore, is a nodejs version of &lt;a href=&quot;https://github.com/caspianmoon/memoripy&quot;&gt;memoripy&lt;/a&gt; that uses a (remote) SPARQL store as (part of) its knowledgebase.&lt;/p&gt;
 &lt;p&gt;I only tried running it after many hours implementing it in a Claude project. Then had a couple of hours manually tweaking to get it to (mostly) run. It&amp;#39;s definitely interacting with Ollama for embeddings &amp;amp; chat, a SPARQL endpoint for persistence. I don&amp;#39;t see the extracted concepts in the SPARQL store, but there&amp;#39;s a JSON syntax bug mentioned in the trace, that might well be related.  &lt;/p&gt;
+&lt;p&gt;Last night I had a short session with Claude, aiming to document what we had so far. I&amp;#39;ve put the artifacts over here : &lt;a href=&quot;https://github.com/danja/semem/tree/main/docs/description_2025-01-01.md&quot;&gt;https://github.com/danja/semem/tree/main/docs/description_2025-01-01.md&lt;/a&gt; It sounds marvellous, but how much is true?&lt;/p&gt;
+&lt;h1&gt;Banebane&lt;/h1&gt;
 &lt;p&gt;I had a chat with ClaudioB yesterday morning, pointed him to my notes so far on #:semem. He asked me if I had a &lt;strong&gt;live instance&lt;/strong&gt; he could play with. A very good question! Not for the first time I&amp;#39;ll quote -&lt;/p&gt;
 &lt;h2&gt;Connolly&amp;#39;s Bane&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -73,7 +75,7 @@ Somewhere around my vocabs I need terms for this particular kind of input. I may
         <title>Entry 2025-01-01_semem-run</title>
         <link href="https://danny.ayers.name/entries/2025-01-01_semem-run.html"/>
         <id>https://danny.ayers.name/entries/2025-01-01_semem-run.html</id>
-        <updated>2025-01-02T11:08:35.621Z</updated>
+        <updated>2025-01-02T11:14:32.301Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -206,7 +208,7 @@ WHERE {
         <title>Entry 2025-01-01_hny</title>
         <link href="https://danny.ayers.name/entries/2025-01-01_hny.html"/>
         <id>https://danny.ayers.name/entries/2025-01-01_hny.html</id>
-        <updated>2025-01-02T11:08:35.621Z</updated>
+        <updated>2025-01-02T11:14:32.301Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -227,7 +229,7 @@ WHERE {
         <title>Entry 2024-12-31_semem-poc</title>
         <link href="https://danny.ayers.name/entries/2024-12-31_semem-poc.html"/>
         <id>https://danny.ayers.name/entries/2024-12-31_semem-poc.html</id>
-        <updated>2025-01-02T11:08:35.621Z</updated>
+        <updated>2025-01-02T11:14:32.302Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -275,7 +277,7 @@ WHERE {
         <title>Entry 2024-12-30_todos</title>
         <link href="https://danny.ayers.name/entries/2024-12-30_todos.html"/>
         <id>https://danny.ayers.name/entries/2024-12-30_todos.html</id>
-        <updated>2025-01-02T11:08:35.621Z</updated>
+        <updated>2025-01-02T11:14:32.302Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;

@@ -14,6 +14,10 @@ What I want right now, as a bit of scaffolding for what I want to explore, is a 
 
 I only tried running it after many hours implementing it in a Claude project. Then had a couple of hours manually tweaking to get it to (mostly) run. It's definitely interacting with Ollama for embeddings & chat, a SPARQL endpoint for persistence. I don't see the extracted concepts in the SPARQL store, but there's a JSON syntax bug mentioned in the trace, that might well be related.  
 
+Last night I had a short session with Claude, aiming to document what we had so far. I've put the artifacts over here : https://github.com/danja/semem/tree/main/docs/description_2025-01-01.md It sounds marvellous, but how much is true?
+
+# Banebane
+
 I had a chat with ClaudioB yesterday morning, pointed him to my notes so far on #:semem. He asked me if I had a **live instance** he could play with. A very good question! Not for the first time I'll quote -
 
 ## Connolly's Bane
