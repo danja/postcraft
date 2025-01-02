@@ -1,7 +1,5 @@
 # Semem Fix & Deploy
 
-**A little pause while I publish these scraps so I can tell Graham what reminded me of him.**
-
 I made a todo list here yesterday without any explanation. Didn't publish. Invisible todo list is absolutely not what I want on my blog front page! My top priority this week is doc organisation, so I'll let myself off this time. I've changed the date on the file, this is it I'll now fill it out...
 
 A little job for this morning is a little explore of [Semem](https://github.com/danja/semem).
@@ -16,11 +14,11 @@ I only tried running it after many hours implementing it in a Claude project. Th
 
 Last night I had a short session with Claude, aiming to document what we had so far. I've put the artifacts over here : https://github.com/danja/semem/tree/main/docs/description_2025-01-01.md It sounds marvellous, but how much is true?
 
-# Banebane
+## Banebane
 
 I had a chat with ClaudioB yesterday morning, pointed him to my notes so far on #:semem. He asked me if I had a **live instance** he could play with. A very good question! Not for the first time I'll quote -
 
-## Connolly's Bane
+### Connolly's Bane
 
 > **"The bane of my existence is doing things that I know the
 computer could do for me"**

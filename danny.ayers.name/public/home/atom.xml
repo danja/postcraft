@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2025-01-02T12:17:37.654Z</updated>
+    <updated>2025-01-02T12:19:48.493Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -15,13 +15,12 @@
         <title>Entry 2025-01-02_fix-deploy</title>
         <link href="https://danny.ayers.name/entries/2025-01-02_fix-deploy.html"/>
         <id>https://danny.ayers.name/entries/2025-01-02_fix-deploy.html</id>
-        <updated>2025-01-02T12:17:37.654Z</updated>
+        <updated>2025-01-02T12:19:48.493Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
         &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
     &lt;h1&gt;Semem Fix &amp;amp; Deploy&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;A little pause while I publish these scraps so I can tell Graham what reminded me of him.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;I made a todo list here yesterday without any explanation. Didn&amp;#39;t publish. Invisible todo list is absolutely not what I want on my blog front page! My top priority this week is doc organisation, so I&amp;#39;ll let myself off this time. I&amp;#39;ve changed the date on the file, this is it I&amp;#39;ll now fill it out...&lt;/p&gt;
 &lt;p&gt;A little job for this morning is a little explore of &lt;a href=&quot;https://github.com/danja/semem&quot;&gt;Semem&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;It appears to (mostly) work, here&amp;#39;s the &lt;a href=&quot;https://danny.ayers.name/entries/2025-01-01_semem-run.html&quot;&gt;console log of a run&lt;/a&gt;.&lt;/p&gt;
@@ -29,9 +28,9 @@
 &lt;p&gt;What I want right now, as a bit of scaffolding for what I want to explore, is a nodejs version of &lt;a href=&quot;https://github.com/caspianmoon/memoripy&quot;&gt;memoripy&lt;/a&gt; that uses a (remote) SPARQL store as (part of) its knowledgebase.&lt;/p&gt;
 &lt;p&gt;I only tried running it after many hours implementing it in a Claude project. Then had a couple of hours manually tweaking to get it to (mostly) run. It&amp;#39;s definitely interacting with Ollama for embeddings &amp;amp; chat, a SPARQL endpoint for persistence. I don&amp;#39;t see the extracted concepts in the SPARQL store.&lt;/p&gt;
 &lt;p&gt;Last night I had a short session with Claude, aiming to document what we had so far. I&amp;#39;ve put the artifacts over here : &lt;a href=&quot;https://github.com/danja/semem/tree/main/docs/description_2025-01-01.md&quot;&gt;https://github.com/danja/semem/tree/main/docs/description_2025-01-01.md&lt;/a&gt; It sounds marvellous, but how much is true?&lt;/p&gt;
-&lt;h1&gt;Banebane&lt;/h1&gt;
+&lt;h2&gt;Banebane&lt;/h2&gt;
 &lt;p&gt;I had a chat with ClaudioB yesterday morning, pointed him to my notes so far on #:semem. He asked me if I had a &lt;strong&gt;live instance&lt;/strong&gt; he could play with. A very good question! Not for the first time I&amp;#39;ll quote -&lt;/p&gt;
-&lt;h2&gt;Connolly&amp;#39;s Bane&lt;/h2&gt;
+&lt;h3&gt;Connolly&amp;#39;s Bane&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;&amp;quot;The bane of my existence is doing things that I know the
 computer could do for me&amp;quot;&lt;/strong&gt;
@@ -101,7 +100,7 @@ For 2 : I&amp;#39;ve got a live Ubuntu server (which you are looking at now) and
         <title>Entry 2025-01-01_semem-run</title>
         <link href="https://danny.ayers.name/entries/2025-01-01_semem-run.html"/>
         <id>https://danny.ayers.name/entries/2025-01-01_semem-run.html</id>
-        <updated>2025-01-02T12:17:37.654Z</updated>
+        <updated>2025-01-02T12:19:48.493Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -181,7 +180,7 @@ WHERE {
         <title>Entry 2025-01-01_hny</title>
         <link href="https://danny.ayers.name/entries/2025-01-01_hny.html"/>
         <id>https://danny.ayers.name/entries/2025-01-01_hny.html</id>
-        <updated>2025-01-02T12:17:37.654Z</updated>
+        <updated>2025-01-02T12:19:48.493Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -202,7 +201,7 @@ WHERE {
         <title>Entry 2024-12-31_semem-poc</title>
         <link href="https://danny.ayers.name/entries/2024-12-31_semem-poc.html"/>
         <id>https://danny.ayers.name/entries/2024-12-31_semem-poc.html</id>
-        <updated>2025-01-02T12:17:37.654Z</updated>
+        <updated>2025-01-02T12:19:48.493Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -250,7 +249,7 @@ WHERE {
         <title>Entry 2024-12-30_todos</title>
         <link href="https://danny.ayers.name/entries/2024-12-30_todos.html"/>
         <id>https://danny.ayers.name/entries/2024-12-30_todos.html</id>
-        <updated>2025-01-02T12:17:37.654Z</updated>
+        <updated>2025-01-02T12:19:48.494Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
