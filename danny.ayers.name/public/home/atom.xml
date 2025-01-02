@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2025-01-02T11:14:32.301Z</updated>
+    <updated>2025-01-02T12:17:37.654Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -15,7 +15,7 @@
         <title>Entry 2025-01-02_fix-deploy</title>
         <link href="https://danny.ayers.name/entries/2025-01-02_fix-deploy.html"/>
         <id>https://danny.ayers.name/entries/2025-01-02_fix-deploy.html</id>
-        <updated>2025-01-02T11:14:32.301Z</updated>
+        <updated>2025-01-02T12:17:37.654Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -27,7 +27,7 @@
 &lt;p&gt;It appears to (mostly) work, here&amp;#39;s the &lt;a href=&quot;https://danny.ayers.name/entries/2025-01-01_semem-run.html&quot;&gt;console log of a run&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;But, &lt;strong&gt;what is it doing?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;What I want right now, as a bit of scaffolding for what I want to explore, is a nodejs version of &lt;a href=&quot;https://github.com/caspianmoon/memoripy&quot;&gt;memoripy&lt;/a&gt; that uses a (remote) SPARQL store as (part of) its knowledgebase.&lt;/p&gt;
-&lt;p&gt;I only tried running it after many hours implementing it in a Claude project. Then had a couple of hours manually tweaking to get it to (mostly) run. It&amp;#39;s definitely interacting with Ollama for embeddings &amp;amp; chat, a SPARQL endpoint for persistence. I don&amp;#39;t see the extracted concepts in the SPARQL store, but there&amp;#39;s a JSON syntax bug mentioned in the trace, that might well be related.  &lt;/p&gt;
+&lt;p&gt;I only tried running it after many hours implementing it in a Claude project. Then had a couple of hours manually tweaking to get it to (mostly) run. It&amp;#39;s definitely interacting with Ollama for embeddings &amp;amp; chat, a SPARQL endpoint for persistence. I don&amp;#39;t see the extracted concepts in the SPARQL store.&lt;/p&gt;
 &lt;p&gt;Last night I had a short session with Claude, aiming to document what we had so far. I&amp;#39;ve put the artifacts over here : &lt;a href=&quot;https://github.com/danja/semem/tree/main/docs/description_2025-01-01.md&quot;&gt;https://github.com/danja/semem/tree/main/docs/description_2025-01-01.md&lt;/a&gt; It sounds marvellous, but how much is true?&lt;/p&gt;
 &lt;h1&gt;Banebane&lt;/h1&gt;
 &lt;p&gt;I had a chat with ClaudioB yesterday morning, pointed him to my notes so far on #:semem. He asked me if I had a &lt;strong&gt;live instance&lt;/strong&gt; he could play with. A very good question! Not for the first time I&amp;#39;ll quote -&lt;/p&gt;
@@ -38,9 +38,35 @@ computer could do for me&amp;quot;&lt;/strong&gt;
 &#92;– Dan Connolly&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;em&gt;Which reminded me I&amp;#39;ve not been in touch with &lt;a href=&quot;https://www.ninebynine.org/&quot;&gt;Graham Klyne&lt;/a&gt; for many years. A blog post of his drew my attention to that quote. Good-o, he&amp;#39;s on Mastodon : &lt;a href=&quot;https://indieweb.social/@gklyne&quot;&gt;@gklyne@indieweb.social&lt;/a&gt;, I&amp;#39;ll ping him there.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Pause&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;It totally ties in with agent-oriented messaging. This is the kind of message I want my systems to be able to deal with automatically.
-Somewhere around my vocabs I need terms for this particular kind of input. I may already have something like &lt;strong&gt;Feature Request&lt;/strong&gt; around the project management oriented bits, but&lt;/p&gt;
+&lt;p&gt;ClaudioB&amp;#39;s question is the kind of message I want my #:hyperdata systems to be able to deal with automatically.&lt;/p&gt;
+&lt;p&gt;Here&amp;#39;s how this human agent is handling it :&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;[prompt]&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Is there a live instance of Semem?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;[me]&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;immediate response, &amp;quot;not yet&amp;quot;&lt;/li&gt;
+&lt;li&gt;reformulate question in terms of concrete requirements
+-&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;(functioning, good-enough) Semem&lt;/li&gt;
+&lt;li&gt;hosting&lt;/li&gt;
+&lt;li&gt;deployment infrastructure&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;For 1 : all I really need to do right away is minor bugfixing and whatever&amp;#39;s needed to use existing online LLMs
+For 2 : I&amp;#39;ve got a live Ubuntu server (which you are looking at now) and a domain name registered for a related plan, some nginx proxying already in place.&lt;br&gt;For 3 : I&amp;#39;ve got a Docker container in-progress for this stuff, &lt;a href=&quot;https://github.com/danja/tbox&quot;&gt;tbox&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;meta-reasoning - evaluate this against existing dev paths, consider priorities, time needed etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;On this point there&amp;#39;s a green flag to go ahead, it&amp;#39;s near-enough in line with what I was planning to do already, slight rearrangement of immediate priorities.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;I acted in several roles there. Humans are good at this. I want a community of independent autonomous intelligent agents (on #:kia).&lt;/p&gt;
+&lt;p&gt;Ops. Azzurra just reminded me that I&amp;#39;ve an appointment with her up at the comune at 15:00. Now 13:12. Clever Azzurra has me sussed. I&amp;#39;d completely forgotten. But she&amp;#39;s given me just the right amount of time to pop this online, take Claudio out for a short walk, find some clean clothes &amp;amp; have a wash.  &lt;/p&gt;
+&lt;h2&gt;Soon...&lt;/h2&gt;
+&lt;p&gt;Somewhere around my vocabs I need terms for this particular kind of input. I may already have something like &lt;strong&gt;Feature Request&lt;/strong&gt; around the project management oriented bits, but it totally ties in with agent-oriented messaging.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;#:todo fix #:semem failing on UPDATE&lt;/li&gt;
 &lt;li&gt;#:todo tease next steps from &lt;code&gt;semem/docs/description_2024-12-30/&lt;/code&gt;&lt;/li&gt;
@@ -75,101 +101,48 @@ Somewhere around my vocabs I need terms for this particular kind of input. I may
         <title>Entry 2025-01-01_semem-run</title>
         <link href="https://danny.ayers.name/entries/2025-01-01_semem-run.html"/>
         <id>https://danny.ayers.name/entries/2025-01-01_semem-run.html</id>
-        <updated>2025-01-02T11:14:32.301Z</updated>
+        <updated>2025-01-02T12:17:37.654Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
         &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
-    &lt;pre&gt;&lt;code&gt;danny@danny-desktop:~/github-danny/hyperdata/packages/semem$  node src/SPARQLExample.js
+    &lt;pre&gt;&lt;code&gt;node src/SPARQLExample.js
+
 [INFO] Initialized FAISS index with dimension 1536
-[ERROR] Failed to parse interaction: SyntaxError: &amp;quot;undefined&amp;quot; is not valid JSON
-    at JSON.parse (&amp;lt;anonymous&amp;gt;)
-    at file:///home/danny/github-danny/hyperdata/packages/semem/src/stores/SPARQLStore.js:129:61
-    at Array.forEach (&amp;lt;anonymous&amp;gt;)
-    at SPARQLStore.loadHistory (file:///home/danny/github-danny/hyperdata/packages/semem/src/stores/SPARQLStore.js:123:37)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async MemoryManager.initialize (file:///home/danny/github-danny/hyperdata/packages/semem/src/MemoryManager.js:56:43) {
-  id: { type: &amp;#39;literal&amp;#39;, value: &amp;#39;9b3e7e67-cea6-4398-a51b-c66f83b477f8&amp;#39; },
-  prompt: {
-    type: &amp;#39;literal&amp;#39;,
-    value: &amp;quot;What&amp;#39;s the current state of AI technology?&amp;quot;
-  },
-  output: {
-    type: &amp;#39;literal&amp;#39;,
-    value: &amp;#39;AI (artificial intelligence) technology has made significant strides in recent years, and its capabilities are now widely recognized. Here are some key developments:&#92;n&amp;#39; +
-      &amp;#39;&#92;n&amp;#39; +
-      &amp;#39;1. Machine Learning: This is a subset of AI that enables computers to learn from data without being explicitly programmed to do so. There have been significant advancements in machine learning algorithms, making it easier for models to perform complex tasks.&#92;n&amp;#39; +
-      &amp;#39;&#92;n&amp;#39; +
-      &amp;#39;2. Natural Language Processing (NLP): NLP allows machines to understand and interpret human language. This technology has advanced significantly, enabling chatbots and virtual assistants to more accurately communicate with users in natural languages.&#92;n&amp;#39; +
-      &amp;#39;&#92;n&amp;#39; +
-      &amp;#39;3. Computer Vision: Computer vision involves using cameras to capture visual information from the environment and converting it into digital images or video footage that can be analyzed. There have been significant improvements in this area, allowing machines to recognize objects, faces, and other elements within an image or video.&#92;n&amp;#39; +
-      &amp;#39;&#92;n&amp;#39; +
-      &amp;#39;4. Robotics: Robots are becoming increasingly sophisticated, with capabilities ranging from simple assembly line work to complex tasks like surgery and disaster response. These robots are using advanced sensors, machine learning algorithms, and AI to perform these tasks more efficiently and effectively.&#92;n&amp;#39; +
-      &amp;#39;&#92;n&amp;#39; +
-      &amp;quot;Overall, AI technology is continuing to evolve rapidly, with new breakthroughs in fields such as robotics, natural language processing, computer vision, and more. As the field of artificial intelligence continues to advance, it&amp;#39;s likely that we&amp;#39;ll see even more impressive developments in the future.&amp;quot;
-  },
-  embedding: { type: &amp;#39;literal&amp;#39;, value: &amp;#39;undefined&amp;#39; },
-  timestamp: {
-    type: &amp;#39;literal&amp;#39;,
-    datatype: &amp;#39;http://www.w3.org/2001/XMLSchema#integer&amp;#39;,
-    value: &amp;#39;1735742627604&amp;#39;
-  },
-  accessCount: {
-    type: &amp;#39;literal&amp;#39;,
-    datatype: &amp;#39;http://www.w3.org/2001/XMLSchema#integer&amp;#39;,
-    value: &amp;#39;1&amp;#39;
-  },
-  concepts: { type: &amp;#39;literal&amp;#39;, value: &amp;#39;undefined&amp;#39; },
-  decayFactor: {
-    type: &amp;#39;literal&amp;#39;,
-    datatype: &amp;#39;http://www.w3.org/2001/XMLSchema#decimal&amp;#39;,
-    value: &amp;#39;1&amp;#39;
-  },
-  memoryType: { type: &amp;#39;literal&amp;#39;, value: &amp;#39;short-term&amp;#39; }
-}
-[INFO] Loaded 0 short-term and 0 long-term memories from store http://localhost:4030/test/query graph &amp;lt;http://example.org/mcp/memory&amp;gt;
-[INFO] Memory initialized with 0 short-term and 0 long-term memories
+[INFO] Loaded 1 short-term and 0 long-term memories from store http://localhost:4030/test/query graph &amp;lt;http://example.org/mcp/memory&amp;gt;
+[INFO] Adding interaction: &amp;#39;What&amp;#39;s the current state of the Semantic Web?&amp;#39;
+[INFO] Memory initialized with 1 short-term and 0 long-term memories
 [INFO] Extracting concepts...
-[INFO] Extracted concepts: [ &amp;#39;current state&amp;#39;, &amp;#39;Semantic Web&amp;#39; ]
-[INFO] No interactions available
-Response: The semantic web has seen significant progress over recent years, driven by advancements in technologies such as natural language processing and machine learning. The current state of the semantic web is largely characterized by the development of standards and protocols that support the creation, exchange, and application of semantic data.
+[INFO] Extracted concepts: [ &amp;#39;Semantic Web technologies&amp;#39;, &amp;#39;AI&amp;#39; ]
+[INFO] Retrieving relevant interactions...
+Response: Semantic Web technologies and Artificial Intelligence (AI) complement each other well, as they are both powerful tools for representing complex data in structured form, facilitating knowledge discovery and enhancing human-computer interaction. Here are some ways in which semantic Web technologies can be integrated with AI:
 
-Some key areas of focus within the Semantic Web include:
+1. **Knowledge Extraction from Semantically-Structured Data**: Semantic Web technologies provide a standardized way of defining and storing the structured information necessary to build semantic web applications. The use of these tools allows for the extraction of knowledge about large amounts of data, making it easier for AI systems to process this information.
 
-1. **Semantically enriched information models**: The Semantic Web has evolved to incorporate rich and structured data formats such as RDF (Resource Description Framework) and JSON-LD (JSON Linked Data). These formats allow for more precise descriptions of resources in a web context, which can be crucial for semantic applications.
+2. **Artificial Intelligence as a Knowledge Broker**: AI can be used to curate and organize vast amounts of data in semantic Web formats. This includes tasks such as categorizing documents, recognizing patterns and relationships within structured data sets, and integrating heterogeneous data sources into a single knowledge base.
 
-2. **Semantic integration services**: Tools like OWLonto are emerging to help developers automatically convert their ontologies into the OWL format, which is widely supported by Semantic Web technologies.
+3. **Interactive Experience Enhancement through AI-Driven Semantic Web Applications**: AI-driven applications can provide a more personalized user experience by using techniques like recommendation systems to suggest content based on the user&amp;#39;s interests or previous behavior. These systems also use semantic Web technologies to ensure that the information presented is accurate and relevant to the user, enhancing their overall satisfaction with the application.
 
-3. **Semantics-Driven Applications**: The Semantic Web has fostered the development of vast ecosystems of Semantic Web-based applications that can interact with each other and with external resources in a semantic way.
+4. **Machine Learning for Enhanced AI Capabilities**: AI can be trained with data from large volumes of structured web documents, which can then be used to improve AI models’ understanding of context, language, and relationships within web content. This integration allows machines to learn complex patterns in unstructured or semi-structured data, further enhancing their ability to perform tasks that require human-like reasoning.
 
-4. **Semantically Enhanced Data Access**: Technologies like SPARQL (SQL for Data) are increasingly being adopted to make data from RDF, JSON-LD, etc. easily accessible through standard SQL-like queries.
+5. **Integration with Natural Language Processing (NLP) Systems**: Semantic Web technologies can be used with AI NLP systems to extract meaning from unstructured text and improve the understanding of natural language queries by machines. This integration allows for a more effective interaction between humans and computers, as the data is presented in a format that is easier for AI systems to interpret.
 
-5. **Semantic Web Standards**: The development of standards such as Apache Jena and Neo4j continue to evolve the Semantic Web landscape by providing tools that support semantic data management, query processing, and other key tasks in the web.
+6. **Knowledge Management for Autonomous Agents**: Semantic Web technologies can be utilized with artificial intelligence-driven agents to store large volumes of structured information. These agents are capable of processing complex queries, making decisions, and performing tasks based on this knowledge. By integrating semantic web technologies into AI systems, we can create more intelligent autonomous agents that are better equipped to handle complex scenarios.
 
-6. **Semantic Web Applications**: There has been a significant increase in the number of commercial applications built using various Semantic Web technologies.
-
-In summary, while there are still challenges and limitations within the Semantic Web landscape, it is now more widely adopted and utilized than ever before. Its potential for transforming how information is managed, shared, and used is becoming increasingly evident.
+These integration strategies illustrate how the capabilities of both Semantic Web technologies and Artificial Intelligence can be combined to enhance our ability to process large volumes of information and solve complex problems efficiently.
 [INFO] Extracting concepts...
 [INFO] Extracted concepts: [
-  &amp;#39;Semantic Web&amp;#39;,
-  &amp;#39;current state&amp;#39;,
-  &amp;#39;progress over recent years&amp;#39;,
-  &amp;#39;advancements in technologies&amp;#39;,
-  &amp;#39;natural language processing&amp;#39;,
-  &amp;#39;machine learning&amp;#39;,
-  &amp;#39;development of standards&amp;#39;,
-  &amp;#39;studies&amp;#39;,
-  &amp;#39;rich and structured data formats&amp;#39;,
-  &amp;#39;more precise descriptions&amp;#39;,
-  &amp;#39;semantic applications&amp;#39;,
-  &amp;#39;Ontologies&amp;#39;,
-  &amp;#39;OWLonto&amp;#39;,
-  &amp;#39;Semantic integration services&amp;#39;,
-  &amp;#39;SPARQL (SQL for Data)&amp;#39;,
-  &amp;#39;commercial applications&amp;#39;
+  &amp;#39;Semantic Web technologies&amp;#39;,
+  &amp;#39;Artificial Intelligence (AI)&amp;#39;,
+  &amp;#39;Knowledge Extraction from Semantically-Structured Data&amp;#39;,
+  &amp;#39;Artificial Intelligence as a Knowledge Broker&amp;#39;,
+  &amp;#39;Interactive Experience Enhancement through AI-Driven Semantic Web Applications&amp;#39;,
+  &amp;#39;Machine Learning for Enhanced AI Capabilities&amp;#39;,
+  &amp;#39;Integration with Natural Language Processing (NLP) Systems&amp;#39;,
+  &amp;#39;Knowledge Management for Autonomous Agents&amp;#39;
 ]
-[INFO] Adding interaction: &amp;#39;What&amp;#39;s the current state of the Semantic Web?&amp;#39;
-[INFO] Saved memory to SPARQL store http://localhost:4030/test/update graph &amp;lt;http://example.org/mcp/memory&amp;gt;. Stats: 1 short-term, 0 long-term memories
+[INFO] Adding interaction: &amp;#39;How can Semantic Web technologies be used with AI?&amp;#39;
+[INFO] Saved memory to SPARQL store http://localhost:4030/test/update graph &amp;lt;http://example.org/mcp/memory&amp;gt;. Stats: 2 short-term, 0 long-term memories
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This query gives one result, containing the prompt &amp;amp; response from the above :&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-sparql&quot;&gt;PREFIX mcp: &amp;lt;http://purl.org/stuff/mcp/&amp;gt;
@@ -208,7 +181,7 @@ WHERE {
         <title>Entry 2025-01-01_hny</title>
         <link href="https://danny.ayers.name/entries/2025-01-01_hny.html"/>
         <id>https://danny.ayers.name/entries/2025-01-01_hny.html</id>
-        <updated>2025-01-02T11:14:32.301Z</updated>
+        <updated>2025-01-02T12:17:37.654Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -229,7 +202,7 @@ WHERE {
         <title>Entry 2024-12-31_semem-poc</title>
         <link href="https://danny.ayers.name/entries/2024-12-31_semem-poc.html"/>
         <id>https://danny.ayers.name/entries/2024-12-31_semem-poc.html</id>
-        <updated>2025-01-02T11:14:32.302Z</updated>
+        <updated>2025-01-02T12:17:37.654Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -277,7 +250,7 @@ WHERE {
         <title>Entry 2024-12-30_todos</title>
         <link href="https://danny.ayers.name/entries/2024-12-30_todos.html"/>
         <id>https://danny.ayers.name/entries/2024-12-30_todos.html</id>
-        <updated>2025-01-02T11:14:32.302Z</updated>
+        <updated>2025-01-02T12:17:37.654Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
