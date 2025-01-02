@@ -4,7 +4,17 @@
 
 I made a todo list here yesterday without any explanation. Didn't publish. Invisible todo list is absolutely not what I want on my blog front page! My top priority this week is doc organisation, so I'll let myself off this time. I've changed the date on the file, this is it I'll now fill it out...
 
-I'd had a chat with ClaudioB, pointed him to my notes so far on [Semem](https://github.com/danja/semem). He asked me if I had a **live instance** he could play with. A very good question! Not for the first time I'll quote -
+A little job for this morning is a little explore of [Semem](https://github.com/danja/semem).
+
+It appears to (mostly) work, here's the [console log of a run](https://danny.ayers.name/entries/2025-01-01_semem-run.html).
+
+But, **what is it doing?**
+
+What I want right now, as a bit of scaffolding for what I want to explore, is a nodejs version of [memoripy](https://github.com/caspianmoon/memoripy) that uses a (remote) SPARQL store as (part of) its knowledgebase.
+
+I only tried running it after many hours implementing it in a Claude project. Then had a couple of hours manually tweaking to get it to (mostly) run. It's definitely interacting with Ollama for embeddings & chat, a SPARQL endpoint for persistence. I don't see the extracted concepts in the SPARQL store, but there's a JSON syntax bug mentioned in the trace, that might well be related.  
+
+I had a chat with ClaudioB yesterday morning, pointed him to my notes so far on #:semem. He asked me if I had a **live instance** he could play with. A very good question! Not for the first time I'll quote -
 
 ## Connolly's Bane
 
