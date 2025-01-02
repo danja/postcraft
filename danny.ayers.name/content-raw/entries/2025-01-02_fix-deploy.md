@@ -12,7 +12,7 @@ But, **what is it doing?**
 
 What I want right now, as a bit of scaffolding for what I want to explore, is a nodejs version of [memoripy](https://github.com/caspianmoon/memoripy) that uses a (remote) SPARQL store as (part of) its knowledgebase.
 
-I only tried running it after many hours implementing it in a Claude project. Then had a couple of hours manually tweaking to get it to (mostly) run. It's definitely interacting with Ollama for embeddings & chat, a SPARQL endpoint for persistence. I don't see the extracted concepts in the SPARQL store, but there's a JSON syntax bug mentioned in the trace, that might well be related.  
+I only tried running it after many hours implementing it in a Claude project. Then had a couple of hours manually tweaking to get it to (mostly) run. It's definitely interacting with Ollama for embeddings & chat, a SPARQL endpoint for persistence. I don't see the extracted concepts in the SPARQL store.
 
 Last night I had a short session with Claude, aiming to document what we had so far. I've put the artifacts over here : https://github.com/danja/semem/tree/main/docs/description_2025-01-01.md It sounds marvellous, but how much is true?
 
@@ -28,10 +28,42 @@ computer could do for me"**
 
 *Which reminded me I've not been in touch with [Graham Klyne](https://www.ninebynine.org/) for many years. A blog post of his drew my attention to that quote. Good-o, he's on Mastodon : [@gklyne@indieweb.social](https://indieweb.social/@gklyne), I'll ping him there.*
 
-**Pause**
+ClaudioB's question is the kind of message I want my #:hyperdata systems to be able to deal with automatically.
 
-It totally ties in with agent-oriented messaging. This is the kind of message I want my systems to be able to deal with automatically.
-Somewhere around my vocabs I need terms for this particular kind of input. I may already have something like **Feature Request** around the project management oriented bits, but
+Here's how this human agent is handling it :
+
+---
+
+**[prompt]**
+
+> Is there a live instance of Semem?
+
+**[me]**
+
+* immediate response, "not yet"
+* reformulate question in terms of concrete requirements
+->
+1. (functioning, good-enough) Semem
+2. hosting
+3. deployment infrastructure
+
+For 1 : all I really need to do right away is minor bugfixing and whatever's needed to use existing online LLMs
+For 2 : I've got a live Ubuntu server (which you are looking at now) and a domain name registered for a related plan, some nginx proxying already in place.  
+For 3 : I've got a Docker container in-progress for this stuff, [tbox](https://github.com/danja/tbox)
+
+* meta-reasoning - evaluate this against existing dev paths, consider priorities, time needed etc
+
+On this point there's a green flag to go ahead, it's near-enough in line with what I was planning to do already, slight rearrangement of immediate priorities.
+
+---
+
+I acted in several roles there. Humans are good at this. I want a community of independent autonomous intelligent agents (on #:kia).
+
+Ops. Azzurra just reminded me that I've an appointment with her up at the comune at 15:00. Now 13:12. Clever Azzurra has me sussed. I'd completely forgotten. But she's given me just the right amount of time to pop this online, take Claudio out for a short walk, find some clean clothes & have a wash.  
+
+## Soon...
+
+Somewhere around my vocabs I need terms for this particular kind of input. I may already have something like **Feature Request** around the project management oriented bits, but it totally ties in with agent-oriented messaging.
 
 * #:todo fix #:semem failing on UPDATE
 * #:todo tease next steps from `semem/docs/description_2024-12-30/`
