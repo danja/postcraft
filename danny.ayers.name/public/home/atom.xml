@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2025-01-02T10:23:57.716Z</updated>
+    <updated>2025-01-02T10:53:21.976Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -15,7 +15,7 @@
         <title>Entry 2025-01-02_fix-deploy</title>
         <link href="https://danny.ayers.name/entries/2025-01-02_fix-deploy.html"/>
         <id>https://danny.ayers.name/entries/2025-01-02_fix-deploy.html</id>
-        <updated>2025-01-02T10:23:57.716Z</updated>
+        <updated>2025-01-02T10:53:21.976Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -65,10 +65,143 @@ Somewhere around my vocabs I need terms for this particular kind of input. I may
     </entry>
     
     <entry>
+        <title>Entry 2025-01-01_semem-run</title>
+        <link href="https://danny.ayers.name/entries/2025-01-01_semem-run.html"/>
+        <id>https://danny.ayers.name/entries/2025-01-01_semem-run.html</id>
+        <updated>2025-01-02T10:53:21.977Z</updated>
+        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
+
+&lt;article class=&quot;post-content&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
+    &lt;pre&gt;&lt;code&gt;danny@danny-desktop:~/github-danny/hyperdata/packages/semem$  node src/SPARQLExample.js
+[INFO] Initialized FAISS index with dimension 1536
+[ERROR] Failed to parse interaction: SyntaxError: &amp;quot;undefined&amp;quot; is not valid JSON
+    at JSON.parse (&amp;lt;anonymous&amp;gt;)
+    at file:///home/danny/github-danny/hyperdata/packages/semem/src/stores/SPARQLStore.js:129:61
+    at Array.forEach (&amp;lt;anonymous&amp;gt;)
+    at SPARQLStore.loadHistory (file:///home/danny/github-danny/hyperdata/packages/semem/src/stores/SPARQLStore.js:123:37)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MemoryManager.initialize (file:///home/danny/github-danny/hyperdata/packages/semem/src/MemoryManager.js:56:43) {
+  id: { type: &amp;#39;literal&amp;#39;, value: &amp;#39;9b3e7e67-cea6-4398-a51b-c66f83b477f8&amp;#39; },
+  prompt: {
+    type: &amp;#39;literal&amp;#39;,
+    value: &amp;quot;What&amp;#39;s the current state of AI technology?&amp;quot;
+  },
+  output: {
+    type: &amp;#39;literal&amp;#39;,
+    value: &amp;#39;AI (artificial intelligence) technology has made significant strides in recent years, and its capabilities are now widely recognized. Here are some key developments:&#92;n&amp;#39; +
+      &amp;#39;&#92;n&amp;#39; +
+      &amp;#39;1. Machine Learning: This is a subset of AI that enables computers to learn from data without being explicitly programmed to do so. There have been significant advancements in machine learning algorithms, making it easier for models to perform complex tasks.&#92;n&amp;#39; +
+      &amp;#39;&#92;n&amp;#39; +
+      &amp;#39;2. Natural Language Processing (NLP): NLP allows machines to understand and interpret human language. This technology has advanced significantly, enabling chatbots and virtual assistants to more accurately communicate with users in natural languages.&#92;n&amp;#39; +
+      &amp;#39;&#92;n&amp;#39; +
+      &amp;#39;3. Computer Vision: Computer vision involves using cameras to capture visual information from the environment and converting it into digital images or video footage that can be analyzed. There have been significant improvements in this area, allowing machines to recognize objects, faces, and other elements within an image or video.&#92;n&amp;#39; +
+      &amp;#39;&#92;n&amp;#39; +
+      &amp;#39;4. Robotics: Robots are becoming increasingly sophisticated, with capabilities ranging from simple assembly line work to complex tasks like surgery and disaster response. These robots are using advanced sensors, machine learning algorithms, and AI to perform these tasks more efficiently and effectively.&#92;n&amp;#39; +
+      &amp;#39;&#92;n&amp;#39; +
+      &amp;quot;Overall, AI technology is continuing to evolve rapidly, with new breakthroughs in fields such as robotics, natural language processing, computer vision, and more. As the field of artificial intelligence continues to advance, it&amp;#39;s likely that we&amp;#39;ll see even more impressive developments in the future.&amp;quot;
+  },
+  embedding: { type: &amp;#39;literal&amp;#39;, value: &amp;#39;undefined&amp;#39; },
+  timestamp: {
+    type: &amp;#39;literal&amp;#39;,
+    datatype: &amp;#39;http://www.w3.org/2001/XMLSchema#integer&amp;#39;,
+    value: &amp;#39;1735742627604&amp;#39;
+  },
+  accessCount: {
+    type: &amp;#39;literal&amp;#39;,
+    datatype: &amp;#39;http://www.w3.org/2001/XMLSchema#integer&amp;#39;,
+    value: &amp;#39;1&amp;#39;
+  },
+  concepts: { type: &amp;#39;literal&amp;#39;, value: &amp;#39;undefined&amp;#39; },
+  decayFactor: {
+    type: &amp;#39;literal&amp;#39;,
+    datatype: &amp;#39;http://www.w3.org/2001/XMLSchema#decimal&amp;#39;,
+    value: &amp;#39;1&amp;#39;
+  },
+  memoryType: { type: &amp;#39;literal&amp;#39;, value: &amp;#39;short-term&amp;#39; }
+}
+[INFO] Loaded 0 short-term and 0 long-term memories from store http://localhost:4030/test/query graph &amp;lt;http://example.org/mcp/memory&amp;gt;
+[INFO] Memory initialized with 0 short-term and 0 long-term memories
+[INFO] Extracting concepts...
+[INFO] Extracted concepts: [ &amp;#39;current state&amp;#39;, &amp;#39;Semantic Web&amp;#39; ]
+[INFO] No interactions available
+Response: The semantic web has seen significant progress over recent years, driven by advancements in technologies such as natural language processing and machine learning. The current state of the semantic web is largely characterized by the development of standards and protocols that support the creation, exchange, and application of semantic data.
+
+Some key areas of focus within the Semantic Web include:
+
+1. **Semantically enriched information models**: The Semantic Web has evolved to incorporate rich and structured data formats such as RDF (Resource Description Framework) and JSON-LD (JSON Linked Data). These formats allow for more precise descriptions of resources in a web context, which can be crucial for semantic applications.
+
+2. **Semantic integration services**: Tools like OWLonto are emerging to help developers automatically convert their ontologies into the OWL format, which is widely supported by Semantic Web technologies.
+
+3. **Semantics-Driven Applications**: The Semantic Web has fostered the development of vast ecosystems of Semantic Web-based applications that can interact with each other and with external resources in a semantic way.
+
+4. **Semantically Enhanced Data Access**: Technologies like SPARQL (SQL for Data) are increasingly being adopted to make data from RDF, JSON-LD, etc. easily accessible through standard SQL-like queries.
+
+5. **Semantic Web Standards**: The development of standards such as Apache Jena and Neo4j continue to evolve the Semantic Web landscape by providing tools that support semantic data management, query processing, and other key tasks in the web.
+
+6. **Semantic Web Applications**: There has been a significant increase in the number of commercial applications built using various Semantic Web technologies.
+
+In summary, while there are still challenges and limitations within the Semantic Web landscape, it is now more widely adopted and utilized than ever before. Its potential for transforming how information is managed, shared, and used is becoming increasingly evident.
+[INFO] Extracting concepts...
+[INFO] Extracted concepts: [
+  &amp;#39;Semantic Web&amp;#39;,
+  &amp;#39;current state&amp;#39;,
+  &amp;#39;progress over recent years&amp;#39;,
+  &amp;#39;advancements in technologies&amp;#39;,
+  &amp;#39;natural language processing&amp;#39;,
+  &amp;#39;machine learning&amp;#39;,
+  &amp;#39;development of standards&amp;#39;,
+  &amp;#39;studies&amp;#39;,
+  &amp;#39;rich and structured data formats&amp;#39;,
+  &amp;#39;more precise descriptions&amp;#39;,
+  &amp;#39;semantic applications&amp;#39;,
+  &amp;#39;Ontologies&amp;#39;,
+  &amp;#39;OWLonto&amp;#39;,
+  &amp;#39;Semantic integration services&amp;#39;,
+  &amp;#39;SPARQL (SQL for Data)&amp;#39;,
+  &amp;#39;commercial applications&amp;#39;
+]
+[INFO] Adding interaction: &amp;#39;What&amp;#39;s the current state of the Semantic Web?&amp;#39;
+[INFO] Saved memory to SPARQL store http://localhost:4030/test/update graph &amp;lt;http://example.org/mcp/memory&amp;gt;. Stats: 1 short-term, 0 long-term memories
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This query gives one result, containing the prompt &amp;amp; response from the above :&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sparql&quot;&gt;PREFIX mcp: &amp;lt;http://purl.org/stuff/mcp/&amp;gt;
+SELECT ?graph ?id ?prompt ?output ?timestamp
+WHERE {
+  GRAPH ?graph {
+  ?s a mcp:Interaction ;
+     mcp:id ?id ;
+     mcp:prompt ?prompt ;
+     mcp:output ?output ;
+     mcp:timestamp ?timestamp .
+    FILTER regex(str(?prompt), &amp;quot;Semantic&amp;quot;)
+}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This gives 2 results :&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sparql&quot;&gt;SELECT *
+WHERE {
+  GRAPH ?graph {
+  ?s ?p ?o
+    FILTER regex(str(?o), &amp;quot;Semantic&amp;quot;)
+}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;One is the triple with the prompt, the other the triple with the LLM output.&lt;/p&gt;
+
+&lt;/article&gt;
+&lt;p class=&quot;post-title h-cinzel&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;
+        
+    &lt;/a&gt;
+&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
+    </entry>
+    
+    <entry>
         <title>Entry 2025-01-01_hny</title>
         <link href="https://danny.ayers.name/entries/2025-01-01_hny.html"/>
         <id>https://danny.ayers.name/entries/2025-01-01_hny.html</id>
-        <updated>2025-01-02T10:23:57.716Z</updated>
+        <updated>2025-01-02T10:53:21.977Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -89,7 +222,7 @@ Somewhere around my vocabs I need terms for this particular kind of input. I may
         <title>Entry 2024-12-31_semem-poc</title>
         <link href="https://danny.ayers.name/entries/2024-12-31_semem-poc.html"/>
         <id>https://danny.ayers.name/entries/2024-12-31_semem-poc.html</id>
-        <updated>2025-01-02T10:23:57.716Z</updated>
+        <updated>2025-01-02T10:53:21.977Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -137,7 +270,7 @@ Somewhere around my vocabs I need terms for this particular kind of input. I may
         <title>Entry 2024-12-30_todos</title>
         <link href="https://danny.ayers.name/entries/2024-12-30_todos.html"/>
         <id>https://danny.ayers.name/entries/2024-12-30_todos.html</id>
-        <updated>2025-01-02T10:23:57.717Z</updated>
+        <updated>2025-01-02T10:53:21.977Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -160,48 +293,6 @@ Somewhere around my vocabs I need terms for this particular kind of input. I may
 &lt;li&gt;#:todo #:postcraft figure out #:semtags flow&lt;/li&gt;
 &lt;li&gt;#:todo #:transmissions generate type definitions&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;/article&gt;
-&lt;p class=&quot;post-title h-cinzel&quot;&gt;
-    &lt;a href=&quot;&quot;&gt;
-        
-    &lt;/a&gt;
-&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
-    </entry>
-    
-    <entry>
-        <title>Entry 2024-12-30_semem-sparq</title>
-        <link href="https://danny.ayers.name/entries/2024-12-30_semem-sparq.html"/>
-        <id>https://danny.ayers.name/entries/2024-12-30_semem-sparq.html</id>
-        <updated>2025-01-02T10:23:57.717Z</updated>
-        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
-
-&lt;article class=&quot;post-content&quot;&gt;
-        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
-    &lt;h1&gt;Semem SPARQ&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/danja/semem&quot;&gt;Semem&lt;/a&gt; doesn&amp;#39;t quite SPARQL yet&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;I was able to sort out the Faiss API issues from earlier so dove right ahead in implementing storage for #:semem that uses a remote SPARQL endpoint. Well, not quite -&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;Executed 45 of 45 specs (4 ERRORS) (33 FAILED) in 1 sec.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/danja/semem/blob/main/src/SPARQLExample.js&quot;&gt;SPARQLExample.js&lt;/a&gt; also fails miserably, when it tries to &lt;code&gt;UPDATE&lt;/code&gt;. This might well be a problem with the target SPARQL store (Fuseki in the #:tbox Docker), I only set that up yesterday (?), haven&amp;#39;t tested it properly yet. I suspect &lt;strong&gt;auth&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;As usual Claude did most of the donkey work for me.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/danja/semem/blob/main/src/stores/SPARQLStore.js&quot;&gt;SPARQLStore.js&lt;/a&gt; (and there&amp;#39;s a &lt;a href=&quot;https://github.com/danja/semem/blob/main/src/stores/CachedSPARQLStore.js&quot;&gt;CachedSPARQLStore.js&lt;/a&gt;) just use simple templating to create the SPARQL. But that&amp;#39;s all it needs right now.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;_generateInsertStatements(memories, type) {
-    return memories.map((interaction, index) =&amp;gt; `
-        _:interaction${type}${index} a mcp:Interaction ;
-            mcp:id &amp;quot;${interaction.id}&amp;quot; ;
-            mcp:prompt &amp;quot;${this._escapeSparqlString(interaction.prompt)}&amp;quot; ;
-            mcp:output &amp;quot;${this._escapeSparqlString(interaction.output)}&amp;quot; ;
-            mcp:embedding &amp;quot;&amp;quot;&amp;quot;${JSON.stringify(interaction.embedding)}&amp;quot;&amp;quot;&amp;quot; ;
-            mcp:timestamp &amp;quot;${interaction.timestamp}&amp;quot;^^xsd:integer ;
-            mcp:accessCount &amp;quot;${interaction.accessCount}&amp;quot;^^xsd:integer ;
-            mcp:concepts &amp;quot;&amp;quot;&amp;quot;${JSON.stringify(interaction.concepts)}&amp;quot;&amp;quot;&amp;quot; ;
-            mcp:decayFactor &amp;quot;${interaction.decayFactor}&amp;quot;^^xsd:decimal ;
-            mcp:memoryType &amp;quot;${type}&amp;quot; .
-    `).join(&amp;#39;&#92;n&amp;#39;);
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Yeah, I finally found a use for the &lt;a href=&quot;https://purl.org/stuff/mcp&quot;&gt;Model Context Protocol Ontology&lt;/a&gt; Claude &amp;amp; I put together almost a month ago.&lt;/p&gt;
 
 &lt;/article&gt;
 &lt;p class=&quot;post-title h-cinzel&quot;&gt;

@@ -82,6 +82,131 @@ Somewhere around my vocabs I need terms for this particular kind of input. I may
 
 <article class="post-content">
         <a href="">#</a>
+    <pre><code>danny@danny-desktop:~/github-danny/hyperdata/packages/semem$  node src/SPARQLExample.js
+[INFO] Initialized FAISS index with dimension 1536
+[ERROR] Failed to parse interaction: SyntaxError: &quot;undefined&quot; is not valid JSON
+    at JSON.parse (&lt;anonymous&gt;)
+    at file:///home/danny/github-danny/hyperdata/packages/semem/src/stores/SPARQLStore.js:129:61
+    at Array.forEach (&lt;anonymous&gt;)
+    at SPARQLStore.loadHistory (file:///home/danny/github-danny/hyperdata/packages/semem/src/stores/SPARQLStore.js:123:37)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MemoryManager.initialize (file:///home/danny/github-danny/hyperdata/packages/semem/src/MemoryManager.js:56:43) {
+  id: { type: &#39;literal&#39;, value: &#39;9b3e7e67-cea6-4398-a51b-c66f83b477f8&#39; },
+  prompt: {
+    type: &#39;literal&#39;,
+    value: &quot;What&#39;s the current state of AI technology?&quot;
+  },
+  output: {
+    type: &#39;literal&#39;,
+    value: &#39;AI (artificial intelligence) technology has made significant strides in recent years, and its capabilities are now widely recognized. Here are some key developments:\n&#39; +
+      &#39;\n&#39; +
+      &#39;1. Machine Learning: This is a subset of AI that enables computers to learn from data without being explicitly programmed to do so. There have been significant advancements in machine learning algorithms, making it easier for models to perform complex tasks.\n&#39; +
+      &#39;\n&#39; +
+      &#39;2. Natural Language Processing (NLP): NLP allows machines to understand and interpret human language. This technology has advanced significantly, enabling chatbots and virtual assistants to more accurately communicate with users in natural languages.\n&#39; +
+      &#39;\n&#39; +
+      &#39;3. Computer Vision: Computer vision involves using cameras to capture visual information from the environment and converting it into digital images or video footage that can be analyzed. There have been significant improvements in this area, allowing machines to recognize objects, faces, and other elements within an image or video.\n&#39; +
+      &#39;\n&#39; +
+      &#39;4. Robotics: Robots are becoming increasingly sophisticated, with capabilities ranging from simple assembly line work to complex tasks like surgery and disaster response. These robots are using advanced sensors, machine learning algorithms, and AI to perform these tasks more efficiently and effectively.\n&#39; +
+      &#39;\n&#39; +
+      &quot;Overall, AI technology is continuing to evolve rapidly, with new breakthroughs in fields such as robotics, natural language processing, computer vision, and more. As the field of artificial intelligence continues to advance, it&#39;s likely that we&#39;ll see even more impressive developments in the future.&quot;
+  },
+  embedding: { type: &#39;literal&#39;, value: &#39;undefined&#39; },
+  timestamp: {
+    type: &#39;literal&#39;,
+    datatype: &#39;http://www.w3.org/2001/XMLSchema#integer&#39;,
+    value: &#39;1735742627604&#39;
+  },
+  accessCount: {
+    type: &#39;literal&#39;,
+    datatype: &#39;http://www.w3.org/2001/XMLSchema#integer&#39;,
+    value: &#39;1&#39;
+  },
+  concepts: { type: &#39;literal&#39;, value: &#39;undefined&#39; },
+  decayFactor: {
+    type: &#39;literal&#39;,
+    datatype: &#39;http://www.w3.org/2001/XMLSchema#decimal&#39;,
+    value: &#39;1&#39;
+  },
+  memoryType: { type: &#39;literal&#39;, value: &#39;short-term&#39; }
+}
+[INFO] Loaded 0 short-term and 0 long-term memories from store http://localhost:4030/test/query graph &lt;http://example.org/mcp/memory&gt;
+[INFO] Memory initialized with 0 short-term and 0 long-term memories
+[INFO] Extracting concepts...
+[INFO] Extracted concepts: [ &#39;current state&#39;, &#39;Semantic Web&#39; ]
+[INFO] No interactions available
+Response: The semantic web has seen significant progress over recent years, driven by advancements in technologies such as natural language processing and machine learning. The current state of the semantic web is largely characterized by the development of standards and protocols that support the creation, exchange, and application of semantic data.
+
+Some key areas of focus within the Semantic Web include:
+
+1. **Semantically enriched information models**: The Semantic Web has evolved to incorporate rich and structured data formats such as RDF (Resource Description Framework) and JSON-LD (JSON Linked Data). These formats allow for more precise descriptions of resources in a web context, which can be crucial for semantic applications.
+
+2. **Semantic integration services**: Tools like OWLonto are emerging to help developers automatically convert their ontologies into the OWL format, which is widely supported by Semantic Web technologies.
+
+3. **Semantics-Driven Applications**: The Semantic Web has fostered the development of vast ecosystems of Semantic Web-based applications that can interact with each other and with external resources in a semantic way.
+
+4. **Semantically Enhanced Data Access**: Technologies like SPARQL (SQL for Data) are increasingly being adopted to make data from RDF, JSON-LD, etc. easily accessible through standard SQL-like queries.
+
+5. **Semantic Web Standards**: The development of standards such as Apache Jena and Neo4j continue to evolve the Semantic Web landscape by providing tools that support semantic data management, query processing, and other key tasks in the web.
+
+6. **Semantic Web Applications**: There has been a significant increase in the number of commercial applications built using various Semantic Web technologies.
+
+In summary, while there are still challenges and limitations within the Semantic Web landscape, it is now more widely adopted and utilized than ever before. Its potential for transforming how information is managed, shared, and used is becoming increasingly evident.
+[INFO] Extracting concepts...
+[INFO] Extracted concepts: [
+  &#39;Semantic Web&#39;,
+  &#39;current state&#39;,
+  &#39;progress over recent years&#39;,
+  &#39;advancements in technologies&#39;,
+  &#39;natural language processing&#39;,
+  &#39;machine learning&#39;,
+  &#39;development of standards&#39;,
+  &#39;studies&#39;,
+  &#39;rich and structured data formats&#39;,
+  &#39;more precise descriptions&#39;,
+  &#39;semantic applications&#39;,
+  &#39;Ontologies&#39;,
+  &#39;OWLonto&#39;,
+  &#39;Semantic integration services&#39;,
+  &#39;SPARQL (SQL for Data)&#39;,
+  &#39;commercial applications&#39;
+]
+[INFO] Adding interaction: &#39;What&#39;s the current state of the Semantic Web?&#39;
+[INFO] Saved memory to SPARQL store http://localhost:4030/test/update graph &lt;http://example.org/mcp/memory&gt;. Stats: 1 short-term, 0 long-term memories
+</code></pre>
+<p>This query gives one result, containing the prompt &amp; response from the above :</p>
+<pre><code class="language-sparql">PREFIX mcp: &lt;http://purl.org/stuff/mcp/&gt;
+SELECT ?graph ?id ?prompt ?output ?timestamp
+WHERE {
+  GRAPH ?graph {
+  ?s a mcp:Interaction ;
+     mcp:id ?id ;
+     mcp:prompt ?prompt ;
+     mcp:output ?output ;
+     mcp:timestamp ?timestamp .
+    FILTER regex(str(?prompt), &quot;Semantic&quot;)
+}
+}
+</code></pre>
+<p>This gives 2 results :</p>
+<pre><code class="language-sparql">SELECT *
+WHERE {
+  GRAPH ?graph {
+  ?s ?p ?o
+    FILTER regex(str(?o), &quot;Semantic&quot;)
+}
+}
+</code></pre>
+<p>One is the triple with the prompt, the other the triple with the LLM output.</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="">
+        
+    </a>
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="">#</a>
     <h1>Happy New Year!</h1>
 <p>Foggy brain yet again. Not for the first time on New Year&#39;s Day, but irritatingly I wasn&#39;t up all that late and didn&#39;t drink to excess. I did have fun last night, my first attempt at livestreaming. Around 7pm I was feeling blocked at desk (my head, not the code) and an idea formed in my head. I&#39;d been listening to Drum &amp; Bass. Didn&#39;t seem right, hmm, bagpipes? <a href="https://www.youtube.com/watch?v=GjdnGNfDyd4">Big Bad Bollocks</a>? Pogues? Hang on, is there any D&amp;B in 3/4 or 6/8 time? I decided to make some. By midnight.    </p>
 <p>Easiest camera to set up was my Android phone (after I spent half an hour sorting out a tripod). Perplexity suggested Facebook was the easiest platform, but neglected to tell me it has a very confusing UI with sod all settings accessible. Worst, whatever resolution/codec it uses, it&#39;s a network glutton. I&#39;m not sure how much actually got streamed, 50% of the times I checked it was waiting to connect.  </p>
@@ -153,40 +278,6 @@ Somewhere around my vocabs I need terms for this particular kind of input. I may
 <li>#:todo #:postcraft figure out #:semtags flow</li>
 <li>#:todo #:transmissions generate type definitions</li>
 </ul>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="">
-        
-    </a>
-</p> <em></em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="">#</a>
-    <h1>Semem SPARQ</h1>
-<p><em><a href="https://github.com/danja/semem">Semem</a> doesn&#39;t quite SPARQL yet</em></p>
-<p>I was able to sort out the Faiss API issues from earlier so dove right ahead in implementing storage for #:semem that uses a remote SPARQL endpoint. Well, not quite -</p>
-<pre><code class="language-sh">Executed 45 of 45 specs (4 ERRORS) (33 FAILED) in 1 sec.
-</code></pre>
-<p><a href="https://github.com/danja/semem/blob/main/src/SPARQLExample.js">SPARQLExample.js</a> also fails miserably, when it tries to <code>UPDATE</code>. This might well be a problem with the target SPARQL store (Fuseki in the #:tbox Docker), I only set that up yesterday (?), haven&#39;t tested it properly yet. I suspect <strong>auth</strong>.</p>
-<p>As usual Claude did most of the donkey work for me.</p>
-<p><a href="https://github.com/danja/semem/blob/main/src/stores/SPARQLStore.js">SPARQLStore.js</a> (and there&#39;s a <a href="https://github.com/danja/semem/blob/main/src/stores/CachedSPARQLStore.js">CachedSPARQLStore.js</a>) just use simple templating to create the SPARQL. But that&#39;s all it needs right now.</p>
-<pre><code class="language-javascript">_generateInsertStatements(memories, type) {
-    return memories.map((interaction, index) =&gt; `
-        _:interaction${type}${index} a mcp:Interaction ;
-            mcp:id &quot;${interaction.id}&quot; ;
-            mcp:prompt &quot;${this._escapeSparqlString(interaction.prompt)}&quot; ;
-            mcp:output &quot;${this._escapeSparqlString(interaction.output)}&quot; ;
-            mcp:embedding &quot;&quot;&quot;${JSON.stringify(interaction.embedding)}&quot;&quot;&quot; ;
-            mcp:timestamp &quot;${interaction.timestamp}&quot;^^xsd:integer ;
-            mcp:accessCount &quot;${interaction.accessCount}&quot;^^xsd:integer ;
-            mcp:concepts &quot;&quot;&quot;${JSON.stringify(interaction.concepts)}&quot;&quot;&quot; ;
-            mcp:decayFactor &quot;${interaction.decayFactor}&quot;^^xsd:decimal ;
-            mcp:memoryType &quot;${type}&quot; .
-    `).join(&#39;\n&#39;);
-}
-</code></pre>
-<p>Yeah, I finally found a use for the <a href="https://purl.org/stuff/mcp">Model Context Protocol Ontology</a> Claude &amp; I put together almost a month ago.</p>
 
 </article>
 <p class="post-title h-cinzel">
