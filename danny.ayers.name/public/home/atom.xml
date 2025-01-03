@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2025-01-03T16:12:35.581Z</updated>
+    <updated>2025-01-03T17:45:06.509Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -15,7 +15,7 @@
         <title>Entry 2025-01-03_light</title>
         <link href="https://danny.ayers.name/entries/2025-01-03_light.html"/>
         <id>https://danny.ayers.name/entries/2025-01-03_light.html</id>
-        <updated>2025-01-03T16:12:35.581Z</updated>
+        <updated>2025-01-03T17:45:06.509Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -80,7 +80,7 @@ const counter = createCounter();
 counter.increment(); // 1
 console.log(counter.count); // undefined
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Heh, not sure I&amp;#39;ve ever used that kind of closure in JS. I can easily imagine my confusion over that syntax. I wouldn&amp;#39;t call the private field &lt;strong&gt;#&lt;/strong&gt; syntax pretty, but it&amp;#39;s a lot more suitable for this bear of very little brain.&lt;/p&gt;
+&lt;p&gt;Heh, not sure I&amp;#39;ve ever used that kind of closure in JS. I can easily imagine my confusion over that syntax. I wouldn&amp;#39;t call the private field &lt;strong&gt;#&lt;/strong&gt; syntax pretty, but it&amp;#39;s a lot more suitable for this &lt;strong&gt;bear of very little brain&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;/article&gt;
 &lt;p class=&quot;post-title h-cinzel&quot;&gt;
@@ -94,7 +94,7 @@ console.log(counter.count); // undefined
         <title>Entry 2025-01-02_fix-deploy</title>
         <link href="https://danny.ayers.name/entries/2025-01-02_fix-deploy.html"/>
         <id>https://danny.ayers.name/entries/2025-01-02_fix-deploy.html</id>
-        <updated>2025-01-03T16:12:35.581Z</updated>
+        <updated>2025-01-03T17:45:06.510Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -179,7 +179,7 @@ For 2 : I&amp;#39;ve got a live Ubuntu server (which you are looking at now) and
         <title>Entry 2025-01-01_semem-run</title>
         <link href="https://danny.ayers.name/entries/2025-01-01_semem-run.html"/>
         <id>https://danny.ayers.name/entries/2025-01-01_semem-run.html</id>
-        <updated>2025-01-03T16:12:35.581Z</updated>
+        <updated>2025-01-03T17:45:06.510Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -259,7 +259,7 @@ WHERE {
         <title>Entry 2025-01-01_repo-boo</title>
         <link href="https://danny.ayers.name/entries/2025-01-01_repo-boo.html"/>
         <id>https://danny.ayers.name/entries/2025-01-01_repo-boo.html</id>
-        <updated>2025-01-03T16:12:35.581Z</updated>
+        <updated>2025-01-03T17:45:06.510Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -323,7 +323,7 @@ npm error 404 Not Found - GET https://registry.yarnpkg.com/squirty - Not found
         <title>Entry 2025-01-01_hny</title>
         <link href="https://danny.ayers.name/entries/2025-01-01_hny.html"/>
         <id>https://danny.ayers.name/entries/2025-01-01_hny.html</id>
-        <updated>2025-01-03T16:12:35.581Z</updated>
+        <updated>2025-01-03T17:45:06.510Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
