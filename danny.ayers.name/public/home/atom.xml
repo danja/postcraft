@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2025-01-02T12:19:48.493Z</updated>
+    <updated>2025-01-03T16:12:35.581Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -12,10 +12,89 @@
 
     
     <entry>
+        <title>Entry 2025-01-03_light</title>
+        <link href="https://danny.ayers.name/entries/2025-01-03_light.html"/>
+        <id>https://danny.ayers.name/entries/2025-01-03_light.html</id>
+        <updated>2025-01-03T16:12:35.581Z</updated>
+        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
+
+&lt;article class=&quot;post-content&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
+    &lt;h1&gt;Light&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Because it is.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;media/images/2025-01/bear-of-little-brain.png&quot; alt=&quot;Bear of Very Little Brain&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Chatted with ClaudioB earlier. He&amp;#39;s planning to set up a machine at home to serve online. I started having a go a few weeks back but got distracted. Setting up #:semem in #:tbox and making it live is my main target today, but as that&amp;#39;ll involve poking around on my remote server I might as well have another look then.&lt;/p&gt;
+&lt;h2&gt;Packer&lt;/h2&gt;
+&lt;p&gt;Before any of that, I need to finish a little #:transmission I started last session. repomix has broken on me. As best I can determine, it&amp;#39;s down to nodejs version, looks like repomix uses some experimental JSON bits that have been pulled. If that is the case, I could use &lt;em&gt;that thing (?)&lt;/em&gt; to choose a version that does work. &lt;strong&gt;Faff.&lt;/strong&gt; I&amp;#39;ve been meaning to make my own on #:transmissions for a while, this tipped me over. Claude gave me some starter code, I just need to &lt;strong&gt;plumb it in and tweak it to sanity, as per Claude code&lt;/strong&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;transmissions$ ./trans packer ./
+...
+[Error: ENOENT: no such file or directory, open &amp;#39;/home/danny/github-danny/transmissions/manifest.ttl&amp;#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Bum!&lt;/strong&gt; I didn&amp;#39;t get around to sorting out the command-line options.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Good-o!&lt;/strong&gt; I did start sorting out the command-line options.&lt;/p&gt;
+&lt;p&gt;Yeah, it looks reasonably well separated. The CLI entry point &lt;code&gt;./trans&lt;/code&gt; calls &lt;code&gt;src/api/cli/run.js&lt;/code&gt; which uses &lt;a href=&quot;https://yargs.js.org/&quot;&gt;yargs&lt;/a&gt; - &lt;em&gt;tee hee&lt;/em&gt;, they say it best :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Yargs be a node.js library fer hearties tryin&amp;#39; ter parse optstrings.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;src/api/cli/run.js&lt;/code&gt; then calls &lt;code&gt;src/api/common/CommandUtils.js&lt;/code&gt;. That does a little bit of path-splitting and simple logic, calling on &lt;code&gt;src/core/ApplicationManager.js&lt;/code&gt; to get things going.&lt;/p&gt;
+&lt;p&gt;I remember now - I left a bit of refactoring around &lt;code&gt;src/core/ApplicationManager.js&lt;/code&gt; in-progress. That&amp;#39;s still not a high priority, I&amp;#39;ll get to it when I next need to do things around there.&lt;/p&gt;
+&lt;p&gt;Hmm. The options do look very broken. But shouldn&amp;#39;t take much fixing.&lt;/p&gt;
+&lt;p&gt;Well, you learn something every day. I wanted to check what was considered best practice for private members in JS. I asked Claude, confirmed with &lt;a href=&quot;https://www.perplexity.ai/&quot;&gt;Perplexity&lt;/a&gt; :&lt;/p&gt;
+&lt;h3&gt;Private Fields in JavaScript&lt;/h3&gt;
+&lt;p&gt;Private fields, denoted by the # prefix, were introduced as part of the ECMAScript 2022 (ES13) specification. This feature provides true privacy encapsulation within classes, preventing access to these fields from outside the class&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;class Person {
+  #secret;
+  constructor(secret) {
+    this.#secret = secret;
+  }
+  getSecret() {
+    return this.#secret;
+  }
+}
+
+const person = new Person(&amp;quot;my secret&amp;quot;);
+console.log(person.getSecret()); // &amp;quot;my secret&amp;quot;
+console.log(person.#secret); // SyntaxError: Private field &amp;#39;#secret&amp;#39; must be declared in an enclosing class
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Supported in:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Node.js 12.0.0+&lt;/li&gt;
+&lt;li&gt;Chrome 74+&lt;/li&gt;
+&lt;li&gt;Firefox 90+&lt;/li&gt;
+&lt;li&gt;Safari 14.1+&lt;/li&gt;
+&lt;li&gt;Edge 79+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Closures for Encapsulation&lt;/h3&gt;
+&lt;p&gt;Closures have been a traditional way to achieve encapsulation in JavaScript before the introduction of private class fields&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function createCounter() {
+  let count = 0;
+  return {
+    increment: function() {
+      count++;
+      console.log(count);
+    }
+  };
+}
+
+const counter = createCounter();
+counter.increment(); // 1
+console.log(counter.count); // undefined
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Heh, not sure I&amp;#39;ve ever used that kind of closure in JS. I can easily imagine my confusion over that syntax. I wouldn&amp;#39;t call the private field &lt;strong&gt;#&lt;/strong&gt; syntax pretty, but it&amp;#39;s a lot more suitable for this bear of very little brain.&lt;/p&gt;
+
+&lt;/article&gt;
+&lt;p class=&quot;post-title h-cinzel&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;
+        
+    &lt;/a&gt;
+&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
+    </entry>
+    
+    <entry>
         <title>Entry 2025-01-02_fix-deploy</title>
         <link href="https://danny.ayers.name/entries/2025-01-02_fix-deploy.html"/>
         <id>https://danny.ayers.name/entries/2025-01-02_fix-deploy.html</id>
-        <updated>2025-01-02T12:19:48.493Z</updated>
+        <updated>2025-01-03T16:12:35.581Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -100,7 +179,7 @@ For 2 : I&amp;#39;ve got a live Ubuntu server (which you are looking at now) and
         <title>Entry 2025-01-01_semem-run</title>
         <link href="https://danny.ayers.name/entries/2025-01-01_semem-run.html"/>
         <id>https://danny.ayers.name/entries/2025-01-01_semem-run.html</id>
-        <updated>2025-01-02T12:19:48.493Z</updated>
+        <updated>2025-01-03T16:12:35.581Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -177,10 +256,74 @@ WHERE {
     </entry>
     
     <entry>
+        <title>Entry 2025-01-01_repo-boo</title>
+        <link href="https://danny.ayers.name/entries/2025-01-01_repo-boo.html"/>
+        <id>https://danny.ayers.name/entries/2025-01-01_repo-boo.html</id>
+        <updated>2025-01-03T16:12:35.581Z</updated>
+        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
+
+&lt;article class=&quot;post-content&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
+    &lt;h1&gt;Repo Boo&lt;/h1&gt;
+&lt;p&gt;Very annoying. I&amp;#39;ve been using Claude projects &lt;strong&gt;heavily&lt;/strong&gt; for recent dev. Made possible by &lt;a href=&quot;https://github.com/yamadashy/repomix&quot;&gt;repomix&lt;/a&gt; which essentially does an annotated concat of a repo&amp;#39;s files. Tonight my thing decided to say:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;danny@danny-desktop:~/github-danny/transmissions$ npm run rp
+
+&amp;gt; transmissions@1.0.0 rp
+&amp;gt; repomix -c repomix.config-small.json . &amp;amp;&amp;amp; repomix -c repomix.config-large.json .
+
+(node:61405) ExperimentalWarning: Importing JSON modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+📦 Repomix v0.2.12
+
+Error: Config file not found at repomix.config-small.json
+For more help, please visit: https://github.com/yamadashy/repomix/issues
+(node:61421) ExperimentalWarning: Importing JSON modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I&amp;#39;ve no idea what I&amp;#39;ve done that would impact there. Can&amp;#39;t remember if this is running a global or local install. Ok, first thing, clear caches and try again. &amp;quot;Hey Claude, how do I..?&amp;quot;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;rm -rf node_modules
+rm package-lock.json
+npm cache clean --force
+npm install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;While that&amp;#39;s running, there is something else I want to do nearby. Squat the npm registry with a couple of things. #:transmissions &amp;amp; #:semem at least, there might be a couple of others. None will be out-of-the-box usable as they should be (as I would interpret proper etiquette), but I think I&amp;#39;m at a point where I can legitimately grab those names. I&amp;#39;ve put loads of work in, am committed to making them useful for other parties.&lt;/p&gt;
+&lt;p&gt;It might even encourage me to get the GitHub CI/CD bits in place (for the badges, innit).&lt;/p&gt;
+&lt;p&gt;Golly :&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;npm warn using --force Recommended protections disabled.
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+
+added 1141 packages in 9m
+
+237 packages are looking for funding
+  run `npm fund` for details
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Aw, &lt;code&gt;npm install squirt&lt;/code&gt; works (whatever that is), I&amp;#39;d have squatted that too. Ok, no biggy.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;npm install squirty
+npm error code E404
+npm error 404 Not Found - GET https://registry.yarnpkg.com/squirty - Not found
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For that I only need to do some minor renaming. #:transmissions would have been a proper pain. I did it once already - had the project working label &amp;quot;treadmill&amp;quot; initially, but decided something more accurately descriptive would be better. Horrible search &amp;amp; replace - not too bad with code, but docs got messy.&lt;/p&gt;
+
+&lt;/article&gt;
+&lt;p class=&quot;post-title h-cinzel&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;
+        
+    &lt;/a&gt;
+&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
+    </entry>
+    
+    <entry>
         <title>Entry 2025-01-01_hny</title>
         <link href="https://danny.ayers.name/entries/2025-01-01_hny.html"/>
         <id>https://danny.ayers.name/entries/2025-01-01_hny.html</id>
-        <updated>2025-01-02T12:19:48.493Z</updated>
+        <updated>2025-01-03T16:12:35.581Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -188,90 +331,6 @@ WHERE {
     &lt;h1&gt;Happy New Year!&lt;/h1&gt;
 &lt;p&gt;Foggy brain yet again. Not for the first time on New Year&amp;#39;s Day, but irritatingly I wasn&amp;#39;t up all that late and didn&amp;#39;t drink to excess. I did have fun last night, my first attempt at livestreaming. Around 7pm I was feeling blocked at desk (my head, not the code) and an idea formed in my head. I&amp;#39;d been listening to Drum &amp;amp; Bass. Didn&amp;#39;t seem right, hmm, bagpipes? &lt;a href=&quot;https://www.youtube.com/watch?v=GjdnGNfDyd4&quot;&gt;Big Bad Bollocks&lt;/a&gt;? Pogues? Hang on, is there any D&amp;amp;B in 3/4 or 6/8 time? I decided to make some. By midnight.    &lt;/p&gt;
 &lt;p&gt;Easiest camera to set up was my Android phone (after I spent half an hour sorting out a tripod). Perplexity suggested Facebook was the easiest platform, but neglected to tell me it has a very confusing UI with sod all settings accessible. Worst, whatever resolution/codec it uses, it&amp;#39;s a network glutton. I&amp;#39;m not sure how much actually got streamed, 50% of the times I checked it was waiting to connect.  &lt;/p&gt;
-
-&lt;/article&gt;
-&lt;p class=&quot;post-title h-cinzel&quot;&gt;
-    &lt;a href=&quot;&quot;&gt;
-        
-    &lt;/a&gt;
-&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
-    </entry>
-    
-    <entry>
-        <title>Entry 2024-12-31_semem-poc</title>
-        <link href="https://danny.ayers.name/entries/2024-12-31_semem-poc.html"/>
-        <id>https://danny.ayers.name/entries/2024-12-31_semem-poc.html</id>
-        <updated>2025-01-02T12:19:48.493Z</updated>
-        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
-
-&lt;article class=&quot;post-content&quot;&gt;
-        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
-    &lt;h1&gt;Semem POC&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;First-thing morning ramblings, deep sea trawling for actionables again&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;I have two upcoming deadlines I&amp;#39;ve set myself:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;#:PoggiPivot 2025-01-05 - get my #:hyperdata project docs sorted&lt;/li&gt;
-&lt;li&gt;#:ProofPivot 2025-01-14 - proofs of concept for projects&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Both racing towards me. But that&amp;#39;s the whole idea, use the purely artificial urgency to motivate myself to &lt;strong&gt;focus&lt;/strong&gt;. Success at achieving the goals is secondary, reflected in the fact I haven&amp;#39;t actually written down those criteria yet.&lt;/p&gt;
-&lt;p&gt;Anyway, since setting these I&amp;#39;ve made a good start on them for &lt;a href=&quot;https://github.com/danja/semem&quot;&gt;Semem&lt;/a&gt; (Semantic Memory). Which has highlighted one particular flaw in my current processes, that &lt;strong&gt;proof of concept&lt;/strong&gt; isn&amp;#39;t actually the phrase I intended in the above.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Somewhere&lt;/em&gt;, probably in a Claude project, hopefully condensed in a vocab, I have (work on) better terms. But I need to get my docs sorted...&lt;/p&gt;
-&lt;p&gt;The phrase is/should be closer to &lt;strong&gt;minimum viable product&lt;/strong&gt;. But I don&amp;#39;t like this phrase because &lt;strong&gt;product&lt;/strong&gt; &lt;em&gt;in this context, in my mind&lt;/em&gt; suggests a marketable commodity. As a dyed in the wool Capitalism-sceptic, I have a knee-jerk reaction to this kind of thing. In society at large there is an overarching conflation between a thing&amp;#39;s value in a &amp;quot;noble&amp;quot; utilitarian sense and it&amp;#39;s bottom line &lt;strong&gt;$ value&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Aside&lt;/strong&gt; : I have a vague memory of having the same kind of reaction while tech-reviewing some book material by &lt;a href=&quot;https://en.wikipedia.org/wiki/Shelley_Powers&quot;&gt;Shelley Powers&lt;/a&gt; a good few years ago. &lt;em&gt;(This may be a completely false memory, apologies to Shelley if that&amp;#39;s the case, but it is plausible and moreover nicely fits this narrative, &amp;quot;don&amp;#39;t let the truth get in way...&amp;quot; and all that).&lt;/em&gt;  Shelley is one of my heros of the Web-tech world, and a bloody good writer. But in this particular chapter she made repeated use of phrases like &amp;quot;business rules&amp;quot;. Which I repeatedly criticised. There is a legitimate definition of &amp;quot;business&amp;quot; in this context, to paraphrase &amp;quot;the important stuff&amp;quot;. But still in my mind the conflation with business in the common-English commercial activity sense made my hackles rise. &lt;/p&gt;
-&lt;p&gt;(Btw, I am an experienced reviewer, and key to that role is drawing attention to text that &lt;em&gt;might not&lt;/em&gt; be quite right. It might well be fine. But I&amp;#39;d say the diligent reviewer should err a little on the side of caution, flag things where suspicions are raised. As an experienced writer, Shelley would know many of such flags were tentative, a legitimate response being to reject them after a cursory mental check - which she probably did in this instance, if it ever happened. For sure, iffy crit is a pain and any crit can be demoralising when you get a downpour (I&amp;#39;d be one of many reviewers doing this). But the patience of Job and thick skin are job requirements.)&lt;/p&gt;
-&lt;p&gt;Any road... I do hope I did get some clear and accurate terminology nailed down for POC/MVC. Neutral language in the sense of not carrying misleading baggage. What I&amp;#39;m after is more like &amp;quot;demonstration of utility&amp;quot;. &lt;strong&gt;Clunky, eh&lt;/strong&gt;.&lt;/p&gt;
-&lt;h2&gt;Semem Demonstration of Utility&lt;/h2&gt;
-&lt;p&gt;I delighted myself with the hubris I got into my working description of #:semem :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/danja/semem&quot;&gt;Semem&lt;/a&gt; is an LLM-compatible context-aware, open-ended graph knowledgebase system combining the advantages of vector embeddings and Linked Data technologies.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;But what am I aiming for by 2025-01-14? I actually have an immediate use case with low-end requirements :&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;A system I can point to my local FS containing scattered markdown notes etc etc so I can use the stuff efficiently.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;I reckon a baseline #:Semem needs to :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;provide simple similarity search&lt;/li&gt;
-&lt;li&gt;cluster related topics at different scales&lt;/li&gt;
-&lt;li&gt;create quasi-formalised annotation (metadata)&lt;/li&gt;
-&lt;li&gt;make a disorganised, heterogenous corpus addressable as a coherent entity&lt;/li&gt;
-&lt;li&gt;exploit LLMs (and maybe trad reasoning) to facilitate new knowledge discovery&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Ok, I have some actionables. Mari&amp;#39;s picking me up in 15 mins to go for a coffee and I&amp;#39;m not yet out of bed.&lt;/p&gt;
-
-&lt;/article&gt;
-&lt;p class=&quot;post-title h-cinzel&quot;&gt;
-    &lt;a href=&quot;&quot;&gt;
-        
-    &lt;/a&gt;
-&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
-    </entry>
-    
-    <entry>
-        <title>Entry 2024-12-30_todos</title>
-        <link href="https://danny.ayers.name/entries/2024-12-30_todos.html"/>
-        <id>https://danny.ayers.name/entries/2024-12-30_todos.html</id>
-        <updated>2025-01-02T12:19:48.494Z</updated>
-        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
-
-&lt;article class=&quot;post-content&quot;&gt;
-        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
-    &lt;h1&gt;Todos&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;No todos los trabajos&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Oddments for &lt;strong&gt;soon&lt;/strong&gt; I might easily forget.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;#:foaf from wget &lt;a href=&quot;https://prod-dcd-datasets-cache-zipfiles.s3.eu-west-1.amazonaws.com/zp23s23xpb-1.zip&quot;&gt;https://prod-dcd-datasets-cache-zipfiles.s3.eu-west-1.amazonaws.com/zp23s23xpb-1.zip&lt;/a&gt; &lt;/li&gt;
-&lt;li&gt;#:todo check pivot terms - write for #:PoggiPivot &amp;amp; #:ProofPivot. Use &amp;#39;inflection point&amp;#39; in docs&lt;/li&gt;
-&lt;li&gt;#:todo form-a-matic - make my index.rdf&lt;/li&gt;
-&lt;li&gt;#:todo #:squirt to #:tbox&lt;/li&gt;
-&lt;li&gt;#:todo #:semem to #:tbox&lt;/li&gt;
-&lt;li&gt;#:todo block diagrams - Claude&lt;/li&gt;
-&lt;li&gt;#:todo pull descriptions from memoripy &amp;amp; trustgraph&lt;/li&gt;
-&lt;li&gt;#:todo GitHub ci/CD&lt;/li&gt;
-&lt;li&gt;#:todo docker dev env&lt;/li&gt;
-&lt;li&gt;#:todo #:postcraft CSS initial size&lt;/li&gt;
-&lt;li&gt;#:todo #:postcraft fix links&lt;/li&gt;
-&lt;li&gt;#:todo #:postcraft figure out #:semtags flow&lt;/li&gt;
-&lt;li&gt;#:todo #:transmissions generate type definitions&lt;/li&gt;
-&lt;/ul&gt;
 
 &lt;/article&gt;
 &lt;p class=&quot;post-title h-cinzel&quot;&gt;
