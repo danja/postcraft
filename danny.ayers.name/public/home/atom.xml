@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2025-01-04T12:33:20.731Z</updated>
+    <updated>2025-01-04T12:34:15.432Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -15,14 +15,14 @@
         <title>Entry 2025-01-04_hoard</title>
         <link href="https://danny.ayers.name/entries/2025-01-04_hoard.html"/>
         <id>https://danny.ayers.name/entries/2025-01-04_hoard.html</id>
-        <updated>2025-01-04T12:33:20.731Z</updated>
+        <updated>2025-01-04T12:34:15.432Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
         &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
     &lt;h1&gt;Hoard&lt;/h1&gt;
 &lt;p&gt;&lt;em&gt;hyperdata-whiteboard&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;I got distracted yesterday while sorting out the #:packer #:transmission (for concat&amp;#39;ing repos for LLMs), then in the evening, when I got back to desk I was too tired to do anything, gave up. Returning to it now, I need a small repo to run it against. As it happens, this morning in bed, a passing thought led me to start another[^1] little whiteboard project (with Claude). I&amp;#39;ll make that a new project.&lt;/p&gt;
+&lt;p&gt;I got distracted yesterday while sorting out the #:packer #:transmission (for concat&amp;#39;ing repos for LLMs), then in the evening, when I got back to desk I was too tired to do anything, gave up. Returning to it now, I need a small repo to run it against. As it happens, this morning in bed, a passing thought led me to start another&lt;sup&gt;&lt;a id=&quot;footnote-ref-1&quot; href=&quot;#footnote-1&quot; data-footnote-ref aria-describedby=&quot;footnote-label&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; little whiteboard project (with Claude). I&amp;#39;ll make that a new project.&lt;/p&gt;
 &lt;p&gt;Online, I&amp;#39;ve created &lt;a href=&quot;https://github.com/danja/hoard&quot;&gt;https://github.com/danja/hoard&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Locally:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;cd ~/github-danny/hyperdata/packages
@@ -36,7 +36,14 @@ npm init -y
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Ok, it fails as expected...&lt;/p&gt;
 &lt;p&gt;My head&amp;#39;s a little fuzzy and Claudio&amp;#39;s pestering. Dogwalk time.&lt;/p&gt;
-&lt;p&gt;[^1] I&amp;#39;ve been around whiteboards a few times before, first time of note being a &lt;a href=&quot;https://www.xml.com/pub/a/2003/11/19/svgwiki.html&quot;&gt;SVG Wiki Whiteboard&lt;/a&gt; in 2003.&lt;/p&gt;
+&lt;section class=&quot;footnotes&quot; data-footnotes&gt;
+&lt;h2 id=&quot;footnote-label&quot; class=&quot;sr-only&quot;&gt;Footnotes&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li id=&quot;footnote-1&quot;&gt;
+&lt;p&gt;I&amp;#39;ve been around whiteboards a few times before, first time of note being a &lt;a href=&quot;https://www.xml.com/pub/a/2003/11/19/svgwiki.html&quot;&gt;SVG Wiki Whiteboard&lt;/a&gt; in 2003. &lt;a href=&quot;#footnote-ref-1&quot; data-footnote-backref aria-label=&quot;Back to reference 1&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
 
 &lt;/article&gt;
 &lt;p class=&quot;post-title h-cinzel&quot;&gt;
@@ -50,7 +57,7 @@ npm init -y
         <title>Entry 2025-01-03_light</title>
         <link href="https://danny.ayers.name/entries/2025-01-03_light.html"/>
         <id>https://danny.ayers.name/entries/2025-01-03_light.html</id>
-        <updated>2025-01-04T12:33:20.731Z</updated>
+        <updated>2025-01-04T12:34:15.432Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -129,7 +136,7 @@ console.log(counter.count); // undefined
         <title>Entry 2025-01-02_fix-deploy</title>
         <link href="https://danny.ayers.name/entries/2025-01-02_fix-deploy.html"/>
         <id>https://danny.ayers.name/entries/2025-01-02_fix-deploy.html</id>
-        <updated>2025-01-04T12:33:20.731Z</updated>
+        <updated>2025-01-04T12:34:15.432Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -214,7 +221,7 @@ For 2 : I&amp;#39;ve got a live Ubuntu server (which you are looking at now) and
         <title>Entry 2025-01-01_semem-run</title>
         <link href="https://danny.ayers.name/entries/2025-01-01_semem-run.html"/>
         <id>https://danny.ayers.name/entries/2025-01-01_semem-run.html</id>
-        <updated>2025-01-04T12:33:20.731Z</updated>
+        <updated>2025-01-04T12:34:15.432Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -294,7 +301,7 @@ WHERE {
         <title>Entry 2025-01-01_repo-boo</title>
         <link href="https://danny.ayers.name/entries/2025-01-01_repo-boo.html"/>
         <id>https://danny.ayers.name/entries/2025-01-01_repo-boo.html</id>
-        <updated>2025-01-04T12:33:20.731Z</updated>
+        <updated>2025-01-04T12:34:15.432Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
