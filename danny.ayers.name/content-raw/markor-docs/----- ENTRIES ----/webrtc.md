@@ -1,0 +1,1 @@
+What open source video livestreaming systems based on WebRTC are there? I'm looking for something lightweight to run on a remote Ubuntu server. The source will be an Android phone. It is important that the system will be able to work on a low bandwidth source connection. The server already has nginx, nodejs, prosody and docker installed

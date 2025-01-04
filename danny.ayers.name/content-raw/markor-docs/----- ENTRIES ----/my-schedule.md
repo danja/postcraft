@@ -1,0 +1,3 @@
+The morning routine I have found works for me is waking to alarm clock at 8:57, which gives me time to open my eyes & have a pee before BBC Radio 4 news. It's just as reliable as any other major news outlet, ie. **not**, but I find a dose of self-important English prods my brain out of whatever loop it was in.
+
+However, I'm slow starting today after a very late night. Usual morning routine but offset about 3 hours. I typically put on  to catch the news, let it run into
