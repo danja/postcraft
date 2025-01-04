@@ -21,7 +21,7 @@
 <p><code>src/api/cli/run.js</code> then calls <code>src/api/common/CommandUtils.js</code>. That does a little bit of path-splitting and simple logic, calling on <code>src/core/ApplicationManager.js</code> to get things going.</p>
 <p>I remember now - I left a bit of refactoring around <code>src/core/ApplicationManager.js</code> in-progress. That&#39;s still not a high priority, I&#39;ll get to it when I next need to do things around there.</p>
 <p>Hmm. The options do look very broken. But shouldn&#39;t take much fixing.</p>
-<p>Well, you learn something every day. I wanted to check what was considered best practice for private members in JS. I asked Claude, confirmed with <a href="https://www.perplexity.ai/">Perplexity</a> :</p>
+<p>Well, you learn something every day. I wanted to check what was considered best practice for <strong>privates</strong> in JS. I asked Claude, confirmed with <a href="https://www.perplexity.ai/">Perplexity</a> :</p>
 <h3>Private Fields in JavaScript</h3>
 <p>Private fields, denoted by the # prefix, were introduced as part of the ECMAScript 2022 (ES13) specification. This feature provides true privacy encapsulation within classes, preventing access to these fields from outside the class</p>
 <pre><code class="language-javascript">class Person {

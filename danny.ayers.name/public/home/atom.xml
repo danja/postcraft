@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2025-01-04T12:35:48.651Z</updated>
+    <updated>2025-01-04T12:39:23.987Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -15,7 +15,7 @@
         <title>Entry 2025-01-04_hoard</title>
         <link href="https://danny.ayers.name/entries/2025-01-04_hoard.html"/>
         <id>https://danny.ayers.name/entries/2025-01-04_hoard.html</id>
-        <updated>2025-01-04T12:35:48.651Z</updated>
+        <updated>2025-01-04T12:39:23.987Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -57,7 +57,7 @@ npm init -y
         <title>Entry 2025-01-03_light</title>
         <link href="https://danny.ayers.name/entries/2025-01-03_light.html"/>
         <id>https://danny.ayers.name/entries/2025-01-03_light.html</id>
-        <updated>2025-01-04T12:35:48.651Z</updated>
+        <updated>2025-01-04T12:39:23.987Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -81,7 +81,7 @@ npm init -y
 &lt;p&gt;&lt;code&gt;src/api/cli/run.js&lt;/code&gt; then calls &lt;code&gt;src/api/common/CommandUtils.js&lt;/code&gt;. That does a little bit of path-splitting and simple logic, calling on &lt;code&gt;src/core/ApplicationManager.js&lt;/code&gt; to get things going.&lt;/p&gt;
 &lt;p&gt;I remember now - I left a bit of refactoring around &lt;code&gt;src/core/ApplicationManager.js&lt;/code&gt; in-progress. That&amp;#39;s still not a high priority, I&amp;#39;ll get to it when I next need to do things around there.&lt;/p&gt;
 &lt;p&gt;Hmm. The options do look very broken. But shouldn&amp;#39;t take much fixing.&lt;/p&gt;
-&lt;p&gt;Well, you learn something every day. I wanted to check what was considered best practice for private members in JS. I asked Claude, confirmed with &lt;a href=&quot;https://www.perplexity.ai/&quot;&gt;Perplexity&lt;/a&gt; :&lt;/p&gt;
+&lt;p&gt;Well, you learn something every day. I wanted to check what was considered best practice for &lt;strong&gt;privates&lt;/strong&gt; in JS. I asked Claude, confirmed with &lt;a href=&quot;https://www.perplexity.ai/&quot;&gt;Perplexity&lt;/a&gt; :&lt;/p&gt;
 &lt;h3&gt;Private Fields in JavaScript&lt;/h3&gt;
 &lt;p&gt;Private fields, denoted by the # prefix, were introduced as part of the ECMAScript 2022 (ES13) specification. This feature provides true privacy encapsulation within classes, preventing access to these fields from outside the class&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;class Person {
@@ -136,7 +136,7 @@ console.log(counter.count); // undefined
         <title>Entry 2025-01-02_fix-deploy</title>
         <link href="https://danny.ayers.name/entries/2025-01-02_fix-deploy.html"/>
         <id>https://danny.ayers.name/entries/2025-01-02_fix-deploy.html</id>
-        <updated>2025-01-04T12:35:48.651Z</updated>
+        <updated>2025-01-04T12:39:23.987Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -221,7 +221,7 @@ For 2 : I&amp;#39;ve got a live Ubuntu server (which you are looking at now) and
         <title>Entry 2025-01-01_semem-run</title>
         <link href="https://danny.ayers.name/entries/2025-01-01_semem-run.html"/>
         <id>https://danny.ayers.name/entries/2025-01-01_semem-run.html</id>
-        <updated>2025-01-04T12:35:48.651Z</updated>
+        <updated>2025-01-04T12:39:23.987Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -301,7 +301,7 @@ WHERE {
         <title>Entry 2025-01-01_repo-boo</title>
         <link href="https://danny.ayers.name/entries/2025-01-01_repo-boo.html"/>
         <id>https://danny.ayers.name/entries/2025-01-01_repo-boo.html</id>
-        <updated>2025-01-04T12:35:48.651Z</updated>
+        <updated>2025-01-04T12:39:23.987Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
