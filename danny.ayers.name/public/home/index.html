@@ -37,6 +37,33 @@
 
 <article class="post-content">
         <a href="">#</a>
+    <h1>Hoard</h1>
+<p><em>hyperdata-whiteboard</em></p>
+<p>I got distracted yesterday while sorting out the #:packer #:transmission (for concat&#39;ing repos for LLMs), then in the evening, when I got back to desk I was too tired to do anything, gave up. Returning to it now, I need a small repo to run it against. As it happens, this morning in bed, a passing thought led me to start another[^1] little whiteboard project (with Claude). I&#39;ll make that a new project.</p>
+<p>Online, I&#39;ve created <a href="https://github.com/danja/hoard">https://github.com/danja/hoard</a></p>
+<p>Locally:</p>
+<pre><code class="language-sh">cd ~/github-danny/hyperdata/packages
+git submodule add https://github.com/danja/hoard.git hoard
+cd hoard
+npm init -y
+</code></pre>
+<p>Ok, so now I can try :</p>
+<pre><code class="language-sh">cd ~/github-danny/transmissions
+./trans packer ../hyperdata/packages/hoard
+</code></pre>
+<p>Ok, it fails as expected...</p>
+<p>My head&#39;s a little fuzzy and Claudio&#39;s pestering. Dogwalk time.</p>
+<p>[^1] I&#39;ve been around whiteboards a few times before, first time of note being a <a href="https://www.xml.com/pub/a/2003/11/19/svgwiki.html">SVG Wiki Whiteboard</a> in 2003.</p>
+
+</article>
+<p class="post-title h-cinzel">
+    <a href="">
+        
+    </a>
+</p> <em></em><!-- POST CONTENT TEMPLATE -->
+
+<article class="post-content">
+        <a href="">#</a>
     <h1>Light</h1>
 <p><em>Because it is.</em></p>
 <p><img src="media/images/2025-01/bear-of-little-brain.png" alt="Bear of Very Little Brain"></p>
@@ -303,19 +330,6 @@ npm error code E404
 npm error 404 Not Found - GET https://registry.yarnpkg.com/squirty - Not found
 </code></pre>
 <p>For that I only need to do some minor renaming. #:transmissions would have been a proper pain. I did it once already - had the project working label &quot;treadmill&quot; initially, but decided something more accurately descriptive would be better. Horrible search &amp; replace - not too bad with code, but docs got messy.</p>
-
-</article>
-<p class="post-title h-cinzel">
-    <a href="">
-        
-    </a>
-</p> <em></em><!-- POST CONTENT TEMPLATE -->
-
-<article class="post-content">
-        <a href="">#</a>
-    <h1>Happy New Year!</h1>
-<p>Foggy brain yet again. Not for the first time on New Year&#39;s Day, but irritatingly I wasn&#39;t up all that late and didn&#39;t drink to excess. I did have fun last night, my first attempt at livestreaming. Around 7pm I was feeling blocked at desk (my head, not the code) and an idea formed in my head. I&#39;d been listening to Drum &amp; Bass. Didn&#39;t seem right, hmm, bagpipes? <a href="https://www.youtube.com/watch?v=GjdnGNfDyd4">Big Bad Bollocks</a>? Pogues? Hang on, is there any D&amp;B in 3/4 or 6/8 time? I decided to make some. By midnight.    </p>
-<p>Easiest camera to set up was my Android phone (after I spent half an hour sorting out a tripod). Perplexity suggested Facebook was the easiest platform, but neglected to tell me it has a very confusing UI with sod all settings accessible. Worst, whatever resolution/codec it uses, it&#39;s a network glutton. I&#39;m not sure how much actually got streamed, 50% of the times I checked it was waiting to connect.  </p>
 
 </article>
 <p class="post-title h-cinzel">

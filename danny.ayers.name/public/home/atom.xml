@@ -3,7 +3,7 @@
     <title>Danny Ayers' Blog</title>
     
     <link href="https://danny.ayers.name"/>
-    <updated>2025-01-03T18:02:22.751Z</updated>
+    <updated>2025-01-04T12:33:20.731Z</updated>
     <id>https://danny.ayers.name</id>
     <author>
         <name>Danny Ayers</name>
@@ -12,10 +12,45 @@
 
     
     <entry>
+        <title>Entry 2025-01-04_hoard</title>
+        <link href="https://danny.ayers.name/entries/2025-01-04_hoard.html"/>
+        <id>https://danny.ayers.name/entries/2025-01-04_hoard.html</id>
+        <updated>2025-01-04T12:33:20.731Z</updated>
+        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
+
+&lt;article class=&quot;post-content&quot;&gt;
+        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
+    &lt;h1&gt;Hoard&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;hyperdata-whiteboard&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I got distracted yesterday while sorting out the #:packer #:transmission (for concat&amp;#39;ing repos for LLMs), then in the evening, when I got back to desk I was too tired to do anything, gave up. Returning to it now, I need a small repo to run it against. As it happens, this morning in bed, a passing thought led me to start another[^1] little whiteboard project (with Claude). I&amp;#39;ll make that a new project.&lt;/p&gt;
+&lt;p&gt;Online, I&amp;#39;ve created &lt;a href=&quot;https://github.com/danja/hoard&quot;&gt;https://github.com/danja/hoard&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Locally:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;cd ~/github-danny/hyperdata/packages
+git submodule add https://github.com/danja/hoard.git hoard
+cd hoard
+npm init -y
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ok, so now I can try :&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;cd ~/github-danny/transmissions
+./trans packer ../hyperdata/packages/hoard
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ok, it fails as expected...&lt;/p&gt;
+&lt;p&gt;My head&amp;#39;s a little fuzzy and Claudio&amp;#39;s pestering. Dogwalk time.&lt;/p&gt;
+&lt;p&gt;[^1] I&amp;#39;ve been around whiteboards a few times before, first time of note being a &lt;a href=&quot;https://www.xml.com/pub/a/2003/11/19/svgwiki.html&quot;&gt;SVG Wiki Whiteboard&lt;/a&gt; in 2003.&lt;/p&gt;
+
+&lt;/article&gt;
+&lt;p class=&quot;post-title h-cinzel&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;
+        
+    &lt;/a&gt;
+&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
+    </entry>
+    
+    <entry>
         <title>Entry 2025-01-03_light</title>
         <link href="https://danny.ayers.name/entries/2025-01-03_light.html"/>
         <id>https://danny.ayers.name/entries/2025-01-03_light.html</id>
-        <updated>2025-01-03T18:02:22.751Z</updated>
+        <updated>2025-01-04T12:33:20.731Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -94,7 +129,7 @@ console.log(counter.count); // undefined
         <title>Entry 2025-01-02_fix-deploy</title>
         <link href="https://danny.ayers.name/entries/2025-01-02_fix-deploy.html"/>
         <id>https://danny.ayers.name/entries/2025-01-02_fix-deploy.html</id>
-        <updated>2025-01-03T18:02:22.752Z</updated>
+        <updated>2025-01-04T12:33:20.731Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -179,7 +214,7 @@ For 2 : I&amp;#39;ve got a live Ubuntu server (which you are looking at now) and
         <title>Entry 2025-01-01_semem-run</title>
         <link href="https://danny.ayers.name/entries/2025-01-01_semem-run.html"/>
         <id>https://danny.ayers.name/entries/2025-01-01_semem-run.html</id>
-        <updated>2025-01-03T18:02:22.752Z</updated>
+        <updated>2025-01-04T12:33:20.731Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -259,7 +294,7 @@ WHERE {
         <title>Entry 2025-01-01_repo-boo</title>
         <link href="https://danny.ayers.name/entries/2025-01-01_repo-boo.html"/>
         <id>https://danny.ayers.name/entries/2025-01-01_repo-boo.html</id>
-        <updated>2025-01-03T18:02:22.752Z</updated>
+        <updated>2025-01-04T12:33:20.731Z</updated>
         <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
 
 &lt;article class=&quot;post-content&quot;&gt;
@@ -310,27 +345,6 @@ npm error code E404
 npm error 404 Not Found - GET https://registry.yarnpkg.com/squirty - Not found
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;For that I only need to do some minor renaming. #:transmissions would have been a proper pain. I did it once already - had the project working label &amp;quot;treadmill&amp;quot; initially, but decided something more accurately descriptive would be better. Horrible search &amp;amp; replace - not too bad with code, but docs got messy.&lt;/p&gt;
-
-&lt;/article&gt;
-&lt;p class=&quot;post-title h-cinzel&quot;&gt;
-    &lt;a href=&quot;&quot;&gt;
-        
-    &lt;/a&gt;
-&lt;/p&gt; &lt;em&gt;&lt;/em&gt;</content>
-    </entry>
-    
-    <entry>
-        <title>Entry 2025-01-01_hny</title>
-        <link href="https://danny.ayers.name/entries/2025-01-01_hny.html"/>
-        <id>https://danny.ayers.name/entries/2025-01-01_hny.html</id>
-        <updated>2025-01-03T18:02:22.752Z</updated>
-        <content type="html">&lt;!-- POST CONTENT TEMPLATE --&gt;
-
-&lt;article class=&quot;post-content&quot;&gt;
-        &lt;a href=&quot;&quot;&gt;#&lt;/a&gt;
-    &lt;h1&gt;Happy New Year!&lt;/h1&gt;
-&lt;p&gt;Foggy brain yet again. Not for the first time on New Year&amp;#39;s Day, but irritatingly I wasn&amp;#39;t up all that late and didn&amp;#39;t drink to excess. I did have fun last night, my first attempt at livestreaming. Around 7pm I was feeling blocked at desk (my head, not the code) and an idea formed in my head. I&amp;#39;d been listening to Drum &amp;amp; Bass. Didn&amp;#39;t seem right, hmm, bagpipes? &lt;a href=&quot;https://www.youtube.com/watch?v=GjdnGNfDyd4&quot;&gt;Big Bad Bollocks&lt;/a&gt;? Pogues? Hang on, is there any D&amp;amp;B in 3/4 or 6/8 time? I decided to make some. By midnight.    &lt;/p&gt;
-&lt;p&gt;Easiest camera to set up was my Android phone (after I spent half an hour sorting out a tripod). Perplexity suggested Facebook was the easiest platform, but neglected to tell me it has a very confusing UI with sod all settings accessible. Worst, whatever resolution/codec it uses, it&amp;#39;s a network glutton. I&amp;#39;m not sure how much actually got streamed, 50% of the times I checked it was waiting to connect.  &lt;/p&gt;
 
 &lt;/article&gt;
 &lt;p class=&quot;post-title h-cinzel&quot;&gt;
