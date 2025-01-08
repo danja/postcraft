@@ -1,22 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>{{ title }}</title>
-    {% if subtitle %}<subtitle>{{ subtitle }}</subtitle>{% endif %}
-    <link href="{{ link }}"/>
-    <updated>{{ updated }}</updated>
-    <id>{{ id }}</id>
+    <title></title>
+    
+    <link href=""/>
+    <updated></updated>
+    <id></id>
     <author>
-        <name>{{ author.name }}</name>
-        {% if author.email %}<email>{{ author.email }}</email>{% endif %}
+        <name></name>
+        
     </author>
 
-    {% for entry in entries %}
-    <entry>
-        <title>{{ entry.title }}</title>
-        <link href="{{ entry.link }}"/>
-        <id>{{ entry.id }}</id>
-        <updated>{{ entry.updated }}</updated>
-        <content type="html">{{ entry.content | escape }}</content>
-    </entry>
-    {% endfor %}
+    
 </feed>
