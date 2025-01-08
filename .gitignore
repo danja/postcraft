@@ -1,5 +1,6 @@
 # Postcraft-specific
 
+test-site/cache/*
 cache/*
 !cache/.*
 
