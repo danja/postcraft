@@ -6,48 +6,48 @@
 
 # SIOC
 
-@prefix trm: <http://purl.org/stuff/transmission/> .
-@prefix fs: <http://purl.org/stuff/filesystem/> .
-@prefix pc: <http://purl.org/stuff/postcraft/> .
-@prefix t: <http://hyperdata.it/transmissions/> . # for custom terms & instances
+@prefix trn: <http://purl.org/stuff/transmissions/> .
+@prefix trn: <http://purl.org/stuff/transmissions/> .
+@prefix trn: <http://purl.org/stuff/transmissions/> .
+@prefix trn: <http://purl.org/stuff/transmissions/> . # for custom terms & instances
 
-<https://danny.ayers.name> a pc:Site ;
+<https://danny.ayers.name> a trn:Site ;
     rdfs:label "danny.ayers.name" ;
     dcterms:title "Rawer" ;
-    pc:contains <https://danny.ayers.name/blog> ;  # maybe
-    pc:includes t:PostContent . # maybe
+    trn:contains <https://danny.ayers.name/blog> ;  # maybe
+    trn:includes trn:PostContent . # maybe
 
 # this should maybe give the contentgroup a renderType, indirect with template etc
 
 # POST CONTENT
-t:PostContent a pc:ContentGroup ;
-   # a pc:Partial ;
-    pc:site <https://danny.ayers.name> ;
-    pc:subdir "blog" ; # better property name?
-    fs:sourceDirectory "entries/journal" ; # test or entries/journal
-    fs:targetDirectory "public/entry-content-cache" ;
-    pc:template "layouts/middlin/templates/entry-content_template.njk" .
+trn:PostContent a trn:ContentGroup ;
+   # a trn:Partial ;
+    trn:site <https://danny.ayers.name> ;
+    trn:subdir "blog" ; # better property name?
+    trn:sourceDirectory "entries/journal" ; # test or entries/journal
+    trn:targetDirectory "public/entry-content-cache" ;
+    trn:template "layouts/middlin/templates/entry-content_template.njk" .
 
 # POST PAGES
-t:PostPages a pc:ContentGroup ;
-    pc:site <https://danny.ayers.name> ;
-   # fs:sourceDirectory "public/post-content-cache" ;
-    fs:targetDirectory "public/blog" ;
-    pc:template "layouts/middlin/templates/entry-page_template.njk" .
+trn:PostPages a trn:ContentGroup ;
+    trn:site <https://danny.ayers.name> ;
+   # trn:sourceDirectory "public/post-content-cache" ;
+    trn:targetDirectory "public/blog" ;
+    trn:template "layouts/middlin/templates/entry-page_template.njk" .
 
 # MAIN PAGE
-t:IndexPage a pc:ContentGroup ; # TODO naming!
-    pc:site <https://danny.ayers.name> ;
-#    a pc:FrontPage ;
-  #  fs:sourceDirectory "public/entry-content-cache" ;
-    fs:filepath "public/blog/index.html" ;
-    pc:template "layouts/middlin/templates/index-page_template.njk" .
+trn:IndexPage a trn:ContentGroup ; # TODO naming!
+    trn:site <https://danny.ayers.name> ;
+#    a trn:FrontPage ;
+  #  trn:sourceDirectory "public/entry-content-cache" ;
+    trn:filepath "public/blog/index.html" ;
+    trn:template "layouts/middlin/templates/index-page_template.njk" .
 
 
 
 # pinned
-<https://danny.ayers.name/index> a pc:SpecialCase ;
-    pc:state "pinned" ;
-    fs:sourceFile "blog/2023-10-27_hello.md" ;
-    fs:targetFile "public/blog/2023-10-27_hello.html" .
-#     pc:template "layouts/middlin/middlin-posts_template.html" .
+<https://danny.ayers.name/index> a trn:SpecialCase ;
+    trn:state "pinned" ;
+    trn:sourceFile "blog/2023-10-27_hello.md" ;
+    trn:targetFile "public/blog/2023-10-27_hello.html" .
+#     trn:template "layouts/middlin/middlin-posts_template.html" .
