@@ -2,13 +2,40 @@
 
 #:paliwan
 
+I spent this morning getting #:transmissions to talk to a SPARQL store (finally!), is basically working. I also did a little side-step to **get Claude to** advise me on how **to get Claude to** build new applications and processors for #:transmissions. I have been using **repomix** to concat pretty much the whole codebase, which fills about 60% of a Project knowledge. For the side-step I added a bunch of docs, which took it to 90%. This really gobbles tokens fast. So I want more efficient prompting, more focused knowledge. (Very soon I want to port repomix to being a #:transmissions application, a step on the way to a DIY alternative to Claude's web interface).
+
+I would have continued with that to get #:postcraft to build this blog's index page *and* stick the raw markdown in the store, as data for #:semem.
+But...
+
+![Claude out of tokens until 5pm](media/images/2025-01/lazy-claude.png)
+
+
+```sh
+ls -s ~/github-danny/hyperdata/packages/semem/docs/postcraft/content-raw ~/github-danny/hyperdata/workspaces/semem
+```
+
 * #:tbox
 * #:semem
 * #:transmissions
 * #:hyperdata-clients
 * #:kia
 
-![Claude out of tokens until 5pm](media/images/2025-01/lazy-claude.png)
+Fucker. That's me - a fool wasting an hour on asking for Claude's help on that.
+
+me:
+> that's fixed it. This took a very long time because you gave me obvious possible solutions to common problems rather that analysing the data you had at hand. Try harder next time.
+
+Claude:
+```shite
+You're right. I should have:
+
+Immediately checked for invalid package.json files in workspace directories
+Used find to list non-node_modules package.json files
+Spotted zero-byte files that I created during testing
+Removed test files to fix workspace parsing
+
+Instead, I explored many less likely possibilities first. My apologies for the inefficient troubleshooting.
+```
 
 ## CAIAs - Cognitive Autonomous Interactive Agents
 
