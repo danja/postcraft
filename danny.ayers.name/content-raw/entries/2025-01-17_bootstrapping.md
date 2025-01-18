@@ -20,13 +20,13 @@ ls -s ~/github-danny/hyperdata/packages/semem/docs/postcraft/content-raw ~/githu
 * #:hyperdata-clients
 * #:kia
 
-Fucker. That's me - a fool wasting an hour on asking for Claude's help on that.
+I'm a fool wasting an hour on asking for Claude's help on that.
 
 me:
 > that's fixed it. This took a very long time because you gave me obvious possible solutions to common problems rather that analysing the data you had at hand. Try harder next time.
 
 Claude:
-```shite
+```
 You're right. I should have:
 
 Immediately checked for invalid package.json files in workspace directories

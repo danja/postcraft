@@ -3,6 +3,7 @@ how does the subject relate to the patient?
 
 Perplexity :
 
+
 The subject and the patient are distinct grammatical and semantic concepts that can overlap but are not always equivalent. Here's how they relate:
 
 ## Grammatical vs. Semantic Roles
