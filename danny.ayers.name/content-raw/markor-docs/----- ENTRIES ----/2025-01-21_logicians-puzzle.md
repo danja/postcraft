@@ -1,4 +1,4 @@
-
+Multirepresentaion and Colbert 
 
 
 I'm really bad at logic puzzles, which is paradoxical given that I've studied a fair bit of logic over the years (loads of FOL, some DL & bits of non-classical, modal etc).
