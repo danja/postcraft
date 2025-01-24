@@ -20,3 +20,5 @@
 * Prepare #:packer for #:semem
 * Fix #:postcraft
 * Reuse #:packer configs for #:semem search?
+
+Rue Mohr, mastodon : As not what mistakes we made yesterday, but what mistakes we can make tomorrow.
