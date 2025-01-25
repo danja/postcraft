@@ -7,3 +7,5 @@ Clear the kitchen table to put things on while tidying the room
 Sort by purpose & destination room (== purpose)
 
 Reinforcement : Reduce cognitive load
+
+Avoid local minima - moe
