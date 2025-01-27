@@ -1,5 +1,6 @@
 # What am I up to?
 
+`/home/danny/github-danny/hyperdata/workspaces/hyperdata/articles/overview/projects.md`
 
 markmap rendering would be nice here
 
