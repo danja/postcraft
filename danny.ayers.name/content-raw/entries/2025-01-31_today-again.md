@@ -36,6 +36,10 @@ ReferenceError: applicationsDir is not defined
 Have a good think how the required functionality can be built into the system based on what's in place already.
 
 ```
+```
+
+Ok, got a good way towards that before tokens ran out. Dogwalk, then food & feet up. 
+
 
 ```sh
 sudo apt install poppler-utils
@@ -44,7 +48,7 @@ sudo apt install poppler-utils
 
 ## Corps Blimey
 
-I needed a term for a chunk of knowledge that (*hand-waves*) is bigger than a doc or little graph, but smaller than a corpus. Obvious really : #:corpuscle
+I needed a term for a chunk of knowledge that (*hand-waves*) is bigger than a doc or little graph, but smaller than a corpus. Obvious really : #:corpuscle. Unintentionally I seem to have slipped into alliteration. This will mean there will be such things as #cogcom **Cognitive Composer Corpuscles**. *Chaos Computer Club, Creedence Clearwater Revival...oh, oops.*
 
 Checking with Claude -
 
