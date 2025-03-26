@@ -1,65 +1,130 @@
-### manifest.ttl for danny.ayers.name ###
+### manifest.ttl for ###
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-# SIOC
+@prefix : <http://purl.org/stuff/transmissions/> .
 
-@prefix trn: <http://purl.org/stuff/transmissions/> .
-@prefix trn: <http://purl.org/stuff/transmissions/> .
-@prefix trn: <http://purl.org/stuff/transmissions/> .
-@prefix trn: <http://purl.org/stuff/transmissions/> . # for custom terms & instances
+#######################
+# for md-to-sparqlstore
 
-<https://danny.ayers.name> a trn:Site ;
-    rdfs:label "danny.ayers.name" ;
-    dcterms:title "Rawer" ;
-    trn:contains <https://danny.ayers.name/home> ;  # maybe
-    trn:includes trn:PostContent . # maybe
+:dirWalker a :ConfigSet ;
+   :sourceDir "content/raw" .
 
-# this should maybe give the contentgroup a renderType, indirect with template etc
+:storeArticle a :ConfigSet ;
+    :dataBlock "contentBlocks" ;
+    :templateFilename "system/sparql-templates/store-article.njk" ;
+    :endpointSettings "system/endpoints.json" .
 
-# POST CONTENT
-trn:PostContent a trn:ContentGroup ;
-    trn:site <https://danny.ayers.name> ;
-    trn:subdir "home" ; # better property name?
-    trn:sourceDirectory "content-raw/entries" ; # SOURCE DIR HERE journal, entries
-    trn:targetDirectory "cache" ;
-    trn:template "layouts/middlin/templates/entry-content_template.njk" .
+###########################
+### for sparqlstore-to-html
 
-# POST PAGES
-trn:PostPages a trn:ContentGroup ;
-    trn:site <https://danny.ayers.name> ;
-   # trn:sourceDirectory "public/post-content-cache" ;
-    trn:targetDirectory "public/home/entries" ;
-    trn:template "layouts/middlin/templates/entry-page_template.njk" .
+:resultIterator a :ConfigSet ;
+  :forEach "queryResults.results.bindings" ;
+  :remove "queryResults" .
 
-# MAIN PAGE
-trn:IndexPage a trn:ContentGroup ; # TODO naming!
-    trn:site <https://danny.ayers.name> ;
-    trn:filepath "public/home/index.html" ;
-    trn:template "layouts/middlin/templates/index-page_template.njk" .
-
-# STYLES ETC not yet implemented
-trn:CSS a trn:StaticGroup ;
-    trn:site <https://danny.ayers.name> ;
-    trn:sourceDirectory "layouts/middlin/css" ;
-    trn:targetDirectory "public/home/css" .
-
-trn:fonts a trn:StaticGroup ;
-    trn:site <https://danny.ayers.name> ;
-    trn:sourceDirectory "layouts/middlin/fonts" ;
-    trn:targetDirectory "public/home/js" .
-
-trn:JS a trn:StaticGroup ;
-    trn:site <https://danny.ayers.name> ;
-    trn:sourceDirectory "layouts/middlin/js" ;
-    trn:targetDirectory "public/home/js" .
+:prepArticle a :ConfigSet  ;
+    :remove "queryResults" ;
+    :rename (:c1 :c2 :c3 :u1)  .
+        # for content
+        :c1   :pre    "currentItem.title.value" ;
+              :post "contentBlocks.title"  .
+        :c2   :pre    "currentItem.content.value" ;
+              :post  "contentBlocks.content"  .
+        :c3   :pre    "appRunStart" ;
+              :post  "contentBlocks.published"  .
+        # for SPARQL update
+        :u1     :pre    "currentItem.article.value" ;
+                :post   "contentBlocks.uri"  .
 
 
-# pinned - not yet implemented
-<https://danny.ayers.name/index> a trn:SpecialCase ;
-    trn:state "pinned" ;
-    trn:sourceFile "home/2023-10-27_hello.md" ;
-    trn:targetFile "public/home/2023-10-27_hello.html" .
-#     trn:template "layouts/middlin/middlin-posts_template.html" .
+:selectArticles a :ConfigSet ;
+    :templateFilename "system/sparql-templates/select-articles.njk" ;
+    :endpointSettings "system/endpoints.json" .
+
+:articleContentTemplate a :ConfigSet ;
+    :templateFilename "layout/base/templates/article-content.njk" .
+
+:articlePageTemplate a :ConfigSet ;
+    :templateFilename "layout/base/templates/article-page.njk" .
+
+:recordRendering a :ConfigSet ;
+    :dataBlock "contentBlocks" ;
+    :templateFilename "system/sparql-templates/record-rendering.njk" ;
+    :endpointSettings "system/endpoints.json" .
+
+#################################
+# for sparqlstore-to-site-indexes
+
+:recentArticles a :ConfigSet ;
+    :templateFilename "system/sparql-templates/recent-articles.njk" ;
+    :endpointSettings "system/endpoints.json" .
+
+:indexResultIterator a :ConfigSet ;
+  :forEach "queryResults.results.bindings" .
+
+:prepRecents a :ConfigSet  ;
+    :remove "queryResults" ;
+    :rename (:pc1 :pc2 :pc3 :pu1)  .
+        :pc1   :pre    "currentItem.title.value" ;
+              :post "contentBlocks.title"  .
+        :pc2   :pre    "currentItem.html.value" ;
+              :post  "contentBlocks.html"  .
+        :pc3   :pre    "currentItem.created.value" ;
+              :post  "contentBlocks.created"  .
+
+        :pu1     :pre    "currentItem.article.value" ;
+                :post   "contentBlocks.uri"  .
+
+:accumulator a :ConfigSet ;
+    :label "test" ;
+    :sourceField "currentItem.html.value" .
+
+#### unforks -------------
+
+### create HTML index
+
+:prepHTML a :ConfigSet  ;
+    :rename (:ph1)  .
+        # for content
+        :ph1   :pre    "accumulator" ;
+              :post "contentBlocks.content"  .
+
+:htmlIndex a :ConfigSet ;
+    :templateFilename "layout/base/templates/index-html.njk" .
+
+:htmlFilepath a :ConfigSet ;
+  :asPath true ;
+  :targetField "destinationFile" ;
+  :values (:ip1 :ip2 :ip3) .
+  :ip1 :field "targetPath" .
+  :ip2 :string "public" .
+  :ip3 :string "index.html" .
+
+:htmlField a :ConfigSet ;
+   :contentField "content" .
+
+:contentLocation  a :ConfigSet ;
+   :contentField "accumulator" .
+
+### create Atom index
+
+:prepAtom a :ConfigSet  ;
+    :rename :pa1  .
+        # for content
+        :pa1   :pre    "accumulator" ;
+              :post "contentBlocks.content"  .
+
+:atomIndex a :ConfigSet ;
+    :templateFilename "layout/base/templates/index-atom.njk" .
+
+:atomFilepath a :ConfigSet ;
+  :asPath true ;
+  :targetField "destinationFile" ;
+  :values (:ip1 :ip2 :ip3) .
+  :ip1 :field "targetPath" .
+  :ip2 :string "public" .
+  :ip3 :string "atom.xml" .
+
+  ### for
