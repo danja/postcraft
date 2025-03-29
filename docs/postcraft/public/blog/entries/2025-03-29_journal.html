@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="/css/fonts.css" type="text/css"/>
+        <link rel="stylesheet" href="/css/grid-columns.css" type="text/css"/>
+        <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+        <title>Postcraft Journal 2025-03-29</title>
+    </head>
+    <!-- POST PAGE TEMPLATE -->
+    <body>
+        <header id="entry-header">
+            <h1 class="post-title h-cinzel">
+                
+            </h1>
+        </header>
+        <h1>Postcraft Journal 2025-03-29</h1>
+<p>~/hyperdata/postcraft/docs/postcraft</p>
+<p>cd ~/hyperdata/transmissions # my local path</p>
+<p>./trans md-to-sparqlstore -v ~/hyperdata/postcraft/docs/postcraft
+./trans postcraft-statics ~/hyperdata/postcraft/docs/postcraft
+./trans sparqlstore-to-html ~/hyperdata/postcraft/docs/postcraft
+./trans sparqlstore-to-site-indexes ~/hyperdata/postcraft/docs/postcraft</p>
+<pre><code class="language-sh">sudo systemctl stop tbox
+cd ~/hyperdata/tbox # my local dir
+docker-compose down
+
+docker-compose up -d
+</code></pre>
+
+        <div class="entry-footer">
+            <h2>About</h2>
+            
+        </div>
+    </body>
+</html>

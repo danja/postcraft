@@ -129,3 +129,11 @@
   :ip3 :string "atom.xml" .
 
   ### for
+    ### for postcraft-statics
+
+  :removePublic a :ConfigSet ;
+    :target "public" .
+
+:copyLayout a :ConfigSet ;
+    :source "layout/base" ;
+    :destination "public/layout" .
