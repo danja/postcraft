@@ -12,7 +12,7 @@
 :mts10-dirWalker a :ConfigSet ;
    :sourceDir "content/raw" .
 
-:ts40-storeArticle a :ConfigSet ;
+:mts40-storeArticle a :ConfigSet ;
     :debug "true" ;
     :dataBlock "contentBlocks" ;
     :templateFilename "system/sparql-templates/store-article.njk" ;
