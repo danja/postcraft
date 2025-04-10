@@ -10,7 +10,7 @@
 # for md-to-sparqlstore
 
 :mts10-dirWalker a :ConfigSet ;
-   :sourceDir "content/raw" .
+   :sourceDir "content/raw/entries" .
 
 :mts40-storeArticle a :ConfigSet ;
     :debug "true" ;
