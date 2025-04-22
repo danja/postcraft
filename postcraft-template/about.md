@@ -2,9 +2,9 @@
 
 ## Default Postcraft Structure
 
-- about.md
-- manifest.ttl
-- content
+- about.md : root description
+- app.ttl : Transmissions settings
+- content 
   - media
   - raw
   - static
