@@ -11,7 +11,15 @@
     </head>
     <!-- POST PAGE TEMPLATE -->
     <body>
-        {{content |safe}}
+        <header id="entry-header">
+            <h1 class="post-title h-cinzel">
+                {{header}}
+            </h1>
+        </header>
+        {{content}}
+        <div class="entry-footer">
+            <h2>About</h2>
+            {{footer}}
+        </div>
     </body>
-      <!-- END POST PAGE TEMPLATE -->
 </html>
